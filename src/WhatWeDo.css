@@ -1,0 +1,11 @@
+@media(max-width = 768px) {
+    .frame{
+        width: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .text-wrapper{
+        justify-content: center;
+        align-items: center;
+    }
+}
