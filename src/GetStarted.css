@@ -1,5 +1,355 @@
-@media (max-width: 768px) {
-    .getStarted {
-        display:none;
-    }
+.getStarted {
+    position: relative;
+    font-family: 'Poppins';
+    top: 50px;
+    display: flex;    
+}
+.intro {
+    left: 133px;
+    top: 150px;
+    position: absolute;
+    color: black;
+    font-size: 36px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.intro-message {
+    width: 347px;
+    left: 133px;
+    top: 270px;
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 300;
+    word-wrap: break-word;
+}
+.CTA {
+    width: 141px;
+    height: 30px;
+    left: 133px;
+    top: 390px;
+    position: absolute;
+}
+.CTA-getstarted {
+    left: 0;
+    top: 0;
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 300;
+    word-wrap: break-word;
+}
+.CTA-arrow {
+    width: 15px;
+    height: 0;
+    left: 108px;
+    top:7px;
+    position: absolute;
+}
+.CTA-line {
+    width: 100px;
+    height: 0;
+    left: 1px;
+    top: 28px;
+    position: absolute;
+    border: 1px black solid;
+}
+.box {
+    height: 522px;
+    width: 51px;
+}
+
+.box .sideBracket {
+    height: 600px;
+    left: 45px ;
+    position: relative;
+    top: 8px;
+    width: 61px;
+}
+ .separate-blocks{
+    top: 32px;
+    left:500px;
+    position: absolute;
+}
+
+.arch-icon {
+    width: 62px;
+    height: 60px;
+    left: 125.63px;
+    top: 29px;
+    position: absolute;
+}
+.arch-icon-text {
+    width: 305.63px;
+    height: 35.90px;
+    left: 5.69px;
+    top: 110px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 22px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.line1 {
+    width: 218.18px;
+    height: 0;
+    left: 49.51px;
+    top: 150px;
+    position: absolute;
+    border: 1px #ED7D31 solid;
+}
+.arch-message {
+    width: 318.32px;
+    height: 56.95px;
+    left: 5.69px;
+    top: 170px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: 300;
+    word-wrap: break-word;
+}
+.Arch-box {
+    width: 300px;
+    height: 257px;
+    margin-left: 15px;
+    top: 0;
+    border-radius: 10px;
+    border: 1px solid rgba(237, 125, 49, 0.14);
+}
+.InteriorDesignIcon {
+    width: 52px;
+    height: 60px;
+    left: 460px;
+    top: 29px;
+    position: absolute;
+}
+.InteriorDesignIconText {
+    width: 191.45px;
+    height: 35.90px;
+    left: 410px;
+    top: 110px;
+    position: absolute;
+    text-align:inherit;
+    color: black;
+    font-size: 22px;
+    font-family: 'Poppins';	
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.line4 {
+    width: 218.18px;
+    height: 0;
+    left: 375px;
+    top: 150px;
+    position: absolute;
+    border: 1px #ED7D31 solid;
+}
+.InteriorDesign-message {
+    width: 318.32px;
+    height: 56.95px;
+    left: 326px;
+    top: 170px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: 300;
+    word-wrap: break-word;
+}
+.ID-box {
+    width: 300px;
+    height: 257px;
+    left: 335px;
+    top: 0;
+    position: absolute;
+    border-radius: 10px;
+    border: 1px solid #ED7D3124;
+}
+.pmgt-icon {
+    width: 55px;
+    height: 60px;
+    left: 130px;
+    top: 300px;
+    position: absolute;
+}
+.pmgt-icon-text {
+    left: 44px;
+    top: 380px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 22px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.line2 {
+    width: 261.49px;
+    height: 0;
+    left: 36px;
+    top: 420px;
+    position: absolute;
+    border: 1px #ED7D31 solid;
+}
+.pmgt-message {
+    width: 332.16px;
+    height: 55.71px;
+    left: 1px;
+    top: 440px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: 300;
+    word-wrap: break-word;
+}
+.PM-box {
+    width: 300px;
+    height: 257px;
+    left: 15px;
+    top: 275px;
+    position: absolute;
+    border-radius: 10px;
+    border: 1px solid #ED7D3124;
+} 
+ .boxArrangement {
+    width: 685px;
+    height: auto;
+    left: 0;
+    top: 0;
+    position: absolute;
+} 
+
+.masterplanning-icon {
+    width: 62px;
+    height: 60px;
+    left: 460px;
+    top: 300px;
+    position: absolute;
+}
+
+.masterplanning-icon-text {
+    width: 305.63px;
+    height: 55.71px;
+    left: 328px;
+    top: 380px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.line3 {
+    width: 218.18px;
+    height: 0;
+    left: 375px;
+    top: 420px;
+    position: absolute;
+    border: 1px #ED7D31 solid;
+}
+
+.masterplanning-message {
+    width: 313.71px;
+    height: 55.71px;
+    left: 326px;
+    top: 440px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: 300;
+    word-wrap: break-word;
+}
+.MP-box {
+    width: 300px;
+    height: 257px;
+    left: 335px;
+    top: 275px;
+    position: absolute;
+    border-radius: 10px;
+    border: 1px solid #ED7D3124;
+}
+
+.mobile{
+    display: none;
+}
+
+
+
+
+@media (max-width: 768px){
+    @media (max-width: 768px) {
+        .separate-blocks{
+            display: none;
+        }
+        .sideBracket{
+            display: none;
+        } 
+        .intro-message{
+            display: none;
+        }
+        .intro{
+            justify-content: center;
+            margin-left: auto;
+            margin-top: auto;
+            top: 0;
+            text-align: center;
+            font-size: 24px;
+        }
+        .mobile {
+            position: relative;
+            display: grid;
+            height: 100%;
+            width: 90%;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px; /* Adjust the space between items */
+            row-gap: 10px; /* Adjust the space between rows */
+            justify-content: center;
+            align-items: center;
+            max-width: 768px;
+            margin-left: -30px;
+            margin-top: 60px;
+            
+          }
+          
+          .icon-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ED7D3124;
+            border-radius: 10px;
+            box-sizing: border-box;
+          }
+          
+          .mobile-icon {
+            margin-top: 10px;
+            width: 25%; /* Adjust the size as needed */
+            max-width: 150px; /* Adjust the max size as needed */
+            margin-bottom: 1px; /* Space between the icon and the text */
+          }
+          .icon-container > h2{
+            font-size: 16px;
+            font-weight: 400;;
+          }
+          .CTA{
+            margin-top: -60px;
+            margin-left: 17px;
+          }
+          
+    }   
 }

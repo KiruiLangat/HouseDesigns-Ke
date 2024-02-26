@@ -22,7 +22,7 @@ export default function Header() {
                 {sidebarVisible && (
                     <ul className={`sidebar ${sidebarVisible ? 'show' : ''}`}>
                         <li className='closeIcon'onClick={() => setSidebarVisible(false)}><Link to="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></Link></li>
-                        <li><Link to="/our-work">Our Work</Link></li>
+                        <li><Link to="/our-expertise">Our Expertise</Link></li>
                         <li><Link to="/about-us">About Us</Link></li>
                         <li><Link to="/shop">Shop</Link></li>
                         <li><Link to="/blog">Blog</Link></li>
@@ -30,7 +30,7 @@ export default function Header() {
                     </ul>
                 )}
                 <ul>
-                    <li className='hideonmobile'><Link to="/our-work">Our Work</Link></li>
+                    <li className='hideonmobile'><Link to="/our-expertise">Our Expertise</Link></li>
                     <li className='hideonmobile'><Link to="/about-us">About Us</Link></li>
                     <li className='hideonmobile'><Link to="/shop">Shop</Link></li>
                     <li className='hideonmobile'><Link to="/blog">Blog</Link></li>
