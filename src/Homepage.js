@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './Header';
 import Carousel from './Carousel';
 import GetStarted from './GetStarted';
+import GetInTouch from './GetInTouch';
+
 import './Homepage.css';
 import '@fontsource/poppins';
 
@@ -15,6 +17,8 @@ function Homepage() {
       <Header />
       <Carousel />
       <GetStarted />
+      <GetInTouch />
+
     </div>
   );
 }
