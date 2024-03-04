@@ -37,6 +37,7 @@ li a {
 
 li a:hover {
     color: #ED7D31;
+    cursor: pointer;
 }
 
 

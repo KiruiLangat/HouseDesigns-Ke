@@ -1,0 +1,84 @@
+.aboutus-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 26%;
+    height: auto;
+    
+    
+}
+.about-us{
+    color: black;
+    font-size: 36px;
+    font-family: Poppins;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.color-scheme{
+    margin-top: 30px;
+    width: 15%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+.color-scheme:hover{
+    transform: scale(1.1);
+}
+.our-workflow{
+    position: absolute;
+    left: 138px;
+    margin-top: -48%;
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+.title-marker{
+    position: absolute;
+    left: 113px;
+    margin-top: -48%;
+    height: 30px;
+
+}
+.workflow{
+    margin-top: 15%;
+    justify-content: center;
+}
+.view-services{
+    position: relative;
+    align-items: flex-end;
+    left:35%;  
+    top: -50px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:768px){
+    .aboutus-container{
+        display: none;
+    }
+    .workflow{
+        display: none;
+    }  
+    .about-us{
+        margin-top: 40%;
+        font-size: 24px;
+        text-align: center;
+    }
+    .view-services{
+        align-items: center;
+    }
+
+}

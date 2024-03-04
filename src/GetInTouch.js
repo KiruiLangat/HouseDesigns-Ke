@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './GetInTouch.css';
-import GetInTouchImg from './images/getintouch.png';
+import GetInTouchImg from './images/projects-img.svg';
 import Arrow from './images/Arrow 7.svg';
 import PhoneIcon from './images/phoneicon.svg';
 import WhatsApp  from './images/WhatsAppIcon.png';

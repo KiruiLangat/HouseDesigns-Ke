@@ -1,9 +1,9 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import carousel1 from './carousel1.png';
-import carousel2 from './carousel2.png';
-import carousel3 from './carousel3.png';
+import carousel1 from './carousel1.svg';
+import carousel2 from './carousel2.svg';
+import carousel3 from './carousel3.svg';
 
 import 'swiper/css';
 import 'swiper/css/pagination';

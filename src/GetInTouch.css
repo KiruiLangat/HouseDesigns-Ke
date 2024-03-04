@@ -1,6 +1,6 @@
 .getintouch-container {
     position: relative;
-    height: 100vh;
+    height: auto;
     width: 100%;
 }
 .getintouch-img {
@@ -58,7 +58,7 @@
     width: 15px;
     height: 0;
     left: 116px;
-    top: 7px;
+    top: 5.5px;
     position: absolute;
 }
 .contactIcons {
@@ -147,14 +147,14 @@
 
 }
 .getintouchBracket {
-    height: 528px;
+    height: 533px;
     width: 51px;
 }
 
 .getintouchBracket .sideBracket {
-    height: 480px;
+    height: 498px;
     left: 1180px;
-    top: 190px;
+    top: 188px;
     position: absolute;
     width: 61px;
     transform: rotate(180deg);
@@ -164,7 +164,9 @@
     .getintouchBracket, .contactIcons{
         display: none;
     }
-   
+   .getintouch-container{
+        position: relative;
+   }
     
     .getintouch-text{
         width: 100%;
@@ -186,7 +188,6 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         
     }
-
     .getintouch-CTA{
         left: 50%;
         top: 70px;

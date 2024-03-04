@@ -4,9 +4,11 @@ import Carousel from './Carousel';
 import GetStarted from './GetStarted';
 import GetInTouch from './getInTouch.js';
 import BrowseProjects from './BrowseProjects.js';
+import AboutUs from './AboutUs.js';
 
 import './Homepage.css';
 import '@fontsource/poppins';
+
 
 const style = {
   fontFamily: 'Poppins',
@@ -19,8 +21,9 @@ function Homepage() {
       <Carousel />
       <GetStarted />
       <GetInTouch />
-      {/* <BrowseProjects /> */}
-
+      <BrowseProjects />
+      <AboutUs />
+      
     </div>
   );
 }
