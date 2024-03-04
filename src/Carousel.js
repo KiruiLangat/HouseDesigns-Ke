@@ -1,27 +1,22 @@
-//import { useState } from 'react';
 import React from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import carousel1 from './carousel1.png';
 import carousel2 from './carousel2.png';
 import carousel3 from './carousel3.png';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import './Carousel.css';
 
-// import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
 
 
 export default function App() {
-  // const [caption, setCaption] = useState("");
-  // let captionTimeout = null;
+  
   return (
     <>
       <Swiper

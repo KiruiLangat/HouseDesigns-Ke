@@ -2,7 +2,8 @@ import React from 'react';
 import Header from './Header';
 import Carousel from './Carousel';
 import GetStarted from './GetStarted';
-import GetInTouch from './GetInTouch';
+import GetInTouch from './getInTouch.js';
+import BrowseProjects from './BrowseProjects.js';
 
 import './Homepage.css';
 import '@fontsource/poppins';
@@ -18,6 +19,7 @@ function Homepage() {
       <Carousel />
       <GetStarted />
       <GetInTouch />
+      {/* <BrowseProjects /> */}
 
     </div>
   );

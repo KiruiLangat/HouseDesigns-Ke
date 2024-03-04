@@ -8,30 +8,30 @@ import WhatsApp  from './images/WhatsAppIcon.png';
 import EmailIcon from './images/emailicon.png';
 import sideBracket from './images/sideBracket.png';
 
-
 export default function GetInTouch() {
     return (
-    <div className='getintouch-container'>
-        <div className ='getintouch-text'>Let’s create something extraordinary together</div>
-        <img src={GetInTouchImg} alt='Get-in-touch-img' className='getintouch-img' />
-        <Link to = '/contact-us'>
-            <div className='getintouch-CTA' >
+        <div className='getintouch-container'>
+            <div className='getintouch-text'>Let’s create something extraordinary together</div>
+            <img src={GetInTouchImg} alt='Get-in-touch-img' className='getintouch-img' />
+            <div className='getintouch-CTA'>
+                <Link to='/contact-us'>
                 <div className='getintouch-CTA-text'>Get in touch</div>
                 <div className='getintouch-CTA-underline'></div>
-                <div className='arrow'><img src = {Arrow} alt='arrow'/></div>
+                <div className='arrow'><img src={Arrow} alt='arrow' /></div>
+                </Link>
             </div>
-        </Link>
-        <div className="getintouchBracket">
-            <img className="sideBracket" alt="sideBracket" src={sideBracket} />
+            <div className="getintouchBracket">
+                <img className="sideBracket" alt="sideBracket" src={sideBracket} />
+            </div>
+            <div className='contactIcons'>
+                <div className='phone-icon'><img src={PhoneIcon} alt='Phone-Icon' /></div>
+                <div className='WhatsAppicon'><img src={WhatsApp} alt='WhatsApp-Icon' /></div>
+                <div className='Email-icon'><img src={EmailIcon} alt='email-icon' /></div>
+                <div className='topline'></div>
+                <div className='bottomline'></div>
+            </div>
         </div>
-        <div className='contactIcons'>
-            <div className='phone-icon' ><img src={PhoneIcon} alt='Phone-Icon'/></div>
-            <div className='WhatsAppicon' ><img  src={WhatsApp} alt='WhatsApp-Icon' /></div>
-            <div className='Email-icon'><img src={EmailIcon} alt='email-icon' /></div>
-            <div className='topline'></div>
-            <div className='bottomline'></div> 
-        </div>
-    </div>
+
     )
     
 
