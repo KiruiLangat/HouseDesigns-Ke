@@ -2,7 +2,7 @@
     width: 100%;
     height: auto;
     position: relative;
-    top: 200px;
+    top: 180px;
 }
 .Bracket {
     height: 500px;
@@ -10,7 +10,7 @@
 }
 
 .Bracket .sideBracket {
-    height: 560px;
+    height: 558px;
     left: 45px ;
     position: absolute;
     top: 0;
@@ -49,20 +49,6 @@
 .project-img :hover{
     background-color: #ED7D31;
 }
-/* .project-name-box {
-    left: 550px;
-    top: 436px;
-    position: absolute;
-}
-.idk-6 {
-    width: 632px;
-    height: 68px;
-    left: 0;
-    top: 0;
-    position: absolute;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 6%, rgba(0, 0, 0, 0.46) 53%);
-    border-radius: 10px;
-} */
 .project-name {
     left: 277px;
     top: 30px;
@@ -126,22 +112,28 @@
 .carousel{
     display: none;
 }
-
+.projects-intro-message-mobile{
+    display: none;
+}
 
 @media (max-width:768px){
-    .Bracket, .project-img, .project-name-box, .sidearrows, .projects-intro{
+    .Bracket, .project-img, .project-name-box, .sidearrows, .projects-intro, .projects-intro-message{
         display: none;
     }
     .carousel{
         display: block;
-        overflow:visible;
+        overflow: hidden;
+        min-height: 70vh;
     }
-    .container{
+    .projects-container{
         display: flex;
         flex-direction: column;
+        margin-top: -15%;
+        
     }
     
-    .projects-intro-message{
+    .projects-intro-message-mobile{
+        display: block;
         width: auto;
         left: 0;
         top: 0;

@@ -3,7 +3,7 @@
     align-content: center;
     justify-content: space-between;
     align-items:center;
-    width: auto;
+    width:100%;
     box-sizing: border-box;
     margin: -5px;
     top: 0;
@@ -23,8 +23,9 @@ ul {
 }   
 
 li {
-    margin: 0px;
+    margin-top: 5px;
     font-size: 15px;
+    font-weight: 300;
     padding: 10px;
     margin-right:35px;
 }

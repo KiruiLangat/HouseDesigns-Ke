@@ -166,6 +166,7 @@
     }
    .getintouch-container{
         position: relative;
+        margin-top: -8%;
    }
     
     .getintouch-text{
@@ -175,6 +176,7 @@
         text-align: center;
         font-size: 24px;
         position: relative;
+
     }
     .getintouch-img{
         position:relative;
@@ -190,7 +192,7 @@
     }
     .getintouch-CTA{
         left: 50%;
-        top: 70px;
+        top: 60px;
         transform: translateX(-50%);
     }
 

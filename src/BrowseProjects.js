@@ -13,6 +13,7 @@ export default function BrowseProjects() {
         <div className='projects-container'>
             <div className='projects-intro'>Browse <br/>our Projects<br/>and Find Your Taste</div>
             <div className='projects-intro-message'>Here are some of our completed projects</div>
+            <div className='projects-intro-message-mobile'>Browse Our Projects</div>
             <div className='carousel'><Carousel/></div>
             
             <img src = {Projectimg} alt = "Project-img" className='project-img'/>
