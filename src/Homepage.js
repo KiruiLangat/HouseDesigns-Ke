@@ -23,6 +23,7 @@ function Homepage() {
       <GetInTouch />
       <BrowseProjects />
       <AboutUs />
+  
       
     </div>
   );

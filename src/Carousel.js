@@ -44,6 +44,14 @@ export default function App() {
         <SwiperSlide data-caption="caption1"><img src={carousel1} alt='Maisonette'/></SwiperSlide>
         <SwiperSlide data-caption="caption2"><img src={carousel2} alt='Maisonette'/></SwiperSlide>
         <SwiperSlide data-caption="caption3"><img src={carousel3} alt='Maisonette'/></SwiperSlide>
+        <SwiperSlide data-caption="caption3"><img src={carousel3} alt='Maisonette'/></SwiperSlide>
+        <SwiperSlide data-caption="caption3"><img src={carousel3} alt='Maisonette'/></SwiperSlide>
+        <SwiperSlide data-caption="caption3"><img src={carousel3} alt='Maisonette'/></SwiperSlide>
+        <SwiperSlide data-caption="caption3"><img src={carousel3} alt='Maisonette'/></SwiperSlide>
+        <SwiperSlide data-caption="caption3"><img src={carousel3} alt='Maisonette'/></SwiperSlide>
+        <SwiperSlide data-caption="caption3"><img src={carousel3} alt='Maisonette'/></SwiperSlide>
+        <SwiperSlide data-caption="caption3"><img src={carousel3} alt='Maisonette'/></SwiperSlide>
+        <SwiperSlide data-caption="caption3"><img src={carousel3} alt='Maisonette'/></SwiperSlide>
   
         <div className="swiper-button-next"></div>
         <div className="swiper-button-prev"></div>

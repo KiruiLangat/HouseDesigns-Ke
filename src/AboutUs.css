@@ -3,10 +3,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 26%;
+    margin-top: 24%;
+    width: 100%;  
     height: auto;
-    
-    
 }
 .about-us{
     color: black;
@@ -14,71 +13,514 @@
     font-family: Poppins;
     font-weight: 400;
     word-wrap: break-word;
+    margin-top: -20px;
 }
 .color-scheme{
     margin-top: 30px;
     width: 15%;
     height: auto;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 .color-scheme:hover{
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 .our-workflow{
     position: absolute;
     left: 138px;
-    margin-top: -48%;
+    margin-top: 12%;
     color: black;
     font-size: 20px;
     font-family: Poppins;
     font-weight: 300;
     word-wrap: break-word;
 }
+
 .title-marker{
     position: absolute;
     left: 113px;
-    margin-top: -48%;
+    margin-top: 12%;
     height: 30px;
-
 }
+
 .workflow{
-    margin-top: 15%;
+    margin-top: 20%;
     justify-content: center;
+    width: auto;
+    transition: transform 0.5s ease-in;
+}
+.workflow:hover{
+    transform: scale(0.7);
 }
 .view-services{
     position: relative;
     align-items: flex-end;
-    left:35%;  
-    top: -50px;
+    left:38%;  
+    top: -45px;
+}
+.mobile-workflow{
+    display: none;
+}
+.philosophy {
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.our-philosophy{
+    left: 138px;
+    top: 0;
+    position: absolute;
+    color: black;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 50px;
+    word-wrap: break-word;
+}
 
+.title-marker2{
+    width: 18px;
+    height: 30px;
+    left: 113px;
+    top: 9px;
+    position: absolute;
+}
+.philosophy-tables{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+    margin-top: 220px;
+}
 
+.simplicity-box{
+    width: 385.24px;
+    height: 357px; 
+    left: 37px;
+    top: 0;
+    position: absolute;
+    border-radius: 20px;
+    border: 1px rgba(79, 74, 69, 0.14) solid;
+}
+.simplicity-box:hover{
+    background-color: #ED7D3124;;
+}
+.simplicity{
+    width: 99.60px;
+    left:40%;
+    top: 9px;
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    font-size: Poppins;
+    font-weight: 300;
+    line-height: 50px;
+    word-wrap: break-word; 
+    
+}
+
+.simplicity-icon{
+    width: 45.59px;
+    height: 30.38px;
+    left: 45%;
+    top: 70px;
+    position: absolute;
+}
+.simplicity-desc{
+    width: 365.85px;
+    left: 10px;
+    top: 115px;
+    position:absolute;
+    text-align: center;
+    color: black; 
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 40px;
+    word-wrap: break-word;
 }
 
 
 
+.infinite-box{
+    width: 385.24px;
+    height: 357px;
+    left: 447px;
+    top: 0;
+    position: absolute;
+    border-radius: 20px;
+    border: 1px rgba(79, 74, 69, 0.14) solid;   
+}
+.infinite-box:hover{
+    background-color: #ED7D3124;
+}
+
+.infinite-title{
+    width: 235.90px;
+    height: 31.37px;
+    left: 89px;
+    top: 9px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 50px;
+    word-wrap: break-word;
+}
+
+.infinite-icon{
+    width: 57.71px;
+    height: 28.22px;
+    left: 170.07px;
+    top: 70px;
+    position: absolute;
+}
+.infinite-desc{
+    width: 365.56px;
+    left: 10px;
+    top: 115px;
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 40px;
+    word-wrap: break-word;
+}
 
 
+.resilience-box{
+    width: 385.24px;
+    height: 357px;
+    left: 857.76px;
+    top: 0;
+    position: absolute;
+    border-radius: 20px;
+    border: 1px rgba(79, 74, 69, 0.14) solid;
+}
+.resilience-box:hover{
+    background-color: #ED7D3124;
+}
+.resilience{
+    width: 249px;
+    left: 82.65px;
+    top: 9px;
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 50px;
+    word-wrap: break-word;
+}
+.resilience-icon{
+    width: 98.70px;
+    height: 9.49px;
+    left: 155px;
+    top: 77px;
+    position: absolute;
+}
+.resilience-desc{
+    width: 365.85px;
+    left: 10px;
+    top: 115px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 40px;
+    word-wrap: break-word;
+}
 
 
+.ourTeam-box{
+    margin-top: 35%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.team-title-box{
+    display: flex;
+}
+.title-marker4{
+    width: 18px;
+    height: 30px;
+    left: 113px;
+    margin-top: 9px;
+    position: absolute;
+}
+.our-team{
+    left: 138px;
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 50px;
+    word-wrap: break-word;
 
+}
+.team-members{
+    display: flex;
+    margin-top: 12%;
+    justify-content:center;
+    align-items: center;
+}
 
+.member1-box{
+    width: 385.24px;
+    height: 357px;
+    left: 37px;
+    border-radius: 10px;
+    border: 1px rgba(79, 74, 69, 0.14) solid;
+    margin: 0 20px;
+}
+.member1-img{
+    width: 100%;
+    height: 75%;
+    border-radius: 10px;
+    margin-top: 5px;
+    
+
+}
+
+.member2-box{
+    width: 385.24px;
+    height: 357px;
+    left: 447px;
+    border-radius: 10px;
+    border: 1px rgba(79, 74, 69, 0.14) solid;
+    margin: 0 20px;
+}
+.member2-img{
+    width:100%;
+    height: 75%;
+    border-radius: 10px;
+    margin-top: 5px;
+    
+}  
+.member1-name{
+    text-align: start;
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 400;
+    margin-top: 5px;
+}
+.member1-title{
+    text-align: start;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 300;
+    margin-top: -10px;
+
+}
+.member2-name{
+    text-align: start;
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 400;
+    margin-top: 5px;
+
+}
+.member2-title{
+    text-align: start;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 300;
+    margin-top: -10px;
+
+}
+.mobile-philosophy{
+    display: none;
+}
 
 
 
 @media (max-width:768px){
-    .aboutus-container{
+    .workflow, .philosophy-tables, .title-marker2, .title-marker4{
         display: none;
+    
     }
-    .workflow{
-        display: none;
-    }  
+    
+    .aboutus-container{
+       margin-top: -15%;
+    }
     .about-us{
-        margin-top: 40%;
+        display: block;
         font-size: 24px;
         text-align: center;
     }
-    .view-services{
-        align-items: center;
+    .color-scheme{
+        display: block;
+        margin-top: 1px;
     }
+    .our-workflow{
+        display: block;
+        margin-top: 15%;
+        text-align: center;
+        font-size: 16px;
+    }
+    .our-workflow::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #ED7D31;
+        transition: width 0.3s;
+    }
+      
+    .our-workflow:hover::after {
+        width: 100%;
+    }
+
+    .title-marker{
+        display: none;
+        
+    }
+    .mobile-workflow{
+        display: block;
+        margin-top: 30%;
+    }
+    .view-services{
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-top: 20px;
+        
+    }
+    .our-philosophy{
+        text-align: center; 
+        font-size: 16px;
+        margin-top: -5%;
+        
+    }
+   
+    .mobile-philosophy{
+        display:grid;
+        margin-top: 35%;
+        
+    }
+    .mobile-simplicity{
+        display: flex;
+        justify-items: center;
+        
+        border: #ED7D31;
+        border-radius: 10px;
+        padding: 5px;
+        margin: 15px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    }
+    .mobile-simplicity-icon{
+        width: 31px;
+        height: auto;
+        margin: 10px;
+        
+    }
+    .mobile-simplicity-title{
+        font-size: 15px;
+        margin: 10px;
+    }
+    .mobile-infinite{
+        display: flex;
+        justify-items: center;
+        
+        border-radius: 10px;
+        padding: 5px;
+        margin: 15px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+    }
+    .mobile-infinite-icon{
+        width: 35px;
+        height: auto;
+        margin: 10px;
+    }
+    .mobile-infinite-title{
+        font-size: 15px;
+        margin: 10px;
+    }
+
+    .mobile-resilience{
+        display: flex;
+        justify-items: center; 
+        
+        border-radius: 10px;
+        padding: 5px;
+        margin: 15px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .mobile-resilience-icon{
+        width: 30px;
+        height: auto;
+        margin: 10px;
+    }
+    .mobile-resilience-title{
+        font-size: 15px;
+        margin: 10px;
+    }
+    .ourTeam-box{
+        margin-top: 15%;
+    }
+    .team-title-box{
+        display: flex;
+        align-content: center;
+        width: auto;
+        height: auto;  
+    }
+    .our-team{
+        text-align: center;
+        font-size: 16px;  
+        transform: translateX(50%);
+        
+        
+    }
+    .team-members{
+        display: grid;
+        justify-content: center;
+        margin-top: 25%;
+        justify-content: space-between;
+    }
+    .member1-box{
+        width: 80%;
+        height: auto;
+        margin: auto;
+        margin-bottom: 20px;
+    } 
+    .member1-box > img{
+        margin: auto;
+    }
+    .member2-box{
+        width: 80%;
+        height: auto;
+        margin: auto;
+        margin-bottom: 10px;
+    } 
+    .member2-box > img{
+        margin: auto;
+    }
+    .member1-name,  .member2-name{
+        text-align: center;
+        font-size: 15px;
+    }
+    .member1-title, .member2-title{
+        text-align: center;
+        font-size: 14px;
+    }
+   
+    
 
 }
