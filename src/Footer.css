@@ -1,0 +1,55 @@
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    width: 100%;
+    justify-content: space-between;
+}
+.footer-logo{
+    width: 205px;
+    height: auto;
+    margin-bottom: -5%;
+
+}
+.footer-nav{
+    margin-left: 10px;
+    margin-bottom: 10%;
+}
+
+.footer-left{
+    display:block;
+    align-items: center;
+    
+}
+.footer-right{
+    display:block;
+    padding: 20px;
+       
+    justify-content: space-between; 
+}
+.footer-socials{
+    margin: 10px;
+    padding: 5px;
+    
+}
+.footer-right p{
+    font-size: 14px;
+    font-weight: 300;
+    color: black;
+    text-align: center;
+}
+.twitter{
+    margin: 0 8px;
+}
+.arrow-up{
+    width: 20%;
+    height: auto;
+    margin-left: 40px;
+    transform:rotate(90deg);
+}
+.arrow-up:hover{
+    background-color: #ED7D31;
+    cursor: pointer;
+    border-radius: 10px;
+}

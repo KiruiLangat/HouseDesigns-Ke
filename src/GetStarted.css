@@ -31,6 +31,10 @@
     left: 120px;
     top: 390px;
     position: absolute;
+    transition: transform 0.2s ease-out;
+}
+.CTA:hover{
+    transform: scale(1.08);
 }
 .CTA-getstarted {
     left: 0;

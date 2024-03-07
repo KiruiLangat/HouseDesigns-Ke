@@ -5,6 +5,8 @@ import GetStarted from './GetStarted';
 import GetInTouch from './getInTouch.js';
 import BrowseProjects from './BrowseProjects.js';
 import AboutUs from './AboutUs.js';
+import Articles from './Articles.js';
+import Footer from './Footer.js';
 
 import './Homepage.css';
 import '@fontsource/poppins';
@@ -23,6 +25,8 @@ function Homepage() {
       <GetInTouch />
       <BrowseProjects />
       <AboutUs />
+      <Articles />
+      <Footer />
   
       
     </div>
