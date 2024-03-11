@@ -14,6 +14,7 @@
     font-weight: 400;
     word-wrap: break-word;
     margin-top: -9px;
+    height: auto;
 }
 .color-scheme{
     margin-top: 30px;
@@ -359,7 +360,7 @@
     }
     
     .aboutus-container{
-       margin-top: -15%;
+       margin: auto;
     }
     .about-us{
         display: block;
@@ -410,6 +411,7 @@
         text-align: center; 
         font-size: 16px;
         margin-top: -5%;
+        
         
     }
    

@@ -15,10 +15,11 @@ export default function GetStarted() {
     <div className="intro">Our Expertise</div>
     <div className='intro-message'>View our services and let's get you started</div>
     <div className='separate-blocks'>
-        <div className='ID-box'/>
+        
         <div className='PM-box' />
         <div className='MP-box' />
         <div className='boxArrangement'>
+            <div className='ID-box'/>
             <img src={InteriorDesign} alt='Interior-Design-Icon' className='InteriorDesignIcon'/>
             <img src={pmgt} alt='Project-Management-Icon' className='pmgt-icon'/>
             <img src={Masterplanning} alt='MasterplanningIcon' className='masterplanning-icon'/>

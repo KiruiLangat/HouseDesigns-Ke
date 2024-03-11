@@ -128,6 +128,9 @@
     border-radius: 10px;
     border: 1px solid rgba(237, 125, 49, 0.14);
 }
+.Arch-box:hover{  
+    background-color: #ED7D3124;
+}
 .InteriorDesignIcon {
     width: 52px;
     height: 60px;
@@ -178,6 +181,9 @@
     border-radius: 10px;
     border: 1px solid #ED7D3124;
 }
+.ID-box:hover{
+    background-color: #ED7D3124;
+}
 .pmgt-icon {
     width: 55px;
     height: 60px;
@@ -226,6 +232,9 @@
     border-radius: 10px;
     border: 1px solid #ED7D3124;
 } 
+.PM-box:hover{
+    background-color: #ED7D3124;
+}
  .boxArrangement {
     width: 685px;
     height: auto;
@@ -286,7 +295,9 @@
     border-radius: 10px;
     border: 1px solid #ED7D3124;
 }
-
+.MP-box:hover{
+    background-color: #ED7D3124;
+}
 .mobile{
     display: none;
 }

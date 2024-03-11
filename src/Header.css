@@ -116,5 +116,25 @@ li a:hover {
         border-radius: 10px;
         box-shadow: 0px 0px 10px 0.1px #00000037;
     }
+    .sidebar-socials{
+        width: 100%;
+        align-items: center;
+        padding: 15px;
+        margin: 0 20px;
+        justify-items: center;
+
+    }
+    .instagram{
+        width: 17%;
+        height: auto;
+    }
+    .twitter{
+        width: 17%;
+        height: auto;
+    }
+    .linkedin{
+        width: 17%;
+        height: auto;
+    }
     
 }

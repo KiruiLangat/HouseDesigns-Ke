@@ -4,6 +4,9 @@ import { Link as ScrollLink } from 'react-scroll';
 import logo from './Logo.png';
 import './Header.css';
 import '@fontsource/poppins/300.css';
+import instagram from './images/instagram.svg';
+import twitter from './images/twitter.svg';
+import linkedIn from './images/linkedin.svg';
 
 const style = {
     fontFamily: 'Poppins',
@@ -38,7 +41,13 @@ export default function Header() {
                         <li><Link to="/shop">Shop</Link></li>
                         <li><Link to="/blog">Blog</Link></li>
                         <li><Link to="/contact-us">Contact Us</Link></li>
+                        <div className='sidebar-socials'>
+                            <img src={instagram} alt='instagram' className='instagram' />
+                            <img src={twitter} alt='twitter' className='twitter' />
+                            <img src={linkedIn} alt='LinkedIn' className='linkedin' />
+                        </div>
                     </ul>
+                    
                 )}
                 <ul>
                     <li className='hideonmobile'><Link to="/our-expertise">Our Expertise</Link></li>

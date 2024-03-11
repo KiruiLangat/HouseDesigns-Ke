@@ -5,6 +5,9 @@
     margin-bottom: 2%;
     width: 100%;
     justify-content: space-between;
+
+    
+    
 }
 .footer-logo{
     width: 205px;
@@ -52,4 +55,39 @@
     background-color: #ED7D31;
     cursor: pointer;
     border-radius: 10px;
+}
+
+
+@media (max-width:768px){
+    .footer-nav > ul{
+        display: none;
+    }
+    .footer-socials{
+        display: none;
+    }
+    .footer-container{
+        display: inline-flex;
+        bottom: 0;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        height: max-content;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer-logo{
+        width: 130px;
+        height: auto;
+        margin-bottom: 0;
+        margin-top: 5px;
+        
+    }
+    .footer-right > p{
+        font-size: 12px;
+        font-weight: 300;
+        margin-right: 10px;
+    }
+   
+
 }

@@ -49,7 +49,7 @@ export default function Footer() {
                     <img src={arrowUp} alt='arrow up' className='arrow-up' />
                 </ScrollLink>
             </div>
-            <p className='footer-text'>© 2024, All Rights Reserved</p>
+            <p className='footer-text'>© 2024, All Rights Reserved </p>
         </div>
     </div>
   )

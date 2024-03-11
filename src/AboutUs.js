@@ -15,8 +15,8 @@ import member2 from './images/projects-img.svg'
 
 export default function AboutUs() {
   return (
-    <div id = "about-us" className='aboutus-container'>
-      <div className='about-us'>Get to Know us!</div>
+    <div className='aboutus-container'>
+      <div id = 'about-us'  className='about-us'>Get to Know us!</div>
       <img src = {colorScheme} alt='colorScheme' className='color-scheme' />
       <div>
         <div className='our-workflow'>OUR WORKFLOW</div>

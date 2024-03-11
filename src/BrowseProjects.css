@@ -128,7 +128,7 @@
     .projects-container{
         display: flex;
         flex-direction: column;
-        margin-top: -15%;
+        margin:auto
         
     }
     
