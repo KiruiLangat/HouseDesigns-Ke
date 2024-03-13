@@ -8,6 +8,7 @@ import twitter from './images/twitter.svg'
 import linkedIn from './images/linkedin.svg'
 import arrowUp from './images/left-arrow.svg'
 
+
 export default function Footer() {
   return (
     <div className='footer-container'>
