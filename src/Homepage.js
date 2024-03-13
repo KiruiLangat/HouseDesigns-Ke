@@ -27,8 +27,6 @@ function Homepage() {
       <AboutUs />
       <Articles />
       <Footer />
-  
-      
     </div>
   );
 }
