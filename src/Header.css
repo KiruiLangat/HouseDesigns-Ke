@@ -34,12 +34,22 @@ li a {
     text-decoration: none;
     color: black;
     align-items: center;
+    
+}
+li a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ED7341;
+    transition: width 0.3s;
+
 }
 
-li a:hover {
-    color: #ED7D31;
-    cursor: pointer;
+li a:hover::after, li a.active::after {
+   width: 100%; 
 }
+
 
 
 /*sidebar*/

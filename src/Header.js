@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import logo from './Logo.png';
 import './Header.css';
@@ -50,7 +50,7 @@ export default function Header() {
                     
                 )}
                 <ul>
-                    <li className='hideonmobile'><Link to="/our-expertise">Our Expertise</Link></li>
+                    <li className='hideonmobile'><NavLink to="/our-expertise">Our Expertise</NavLink></li>
                     <li className='hideonmobile'>
                         <ScrollLink
                             to="about-us"
@@ -58,12 +58,11 @@ export default function Header() {
                             smooth = {true}
                             duration={500}
                             offset={-70}
-
                             >About Us
                         </ScrollLink></li>
-                    <li className='hideonmobile'><Link to="/shop">Shop</Link></li>
-                    <li className='hideonmobile'><Link to="/blog">Blog</Link></li>
-                    <li className='hideonmobile'><Link to="/contact">Contact Us</Link></li>
+                    <li className='hideonmobile'><NavLink to="/shop">Shop</NavLink></li>
+                    <li className='hideonmobile'><NavLink to="/blog">Blog</NavLink></li>
+                    <li className='hideonmobile'><NavLink to="/contact-us">Contact Us</NavLink></li>
                     <li className='menu-button' onClick={showSidebar}><Link to="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></Link></li>
                 </ul>
             </nav>

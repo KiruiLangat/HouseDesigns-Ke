@@ -27,21 +27,21 @@ export default function OurExpertise(){
                 </div>
                 <div className='service1'>
                     <img src= {architecture} alt='architecture' className='service1-img' />
-                    <h2>Architecture</h2>
+                    <h2>Interior Design</h2>
                     <div className='arrow-services'>
                         <img src={arrow} alt='arrow'  />
                     </div>
                 </div>
                 <div className='service1'>
                     <img src= {architecture} alt='architecture' className='service1-img' />
-                    <h2>Architecture</h2>
+                    <h2>Project Management</h2>
                     <div className='arrow-services'>
                         <img src={arrow} alt='arrow'  />
                     </div>
                 </div>
                 <div className='service1'>
                     <img src= {architecture} alt='architecture' className='service1-img' />
-                    <h2>Architecture</h2>
+                    <h2>Master Planning</h2>
                     <div className='arrow-services'>
                         <img src={arrow} alt='arrow'  />
                     </div>

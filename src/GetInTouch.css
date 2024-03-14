@@ -57,12 +57,13 @@
     border: 1px black solid;
 }
 
-.arrow {
+.arrow-right {
     width: 15px;
     height: 0;
     left: 116px;
     top: 5.5px;
     position: absolute;
+    border: none;
 }
 .contactIcons {
     width: 262px;

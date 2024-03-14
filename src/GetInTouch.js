@@ -4,7 +4,7 @@ import './GetInTouch.css';
 import GetInTouchImg from './images/projects-img.svg';
 import Arrow from './images/Arrow.svg';
 import PhoneIcon from './images/phoneicon.svg';
-import WhatsApp  from './images/WhatsAppIcon.png';
+import WhatsApp  from './images/whatsappicon.svg';
 import EmailIcon from './images/emailicon.png';
 import sideBracket from './images/sideBracket.png';
 
@@ -17,7 +17,7 @@ export default function GetInTouch() {
                 <Link to='/contact-us'>
                 <div className='getintouch-CTA-text'>Get in touch</div>
                 <div className='getintouch-CTA-underline'></div>
-                <div className='arrow'><img src={Arrow} alt='arrow' /></div>
+                <div className='arrow-right'><img src={Arrow} alt='arrow' /></div>
                 </Link>
             </div>
             <div className="getintouchBracket">
@@ -25,7 +25,7 @@ export default function GetInTouch() {
             </div>
             <div className='contactIcons'>
                 <div className='phone-icon'><img src={PhoneIcon} alt='Phone-Icon' /></div>
-                <div className='WhatsAppicon'><img src={WhatsApp} alt='WhatsApp-Icon' /></div>
+                <Link to={'/contact-us'}><div className='WhatsAppicon'><img src={WhatsApp} alt='WhatsApp-Icon' /></div></Link>
                 <div className='Email-icon'><img src={EmailIcon} alt='email-icon' /></div>
                 <div className='topline'></div>
                 <div className='bottomline'></div>

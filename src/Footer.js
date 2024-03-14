@@ -45,7 +45,6 @@ export default function Footer() {
                     smooth = {true}
                     duration={1800}
                     offset={-80}
-            
                     >
                     <img src={arrowUp} alt='arrow up' className='arrow-up' />
                 </ScrollLink>
