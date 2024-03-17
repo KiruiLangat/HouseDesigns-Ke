@@ -7,11 +7,16 @@ import instagram from './images/instagram.svg'
 import twitter from './images/twitter.svg'
 import linkedIn from './images/linkedin.svg'
 import arrowUp from './images/left-arrow.svg'
+import '@fontsource/poppins'
+
+const style = {
+    fontFamily: 'Poppins'
+}
 
 
 export default function Footer() {
   return (
-    <div className='footer-container'>
+    <div className='footer-container' style={style}>
         <div className='footer-left'>
             <Link to= '/'><img src={logo} alt='logo' className='footer-logo' /></Link>
             <nav className='footer-nav'>

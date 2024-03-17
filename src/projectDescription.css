@@ -1,0 +1,106 @@
+.project-description{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.large-img{
+    width: 93%;
+    height: auto;
+    border-radius: 10px;
+    margin: auto;
+}
+.large-img img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    margin-bottom: 5px;
+}
+.masonry{
+    width: 93%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    gap:10px;
+    margin: auto;
+}
+.masonry img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);;
+}
+.project-info{
+    width: 93%;
+    height: auto;
+    margin: auto;
+    display: flex;
+}
+.project-info h1{
+    font-size: 36px;
+    font-weight: 400;
+}
+.descriptions{
+    margin-left: 10%;
+    
+}
+.description1 h2{
+    font-size: 24px;
+    font-weight: 400;
+}
+.description1 p{
+    font-size: 18px;
+    font-weight: 300;
+}
+.description2 h2{
+    font-size: 24px;
+    font-weight: 400;
+}
+.description2 p{
+    font-size: 18px;
+    font-weight: 300;
+}
+.description3 h2{
+    font-size: 24px;
+    font-weight: 400;
+}
+.description3 p{
+    font-size: 18px;
+    font-weight: 300;
+}
+.details{
+    margin-left:15%;   
+    
+}
+.details h2{
+    font-size: 24px;
+    font-weight: 400;
+}
+.details p{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+@media (max-width:768px){
+    .large-img{
+        margin-top: 2%;
+    }
+     .project-info{
+        width: auto;
+        margin: auto;
+     }
+    .project-info h1{
+        font-size: 24px;
+        
+    }
+    .description1 h2, .description2 h2, .description3 h2, .details h2{
+        font-size: 16px;
+    }
+    .description1 p, .description2 p, .description3 p, .details p{
+        font-size: 14px;
+    }
+}

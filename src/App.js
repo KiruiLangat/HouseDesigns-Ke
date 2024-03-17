@@ -6,6 +6,8 @@ import Blog from './Blog';
 import OurExpertise from './OurExpertise';
 import ContactUs from './ContactUs';
 import Shop from './Shop'
+import Projects from './Projects'
+import ProjectDescription from './projectDescription';
 
 export default function App() {
   const {pathname} = useLocation();
@@ -21,6 +23,9 @@ export default function App() {
       <Route path='/our-expertise' element={<OurExpertise />} />
       <Route path='/contact-us' element={<ContactUs />} />
       <Route path='/shop' element={<Shop/>} />
+      <Route path ='/architecture/projects' element={<Projects/>} />
+      <Route path='/projects/project-description' element={<ProjectDescription/>} />
+
     </Routes>
      
   )
