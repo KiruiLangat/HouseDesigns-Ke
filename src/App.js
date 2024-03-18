@@ -8,6 +8,7 @@ import ContactUs from './ContactUs';
 import Shop from './Shop'
 import Projects from './Projects'
 import ProjectDescription from './projectDescription';
+import Submission from './Submission';
 
 export default function App() {
   const {pathname} = useLocation();
@@ -25,6 +26,7 @@ export default function App() {
       <Route path='/shop' element={<Shop/>} />
       <Route path ='/architecture/projects' element={<Projects/>} />
       <Route path='/projects/project-description' element={<ProjectDescription/>} />
+      <Route path='/contact-us/submission' element={<Submission/>} />
 
     </Routes>
      
