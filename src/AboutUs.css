@@ -13,7 +13,7 @@
     font-family: Poppins;
     font-weight: 400;
     word-wrap: break-word;
-    margin-top: -9px;
+    margin-top:auto;
     height: auto;
 }
 .color-scheme{
@@ -366,6 +366,7 @@
         display: block;
         font-size: 24px;
         text-align: center;
+        margin-top: 30%;
     }
     .color-scheme{
         display: block;

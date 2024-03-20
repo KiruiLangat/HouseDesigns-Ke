@@ -15,7 +15,7 @@ export default function Projects() {
         <div style={style} className='projects'>
             <Header />
             <h1>Architecture Projects</h1>
-            <div className='projects-container'>
+            <div className='service-projects-container'>
                 <Link to='/projects/project-description'>
                 <div className='project-box1'>
                     <img src={ProjectImg} alt='project-img' className='projects-img'/>
