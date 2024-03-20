@@ -8,6 +8,12 @@ body{
     box-sizing: border-box;
     cursor:crosshair;
 }
+.dropdown-arrow{
+    margin: auto;
+}
+
+
+
 @media (max-width:768px){
     
 }

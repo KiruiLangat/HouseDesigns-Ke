@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import Largeimg from './carousel3.svg'
+import Largeimg from './carousel2.jpg'
 import ProjectDesc1 from './images/projectDescription1.svg'
 import ProjectDesc2 from './images/projectDescription2.svg'
 

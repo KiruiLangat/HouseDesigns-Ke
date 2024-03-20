@@ -11,6 +11,17 @@ body{
     flex-direction: column;
     position: relative;
 }
+.blog-intro h1{
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: Poppins;
+}
+.blog-intro img{
+    width: 93%;
+    height: auto;
+}
 .overlay-info{
     position: absolute;
     bottom: 0;
@@ -41,17 +52,7 @@ body{
     margin-left: 10px;
 }
 
-.blog-intro h1{
-    font-size: 36px;
-    margin: 0;
-    padding: 0;
-    color: black;
-    font-family: Poppins;
-}
-.blog-intro img{
-    width: 93%;
-    height: auto;
-}
+
 
 @media (max-width:768px){
     body{
@@ -60,6 +61,7 @@ body{
     .blog-intro img{
         width: 93%;
         margin-top: 3%;
+        height: auto;
     }
     .overlay-info{
         height: 43%;
