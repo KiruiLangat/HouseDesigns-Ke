@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
-import logo from './Logo.png';
+import logo from './images/Logo.png';
 import './Header.css';
 import '@fontsource/poppins/300.css';
 import instagram from './images/instagram.svg';

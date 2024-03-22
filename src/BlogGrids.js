@@ -1,7 +1,7 @@
 import React from 'react'
 import './BlogGrids.css';
 import '@fontsource/poppins'
-import tester from './carousel1.svg'
+import tester from './images/carousel1.svg'
 import arrow from './images/arrow-button.svg'
 
 const style = {

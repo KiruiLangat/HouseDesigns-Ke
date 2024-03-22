@@ -4,7 +4,7 @@ import '@fontsource/poppins'
 import Header from './Header'
 import Footer from './Footer'
 import landingImg from './images/OurExpertise.svg'
-import architecture from './images/Architecture.svg'
+import architecture from './images/CM_1.jpg'
 import arrow from './images/arrow-button.svg'
 import { Link } from 'react-router-dom'
 

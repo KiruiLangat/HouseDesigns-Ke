@@ -1,9 +1,11 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import Largeimg from './carousel2.jpg'
-import ProjectDesc1 from './images/projectDescription1.svg'
-import ProjectDesc2 from './images/projectDescription2.svg'
+import Largeimg from './images/carousel2.jpg'
+import ProjectDesc1 from './images/CM_1.jpg'
+import ProjectDesc2 from './images/CM_2.jpg'
+import ProjectDesc3 from './images/CM_3.jpg'
+import ProjectDesc4 from './images/CM_4.jpg'
 
 import './projectDescription.css'
 import '@fontsource/poppins'
@@ -21,10 +23,10 @@ export default function projectDescription() {
                 <img src={Largeimg} alt='large-img' />
             </div>
             <div className='masonry'>
-                <img src={ProjectDesc2} alt='project-img' className='project-img2'/>
-                <img src={ProjectDesc1} alt='project-img' className='project-img1'/>
-                <img src={ProjectDesc2} alt='project-img' className='project-img2'/>
-                <img src={ProjectDesc1} alt='project-img' className='project-img1'/>
+                <img src={ProjectDesc1} alt='project-img' className='project-img2'/>
+                <img src={ProjectDesc2} alt='project-img' className='project-img1'/>
+                <img src={ProjectDesc3} alt='project-img' className='project-img2'/>
+                <img src={ProjectDesc4} alt='project-img' className='project-img1'/>
             </div>
             <h1>Project Title</h1>
             <div className='project-info'>
@@ -48,6 +50,7 @@ export default function projectDescription() {
                     <p>◦ 4 Bedrooms | 3 Full Baths</p>
                     <p>◦ 6 Car Garage</p>
                 </div>
+                
             </div>
             <Footer />
         </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import carousel3 from './carousel3.jpg';
-import carousel2 from './carousel2.jpg';
+import carousel3 from './images/carousel3.jpg';
+import carousel2 from './images/carousel2.jpg';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';

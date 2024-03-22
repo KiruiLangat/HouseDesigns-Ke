@@ -3,7 +3,7 @@ import './Blog.css';
 import Header from './Header';
 import Footer from './Footer';
 import '@fontsource/poppins'
-import masterplan from './carousel3.svg'
+import masterplan from './images/carousel3.svg'
 
 import SearchBar from './SearchBar';
 import BlogGrids from './BlogGrids';
