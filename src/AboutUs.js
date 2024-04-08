@@ -9,8 +9,8 @@ import mobileWorkflow from './images/mobileWorkflow.svg'
 import simplicityIcon from './images/simplicityicon.svg'
 import infiniteCaps from './images/posibilitiesicon.svg'
 import resilienceicon from './images/resilianceicon.svg'
-import member1 from './images/projects-img.svg'
-import member2 from './images/projects-img.svg'
+import Kelvin from './images/Kelvin.jpg'
+import member2 from './images/Kelvin.jpg'
 
 
 export default function AboutUs() {
@@ -73,7 +73,7 @@ export default function AboutUs() {
         </div>
         <div className='team-members'>
           <div className='member1-box'>
-            <img src= {member1} alt='member1' className='member1-img' />
+            <img src= {Kelvin} alt='member1' className='member1-img' />
             <h2 className='member1-name'>Kelvin Maundu</h2>
             <h3 className='member1-title'>Senior Architect</h3>
           </div>
