@@ -6,6 +6,12 @@
     width: 93%;
     margin: auto;
     margin-top: 3%;
+    color: black;
+    text-decoration: none;
+}
+.grids a{
+    text-decoration: none;
+    color: black;
 }
 .box1{
     border: rgba(0, 0, 0, 0.1) 1px solid;
@@ -58,12 +64,21 @@
     font-weight: 300;
     word-wrap: break-word;
     margin: 5px 10px;
+    color: black;
+    
 }
 
 .box1 p{
     font-size: 12px;
     margin: 10px 10px;
+    color: black; 
 }
+.box1 link{
+    text-decoration: none;
+    color: black;
+
+}
+
 
 @media (max-width: 768px){
     .grids{

@@ -1,9 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Blog.css';
 import Header from './Header';
 import Footer from './Footer';
 import '@fontsource/poppins'
-// import masterplan from './images/carousel3.svg'
 
 import SearchBar from './SearchBar';
 import BlogGrids from './BlogGrids';
@@ -49,7 +49,7 @@ export default function Blog() {
 
   if (blogPost && blogPost.length > 0) {
     // console.log(blogPost.rendered);
-    const { _embedded, title, excerpt , date} = blogPost[0];
+    const { id, _embedded, title, excerpt , date} = blogPost[0];
     let featuredImage;
     if (_embedded && _embedded['wp:featuredmedia'] && _embedded['wp:featuredmedia'].length > 0) {
       featuredImage = _embedded['wp:featuredmedia'][0].source_url;
@@ -61,7 +61,7 @@ export default function Blog() {
     return (
       <div style={style}>
             <Header />
-            <div className="blog-intro">
+            <Link to={`/posts/${id}`} className="blog-intro">
               <div className='test-img'>
                 <img src= {featuredImage} alt='featured-img' />
               </div> 
@@ -70,7 +70,7 @@ export default function Blog() {
                 <p className='excerpt' dangerouslySetInnerHTML={{__html: excerpt ? excerpt.rendered : ''}}></p>
                 <p className='date'>{date ? new Date(date).toLocaleDateString() : ''}</p>
               </div>
-            </div>
+            </Link>
             <SearchBar />
             <BlogGrids />
             <Footer />

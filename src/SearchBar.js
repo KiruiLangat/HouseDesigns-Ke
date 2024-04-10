@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SearchIcon from './images/SearchIcon.svg';
 import './SearchBar.css';
 import '@fontsource/poppins';
@@ -101,13 +102,15 @@ function SearchBar() {
 
         <div className='search-results'>
           {searchResults.map (post => (
-            <div key={post.id}>
-              {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url &&(
-                <img src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' width='20%' height='20%'/>
-              )}
-              <h2 dangerouslySetInnerHTML={{__html: post.title.rendered}}/>
-              <p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
-            </div>
+            <Link to={`/posts/${post.id}`} className='search-results' key={post.id}>
+              <div>
+                {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url &&(
+                  <img src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' width='20%' height='20%'/>
+                )}
+                <h2 dangerouslySetInnerHTML={{__html: post.title.rendered}}/>
+                <p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
+              </div>
+            </Link>
           ))}
         </div>
         

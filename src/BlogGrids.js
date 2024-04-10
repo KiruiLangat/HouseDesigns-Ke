@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import './BlogGrids.css';
 import '@fontsource/poppins'
 import arrow from './images/arrow-button.svg'
@@ -32,7 +33,7 @@ export default function BlogGrids() {
   return (
     <div style={style} className='grids'>
         {posts.map(post => (
-            <div key={post.id} className='box1'>
+            <Link to={`/posts/${post.id}`} key={post.id} className='box1'>
                 <div className='img-box'>
                 {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
                     <img src= {post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' className='tester-img' />
@@ -43,7 +44,7 @@ export default function BlogGrids() {
                     <img src= {arrow} alt='arrow'  />
                 </div>
                 <p>{new Date (post.date).toLocaleDateString()}</p>
-            </div>
+            </Link>
         ))}
 {/*         
         // <div className='box1'>

@@ -99,6 +99,11 @@ input:focus {
     font-family: Poppins;
     font-weight: 300;
 }
+.search-results a{
+    text-decoration: none;
+    color: black;
+
+}
 
 @media (max-width:768px){
     .search-bar{
