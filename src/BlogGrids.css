@@ -11,8 +11,8 @@
     border: rgba(0, 0, 0, 0.1) 1px solid;
     border-radius: 10px;
     width: 93%;
-    height: auto;
-    margin: 5px;
+    height: 90%;
+    margin: auto;
     position: relative;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }
@@ -36,12 +36,21 @@
     margin-bottom: 5px;
 
 }
+.img-box{
+    width: 100%;
+    height: 50%;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
 
+}
 .tester-img{
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
     margin: auto;
+    object-fit: cover;
     
 }
 .box1 h2{
@@ -53,7 +62,7 @@
 
 .box1 p{
     font-size: 12px;
-    margin: 5px 10px;
+    margin: 10px 10px;
 }
 
 @media (max-width: 768px){

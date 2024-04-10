@@ -43,35 +43,40 @@ function SearchBar() {
   const handleCategoryChange = event => {
     const categorySlug = event.target.value;
 
-    fetch (`https://housedesigns.co.ke/blog/wp-json/wp/v2/categories?slug=${categorySlug}`)
-    .then(response => {
-      console.log(response)
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json()
-    })
-    .then(categories => {
-      if (categories.length > 0) {
-        const categoryId = categories[0].id;
-        setCategory(categorySlug);
+    if (categorySlug === '/') {
+      setSearchResults([]);
+    }
+    else{
+      fetch (`https://housedesigns.co.ke/blog/wp-json/wp/v2/categories?slug=${categorySlug}`)
+      .then(response => {
+        console.log(response)
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json()
+      })
+      .then(categories => {
+        if (categories.length > 0) {
+          const categoryId = categories[0].id;
+          setCategory(categorySlug);
 
-        fetch(`https://housedesigns.co.ke/blog/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
-        .then(response => {
-          console.log(response)
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.json()
-        })
-        .then(data => {
-          setSearchResults(data);
-        });
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error)
-    })
+          fetch(`https://housedesigns.co.ke/blog/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
+          .then(response => {
+            console.log(response)
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json()
+          })
+          .then(data => {
+            setSearchResults(data);
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error)
+      })
+    }
   }
 
   return (
@@ -85,7 +90,7 @@ function SearchBar() {
         /> 
 
         <select value={category} onChange={handleCategoryChange}>
-            <option value="/">Categories</option>
+            <option value="/">Filter Search</option>
             <option value="popular">Popular</option>
             <option value="architecture">Architecture</option>
             <option value="construction">Construction</option>
