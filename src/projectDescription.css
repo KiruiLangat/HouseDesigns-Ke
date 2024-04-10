@@ -39,9 +39,10 @@
     margin: auto;
     display: flex;
 }
-.project-info h1{
+.project-description h1{
     font-size: 36px;
     font-weight: 400;
+    text-align: center;
 }
 .descriptions{
     margin-left: 10%;
@@ -93,7 +94,7 @@
         width: auto;
         margin: auto;
      }
-    .project-info h1{
+    .project-description h1{
         font-size: 24px;
         
     }

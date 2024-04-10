@@ -16,7 +16,9 @@ export default function OurExpertise(){
     return(
         <div className="our-expertise" style={style}>
             <Header />
-            <img src={landingImg} alt="landing" className="landing-img" />
+            <div className="landing-img">
+                <img src={landingImg} alt="landing" />
+            </div>
             <h1 className='title-services'>Explore our services</h1>
             <div className='services'>
                <div className='service1'>

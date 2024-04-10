@@ -6,7 +6,12 @@
 .landing-img{
     width: 93%;
     height: auto;
-    margin: 0 40px;
+    margin: auto;
+}
+.landing-img img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 .title-services{
     font-size: 20px;
@@ -78,8 +83,8 @@
     }
     .landing-img{
         width: 93%;
-        margin: 3% 3.5%;
-        
+        margin: auto;
+        margin-top: 10px;    
     }
     .service1 h2{
         text-align: center;

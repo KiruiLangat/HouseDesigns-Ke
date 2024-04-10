@@ -46,63 +46,6 @@ export default function BlogGrids() {
                 <p>{new Date (post.date).toLocaleDateString()}</p>
             </Link>
         ))}
-{/*         
-        // <div className='box1'>
-        //     <img src= {tester} alt='tester-img' className='tester-img' />
-        //     <h2>How to design a sustainable home</h2>
-        //     <div className='arrow'>
-        //         <img src= {arrow} alt='arrow'  />
-        //     </div>
-        //     <p>04 March 2024</p>
-        // </div>
-        // <div className='box1'>
-        //     <img src= {tester} alt='tester-img' className='tester-img' />
-        //     <h2>How to design a sustainable home</h2>
-        //     <div className='arrow'>
-        //         <img src= {arrow} alt='arrow'  />
-        //     </div>
-        //     <p>04 March 2024</p>
-        // </div>
-        // <div className='box1'>
-        //     <img src= {tester} alt='tester-img' className='tester-img' />
-        //     <h2>How to design a sustainable home</h2>
-        //     <div className='arrow'>
-        //         <img src= {arrow} alt='arrow'  />
-        //     </div>
-        //     <p>04 March 2024</p>
-        // </div>
-        // <div className='box1'>
-        //     <img src= {tester} alt='tester-img' className='tester-img' />
-        //     <h2>How to design a sustainable home</h2>
-        //     <div className='arrow'>
-        //         <img src= {arrow} alt='arrow'  />
-        //     </div>
-        //     <p>04 March 2024</p>
-        // </div>
-        // <div className='box1'>
-        //     <img src= {tester} alt='tester-img' className='tester-img' />
-        //     <h2>How to design a sustainable home</h2>
-        //     <div className='arrow'>
-        //         <img src= {arrow} alt='arrow'  />
-        //     </div>
-        //     <p>04 March 2024</p>
-        // </div>
-        // <div className='box1'>
-        //     <img src= {tester} alt='tester-img' className='tester-img' />
-        //     <h2>How to design a sustainable home</h2>
-        //     <div className='arrow'>
-        //         <img src= {arrow} alt='arrow'  />
-        //     </div>
-        //     <p>04 March 2024</p>
-        // </div>
-        // <div className='box1'>
-        //     <img src= {tester} alt='tester-img' className='tester-img' />
-        //     <h2>How to design a sustainable home</h2>
-        //     <div className='arrow'>
-        //         <img src= {arrow} alt='arrow'  />
-        //     </div>
-        //     <p>04 March 2024</p>
-        // </div> */}
     </div>
   )
 }

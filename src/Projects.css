@@ -4,10 +4,11 @@
     padding: 0;
     height: 100vh;
 }
-.projects h1{
+.projects-title{
     font-size: 36px;
     font-weight: 300;
     margin-top: 3%;
+    text-align: center;
 }
 .service-projects-container{
     width: 80%;
@@ -67,9 +68,9 @@
     .projects{
         width: 100%;
     }
-    .projects h1{
+    .projects-title{
         font-size: 24px;
-        margin-top: 5%;
+        margin-top: 8%;
     }
    
     .project-box1{

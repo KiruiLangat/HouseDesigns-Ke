@@ -17,7 +17,7 @@ export default function Projects() {
     return (
         <div style={style} className='projects'>
             <Header />
-            <h1>Architecture Projects</h1>
+            <h1 className='projects-title'>Architecture Projects</h1>
             <div className='service-projects-container'>
                 
                 <div className='project-box1'>
