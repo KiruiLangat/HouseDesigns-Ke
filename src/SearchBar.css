@@ -1,6 +1,7 @@
 .search-bar{
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .search-bar input {
@@ -30,7 +31,7 @@ input:focus {
 } */
 .search-icon {
     position: absolute;
-    top: 72.5%;
+    top: 38.5px;
     left: 50px;
     justify-content: center;
     transform: translateY(-50%);
@@ -40,7 +41,13 @@ input:focus {
     border: none;
     cursor: pointer;
 }
-.search-bar select{
+.search-options{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.search-options select{
     font-size: 14px;
     font-family: Poppins;
     font-weight: 300;
@@ -63,24 +70,84 @@ input:focus {
     margin: 5px;
     
 }
+.search-results{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    justify-content: space-evenly;
+    margin-left: 0%;
+    background-color: #f8f8f8f8;
+    padding: 0 5px;
+    border-radius: 10px;
+    width: 93%;
+    margin: auto;
+    margin-top: 20px;
+    z-index: 1;
+}
+.search-results img{
+    width: auto;
+    height: 70px;
+    margin: 5px;
+    border-radius: 10px;
+}
+.search-results h2{
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 300;
+}
+.search-results p{
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 300;
+}
 
 @media (max-width:768px){
     .search-bar{
         display: flex;
+    }
+    .search-options{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
     }
     .search-bar input {
         margin-left: auto;
         width: 30%;
         font-size: 12px;
     }
-    .search-bar select{
+    .search-bar input::placeholder{
+        font-size: 12px;
+    }
+    .search-bar option{
+        font-size: 12px;
+    }
+    .search-options select{
         width: 30%;
         margin-right: auto;
-        font-size: 14px;
+        font-size: 12px;
         margin-left: 12px;
     }
     .search-icon{
-        left: 35px;
+        left: 30px;
+    }
+    .search-results{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        justify-content: space-evenly;
+        margin-left: 0%;
+        background-color: #f8f8f8f8;
+        padding: 0 5px;
+        border-radius: 10px;
+        width: 93%;
+        margin: auto;
+        margin-top: 20px;
+        z-index: 1;
+    }
+    .search-results h2{
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .search-results p{
+        font-size: 12px;
     }
     
 }

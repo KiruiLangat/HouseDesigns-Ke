@@ -63,7 +63,7 @@ export default function Blog() {
             <Header />
             <div className="blog-intro">
               <div className='test-img'>
-                <img src= {featuredImage} alt='test-img' />
+                <img src= {featuredImage} alt='featured-img' />
               </div> 
               <div className='overlay-info'>
                 <h2 dangerouslySetInnerHTML={{__html: title ? title.rendered : ''}}></h2>
