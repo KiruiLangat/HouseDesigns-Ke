@@ -277,6 +277,22 @@
     justify-content:center;
     align-items: center;
 }
+.member-img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: auto;
+}
+.member-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+.member2-box img{
+    width: 95%;
+    
+}
 
 .member1-box{
     width: 385.24px;
@@ -290,13 +306,6 @@
 .member1-box:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
-.member1-img{
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 5px;
-}
-
 .member2-box{
     width: 385.24px;
     height: auto;
@@ -308,15 +317,7 @@
 .member2-box:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1); 
 }
-
-
-.member2-img{
-    width:100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 5px;
-    
-}  
+  
 .member1-name{
     text-align: start;
     margin-left: 10px;
@@ -509,18 +510,20 @@
         justify-content: space-between;
     }
     .member1-box{
-        width: 80%;
+        width: 100%;
         height: auto;
         margin: auto;
         margin-bottom: 20px;
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     } 
-    .member1-box > img{
-        margin: auto;
+    .member-img > img{
+        margin: 5px;
+        height: 300px;
+        width: auto;
     }
     .member2-box{
-        width: 80%;
+        width: 100%;
         height: auto;
         margin: auto;
         margin-bottom: 10px;

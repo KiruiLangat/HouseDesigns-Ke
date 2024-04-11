@@ -10,7 +10,7 @@ import simplicityIcon from './images/simplicityicon.svg'
 import infiniteCaps from './images/posibilitiesicon.svg'
 import resilienceicon from './images/resilianceicon.svg'
 import Kelvin from './images/Kelvin.jpg'
-import member2 from './images/Kelvin.jpg'
+import Jonathan from './images/Jonathan2.png'
 
 
 export default function AboutUs() {
@@ -73,12 +73,16 @@ export default function AboutUs() {
         </div>
         <div className='team-members'>
           <div className='member1-box'>
-            <img src= {Kelvin} alt='member1' className='member1-img' />
+            <div className='member-img'>
+              <img src={Kelvin} alt='Kelvin'  />
+            </div>
             <h2 className='member1-name'>Kelvin Maundu</h2>
             <h3 className='member1-title'>Senior Architect</h3>
           </div>
           <div className='member2-box'>
-            <img src= {member2} alt='member2' className='member2-img' />
+            <div className='member-img'>
+              <img src={Jonathan} alt='Jonathan'  />
+            </div>
             <h2 className='member2-name'>Jonathan Munyao</h2>
             <h3 className='member2-title'>Senior Architect</h3>
           </div>

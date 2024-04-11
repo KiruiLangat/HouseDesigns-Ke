@@ -1,5 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import carousel3 from './images/carousel3.jpg';
 import carousel2 from './images/carousel2.jpg';
@@ -27,18 +28,13 @@ export default function App() {
         style={style}
       >
         <SwiperSlide >
-          <img src={carousel3} alt='Maisonette'/>
-          <div className='carousel-overlay1'>
-            <p>Big Bang Maisonette</p>
-            <p>Westlands, Nairobi</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide >
-          <img src={carousel2} alt='Maisonette'/>
-          <div className='carousel-overlay1'>
-            <p>Big Bang Maisonette</p>
-            <p>Westlands, Nairobi</p>
-          </div>
+          <Link to='/projects/project-description'>
+            <img src={carousel2} alt='Maisonette'/>
+            <div className='carousel-overlay1'>
+              <p>Big Bang Maisonette</p>
+              <p>Westlands, Nairobi</p>
+            </div>
+          </Link>
         </SwiperSlide>
         <SwiperSlide >
           <img src={carousel3} alt='Maisonette'/>
@@ -49,6 +45,13 @@ export default function App() {
         </SwiperSlide>
         <SwiperSlide >
           <img src={carousel2} alt='Maisonette'/>
+          <div className='carousel-overlay1'>
+            <p>Big Bang Maisonette</p>
+            <p>Westlands, Nairobi</p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide >
+          <img src={carousel3} alt='Maisonette'/>
           <div className='carousel-overlay1'>
             <p>Big Bang Maisonette</p>
             <p>Westlands, Nairobi</p>

@@ -10,7 +10,7 @@
 }
 .landing-img img{
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
 }
 .title-services{
@@ -39,17 +39,23 @@
     margin: 5px; 
     position: relative
 }
+
 .service1:hover{
     background-color: #ED7D3124;
 }
 .service1-img{
     width: 100%;
-    height: auto;
+    height: 280px;
+    border-radius: 10px;
+}
+.service1-img img{
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
 }
 .arrow-services{
     position: absolute;
-    top: 93.5%;
+    top: 92%;
     left: 95%;
     transform: translate(-50%, -50%);
     width: 20%;
@@ -82,14 +88,24 @@
         display: none;
     }
     .landing-img{
-        width: 93%;
+        width: 100%;
         margin: auto;
+        height: auto;
         margin-top: 10px;    
+    }
+    .landing-img img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
     }
     .service1 h2{
         text-align: center;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 300;
+    }
+    .service1-img{
+        width: 100%;
+        height: 200px;
     }
     .title-services{
         font-size: 18px;

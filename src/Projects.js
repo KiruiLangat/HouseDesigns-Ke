@@ -22,7 +22,9 @@ export default function Projects() {
                 
                 <div className='project-box1'>
                     <Link to='/projects/project-description'>
-                        <img src={ProjectImg1} alt='project-img' className='projects-img'/>
+                        <div className='projects-img'>
+                            <img src={ProjectImg1} alt='project-img' />
+                        </div>
                         <h2>Project Title</h2>
                     </Link>
                 </div>
