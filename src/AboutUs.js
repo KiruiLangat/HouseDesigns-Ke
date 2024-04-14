@@ -4,7 +4,7 @@ import './AboutUs.css'
 import colorScheme from './images/colorScheme.svg'
 import titleMarker from './images/Title-marker.svg'
 import Workflow from './images/workflow.svg'
-import ViewServices from './images/viewServices.svg'
+import ViewServices from './images/ViewServices.svg'
 import mobileWorkflow from './images/mobileWorkflow.svg'
 import simplicityIcon from './images/simplicityicon.svg'
 import infiniteCaps from './images/posibilitiesicon.svg'
@@ -69,7 +69,7 @@ export default function AboutUs() {
       <div className='ourTeam-box'>
         <div className='team-title-box'>
           <img src = {titleMarker} alt='titleMarker4' className='title-marker4'/>
-          <div className='our-team'>OUR TEAM</div> 
+          <div className='our-team'>OUR LEAD TEAM</div> 
         </div>
         <div className='team-members'>
           <div className='member1-box'>

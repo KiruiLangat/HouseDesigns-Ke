@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './GetInTouch.css';
-import GetInTouchImg from './images/projects-img.svg';
+import GetInTouchCarousel from './getintouchCarousel'
 import Arrow from './images/Arrow.svg';
 import PhoneIcon from './images/phoneicon.svg';
 import WhatsApp  from './images/whatsappicon.svg';
@@ -12,7 +12,9 @@ export default function GetInTouch() {
     return (
         <div className='getintouch-container'>
             <div className='getintouch-text'>Let’s create something extraordinary together</div>
-            <img src={GetInTouchImg} alt='Get-in-touch-img' className='getintouch-img' />
+            <div className='getintouch-img'>
+                <GetInTouchCarousel />
+            </div>
             <div className='getintouch-CTA'>
                 <Link to='/contact-us'>
                 <div className='getintouch-CTA-text'>Get in touch</div>

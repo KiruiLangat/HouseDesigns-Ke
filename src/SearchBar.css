@@ -74,35 +74,51 @@ input:focus {
     display: grid;
     grid-template-columns: repeat(4, minmax(200px, 1fr));
     justify-content: space-evenly;
+    gap: 10px;
     margin-left: 0%;
     background-color: #f8f8f8f8;
     padding: 0 5px;
     border-radius: 10px;
     width: 93%;
+    height: auto;
     margin: auto;
     margin-top: 20px;
     z-index: 1;
 }
-.search-results img{
-    width: auto;
-    height: 70px;
-    margin: 5px;
-    border-radius: 10px;
-}
 .search-results h2{
-    font-size: 24px;
+    font-size:16px;
     font-family: Poppins;
     font-weight: 300;
+    margin-left: 5px;
 }
 .search-results p{
-    font-size: 16px;
+    font-size: 12px;
     font-family: Poppins;
-    font-weight: 300;
+    color: black;
+    margin-left: 5px ;
 }
 .search-results a{
     text-decoration: none;
     color: black;
 
+}
+.search-results-container{
+    border: 1px solid rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    width: 93%;
+    height: 80%;
+    margin: auto;
+}
+.featured-img{
+   width: 100%;
+   height: 50%;
+}
+.featured-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin: auto;
+    object-fit: cover;
 }
 
 @media (max-width:768px){
@@ -138,6 +154,7 @@ input:focus {
         display: grid;
         grid-template-columns: repeat(2, minmax(200px, 1fr));
         justify-content: space-evenly;
+        gap: 10px;
         margin-left: 0%;
         background-color: #f8f8f8f8;
         padding: 0 5px;
@@ -148,11 +165,29 @@ input:focus {
         z-index: 1;
     }
     .search-results h2{
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 300;
     }
     .search-results p{
-        font-size: 12px;
+        font-size: 10px;
+    }
+    .search-results-container{
+        border: 1px solid rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+        width: 93%;
+        height: 80%;
+        margin: auto;
+    }
+    .featured-img{
+        width: 100%;
+        height: 50%;
+    }
+    .featured-img img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        margin: auto;
+        object-fit: cover;
     }
     
 }

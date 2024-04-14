@@ -6,7 +6,7 @@ import carousel2 from './images/carousel2.jpg';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import './BrowseCarousel.css';
+import './getintouchCarousel.css';
 import '@fontsource/poppins'
 
 const style = {
@@ -18,41 +18,26 @@ export default function App() {
   return (
     <>
       <Swiper
-        autoplay={{ delay: 3000, disableOnInteraction: true }}
+        autoplay={{ delay: 3500, disableOnInteraction: true }}
         loop={true}
         pagination={{ clickable: true, el: '.swiper-pagination' }}
         navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
         modules={[Autoplay,Pagination, Navigation]}
-        className="BrowseSwiper"
+        className="CTASwiper"
         style={style}
       >
         <SwiperSlide >
-          <img src={carousel3} alt='Maisonette'/>
-          <div className='carousel-overlay'>
-            <p>Big Bang Maisonette</p>
-          </div>
+            <img src={carousel2} alt='Maisonette'/>
         </SwiperSlide>
         <SwiperSlide >
-          <img src={carousel2} alt='Maisonette'/>
-          <div className='carousel-overlay'>
-            <p>Big Bang Maisonette</p>
-          </div>
+            <img src={carousel3} alt='Maisonette'/>
         </SwiperSlide>
         <SwiperSlide >
-          <img src={carousel3} alt='Maisonette'/>
-          <div className='carousel-overlay'>
-            <p>Big Bang Maisonette</p>
-          </div>
+            <img src={carousel2} alt='Maisonette'/>
         </SwiperSlide>
         <SwiperSlide >
-          <img src={carousel2} alt='Maisonette'/>
-          <div className='carousel-overlay'>
-            <p>Big Bang Maisonette</p>
-          </div>
+            <img src={carousel3} alt='Maisonette'/>
         </SwiperSlide>
-
-       
-
       </Swiper>
 
     </>

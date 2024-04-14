@@ -1,4 +1,6 @@
 import React from 'react'
+// import { useEffect, useState } from 'react'
+// import { useParams } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
 import Largeimg from './images/carousel2.jpg'
@@ -16,10 +18,39 @@ const style ={
 
 
 export default function projectDescription() {
+    // const [project, setProject] = useState([null]);
+    // const {projectId} = useParams();
+
+    // useEffect (() => {
+    //     fetch(`/projects/${projectId}`)
+    //     .then(response => {
+    //         console.log(response)
+    //         if (!response.ok) {
+    //             throw new Error(`HTTP error! status: ${response.status}`);
+    //         }
+    //         return response.json()
+    //     })
+
+    //     .then(data => {
+    //         setProject(data);
+    //     })
+    //     .catch(error => {
+    //         console.error('Error fetching project', error);
+    //       });
+    
+    // }, [projectId]);
+
+    // if (!project) {
+    //     return <div className='loading'>Loading<span>...</span></div>
+    // }
+
+
+
     return (
         <div className='project-description' style={style}>
             <Header />
             <div className='large-img'>
+                {/* src={project.image_url} */}
                 <img src={Largeimg} alt='large-img' />
             </div>
             <div className='masonry'>

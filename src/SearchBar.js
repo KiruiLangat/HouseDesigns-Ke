@@ -102,14 +102,15 @@ function SearchBar() {
 
         <div className='search-results'>
           {searchResults.map (post => (
-            <Link to={`/posts/${post.id}`} className='search-results' key={post.id}>
-              <div>
+            <Link to={`/posts/${post.id}`} className='search-results-container' key={post.id}>
+              <div className='featured-img'>
                 {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url &&(
-                  <img src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' width='20%' height='20%'/>
+                  <img src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img'/>
                 )}
-                <h2 dangerouslySetInnerHTML={{__html: post.title.rendered}}/>
-                <p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
               </div>
+              <h2 dangerouslySetInnerHTML={{__html: post.title.rendered}}/>
+              <p>{new Date (post.date).toLocaleDateString()}</p>
+              
             </Link>
           ))}
         </div>

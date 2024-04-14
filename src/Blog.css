@@ -80,7 +80,7 @@ body{
 .overlay-info h2{
     font-size: 24px;
     font-family: Poppins;
-    font-weight: 300;
+    font-weight: 400;
     word-wrap: break-word;
     margin-bottom: -5px;
     margin-left: 10px;
@@ -121,14 +121,16 @@ body{
         height: 43%;
     }
     .overlay-info h2{
-        font-size: 16px;       
+        font-size: 16px;
+        font-weight: 400;     
 
     }
     .excerpt{
-        font-size: 13px;
+        font-size: 12px;
+        font-weight: 300;
     }
     .date{
-        font-size: 12px;
+        font-size: 10px;
     }
    
 }

@@ -34,6 +34,7 @@ export default function Header() {
                                 smooth = {true}
                                 duration={500}
                                 offset={-70}
+                                onClick={() => setSidebarVisible(false)}
 
                                 >About Us
                             </ScrollLink>

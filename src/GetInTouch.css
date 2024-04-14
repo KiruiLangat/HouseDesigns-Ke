@@ -5,11 +5,14 @@
 }
 .getintouch-img {
     width: 50%;
-    height: auto;
     left: 45px;
-    top: 218px;
+    top: 228px;
     position: absolute;
     border-radius: 10px;
+}
+.getintouch-img ::content{
+    width: 100%;
+    height: 100%;
 }
 
 .getintouch-text {
@@ -49,9 +52,9 @@
 }
 
 .getintouch-CTA-underline  {
-    width: 106px;
+    width: 104px;
     height: 0;
-    left: 0;
+    left: 2px;
     top: 28px;
     position: absolute;
     border: 1px black solid;
@@ -187,15 +190,18 @@
         left: auto;
         right: auto;
         padding: 0;
-        margin:10px;
-        height: auto;
-        width: 95%;
-        top:40px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        
+        margin:auto;
+        width: auto;
+        top:30px;
+        box-sizing: border-box;
+       
+    }
+    .getintouch-img ::content{
+        width: 100%;
+        height: 100%;
     }
     .getintouch-CTA{
-        left: 50%;
+        left: 52%;
         top: 60px;
         transform: translateX(-50%);
     }

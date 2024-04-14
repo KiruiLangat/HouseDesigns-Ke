@@ -25,7 +25,8 @@ export default function OurExpertise(){
             <h1 className='title-services'>Explore our services</h1>
             <div className='services'>
                <div className='service1'>
-                    <Link to='/architecture/projects'>
+                    {/* {`/projects/${service.type}`} */}
+                    <Link to='/architecture/projects'> 
                         <div className='service1-img'>
                             <img src= {architecture} alt='architecture'  />
                         </div>

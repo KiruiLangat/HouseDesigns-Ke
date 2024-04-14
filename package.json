@@ -5,6 +5,7 @@
   "proxy": "https://housedesigns.co.ke/blog",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@fontsource/poppins": "^5.0.13",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -54,5 +55,4 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
-  
 }

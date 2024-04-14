@@ -2,15 +2,18 @@ body {
     height: 100%;
   }
   
-  .BrowseSwiper {
+  
+  .CTASwiper {
     top: 0;
-    width: 95%;
-    height: 480px;
+    width: 93%;
+    height: 430px;
     border-radius: 10px;
     padding: 0;
     overflow: hidden;
   }
- 
+  .swiper-button-next, .swiper-button-prev {
+    color: #ED7D31;
+  }
   .swiper-slide{
     margin: 0;
   }
@@ -26,12 +29,12 @@ body {
     box-shadow: none;
     border-radius: 10px;
   }
-  .carousel-overlay{
+  .carousel-overlay1{
     position: absolute;
     bottom: 0;
-    width: 100%;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.5);
+    width: 20%;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.78);
     border-radius: 10px;
     padding: 0;
     opacity: 0;
@@ -45,10 +48,9 @@ body {
     to{ opacity: 1; }
     
   }
-  .carousel-overlay p{
-    text-align: center;
-    margin: 10px auto;
-    font-size: 18px;
+  .carousel-overlay1 p{
+    margin-left: 20px;
+    font-size: 16px;
     color: #ED7D31;
   }
   
@@ -59,12 +61,12 @@ body {
       display: none;
     }
     .swiper-pagination {
-      display: none;
+      display: block;
     }
     .swiper-pagination-bullet {
-      display: none;
+      background-color: #ED7D31;
     }
-    .swiper {
+    .CTASwiper {
       padding: 0;
       margin: 10px;
       height: 300px;
@@ -80,14 +82,14 @@ body {
       background-color: transparent;
       box-shadow: none;
     }
-    .carousel-overlay{
+    .carousel-overlay1{
       display: flex;
       width: 100%;
       height: 40px;
       justify-content: space-around;
       margin: 0;
     }
-    .carousel-overlay p{
+    .carousel-overlay1 p{
       font-size: 12px;
       box-shadow: #ED7D3124;
     }

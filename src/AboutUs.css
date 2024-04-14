@@ -28,7 +28,7 @@
 .our-workflow{
     position: absolute;
     left: 138px;
-    margin-top: 12%;
+    margin-top: 10%;
     color: black;
     font-size: 20px;
     font-family: Poppins;
@@ -39,7 +39,7 @@
 .title-marker{
     position: absolute;
     left: 113px;
-    margin-top: 12%;
+    margin-top: 10%;
     height: 30px;
 }
 
@@ -498,9 +498,7 @@
     }
     .our-team{
         text-align: center;
-        font-size: 16px;  
-        transform: translateX(50%);
-        
+        font-size: 16px;    
         
     }
     .team-members{
