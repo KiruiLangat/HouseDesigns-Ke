@@ -32,7 +32,8 @@
         margin-top: 5%;
     }
     .prompt h1{
-        font-size: 20px;
+        font-size: 18px;
+        text-align: center;
     }
     .prompt img{
         width: auto;

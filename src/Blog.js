@@ -22,7 +22,7 @@ export default function Blog() {
       .then(response => {
         console.log(response)
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error('Reload');
         }
         return response.json()
       })

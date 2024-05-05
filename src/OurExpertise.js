@@ -3,7 +3,7 @@ import './OurExpertise.css'
 import '@fontsource/poppins'
 import Header from './Header'
 import Footer from './Footer'
-import landingImg from './images/OurExpertise.svg'
+import landingImg from './images/OurExpertise.jpg'
 import InteriorDesign from './images/interior-design.jpg'
 import ProjectMgmt from './images/projectMgmt.webp'
 import Masterplanning from './images/IsioloUniversity.png'
@@ -25,8 +25,7 @@ export default function OurExpertise(){
             <h1 className='title-services'>Explore our services</h1>
             <div className='services'>
                <div className='service1'>
-                    {/* {`/projects/${service.type}`} */}
-                    <Link to='/architecture/projects'> 
+                    <Link to="/service/architecture"> 
                         <div className='service1-img'>
                             <img src= {architecture} alt='architecture'  />
                         </div>
@@ -37,7 +36,7 @@ export default function OurExpertise(){
                     </Link>
                 </div>
                 <div className='service1'>
-                    <Link to=''>
+                    <Link to="">
                         <div className='service1-img'>
                             <img src= {InteriorDesign} alt='interior design'  />
                         </div>

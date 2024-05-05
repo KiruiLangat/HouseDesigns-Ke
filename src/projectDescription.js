@@ -1,14 +1,7 @@
-import React from 'react'
-// import { useEffect, useState } from 'react'
-// import { useParams } from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import { useParams } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
-import Largeimg from './images/carousel2.jpg'
-import ProjectDesc1 from './images/CM_1.jpg'
-import ProjectDesc2 from './images/CM_2.jpg'
-import ProjectDesc3 from './images/CM_3.jpg'
-import ProjectDesc4 from './images/CM_4.jpg'
-
 import './projectDescription.css'
 import '@fontsource/poppins'
 
@@ -16,74 +9,95 @@ const style ={
     fontFamily:'Poppins'
 }
 
+export default function ProjectDescription() {
+    const { title } = useParams()
+    const [images, setImages] = useState([])
 
-export default function projectDescription() {
-    // const [project, setProject] = useState([null]);
-    // const {projectId} = useParams();
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const response = await fetch(`http://192.168.100.7:5000/api/residentials/project-description/${title}`)
+                console.log(title)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json()
+                setImages(data)
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        fetchImages();
+    }, [title]);
 
-    // useEffect (() => {
-    //     fetch(`/projects/${projectId}`)
-    //     .then(response => {
-    //         console.log(response)
-    //         if (!response.ok) {
-    //             throw new Error(`HTTP error! status: ${response.status}`);
-    //         }
-    //         return response.json()
-    //     })
+    const [project, setProject] = useState(null)
 
-    //     .then(data => {
-    //         setProject(data);
-    //     })
-    //     .catch(error => {
-    //         console.error('Error fetching project', error);
-    //       });
-    
-    // }, [projectId]);
+    useEffect (() => {
+        const fetchProject = async () => {
+            try{
+                const response = await fetch(`http://192.168.100.7:5000/api/residentials/project-details/${title}`)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json()
+                setProject(data)
+                
+            } catch (error){
+                console.error(error)
 
-    // if (!project) {
-    //     return <div className='loading'>Loading<span>...</span></div>
-    // }
+            }
+        }
+        fetchProject();
+    }, [title]);
 
-
+    // useEffect(() => {
+    //     console.log(project)
+    // }, [project])
 
     return (
         <div className='project-description' style={style}>
             <Header />
-            <div className='large-img'>
-                {/* src={project.image_url} */}
-                <img src={Largeimg} alt='large-img' />
-            </div>
-            <div className='masonry'>
-                <img src={ProjectDesc1} alt='project-img' className='project-img2'/>
-                <img src={ProjectDesc2} alt='project-img' className='project-img1'/>
-                <img src={ProjectDesc3} alt='project-img' className='project-img2'/>
-                <img src={ProjectDesc4} alt='project-img' className='project-img1'/>
-            </div>
-            <h1>Project Title</h1>
-            <div className='project-info'>
-                
-                <div className='descriptions'>
-                    <div className='description1'>
-                        <h2>Location</h2>
-                        <p>Syokimau</p>
-                    </div>
-                    <div className='description2'>
-                        <h2>Project Area</h2>
-                        <p>1054 sqft</p>
-                    </div>
-                    <div className='description3'>
-                        <h2>Status</h2>
-                        <p>Completed</p>
-                    </div>
+            <>
+                <div className='large-img'>
+                    <img src={images[0]} alt='project Img'/>
                 </div>
-                <div className='details'>
-                    <h2>Project Details</h2>
-                    <p>◦ 4 Bedrooms | 3 Full Baths</p>
-                    <p>◦ 6 Car Garage</p>
+                <div className='masonry'>
+                    {images.slice(1).map((image, index) => (
+                        <div key={index} className='image-container'>
+                            <img  src={image} alt={`img${index + 1}`} onLoad={(e) => e.target.style.opacity = 1} loading='lazy'/>
+                        </div>
+                        
+                    ))}
                 </div>
-                
-            </div>
+            </>
+            {project && (
+                <>
+                    <h1>{project.title}</h1>
+                    <div className='project-info'>                
+                        <div className='descriptions'>
+                            <div className='description1'>
+                                <h2>Location</h2>
+                                <p>{project.location}</p>
+                            </div>
+                            <div className='description2'>
+                                <h2>Plinth Area</h2>
+                                <p>{project.plinth_area}</p>
+                            </div>
+                            <div className='description3'>
+                                <h2>Status</h2>
+                                <p>{project.project_status}</p>
+                            </div>
+                        </div>
+                        <div className='details'>
+                            <h2>Project Details</h2>
+                            <p>{project.details}</p>
+                        </div>   
+                    </div>  
+                </>  
+            )}
+
             <Footer />
+
         </div>
     )
 }

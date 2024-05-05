@@ -2,7 +2,6 @@
   "name": "house-designske",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://housedesigns.co.ke/blog",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
     "@fontsource/poppins": "^5.0.13",
@@ -10,6 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "express": "^4.19.1",
+    "http-proxy-middleware": "^3.0.0",
     "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
     "react": "^18.2.0",
