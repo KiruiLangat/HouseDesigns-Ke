@@ -6,7 +6,7 @@ import Footer from './Footer'
 import landingImg from './images/OurExpertise.jpg'
 import InteriorDesign from './images/interior-design.jpg'
 import ProjectMgmt from './images/projectMgmt.webp'
-import Masterplanning from './images/IsioloUniversity.png'
+import Masterplanning from './images/masterplanning.png'
 import architecture from './images/CM_1.jpg'
 import arrow from './images/arrow-button.svg'
 import { Link } from 'react-router-dom'
@@ -58,7 +58,7 @@ export default function OurExpertise(){
                     </Link>
                 </div>
                 <div className='service1'>
-                    <Link to=''>
+                    <Link to='/service/masterplanning'>
                         <div className='service1-img'>
                             <img src= {Masterplanning} alt='masterplanning'  />
                         </div>

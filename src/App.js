@@ -12,7 +12,9 @@ import Submission from './Submission';
 import Post from './Post';
 import ArchitectureServiceCategory from './ArchitectureServiceCategory';
 import ServiceSubCategory from './ServiceSubCategory'
-
+import CommercialCategory from './CommercialCategory';
+import InstitutionCategory from './InstitutionCategory';
+import Masterplanning from './Masterplanning';
 
 export default function App() {
   const {pathname} = useLocation();
@@ -34,7 +36,9 @@ export default function App() {
       <Route path="/architecture/residentials" element={<ServiceSubCategory />} />
       <Route path="/residentials/:sub_category_name" element={<Projects />} />
       <Route path='/residentials/project-description/:title' element={<ProjectDescription/>} />
-
+      <Route path='/architecture/commercial' element={<CommercialCategory/>} />
+      <Route path='/architecture/institutions' element={<InstitutionCategory />} />
+      <Route path='/service/masterplanning' element={<Masterplanning />} />
 
     </Routes>
      

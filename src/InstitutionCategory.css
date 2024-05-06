@@ -1,0 +1,19 @@
+.details button{
+    padding: 5px;
+    font-family: Poppins;
+    font-size: 14px;
+    background: #ffff;
+    border: 1px solid #e37142;
+    border-radius: 10px;
+}
+.details button:hover{
+    background: #e37142;
+    color: white;
+    border: none;
+}
+
+@media(max-width:760px){
+    .details button{
+        font-size: 12px;
+    }
+}
