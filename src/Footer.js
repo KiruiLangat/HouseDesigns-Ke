@@ -68,7 +68,7 @@ export default function Footer() {
                 </div>
                 <p className='footer-text'>© 2024, All Rights Reserved </p>
             </div>
-            
+            <p className='footer-text'>© 2024, All Rights Reserved </p>
             
         </div>
     </div>
