@@ -39,7 +39,7 @@ export default function BlogGrids() {
                     <img src= {post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' className='tester-img' />
                 )}
                 </div>
-                <h2 dangerouslySetInnerHTML={{__html: post.title.rendered }}/>
+                <h2  className='post-title' dangerouslySetInnerHTML={{__html: post.title.rendered }}/>
                 <div className='arrow'>
                     <img src= {arrow} alt='arrow'  />
                 </div>

@@ -76,14 +76,14 @@ input:focus {
     justify-content: space-evenly;
     gap: 10px;
     margin-left: 0%;
-    background-color: #f8f8f8f8;
+    background-color: #ED7D3124;
     padding: 0 5px;
     border-radius: 10px;
     width: 93%;
     height: auto;
     margin: auto;
     margin-top: 20px;
-    z-index: 1;
+   
 }
 .search-results h2{
     font-size:16px;
@@ -104,21 +104,20 @@ input:focus {
 }
 .search-results-container{
     border: 1px solid rgba(0, 0, 0, 0.19);
+    height: fit-content;
     border-radius: 10px;
-    width: 93%;
-    height: 80%;
-    margin: auto;
+    margin: 5%;   
 }
-.featured-img{
-   width: 100%;
-   height: 50%;
+.search-results .search-results-container .featured-img{
+    width: 100%;
+    height: 152px;
 }
-.featured-img img{
+.search-results .search-results-container .featured-img img{
     width: 100%;
     height: 100%;
-    border-radius: 10px;
-    margin: auto;
     object-fit: cover;
+    margin: auto;
+    border-radius: 10px;
 }
 
 @media (max-width:768px){
@@ -154,15 +153,10 @@ input:focus {
         display: grid;
         grid-template-columns: repeat(2, minmax(200px, 1fr));
         justify-content: space-evenly;
-        gap: 10px;
-        margin-left: 0%;
-        background-color: #f8f8f8f8;
-        padding: 0 5px;
+        gap: 5px;
         border-radius: 10px;
         width: 93%;
-        margin: auto;
-        margin-top: 20px;
-        z-index: 1;
+        margin: 20px auto;
     }
     .search-results h2{
         font-size: 14px;
@@ -171,23 +165,16 @@ input:focus {
     .search-results p{
         font-size: 10px;
     }
-    .search-results-container{
-        border: 1px solid rgba(0, 0, 0, 0.19);
-        border-radius: 10px;
-        width: 93%;
-        height: 80%;
-        margin: auto;
+    .search-results .search-results-container{
+        margin-top: 5%;
+        border: none;
     }
-    .featured-img{
-        width: 100%;
-        height: 50%;
+    .search-results .search-results-container .featured-img{
+        height: 130px;
     }
-    .featured-img img{
+    .featured-img img {
         width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        margin: auto;
-        object-fit: cover;
+        height: 130px;
     }
     
 }

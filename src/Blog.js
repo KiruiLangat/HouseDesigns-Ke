@@ -4,8 +4,7 @@ import './Blog.css';
 import Header from './Header';
 import Footer from './Footer';
 import '@fontsource/poppins'
-
-import SearchBar from './SearchBar';
+import SearchBar from './BlogSearchBar';
 import BlogGrids from './BlogGrids';
 
 const style = {
@@ -22,7 +21,7 @@ export default function Blog() {
       .then(response => {
         console.log(response)
         if (!response.ok) {
-          throw new Error('Reload');
+          throw new Error('Reload Page');
         }
         return response.json()
       })
@@ -44,7 +43,7 @@ export default function Blog() {
     return <div className='loading'>Loading<span>...</span></div>;
   }
   if (error) {
-    return <div className='error'>Error: {error}</div>;
+    return <div className='error'>{error}</div>;
   }
 
   if (blogPost && blogPost.length > 0) {
@@ -58,25 +57,34 @@ export default function Blog() {
         featuredImage = 'https://housedesigns.co.ke/blog/wp-content/uploads/2024/04/masterplanning.png';
       }
     
-    return (
-      <div style={style}>
-            <Header />
-            <Link to={`/posts/${id}`} className="blog-intro">
-              <div className='test-img'>
-                <img src= {featuredImage} alt='featured-img' />
-              </div> 
-              <div className='overlay-info'>
-                <h2 dangerouslySetInnerHTML={{__html: title ? title.rendered : ''}}></h2>
-                <p className='excerpt' dangerouslySetInnerHTML={{__html: excerpt ? excerpt.rendered : ''}}></p>
-                <p className='date'>{date ? new Date(date).toLocaleDateString() : ''}</p>
-              </div>
-            </Link>
-            <SearchBar />
-            <BlogGrids />
-            <Footer />
-      </div>
+    
+      return (
+        <div style={style}>
+              <Header />
+              <Link to={`/posts/${id}`} className="blog-intro">
+                <div className='test-img'>
+                  <img src= {featuredImage} alt='featured-img' />
+                </div> 
+                <div className='overlay-info'>
+                  <h2 dangerouslySetInnerHTML={{__html: title ? title.rendered : ''}}></h2>
+                  <p className='excerpt' dangerouslySetInnerHTML={{__html: excerpt ? truncateText(excerpt.rendered, 110, 768) : ''}}></p>
+                  <p className='date'>{date ? new Date(date).toLocaleDateString() : ''}</p>
+                </div>
+              </Link>
+              <SearchBar />
+              <BlogGrids />
+              <Footer />
+        </div>
     );
+    function truncateText(text, length, viewportWidth) {
+      if (window.innerWidth <= viewportWidth && text.length > length) {
+          return text.substring(0, length) + '...';
+      } else {
+          return text;
+      }
+    }
 } else {
     console.log('blogPost is not defined yet');
     return null
   }}
+

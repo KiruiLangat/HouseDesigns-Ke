@@ -59,7 +59,7 @@
 .our-contacts{
     border: 1px rgba(0, 0, 0, 0.1) solid;
     border-radius: 10px;
-     padding: 15px;
+    padding: 15px;
     margin: auto;
     width: 100%;
     
@@ -70,87 +70,84 @@
     font-size: 20px;
     font-weight: 400;
     margin-top: 0;
-    
 }
-.location{
-    margin-top: 1%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-items: center;
-    justify-content: space-evenly;
-    margin: auto;
-}
-.location p{
-    font-size: 16px;
+.our-contacts h3{
+    font-size: 18px;
+    font-weight: 400;
     text-align: center;
+    margin:0;
 }
-.location img{
-    width: 7%;
-    height: auto;
-;
-}
+
 .call{
-    margin-top: 1%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-items: center;
     justify-content: space-evenly;
-    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
 }
 .call p{
     font-size: 16px;
     text-align: center;
+    font-weight: 300;
+    margin: auto;
 }
 .call img{
-    width: 7%;
+    width: 10%;
     height: auto;
+    margin-bottom: 5px;
 }
 .email{
-    margin-top: 1%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-items: center;
-    justify-content: space-evenly;
-    margin: auto;
-    margin-left: 1.5%;
-    
-}
-.email p{
-    font-size: 16px;
-    text-align: center;
-    
-}
-.email img{
-    width: 7%;
-    height: auto;
-}
-.whatsapp{
-    margin-top: 1%;
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-items: center;
     justify-content: space-evenly;
     margin: 10px;
-    margin-left: 0;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 15px;
+}
+.email p{
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;  
+    margin: auto 
+}
+.email img{
+    width: 10%;
+    height: auto;
+    margin-bottom: 5px;
+}
+.whatsapp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 15px;
+
 }
 .whatsapp a{
     font-size: 16px;
     text-align: center;
-    margin-left: 0;
     text-decoration: none;
     color: black;
+    font-weight: 300;
+    margin: auto;
 }
 .whatsapp a:hover{
     color: #ED7431;
 }
 
 .whatsapp img{
-    width: 7%;
+    width: 10%;
     height: auto;
+    margin-bottom: 5px;
 }
 
 .form{
@@ -218,8 +215,9 @@ form{
     font-family: Poppins;
     padding: 8px;
     border-radius: 10px;
+    color:black;
     background-color: #ffffff;
-    border: 1px rgba(0, 0, 0, 0.1) solid;
+    border: 1px #ED7431 solid;
     width: 30%;
     margin-left: 35%;
     margin-bottom: 5%;
@@ -273,57 +271,62 @@ form{
     .our-contacts h2{
         font-size: 18px;
     }
-    .location{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .our-contacts h3{
+        font-size: 16px;
+        margin: 0;
     }
-    .location img{
-        width: 10%;
-    }
-    .location p{
-        font-size: 14px;
-        font-weight: 300;
-    }
+   
     .call{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 10px;
+        padding: 10px;
     }
     .call img{
-        width: 10%;
+        width: 15%;
+        margin-bottom: 10px;
     }
     .call p{
         font-size: 14px;
         font-weight: 300;
+        margin: auto;
     }
     .email{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 10px;
+        padding: 10px;
     }
     .email img{
-        width: 10%;
+        width: 15%;
+        margin-bottom: 10px;
     }
     .email p{
         font-size: 14px;
         font-weight: 300;
+        margin: auto;
     }
     .whatsapp{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 10px;
+        padding: 10px;
     }
     .whatsapp img{
-        width: 10%;
+        width: 15%;
+        margin-bottom: 10px;
     }
     .whatsapp a{
         font-size: 14px;
         font-weight: 300;
+        color: #ED7431;
+        margin: auto;
     }
     .form{
         width: 90%;

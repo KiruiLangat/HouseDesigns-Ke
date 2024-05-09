@@ -58,7 +58,7 @@
     .browse-carousel{
         position: relative;
         overflow: hidden;
-        min-height: 70vh;
+        min-height: 60vh;
         left: 0;
         right: 0;
         width: 100%;

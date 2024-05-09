@@ -26,7 +26,7 @@
 }
 .message img{
     width: 15%;
-    height: autp;
+    height: auto;
 }
 .message h1{
     font-size: 36px;
@@ -74,4 +74,45 @@
 .shop-prompt a{
     text-decoration: none;
     color: black;
+}
+
+@media (max-width:760px){
+    .submission-prompt{
+        width: 100%;
+        height: auto;
+    }
+    .cancel-icon{
+        margin: 10px;
+        padding: 10px;
+    }
+    .message{
+        margin:10%;
+    }
+    .message img{
+        width: 15%;
+        margin-top: 10%;
+    }
+    .message h1{
+        font-size: 24px;
+    }
+    .message p{
+        font-size: 16px;
+    }
+    .shop-prompt{
+        width: 90%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .shop-prompt h2{
+        font-size: 16px;
+       
+    }
+    .shop-prompt a{
+        font-size: 14px;
+    }
+    .arrow-icon{
+        top:76%;
+        left: 79%;
+        width: 4%;
+        height: auto;
+    }
 }

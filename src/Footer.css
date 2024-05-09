@@ -27,8 +27,7 @@
 }
 .footer-right{
     display:block;
-    padding: 20px;
-       
+    padding: 20px;  
     justify-content: space-between; 
 }
 .footer-socials{
@@ -45,6 +44,7 @@
 .twitter{
     margin: 0 8px;
 }
+
 .arrow-up{
     width: 20%;
     height: auto;
@@ -56,7 +56,10 @@
     cursor: pointer;
     border-radius: 10px;
 }
+.mobile-footer-socials{
+    display: none;
 
+}
 
 
 @media (max-width:768px){
@@ -81,14 +84,60 @@
         width: 130px;
         height: auto;
         margin-bottom: 0;
-        margin-top: 5px;
+        margin-top: 8px;
         
     }
     .footer-right > p{
+        display: none;
         font-size: 12px;
         font-weight: 300;
         margin-right: 10px;
     }
+    .footer-right{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        height: auto;
+    }
+    .mobile-footer-socials{
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+
+    }
+    .mobile-socials{
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        margin-bottom: 0;
+        margin-top: -8%;
+    }
    
+    .whatsapp{
+        width: 50%;
+    }
+    .mobileIcon{
+       width: 50%;
+       
+    }
+    .whatsapp-link{
+        width: 100%;
+        height: auto;
+        margin-left: 20%;
+    }
+    .mobile-ref-link{
+        width: 100%;
+        height: auto;
+        margin-right: 20%;
+        margin-top: 8px;
+    }
+
+    .mobile-footer-socials p{
+        font-size: 12px;
+        margin-top: -10px;
+    }
 
 }

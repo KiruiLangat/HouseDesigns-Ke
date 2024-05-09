@@ -16,10 +16,12 @@ const style = {
 export default function Submission() {
   return (
     <div style={style} className='submission-prompt'>
-        <img src={Cancel} alt='cancel-icon' className='cancel-icon' />
+        <Link to ='/contact-us'>
+          <img src={Cancel} alt='cancel-icon' className='cancel-icon' />
+        </Link>
         <div className='message'>
             <img src={Check} alt='check-icon' />
-            <h1>Thank you for reaching out!</h1>
+            <h1>Form submitted successfully!</h1>
             <p>Our team will get in touch with you as soon as possible.</p>
         </div>
         <div className='shop-prompt'>

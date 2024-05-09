@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SearchIcon from './images/SearchIcon.svg';
-import './SearchBar.css';
+import './BlogSearchBar.css';
 import '@fontsource/poppins';
  
 
@@ -102,15 +102,16 @@ function SearchBar() {
 
         <div className='search-results'>
           {searchResults.map (post => (
-            <Link to={`/posts/${post.id}`} className='search-results-container' key={post.id}>
-              <div className='featured-img'>
-                {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url &&(
-                  <img src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img'/>
-                )}
-              </div>
-              <h2 dangerouslySetInnerHTML={{__html: post.title.rendered}}/>
-              <p>{new Date (post.date).toLocaleDateString()}</p>
-              
+            <Link to={`/posts/${post.id}`}  key={post.id}>
+              <div className='search-results-container'>
+                <div className='featured-img'>
+                  {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url &&(
+                  <img src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' />
+                  )}
+                </div> 
+                <h2 dangerouslySetInnerHTML={{__html: post.title.rendered}}/>
+                <p>{new Date (post.date).toLocaleDateString()}</p>
+              </div> 
             </Link>
           ))}
         </div>

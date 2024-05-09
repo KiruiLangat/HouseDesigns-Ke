@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import carousel3 from './images/carousel3.jpg';
-import carousel2 from './images/carousel2.jpg';
+// import carousel3 from './images/carousel3.jpg';
+// import carousel2 from './images/carousel2.jpg';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -13,12 +13,42 @@ const style = {
   fontFamily: 'Poppins',
 }
 
-export default function App() {
-  
+export default function BrowseCarousel() {
+  const [projects, setProjects] = useState([])
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('http://192.168.100.7:5000/api/browse')
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json()
+        setProjects(data);
+        // swiperRef.current.update();
+      }
+      catch (error) {
+        console.error(error)
+      }
+    }
+    fetchProjects();
+  }, []);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.update();
+    }
+  }, [projects]);
+
   return (
     <>
       <Swiper
-        autoplay={{ delay: 3000, disableOnInteraction: true }}
+        onSwiper={(swiper)=> {
+          swiperRef.current = swiper;
+          swiper.autoplay.start();
+        }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         pagination={{ clickable: true, el: '.swiper-pagination' }}
         navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
@@ -26,31 +56,34 @@ export default function App() {
         className="BrowseSwiper"
         style={style}
       >
-        <SwiperSlide >
-          <img src={carousel3} alt='Maisonette'/>
+        {projects.map((project) => (
+          <SwiperSlide  key={project.id}>
+          <img src={project.image_url} alt={project.title}/>
           <div className='carousel-overlay'>
-            <p>Big Bang Maisonette</p>
+            <p>{project.title}</p>
           </div>
         </SwiperSlide>
-        <SwiperSlide >
-          <img src={carousel2} alt='Maisonette'/>
-          <div className='carousel-overlay'>
-            <p>Big Bang Maisonette</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide >
-          <img src={carousel3} alt='Maisonette'/>
-          <div className='carousel-overlay'>
-            <p>Big Bang Maisonette</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide >
-          <img src={carousel2} alt='Maisonette'/>
-          <div className='carousel-overlay'>
-            <p>Big Bang Maisonette</p>
-          </div>
-        </SwiperSlide>
-
+        ))}
+        
+        {/* // <SwiperSlide >
+        //   <img src={carousel2} alt='Maisonette'/>
+        //   <div className='carousel-overlay'>
+        //     <p>Big Bang Maisonette</p>
+        //   </div>
+        // </SwiperSlide>
+        // <SwiperSlide >
+        //   <img src={carousel3} alt='Maisonette'/>
+        //   <div className='carousel-overlay'>
+        //     <p>Big Bang Maisonette</p>
+        //   </div>
+        // </SwiperSlide>
+        // <SwiperSlide >
+        //   <img src={carousel2} alt='Maisonette'/>
+        //   <div className='carousel-overlay'>
+        //     <p>Big Bang Maisonette</p>
+        //   </div>
+        // </SwiperSlide>
+ */}
        
 
       </Swiper>

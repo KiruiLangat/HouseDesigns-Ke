@@ -30,7 +30,7 @@ export default function App() {
       <Route path='/our-expertise' element={<OurExpertise />} />
       <Route path='/contact-us' element={<ContactUs />} />
       <Route path='/shop' element={<Shop/>} />
-      <Route path='/contact-us/submission' element={<Submission/>} />
+      <Route path='/submission-page' element={<Submission/>} />
       <Route path="/posts/:id" element={<Post />} />
       <Route path="/service/architecture" element={<ArchitectureServiceCategory />} />
       <Route path="/architecture/residentials" element={<ServiceSubCategory />} />

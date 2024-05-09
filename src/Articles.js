@@ -14,7 +14,7 @@ export default function Articles() {
     React.useEffect(() => {
         fetch('https://housedesigns.co.ke/blog/wp-json/wp/v2/posts?_embed&per_page=3')
         .then(response => {
-            console.log(response)
+            // console.log(response)
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -22,7 +22,7 @@ export default function Articles() {
         })
         .then(data => {
             setPost(data);
-            console.log('Posts:', data)
+            // console.log('Posts:', data)
         })
         .catch(error => {
             console.error('Error:', error)

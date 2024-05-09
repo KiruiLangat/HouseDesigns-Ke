@@ -3,7 +3,7 @@ import './GetStarted.css';
 import '@fontsource/poppins'
 import InteriorDesign from './images/interior-design.png'
 import pmgt from './images/pmgt.png'
-import Masterplanning from './images/masterplanning.png'
+import Masterplanning from './images/masterplanningIcon.png'
 import Architecture from './images/Architecture.png'
 import sideBracket from './images/sideBracket.png'
 import { Link } from 'react-router-dom';

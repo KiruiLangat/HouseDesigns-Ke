@@ -92,6 +92,9 @@ body{
     margin-left: 10px;
     margin-top: 0;
     margin-bottom: -5px;
+    white-space: nowarap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .date{
     font-weight: 300;
@@ -121,13 +124,14 @@ body{
         height: 43%;
     }
     .overlay-info h2{
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 400;     
-
     }
     .excerpt{
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 300;
+        white-space: normal;
+        overflow: visible;
     }
     .date{
         font-size: 10px;

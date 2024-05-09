@@ -6,8 +6,11 @@ import logo from './images/Logo.png'
 import instagram from './images/instagram.svg'
 import twitter from './images/twitter.svg'
 import linkedIn from './images/linkedin.svg'
+import whatsapp from './images/whatsappicon.svg'
+import mobile from './images/callicon.svg'
 import arrowUp from './images/left-arrow.svg'
 import '@fontsource/poppins'
+
 
 const style = {
     fontFamily: 'Poppins'
@@ -52,9 +55,21 @@ export default function Footer() {
                     offset={-80}
                     >
                     <img src={arrowUp} alt='arrow up' className='arrow-up' />
-                </ScrollLink>
+                </ScrollLink> 
             </div>
-            <p className='footer-text'>© 2024, All Rights Reserved </p>
+            <div className='mobile-footer-socials'>
+                <div className='mobile-socials'>
+                    <a href="https://wa.me/+254710478088" target="_blank" rel="noopener noreferrer" className='whatsapp-link' >
+                        <img src={whatsapp} alt='whatsapp' className='whatsapp' />
+                    </a>
+                    <a href="tel:+254701478088" className='mobile-ref-link' >
+                        <img src={mobile} alt='mobile' className='mobileIcon' />
+                    </a>
+                </div>
+                <p className='footer-text'>© 2024, All Rights Reserved </p>
+            </div>
+            
+            
         </div>
     </div>
   )
