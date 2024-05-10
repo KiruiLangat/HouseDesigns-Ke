@@ -58,6 +58,7 @@ export default function Footer() {
                 </ScrollLink> 
             </div>
             <div className='mobile-footer-socials'>
+                <p className='footer-text'>Contact us</p>
                 <div className='mobile-socials'>
                     <a href="https://wa.me/+254710478088" target="_blank" rel="noopener noreferrer" className='whatsapp-link' >
                         <img src={whatsapp} alt='whatsapp' className='whatsapp-footer' />
@@ -66,7 +67,7 @@ export default function Footer() {
                         <img src={mobile} alt='mobile' className='mobileIcon' />
                     </a>
                 </div>
-                <p className='footer-text'>© 2024, All Rights Reserved </p>
+                
             </div>
             <p className='footer-text'>© 2024, All Rights Reserved </p>
             

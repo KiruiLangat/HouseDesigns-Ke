@@ -35,9 +35,9 @@ export default function BlogGrids() {
         {posts.map(post => (
             <Link to={`/posts/${post.id}`} key={post.id} className='box1'>
                 <div className='img-box'>
-                {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
-                    <img src= {post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' className='tester-img' />
-                )}
+                    {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
+                        <img src= {post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img'  />
+                    )}
                 </div>
                 <h2  className='post-title' dangerouslySetInnerHTML={{__html: post.title.rendered }}/>
                 <div className='arrow'>

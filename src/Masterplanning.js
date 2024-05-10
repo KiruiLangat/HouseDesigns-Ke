@@ -33,7 +33,7 @@ export default function Masterplanning(){
                 <img src={Masterplan} alt="institution Masterplan" />
             </div>
             <h1 className="masterplan-title">Masterplanning Services</h1>
-            <p>University of Isiolo</p>
+            <h2>University of Isiolo</h2>
             <div className="Masonry">
                 <img src={Masterplan1} alt="institution Masterplan" />
                 <img src={Masterplan2} alt="institution Masterplan" />
@@ -51,9 +51,9 @@ export default function Masterplanning(){
                 <img src={Masterplan14} alt="institution Masterplan" />
                 <img src={Masterplan15} alt="institution Masterplan" />
             </div>
+
+
             <Footer />
-
-
         </div>
     )
 }
