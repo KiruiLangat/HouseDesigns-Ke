@@ -60,7 +60,7 @@ export default function Footer() {
             <div className='mobile-footer-socials'>
                 <div className='mobile-socials'>
                     <a href="https://wa.me/+254710478088" target="_blank" rel="noopener noreferrer" className='whatsapp-link' >
-                        <img src={whatsapp} alt='whatsapp' className='whatsapp' />
+                        <img src={whatsapp} alt='whatsapp' className='whatsapp-footer' />
                     </a>
                     <a href="tel:+254701478088" className='mobile-ref-link' >
                         <img src={mobile} alt='mobile' className='mobileIcon' />
