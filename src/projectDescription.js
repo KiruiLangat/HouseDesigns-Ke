@@ -4,6 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import './projectDescription.css'
 import '@fontsource/poppins'
+import { BASE_URL } from './apiConfig'
 
 const style ={
     fontFamily:'Poppins'
@@ -16,7 +17,7 @@ export default function ProjectDescription() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const response = await fetch(`http://192.168.100.7:5000/api/residentials/project-description/${title}`)
+                const response = await fetch(`${BASE_URL}/api/residentials/project-description/${title}`)
                 console.log(title)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -35,7 +36,7 @@ export default function ProjectDescription() {
     useEffect (() => {
         const fetchProject = async () => {
             try{
-                const response = await fetch(`http://192.168.100.7:5000/api/residentials/project-details/${title}`)
+                const response = await fetch(`${BASE_URL}/api/residentials/project-details/${title}`)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

@@ -2,12 +2,12 @@ import React, {useState, useEffect, useRef}from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './Carousel.css';
 import '@fontsource/poppins'
+import { BASE_URL } from './apiConfig';
 
 const style = {
   fontFamily: 'Poppins',
@@ -22,7 +22,7 @@ export default function Carousel() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://192.168.100.7:5000/api/swiper')
+        const response = await fetch(`${BASE_URL}/api/swiper`)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

@@ -5,6 +5,7 @@ import Footer from './Footer';
 import './Projects.css';
 import '@fontsource/poppins'
 import { Link } from 'react-router-dom';
+import { BASE_URL } from './apiConfig';
 
 const style = {
     fontFamily: 'Poppins',
@@ -25,7 +26,7 @@ export default function Projects() {
         const fetchProjects = async () => {
             try{
                 const subCategoryId = subCategoryMap[sub_category_name]
-                const response = await fetch(`http://192.168.100.7:5000/api/residentials/${subCategoryId}`)
+                const response = await fetch(`${BASE_URL}/api/residentials/${subCategoryId}`)
             
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

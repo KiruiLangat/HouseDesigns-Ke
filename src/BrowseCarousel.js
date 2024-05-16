@@ -1,13 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-// import carousel3 from './images/carousel3.jpg';
-// import carousel2 from './images/carousel2.jpg';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './BrowseCarousel.css';
 import '@fontsource/poppins'
+import { BASE_URL } from './apiConfig';
 
 const style = {
   fontFamily: 'Poppins',
@@ -20,7 +19,7 @@ export default function BrowseCarousel() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://192.168.100.7:5000/api/browse')
+        const response = await fetch(`${BASE_URL}/api/browse`)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
