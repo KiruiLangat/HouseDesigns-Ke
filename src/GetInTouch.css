@@ -49,22 +49,15 @@
     font-family: 'Poppins';
     font-weight: 300;
     word-wrap: break-word;
+    border-bottom: 1.5px solid black;
 }
 
-.getintouch-CTA-underline  {
-    width: 104px;
-    height: 0;
-    left: 2px;
-    top: 28px;
-    position: absolute;
-    border: 1px black solid;
-}
 
 .CTAarrow-right {
     width: 15px;
     height: 0;
-    left: 116px;
-    top: 5.5px;
+    left: 77%;
+    top: 5.4px;
     position: absolute;
     border: none;
 }
@@ -172,7 +165,7 @@
         display: none;
     }
    .getintouch-container{
-        position: relative;
+        
         margin-top: -8%;
    }
     
@@ -183,6 +176,7 @@
         text-align: center;
         font-size: 24px;
         position: relative;
+        word-wrap: break-word;       
 
     }
     .getintouch-img{
@@ -205,9 +199,57 @@
         top: 60px;
         transform: translateX(-50%);
     }
-
-
 }
+@media (max-width:400px){
+    .getintouch-container{
+        margin-top: -15%;
+    }
+    .getintouch-CTA{
+        left: 55%;
+        top: 60px;
+        transform: translateX(-50%);
+    }
+    .getintouch-text{
+        font-size: 24px;
+        justify-self: center;
+    }
+    .getintouch-CTA-text{
+        font-size: 16px;
+        text-align: center;
+        
+        
+    }
+    .CTAarrow-right{
+        position: absolute;
+        left: 102px;
+        top: 5px;
+    }
+    .CTAarrow-right svg{
+        width: 14px;
+    }
+}
+@media (max-width:320px){
+    .getintouch-container{
+        margin-top: -25%;
+    }
+    .getintouch-CTA{
+        left: 55%;
+        top: 60px;
+        transform: translateX(-50%);
+    }
+    .getintouch-CTA-text{
+        font-size: 14px;
+    }
+    .CTAarrow-right{
+        position: absolute;
+        left: 88px;
+        top: 3.5px;
+    }
+    .CTAarrow-right svg{
+        width: 12px;
+    }
+}
+
 
 
 

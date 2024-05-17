@@ -4,7 +4,7 @@ import './AboutUs.css'
 import colorScheme from './images/colorScheme.svg'
 import titleMarker from './images/Title-marker.svg'
 import Workflow from './images/workflow.svg'
-import ViewServices from './images/ViewServices.svg'
+// import ViewServices from './images/ViewServices.svg'
 import mobileWorkflow from './images/mobileWorkflow.svg'
 import simplicityIcon from './images/simplicityicon.svg'
 import infiniteCaps from './images/posibilitiesicon.svg'
@@ -20,6 +20,7 @@ export default function AboutUs() {
       <img src = {colorScheme} alt='colorScheme' className='color-scheme' />
       <div>
         <div className='our-workflow'>OUR WORKFLOW</div>
+        <h2 className='our-workflow-mobile'>OUR WORKFLOW</h2>
         <img src = {titleMarker} alt='titleMarker' className='title-marker' />
       </div>
       <div>
@@ -27,10 +28,14 @@ export default function AboutUs() {
       </div>
       <img src= {mobileWorkflow} alt='worflow'className='mobile-workflow' />
       <div className= 'view-services'>
-        <Link to = './our-expertise'><img src= {ViewServices} alt='View-Our-Services' /></Link>
+        <Link to = './our-expertise'>
+          <div>View our services</div>
+          <svg className='CTA-arrow-mobile' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Arrow 7" d="M15.7071 8.70711C16.0976 8.31658 16.0976 7.68342 15.7071 7.29289L9.34315 0.928932C8.95262 0.538408 8.31946 0.538408 7.92893 0.928932C7.53841 1.31946 7.53841 1.95262 7.92893 2.34315L13.5858 8L7.92893 13.6569C7.53841 14.0474 7.53841 14.6805 7.92893 15.0711C8.31946 15.4616 8.95262 15.4616 9.34315 15.0711L15.7071 8.70711ZM0 9H15V7H0L0 9Z" fill="#ED7D31"/></svg>
+        </Link>
       </div>
       <div className='philosophy'>
         <div className='our-philosophy'>OUR PHILOSOPHY</div>
+        <h2 className='our-philosophy-mobile'>OUR PHILOSOPHY</h2>
         <img src = {titleMarker} alt='titleMarker' className='title-marker2' />
       </div>
       <div className='philosophy-tables'>
@@ -66,10 +71,12 @@ export default function AboutUs() {
           <div className='mobile-resilience-title'>Resilience & Flexibility</div>
         </div>    
       </div>
+      <h2 className='our-team-mobile'>OUR LEAD TEAM</h2>
       <div className='ourTeam-box'>
         <div className='team-title-box'>
           <img src = {titleMarker} alt='titleMarker4' className='title-marker4'/>
           <div className='our-team'>OUR LEAD TEAM</div> 
+          
         </div>
         <div className='team-members'>
           <div className='member1-box'>

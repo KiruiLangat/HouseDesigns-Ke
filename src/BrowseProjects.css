@@ -85,3 +85,13 @@
         position: relative;
     }
 }
+@media (max-width:400px){
+    .projects-container{
+        margin-top: -10%;
+    }
+}
+@media (max-width:320px){
+    .projects-container{
+        margin-top: -15%;
+    }
+}

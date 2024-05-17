@@ -11,10 +11,15 @@ body{
 .dropdown-arrow{
     margin: auto;
 }
-
-
-
 @media (max-width:768px){
-    
+    body{
+        width: 100%;
+    }
 }
+@media (max-width:425px){
+    body{
+        width: 100%;
+    }
+}
+
 

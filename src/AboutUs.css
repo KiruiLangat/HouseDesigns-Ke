@@ -58,6 +58,19 @@
     left:38%;  
     top: -45px;
     transition: transform 0.2s ease-out;
+    border-bottom: 1.5px solid black;
+}
+.view-services a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 300;
+    
+}
+.view-services svg{
+    margin-left: 105%;
+    margin-top: -13%;
+    position: absolute;    
 }
 .view-services:hover{
     transform: scale(1.08);
@@ -353,36 +366,40 @@
     margin-top: -10px;
 
 }
-.mobile-philosophy{
+.mobile-philosophy, .our-workflow-mobile, .our-philosophy-mobile, .our-team-mobile{
     display: none;
 }
 
 
 
 @media (max-width:768px){
-    .workflow, .philosophy-tables, .title-marker2, .title-marker4{
+    .workflow, .philosophy-tables, .title-marker2, .title-marker4, .our-workflow, .our-philosophy, .our-team{
         display: none;
     
     }
-    
+
     .aboutus-container{
        margin: auto;
+       margin-top: auto;
+       
     }
     .about-us{
         display: block;
         font-size: 24px;
         text-align: center;
-        margin-top: 30%;
+        margin-top: 45%;
     }
     .color-scheme{
         display: block;
         margin-top: 1px;
     }
-    .our-workflow{
+    .our-workflow-mobile{
         display: block;
-        margin-top: 15%;
         text-align: center;
         font-size: 16px;
+        font-weight: 300;
+        margin-top: 40%;
+        margin-bottom: 0;
     }
     .our-workflow::after {
         content: '';
@@ -405,26 +422,28 @@
     }
     .mobile-workflow{
         display: block;
-        margin-top: 30%;
+        margin-top: 5%;
     }
     .view-services{
         position: relative;
         left: 0;
         top: 0;
-        margin-top: 20px;
-        
+        margin-top: 20px;        
     }
-    .our-philosophy{
-        text-align: center; 
+    .view-services a{
+        font-size: 18px;
+    }
+    .our-philosophy-mobile{
+        display: block;
         font-size: 16px;
-        margin-top: -5%;
-        
-        
+        text-align: center;
+        font-weight: 300;
+        margin-bottom: 0;
     }
    
     .mobile-philosophy{
         display:grid;
-        margin-top: 35%;
+        margin-top: 28%;
         
     }
     .mobile-simplicity{
@@ -496,15 +515,19 @@
         width: auto;
         height: auto;  
     }
-    .our-team{
+    .our-team-mobile{
+        display: block;
+        font-size: 16px;
+        font-weight: 300;
         text-align: center;
-        font-size: 16px;    
+        margin-top: 20%;
+        margin-bottom: 0;
         
     }
     .team-members{
         display: grid;
+        margin-top: 0;
         justify-content: center;
-        margin-top: 25%;
         justify-content: space-between;
     }
     .member1-box{
@@ -540,6 +563,31 @@
         font-size: 14px;
     }
    
-    
+}
 
+@media (max-width:400px){
+    .about-us{
+        margin-top: 50%;
+    }
+    .our-workflow-mobile{
+        margin-top: 30%;
+        font-size: 15px;
+    }
+    .mobile-workflow{
+        width: 90%;
+    }
+    .view-services a{
+        font-size: 16px;
+    }
+    .our-philosophy-mobile{
+        font-size: 16px;
+    }
+}
+@media (max-width:320px){
+    .about-us{
+        margin-top: 55%;
+    }
+    .view-services a{
+        font-size: 16px;
+    }
 }
