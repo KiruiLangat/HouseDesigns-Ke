@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://housedesigns.co.ke/';
+export const BASE_URL = 'https://housedesigns.co.ke';
