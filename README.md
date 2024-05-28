@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Comprehensive Web Application and eCommerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This comprehensive web application and eCommerce platform has been meticulously developed from scratch and is currently a work in progress. The client side is built using React, ensuring a dynamic and responsive user experience, while the server side is powered by Node.js, providing robust and scalable backend services. The application is deployed on a hosting service and managed using the cPanel platform.
 
-In the project directory, you can run:
+## Features & Technologies
 
-### `npm start`
+### Frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React: For building dynamic and interactive user interfaces with component-based architecture.
+- Fetch API: To handle asynchronous requests and communicate with the server-side logic.
+- Headless CMS: Utilizing WordPress RESTful API to manage and deliver backend content seamlessly.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Node.js: For handling server-side logic with a focus on performance and scalability.
+Express.js: As a lightweight web application framework to streamline routing and server management.
+MySQL: To design and manage relational database schemas for structured data storage.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Hosting Provider: Reliable and scalable hosting solutions to ensure high availability and performance.
+cPanel: For efficient file management and streamlined application deployment.
 
-### `npm run build` fails to minify
+### Website
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The application can be accessed at https://housedesigns.co.ke.
+
+### Status
+
+This project is still in progress, continuously evolving and improving. As a Full Stack Engineer, I am committed to lifelong learning and enhancing my skills to deliver high-quality web applications.
+
+## Contact
+
+For any questions, reach me through reachlangat@gmail.com 
