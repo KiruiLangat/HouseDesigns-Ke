@@ -2,7 +2,7 @@
 
 ## Overview
 
-This comprehensive web application and eCommerce platform has been meticulously developed from scratch and is currently a work in progress. The client side is built using React, ensuring a dynamic and responsive user experience, while the server side is powered by Node.js, providing robust and scalable backend services. The application is deployed on a hosting service and managed using the cPanel platform.
+This comprehensive web application and eCommerce platform is developed from scratch and is currently a work in progress. The client side is built using React, ensuring a dynamic and responsive user experience, while the server side is powered by Node.js, providing robust and scalable backend services. The application is deployed on a hosting service and managed using the cPanel platform.
 
 ## Features & Technologies
 
