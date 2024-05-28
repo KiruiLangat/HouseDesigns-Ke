@@ -22,17 +22,22 @@ export default function Carousel() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch(`${BASE_URL}/api/swiper`)
+        const response = await fetch(`/api/swiper`)
+        const contentType = response.headers.get("content-type");
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
+        } else if (!contentType || !contentType.includes("application/json")) {
+          throw new TypeError("Oops, we haven't got JSON!");
         }
+
         const data = await response.json()
         setProjects(data)
-        
-        
+
       }
       catch (error) {
-        console.error(error)
+        console.error('Error message:',error.message);
+        console.error('Error stack trace:',error.stack);
       }
     }
     fetchProjects();
