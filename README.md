@@ -14,14 +14,14 @@ This comprehensive web application and eCommerce platform is developed from scra
 
 ### Backend
 
-Node.js: For handling server-side logic with a focus on performance and scalability.
-Express.js: As a lightweight web application framework to streamline routing and server management.
-MySQL: To design and manage relational database schemas for structured data storage.
+- Node.js: For handling server-side logic with a focus on performance and scalability.
+- Express.js: As a lightweight web application framework to streamline routing and server management.
+- MySQL: To design and manage relational database schemas for structured data storage.
 
 ### Deployment
 
-Hosting Provider: Reliable and scalable hosting solutions to ensure high availability and performance.
-cPanel: For efficient file management and streamlined application deployment.
+- Hosting Provider: Reliable and scalable hosting solutions to ensure high availability and performance.
+- cPanel: For efficient file management and streamlined application deployment.
 
 ### Website
 
