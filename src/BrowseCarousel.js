@@ -56,10 +56,12 @@ export default function BrowseCarousel() {
       >
         {projects.map((project) => (
           <SwiperSlide  key={project.id}>
-          <img src={project.image_url} alt={project.title}/>
-          <div className='carousel-overlay'>
-            <p>{project.title}</p>
-          </div>
+            <Link to={`/residentials/project-description/${project.title}`}>
+              <img src={project.image_url} alt={project.title}/>
+              <div className='carousel-overlay'>
+                <p>{project.title}</p>
+              </div>
+            </Link>
         </SwiperSlide>
         ))}
         
