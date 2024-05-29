@@ -1,24 +1,28 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import './BrowseProjects.css';
 import sideBracket from './images/sideBracket.png'
-// import rightArrow from './images/right-arrow.svg'
-// import leftArrow from './images/left-arrow.svg'
 import BrowseCarousel from './BrowseCarousel'
 
 
 export default function BrowseProjects() {
     return (
         <div className='projects-container'>
-            <div className='projects-intro'>Browse <br/>our Projects<br/>and Find Your Taste</div>
-            <div className='projects-intro-message'>Here are some of our completed projects</div>
-            <div className='projects-intro-message-mobile'>Browse Our Projects</div>
-            <div className='browse-carousel'><BrowseCarousel/></div>
-        
-            <div className="Bracket">
-                <img className="sideBracket" alt="sideBracket" src={sideBracket} />
+            
+            <div className="sidebracket">
+                <img src={sideBracket} alt="sideBracket"  />
             </div>
             
+            <div className='projects-intro'>
+                <h1>Browse <br/>our Projects<br/>and Find Your <br/> Taste</h1>
+                <p>Here are some of our completed <br/> projects</p>
+            </div>
+
+            <div className='projects-intro-message-mobile'>
+                <h1>Browse Our Projects</h1>
+            </div>
+
+            <BrowseCarousel/>
+        
             
             
             

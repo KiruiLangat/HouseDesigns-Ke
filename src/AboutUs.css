@@ -3,13 +3,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 25%;
+    margin-top: 5%;
     width: 100%;  
     height: auto;
 }
 .about-us{
     color: black;
-    font-size: 36px;
+    font-size: 28px;
     font-family: Poppins;
     font-weight: 400;
     word-wrap: break-word;
@@ -18,7 +18,7 @@
 }
 .color-scheme{
     margin-top: 30px;
-    width: 15%;
+    width: 10%;
     height: auto;
     transition: transform 0.5s ease-in-out;
 }
@@ -57,8 +57,7 @@
     align-items: flex-end;
     left:38%;  
     top: -45px;
-    transition: transform 0.2s ease-out;
-    border-bottom: 1.5px solid black;
+    
 }
 .view-services a{
     text-decoration: none;
@@ -67,14 +66,18 @@
     font-weight: 300;
     
 }
+.view-services p{
+    border-bottom: 1.5px solid black;
+}
+.view-services p:hover{
+    border-bottom: 1.5px solid #ED7D31;
+}
 .view-services svg{
     margin-left: 105%;
-    margin-top: -13%;
+    margin-top: -22%;
     position: absolute;    
 }
-.view-services:hover{
-    transform: scale(1.08);
-}
+
 .mobile-workflow{
     display: none;
 }
@@ -104,161 +107,77 @@
     position: absolute;
 }
 .philosophy-tables{
-    width: 100%;
-    height: 100%;
+    width: 93%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: auto;
-    justify-content: center;
-    position: relative;
-    margin-top: 220px;
-}
-
-.simplicity-box{
-    width: 385.24px;
-    height: 357px; 
-    left: 37px;
-    top: 0;
-    position: absolute;
-    border-radius: 20px;
-    border: 1px rgba(79, 74, 69, 0.14) solid;
-}
-.simplicity-box:hover{
-    background-color: #ED7D3124;;
-}
-.simplicity{
-    width: 99.60px;
-    left:40%;
-    top: 9px;
-    position: absolute;
-    color: black;
-    font-size: 18px;
-    font-size: Poppins;
-    font-weight: 300;
-    line-height: 50px;
-    word-wrap: break-word; 
+    margin-top: 15%;
     
 }
-
-.simplicity-icon{
-    width: 45.59px;
-    height: 30.38px;
-    left: 45%;
-    top: 70px;
-    position: absolute;
-}
-.simplicity-desc{
-    width: 365.85px;
-    left: 10px;
-    top: 115px;
-    position:absolute;
-    text-align: center;
-    color: black; 
-    font-size: 14px;
-    font-family: Poppins;
+.philosophy-tables h2{
+    font-size: 18px;
     font-weight: 300;
-    line-height: 40px;
-    word-wrap: break-word;
+    text-align: center;
+    margin: 10px;
 }
-
-
-
-.infinite-box{
-    width: 385.24px;
-    height: 357px;
-    left: 447px;
-    top: 0;
-    position: absolute;
+.philosophy-tables p{
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    margin: 10px;
+}
+.simplicity-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    line-height: 40px;
     border-radius: 20px;
-    border: 1px rgba(79, 74, 69, 0.14) solid;   
+    border: 1px rgba(79, 74, 69, 0.14) solid;
+    margin: 0 10px;
+}
+.simplicity-box:hover{
+    background-color: #ED7D3124;
+}
+.infinite-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: 1px rgba(79, 74, 69, 0.14) solid;
+    margin: 0 10px;
 }
 .infinite-box:hover{
     background-color: #ED7D3124;
 }
-
-.infinite-title{
-    width: 235.90px;
-    height: 31.37px;
-    left: 89px;
-    top: 9px;
-    position: absolute;
-    text-align: center;
-    color: black;
-    font-size: 18px;
-    font-family: Poppins;
-    font-weight: 300;
-    line-height: 50px;
-    word-wrap: break-word;
-}
-
-.infinite-icon{
-    width: 57.71px;
-    height: 28.22px;
-    left: 170.07px;
-    top: 70px;
-    position: absolute;
-}
-.infinite-desc{
-    width: 365.56px;
-    left: 10px;
-    top: 115px;
-    position: relative;
-    text-align: center;
-    color: black;
-    font-size: 14px;
-    font-family: Poppins;
-    font-weight: 300;
-    line-height: 40px;
-    word-wrap: break-word;
-}
-
-
 .resilience-box{
-    width: 385.24px;
-    height: 357px;
-    left: 857.76px;
-    top: 0;
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    line-height: 40px;
     border-radius: 20px;
     border: 1px rgba(79, 74, 69, 0.14) solid;
+    margin: 0 10px;
 }
 .resilience-box:hover{
     background-color: #ED7D3124;
 }
-.resilience{
-    width: 249px;
-    left: 82.65px;
-    top: 9px;
-    position: absolute;
-    color: black;
-    font-size: 18px;
-    font-family: Poppins;
-    font-weight: 300;
-    line-height: 50px;
-    word-wrap: break-word;
-}
-.resilience-icon{
-    width: 98.70px;
-    height: 9.49px;
-    left: 155px;
-    top: 77px;
-    position: absolute;
-}
-.resilience-desc{
-    width: 365.85px;
-    left: 10px;
-    top: 115px;
-    position: absolute;
-    text-align: center;
-    color: black;
-    font-size: 14px;
-    font-family: Poppins;
-    font-weight: 300;
-    line-height: 40px;
-    word-wrap: break-word;
-}
 
+.simplicity-icon, .infinite-icon, .resilience-icon{
+    width: 45px;
+    height: 40px;
+    margin: auto;
+    margin-top: 5px;
+}
 
 .ourTeam-box{
-    margin-top: 35%;
+    margin-top: 10%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -387,7 +306,7 @@
         display: block;
         font-size: 24px;
         text-align: center;
-        margin-top: 45%;
+        margin-top: 15%;
     }
     .color-scheme{
         display: block;
@@ -432,6 +351,9 @@
     }
     .view-services a{
         font-size: 18px;
+    }
+    .view-services svg{
+        width: 14px;
     }
     .our-philosophy-mobile{
         display: block;

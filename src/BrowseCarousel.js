@@ -18,7 +18,7 @@ export default function BrowseCarousel() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/browse')
+        const response = await fetch('/api/browse')
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

@@ -21,7 +21,7 @@ export default function Carousel() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://housedesigns.co.ke/api/swiper')
+        const response = await fetch('/api/swiper')
         const contentType = response.headers.get("content-type");
 
         if (!response.ok) {

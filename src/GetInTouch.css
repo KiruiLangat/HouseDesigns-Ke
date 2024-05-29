@@ -1,9 +1,140 @@
-.getintouch-container {
-    position: relative;
-    height: auto;
-    width: 100%;
+.getintouch-container{
+    width: 93%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 5%;
 }
-.getintouch-img {
+.getintouch-img{
+    display: none;
+}
+
+.getintouch-details{
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    margin: auto;
+}
+
+.thedetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+}
+.thedetails h1{
+    font-size: 28px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0;
+}
+.topline{
+    width: 20px;
+    height: 0;
+    margin-top: 10%;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    align-self: center;
+    border: 1px rgba(237, 125, 49, 0.14) solid;
+}
+.getintouch-contacticons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top:8%;
+}
+.getintouch-whatsapp-icon{
+    width: 40px;
+    height: 40px;
+    background: rgba(237, 125, 49, 0.14);
+    border-radius: 999px;
+    margin: 0 5px;
+}
+.getintouch-whatsapp-icon img{
+    width: 25px;
+    height: 25px;
+    margin: 7px;
+}
+
+.getintouch-phone-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(237, 125, 49, 0.14);
+    border-radius: 999px;
+    margin: 0 10px;
+}
+.getintouch-phone-icon img{
+    width: 25px;
+    height: 25px;
+    margin: 7px;
+}
+
+.getintouch-email-icon{
+    width: 40px;
+    height: 40px;
+    background: rgba(237, 125, 49, 0.14);
+    border-radius: 999px;
+    margin: 0 10px;
+}
+.getintouch-email-icon img{
+    width: 25px;
+    height: 25px;
+    margin: 7px;
+}
+
+.bottomline{
+    width: 20px;
+    height: 0;
+    margin-top: 10%;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    align-self: center;
+    border: 1px rgba(237, 125, 49, 0.14) solid;
+}
+.getintouchCTA{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+}
+.thedetails a{
+    text-decoration: none;
+    color: black;
+}
+.getintouchCTA p{
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+    margin-right: 5px;
+    border-bottom: 1.5px solid black;
+}
+.getintouchCTA p:hover{
+    border-bottom: 1.5px solid #Ed7d31;
+
+}
+.getintouchCTA svg{
+    width: 14px;
+}
+
+.getintouch-sidebracket{
+    width: 61px;
+    height: 510px;
+    margin: auto;
+    transform: rotate(180deg);
+}
+.getintouch-sidebracket img{
+    width: 100%;
+    height: 100%;
+}
+
+/* .getintouch-img {
     width: 50%;
     left: 45px;
     top: 228px;
@@ -158,98 +289,49 @@
     position: absolute;
     width: 61px;
     transform: rotate(180deg);
-} 
+}  */
 
 @media (max-width: 768px){
-    .getintouchBracket, .contactIcons{
+    .topline, .bottomline, .getintouch-contacticons, .getintouch-sidebracket{
         display: none;
     }
-   .getintouch-container{
-        
-        margin-top: -8%;
-   }
-    
-    .getintouch-text{
-        width: 100%;
-        left: 0;
-        top: 0;
-        text-align: center;
-        font-size: 24px;
-        position: relative;
-        word-wrap: break-word;       
-
-    }
-    .getintouch-img{
-        position:relative;
-        left: auto;
-        right: auto;
-        padding: 0;
-        margin:auto;
+    .getintouch-container{
+        grid-template-columns: 1fr;
         width: auto;
-        top:30px;
-        box-sizing: border-box;
-       
+        margin-top: 10%;
     }
-    .getintouch-img ::content{
-        width: 100%;
-        height: 100%;
+    .getintouch-details{
+        grid-template-columns: 1fr;
+        width: auto;
     }
-    .getintouch-CTA{
-        left: 52%;
-        top: 60px;
-        transform: translateX(-50%);
+    .thedetails{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: auto;
     }
+    .thedetails h1{
+        font-size: 24px;
+        margin-top: 5%;
+        text-align: center;
+    }
+    .getintouchCTA{
+        margin-top: 0;
+    }
+
 }
 @media (max-width:400px){
-    .getintouch-container{
-        margin-top: -15%;
+    .thedetails h1{
+        font-size: 20px;
     }
-    .getintouch-CTA{
-        left: 55%;
-        top: 60px;
-        transform: translateX(-50%);
-    }
-    .getintouch-text{
-        font-size: 24px;
-        justify-self: center;
-    }
-    .getintouch-CTA-text{
+    .getintouchCTA p{
         font-size: 16px;
-        text-align: center;
-        
-        
     }
-    .CTAarrow-right{
-        position: absolute;
-        left: 102px;
-        top: 5px;
-    }
-    .CTAarrow-right svg{
-        width: 14px;
-    }
-}
-@media (max-width:320px){
-    .getintouch-container{
-        margin-top: -25%;
-    }
-    .getintouch-CTA{
-        left: 55%;
-        top: 60px;
-        transform: translateX(-50%);
-    }
-    .getintouch-CTA-text{
-        font-size: 14px;
-    }
-    .CTAarrow-right{
-        position: absolute;
-        left: 88px;
-        top: 3.5px;
-    }
-    .CTAarrow-right svg{
+    .getintouchCTA svg{
         width: 12px;
     }
 }
-
 
 
 

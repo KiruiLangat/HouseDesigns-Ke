@@ -1,8 +1,4 @@
-body {
-    height: 100%;
-  }
-  
-  
+ 
   .CTASwiper {
     top: 0;
     width: 93%;
@@ -66,6 +62,7 @@ body {
     .swiper-pagination-bullet {
       background-color: #ED7D31;
     }
+    
     .CTASwiper {
       padding: 0;
       margin: 10px;

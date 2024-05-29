@@ -1,97 +1,58 @@
 .projects-container {
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: 180px;
-}
-.Bracket {
-    height: 500px;
-    width: 51px;
+    width: 93%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 6fr 10fr;
+    margin: auto;
+    align-items: center;
+    margin-top: 5%;
 }
 
-.Bracket .sideBracket {
-    height: 558px;
-    left: 45px ;
-    position: absolute;
-    top: 0;
-    width: 61px;
-}
 .projects-intro {
-    width: 280px;
-    left: 113px;
-    top: 80px;
-    position: absolute;
-    color: black;
-    font-size: 36px;
-    font-family: 'Poppins'; 
-    font-weight: 400;
-    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content:baseline;
+    align-items:baseline;
+    margin-top: auto;
+    margin-bottom: auto;
 }
-.projects-intro-message {
-    width: 329px;
-    left: 113px;
-    top: 380px;
-    position: absolute;
-    color: black;
+.projects-intro h1{
+    font-size: 28px;
+    font-weight: 400;
+}
+.projects-intro p{
     font-size: 18px;
-    font-family: 'Poppins';
     font-weight: 300;
     word-wrap: break-word;
 }
-.browse-carousel{
-    width: 55%;
-    height: auto;
-    left: 550px;
-    top: 30px;
-    position: absolute;
-    border-radius: 10px;
-}
+
 
 .projects-intro-message-mobile{
     display: none;
 }
 
 @media (max-width:768px){
-    .Bracket,.project-name-box, .sidearrows, .projects-intro, .projects-intro-message{
+   .sidebracket, .projects-intro{
         display: none;
-    }
-    .browse-carousel{
-        position: relative;
-        overflow: hidden;
-        min-height: 60vh;
-        left: 0;
-        right: 0;
-        width: 100%;
-        top:0;
-    }
-    .projects-container{
+   }
+   .projects-container{
+        grid-template-columns: 1fr;
+        width: auto;
+   }
+   .projects-intro-message-mobile{
         display: flex;
         flex-direction: column;
-        margin-top: -5%;
-        margin-bottom: 10%;
-        
-    }
-    
-    .projects-intro-message-mobile{
-        display: block;
-        width: auto;
-        left: 0;
-        top: 0;
-        margin-top: -30px;
-        margin-bottom: 10px;
-        text-align: center;
-        font-size: 24px;
-        font-weight: 400;
-        position: relative;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10%;
+   }
+    .projects-intro-message-mobile h1{
+          font-size: 24px;
+          font-weight: 400;
     }
 }
 @media (max-width:400px){
-    .projects-container{
-        margin-top: -10%;
-    }
-}
-@media (max-width:320px){
-    .projects-container{
-        margin-top: -15%;
+    .projects-intro-message-mobile h1{
+        font-size: 20px;
     }
 }
