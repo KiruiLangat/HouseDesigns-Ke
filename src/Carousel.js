@@ -7,7 +7,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './Carousel.css';
 import '@fontsource/poppins'
-import { BASE_URL } from './apiConfig';
 
 const style = {
   fontFamily: 'Poppins',
@@ -22,7 +21,7 @@ export default function Carousel() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch(`/api/swiper`)
+        const response = await fetch('http://housedesigns.co.ke/api/swiper')
         const contentType = response.headers.get("content-type");
 
         if (!response.ok) {

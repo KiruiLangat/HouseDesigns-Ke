@@ -9,7 +9,7 @@ import Calendly from './Calendly'
 import callicon from './images/callicon.svg'
 import emailicon from './images/emailicon.svg'
 import whatsappicon from './images/whatsappicon.svg'
-import { BASE_URL } from './apiConfig'
+//import { BASE_URL } from './apiConfig'
 
 const style = {
   fontFamily: 'Poppins'
@@ -30,7 +30,7 @@ export default function ContactUs() {
     event.preventDefault();
 
     try{
-        const response = await fetch(`${BASE_URL}/api/contact-form`, {
+        const response = await fetch(`/api/contact-form`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

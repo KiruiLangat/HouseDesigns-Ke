@@ -4,7 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import './projectDescription.css'
 import '@fontsource/poppins'
-import { BASE_URL } from './apiConfig'
+//import { BASE_URL } from './apiConfig'
 
 const style ={
     fontFamily:'Poppins'
