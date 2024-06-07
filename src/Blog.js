@@ -67,7 +67,7 @@ export default function Blog() {
                 </div> 
                 <div className='overlay-info'>
                   <h2 dangerouslySetInnerHTML={{__html: title ? title.rendered : ''}}></h2>
-                  <p className='excerpt' dangerouslySetInnerHTML={{__html: excerpt ? truncateText(excerpt.rendered, 110, 768) : ''}}></p>
+                  <p className='excerpt' dangerouslySetInnerHTML={{__html: excerpt ? truncateText(excerpt.rendered, 100, 768) : ''}}></p>
                   <p className='date'>{date ? new Date(date).toLocaleDateString() : ''}</p>
                 </div>
               </Link>
