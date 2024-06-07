@@ -285,7 +285,7 @@ form{
         padding: 10px;
     }
     .call img{
-        width: 15%;
+        width: 100%;
         margin-bottom: 10px;
     }
     .call p{
@@ -302,7 +302,7 @@ form{
         padding: 10px;
     }
     .email img{
-        width: 15%;
+        width: 100%;
         margin-bottom: 10px;
     }
     .email p{
@@ -319,7 +319,7 @@ form{
         padding: 10px;
     }
     .whatsapp img{
-        width: 15%;
+        width: 100%;
         margin-bottom: 10px;
     }
     .whatsapp a{

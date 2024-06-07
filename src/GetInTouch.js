@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './GetInTouch.css';
 import GetInTouchCarousel from './getintouchCarousel'
-import PhoneIcon from './images/phoneicon.svg';
-import WhatsApp  from './images/whats-app.png';
-import EmailIcon from './images/emailicon.png';
+import PhoneIcon from './images/mobileSVG.svg';
+import WhatsApp  from './images/whataspp-black-svg.svg';
+import EmailIcon from './images/emailSVG.svg';
 import sideBracket from './images/sideBracket.png';
 
 const style ={
@@ -22,22 +22,24 @@ export default function GetInTouch() {
                 <div className='thedetails'>
 
                     <h1>Get your Dream House Today!</h1>
-                    <div className='topline'></div>
 
-                    <div className='getintouch-contacticons'>
-                        <div className='getintouch-whatsapp-icon'>
-                            <img src={WhatsApp} alt='WhatsApp-Icon' />
+                    <div className='getintouch-linesandicons'>
+                        <div className='topline'></div>
+
+                        <div className='getintouch-contacticons'>
+                            <div className='getintouch-whatsapp-icon'>
+                                <img src={WhatsApp} alt='WhatsApp-Icon' />
+                            </div>
+                            <div className='getintouch-phone-icon'>
+                                <img src={PhoneIcon} alt='Phone-Icon' />
+                            </div>
+                            <div className='getintouch-email-icon'>
+                                <img src={EmailIcon} alt='email-icon' />
+                            </div>
                         </div>
-                        <div className='getintouch-phone-icon'>
-                            <img src={PhoneIcon} alt='Phone-Icon' />
-                        </div>
-                        <div className='getintouch-email-icon'>
-                            <img src={EmailIcon} alt='email-icon' />
-                        </div>
+                            
+                        <div className='bottomline'></div>
                     </div>
-                        
-                    <div className='bottomline'></div>
-    
                     <Link to={'/contact-us'}>
                         <div className='getintouchCTA'>
                             <p>Get in touch</p>

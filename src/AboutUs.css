@@ -489,7 +489,8 @@
 
 @media (max-width:400px){
     .about-us{
-        margin-top: 50%;
+        margin-top: 15%;
+        font-size: 20px;
     }
     .our-workflow-mobile{
         margin-top: 30%;
@@ -507,7 +508,8 @@
 }
 @media (max-width:320px){
     .about-us{
-        margin-top: 55%;
+        margin-top: 15%;
+        font-size: 20px;
     }
     .view-services a{
         font-size: 16px;

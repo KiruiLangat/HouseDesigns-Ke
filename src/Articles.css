@@ -165,14 +165,21 @@
         display: none;
     }
 
-   
-   
     .headline{
         font-size: 16px;
     }
     .article-box1 p{
         font-size: 12px;
     }
-    
   
+}
+@media (max-width:400px){
+    .articles-container h1{
+        font-size: 20px;
+    }
+}
+@media (max-width:320px){
+    .articles-container h1{
+        font-size: 20px;
+    }
 }

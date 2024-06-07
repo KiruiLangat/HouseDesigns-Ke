@@ -6,9 +6,9 @@ import Header from './Header'
 import '@fontsource/poppins'
 import Footer from './Footer'
 import Calendly from './Calendly' 
-import callicon from './images/callicon.svg'
-import emailicon from './images/emailicon.svg'
-import whatsappicon from './images/whatsappicon.svg'
+import callicon from './images/mobileSVG.svg'
+import emailicon from './images/emailSVG.svg'
+import whatsappicon from './images/whataspp-black-svg.svg'
 //import { BASE_URL } from './apiConfig'
 
 const style = {

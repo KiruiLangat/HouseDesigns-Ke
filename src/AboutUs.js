@@ -83,7 +83,7 @@ export default function AboutUs() {
               <img src={Kelvin} alt='Kelvin'  />
             </div>
             <h2 className='member1-name'>Kelvin Maundu</h2>
-            <h3 className='member1-title'>Managing Partner</h3>
+            <h3 className='member1-title'>Managing Director</h3>
           </div>
           <div className='member2-box'>
             <div className='member-img'>

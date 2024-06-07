@@ -35,6 +35,7 @@
     padding: 5px;
     
 }
+
 .footer-right p{
     font-size: 14px;
     font-weight: 300;
@@ -43,6 +44,13 @@
 }
 .twitter{
     margin: 0 8px;
+    width: 45px;
+    height: 45px;
+}
+.instagram, .linkedin{
+    width: 45px;
+    height: 45px;
+
 }
 
 .arrow-up{
@@ -76,7 +84,7 @@
         box-sizing: border-box;
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         border-radius: 10px;
-        height: max-content;
+        height: auto;
         justify-content: space-between;
         align-items: center;
     }
@@ -87,7 +95,7 @@
         margin-top: 8px;
         
     }
-    .footer-right > p{
+    .footer-text{
         display: none;
         font-size: 12px;
         font-weight: 300;
@@ -109,37 +117,61 @@
 
     }
     .mobile-socials{
-        display: flex;
-        flex-direction: row; 
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        margin:auto;
         align-items: center;
-        margin-bottom: 1px;
-        margin-top: -2%;
-        margin-left: 10%;
+        width: auto;
+
     }
-   
-    .whatsapp-footer{
-        width: 50%;
-    }
+
     .mobileIcon{
-       width: 50%;
-       margin-top: -5px;
+       width: 100%;
+       margin: auto;
        
     }
     .whatsapp-link{
-        width: 100%;
-        height: auto;
-        margin-left: 25%;
+        width: 80%;
+        height: auto;        
     }
     .mobile-ref-link{
-        width: 100%;
+        width: 80%;
         height: auto;
-        margin-right: 25%;
-        margin-top: 8px;
+        
+    }
+    .twitter-link{
+        width: 80%;
+        height: auto;
+    
+    }
+    .linkedin-link{
+        width: 80%;
+        height: auto;
+        
+    }
+    .instagram-link{
+        width: 80%;
+        height: auto;
+        
     }
 
-    .mobile-footer-socials p{
+    .mobile-footer-socials p {
         font-size: 12px;
-        margin-top: -10px;
+        font-weight: 300;
+        margin:auto;
+        text-align:left;
+        margin-top: 2%;
     }
 
+}
+@media (max-width:400px){
+    .mobile-footer-socials p{
+        font-size: 10px;
+    }
+}
+@media (max-width:320px){
+    .mobile-footer-socials p{
+        font-size: 10px;
+    }
 }
