@@ -54,7 +54,7 @@ export default function Articles() {
             ))}
         </div>
         <div className='read-more'>
-            <Link to = '/blog'><h2 className='read-more-text'>Read More</h2></Link>
+            <Link to = '/articles'><h2 className='read-more-text'>Read More</h2></Link>
             
         </div>
     </div>

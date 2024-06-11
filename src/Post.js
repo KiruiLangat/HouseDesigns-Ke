@@ -29,7 +29,6 @@ export default function Post() {
   return (
     <div style={style} className='post-container'>
         <Header />  
-
         <div className='post'>
             <div className='featured-img'>
                 {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
@@ -41,19 +40,8 @@ export default function Post() {
                 <p>{new Date(post.date).toLocaleDateString()}</p>
                 <div className='post-content' dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
             </div>
-            <div className='navigation'>
-              {post.previous && (
-              <a href={`/post/${post.previous.id}`} className='previous'>
-                Previous
-              </a>
-              )}
-              {post.next && (
-              <a href={`/post/${post.next.id}`} className='next'>
-                Next
-              </a>
-              )}
-            </div>
         </div>
+        
         <Footer />
     </div>
   );

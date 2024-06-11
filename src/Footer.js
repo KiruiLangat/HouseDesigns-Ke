@@ -37,7 +37,7 @@ return (
                                             </ScrollLink>
                                     </li>
                                     <li><Link to='/shop'>Shop</Link></li>
-                                    <li><Link to='/blog'>Blog</Link></li>
+                                    <li><Link to='/articles'>Blog</Link></li>
                                     <li><Link to='/contact-us'>Contact Us</Link></li>
                             </ul>
                     </nav>

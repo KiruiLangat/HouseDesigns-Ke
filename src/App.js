@@ -26,7 +26,7 @@ export default function App() {
   return (
     <Routes>
       <Route exact path="/" element={<Homepage />} />
-      <Route path="/blog" element={<Blog />} />
+      <Route path="/articles" element={<Blog />} />
       <Route path='/our-expertise' element={<OurExpertise />} />
       <Route path='/contact-us' element={<ContactUs />} />
       <Route path='/shop' element={<Shop/>} />
