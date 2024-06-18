@@ -26,7 +26,7 @@ export default function Projects() {
         const fetchProjects = async () => {
             try{
                 const subCategoryId = subCategoryMap[sub_category_name]
-                const response = await fetch(`/api/residentials/${subCategoryId}`)
+                const response = await fetch(`https://housedesigns.co.ke/api/residentials/${subCategoryId}`)
             
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

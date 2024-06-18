@@ -30,7 +30,7 @@ export default function ContactUs() {
     event.preventDefault();
 
     try{
-        const response = await fetch(`/api/contact-form`, {
+        const response = await fetch(`https://housedesigns.co.ke/api/contact-form`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
