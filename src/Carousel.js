@@ -21,27 +21,32 @@ export default function Carousel() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('https://housedesigns.co.ke/api/swiper')
+        const response = await fetch('/api/swiper')
         const contentType = response.headers.get("content-type");
-
+  
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         } else if (!contentType || !contentType.includes("application/json")) {
           throw new TypeError("Oops, we haven't got JSON!");
         }
-
-        const data = await response.json()
-        setProjects(data)
-
+  
+        const text = await response.text();
+        console.log(text);
+  
+        try {
+          const data = JSON.parse(text);
+          setProjects(data);
+        } catch (err) {
+          console.error('Failed to parse JSON:', err);
+        }
       }
       catch (error) {
-        console.error('Error message:',error.message);
-        console.error('Error stack trace:',error.stack);
+        console.error('Error:', error)
       }
     }
+  
     fetchProjects();
-  },[]);
-
+  }, []);
   useEffect(() => {
     if (swiperRef.current) {
       swiperRef.current.update();

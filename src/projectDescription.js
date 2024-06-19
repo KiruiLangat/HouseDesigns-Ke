@@ -17,7 +17,7 @@ export default function ProjectDescription() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const response = await fetch(`https://housedesigns.co.ke/api/residentials/project-description/${title}`)
+                const response = await fetch(`/api/residentials/project-description/${title}`)
                 console.log(title)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -36,7 +36,7 @@ export default function ProjectDescription() {
     useEffect (() => {
         const fetchProject = async () => {
             try{
-                const response = await fetch(`https://housedesigns.co.ke/api/residentials/project-details/${title}`)
+                const response = await fetch(`/api/residentials/project-details/${title}`)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
