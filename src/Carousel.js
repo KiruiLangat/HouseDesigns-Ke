@@ -30,11 +30,8 @@ export default function Carousel() {
           throw new TypeError("Oops, we haven't got JSON!");
         }
   
-        const text = await response.text();
-        console.log(text);
-  
         try {
-          const data = JSON.parse(text);
+          const data = await response.json();
           setProjects(data);
         } catch (err) {
           console.error('Failed to parse JSON:', err);
