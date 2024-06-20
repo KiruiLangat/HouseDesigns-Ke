@@ -5,7 +5,7 @@ import Footer from './Footer';
 import './Projects.css';
 import '@fontsource/poppins'
 import { Link } from 'react-router-dom';
-//import { BASE_URL } from './apiConfig';
+
 
 const style = {
     fontFamily: 'Poppins',
