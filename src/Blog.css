@@ -121,13 +121,15 @@ body{
         height: 100%;
     }
     .overlay-info{
-        height: 43%;
+        height: 50%;
+        margin-bottom: 0;
     }
     .overlay-info h2{
         font-size: 18px;
-        font-weight: 400;     
+        font-weight: 300;     
     }
     .excerpt{
+        
         font-size: 14px;
         font-weight: 300;
         white-space: normal;
@@ -137,4 +139,16 @@ body{
         font-size: 10px;
     }
    
+}
+@media (max-width:320px){
+    .overlay-info h2{
+        font-size: 16px;
+    }
+    .excerpt{
+        font-size: 13px;
+       
+    }
+    .date{
+        font-size: 10px;
+    }
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import '@fontsource/poppins'
 import Header from './Header'
@@ -13,12 +14,22 @@ const style = {
 export default function Post() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
+  const [previousPost, setPreviousPost] = useState(null);
+  const [nextPost, setNextPost] = useState(null);
 
   useEffect(() => {
     fetch(`https://housedesigns.co.ke/blog/wp-json/wp/v2/posts/${id}?_embed`)
       .then(response => response.json())
       .then(data => {
         setPost(data);
+      });
+
+    fetch(`https://housedesigns.co.ke/blog/wp-json/wp/v2/posts?_embed`)
+      .then(response => response.json())
+      .then(data => {
+        const currentIndex = data.findIndex(post => post.id === Number(id));
+        setPreviousPost(data[currentIndex - 1]);
+        setNextPost(data[currentIndex + 1]);
       });
   }, [id]);
 
@@ -41,6 +52,23 @@ export default function Post() {
                 <div className='post-content' dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
             </div>
         </div>
+        <div className='blog-navigation'>
+          <div className='previous'>
+            {previousPost && (
+              <Link to={`/posts/${previousPost.id}`}>
+                <h2>● Previous Post</h2>
+              </Link>
+            )}
+          </div>
+          <div className='next'>
+            {nextPost && (
+                <Link to={`/posts/${nextPost.id}`}>
+                    <h2>Next Post ●</h2>
+                </Link>
+            )}
+          </div>
+        </div>
+        
         
         <Footer />
     </div>
