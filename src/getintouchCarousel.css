@@ -25,30 +25,7 @@
     box-shadow: none;
     border-radius: 10px;
   }
-  .carousel-overlay1{
-    position: absolute;
-    bottom: 0;
-    width: 20%;
-    height: 100px;
-    background: rgba(0, 0, 0, 0.78);
-    border-radius: 10px;
-    padding: 0;
-    opacity: 0;
-    overflow: hidden;
-    animation: fadeIn 2s forwards;
-    animation-delay: 0.5s;
-  }
-  
-  @keyframes fadeIn {
-    from{ opacity: 0; }
-    to{ opacity: 1; }
-    
-  }
-  .carousel-overlay1 p{
-    margin-left: 20px;
-    font-size: 16px;
-    color: #ED7D31;
-  }
+ 
   
   
   @media (max-width: 768px) {
@@ -79,16 +56,6 @@
       background-color: transparent;
       box-shadow: none;
     }
-    .carousel-overlay1{
-      display: flex;
-      width: 100%;
-      height: 40px;
-      justify-content: space-around;
-      margin: 0;
-    }
-    .carousel-overlay1 p{
-      font-size: 12px;
-      box-shadow: #ED7D3124;
-    }
+  
    
   }

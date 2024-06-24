@@ -34,7 +34,7 @@ body {
   bottom: 0;
   width: 20%;
   height: 80px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   padding: 0;
   opacity: 0;
@@ -88,7 +88,6 @@ body {
     height: 40px;
     justify-content: space-around;
     margin: 0;
-    background: rgba(0, 0, 0, 0.5);
   }
   .carousel-overlay1 p{
     font-size: 12px;
