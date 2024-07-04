@@ -33,11 +33,11 @@ body {
   position: absolute;
   bottom: 0;
   width: 20%;
-  height: 80px;
+  height: 100px;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   padding: 0;
-  opacity: 0;
+  opacity: 0; 
   overflow: hidden;
   animation: fadeIn 2s forwards;
   animation-delay: 0.5s;
