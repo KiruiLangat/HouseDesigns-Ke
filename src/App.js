@@ -30,15 +30,15 @@ export default function App() {
       <Route path='/our-expertise' element={<OurExpertise />} />
       <Route path='/contact-us' element={<ContactUs />} />
       <Route path='/shop' element={<Shop/>} />
-      <Route path='/submission-page' element={<Submission/>} />
+      <Route path='/submission' element={<Submission/>} />
       <Route path="/posts/:id" element={<Post />} />
-      <Route path="/service/architecture" element={<ArchitectureServiceCategory />} />
+      <Route path="/architecture" element={<ArchitectureServiceCategory />} />
       <Route path="/architecture/residentials" element={<ServiceSubCategory />} />
       <Route path="/residentials/:sub_category_name" element={<Projects />} />
-      <Route path='/residentials/project-description/:title' element={<ProjectDescription/>} />
+      <Route path='/residentials/:title' element={<ProjectDescription/>} />
       <Route path='/architecture/commercial' element={<CommercialCategory/>} />
       <Route path='/architecture/institutions' element={<InstitutionCategory />} />
-      <Route path='/service/masterplanning' element={<Masterplanning />} />
+      <Route path='/masterplanning' element={<Masterplanning />} />
 
     </Routes>
      

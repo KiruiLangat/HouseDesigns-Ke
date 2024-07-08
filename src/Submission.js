@@ -1,3 +1,6 @@
+//Submission Confirmation page
+
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Cancel from './images/cancel.svg'    

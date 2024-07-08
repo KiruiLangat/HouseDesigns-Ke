@@ -43,7 +43,7 @@ export default function ServiceSubCategory(){
                         </Link>
                     </div>
                     <div className='project-box1'>
-                        <Link to={`/residentials/tiny homes`}>
+                        <Link to={`/residentials/tiny-homes`}>
                         <div className='project-img'>
                             <img src={TinyHomesImg} alt='Tiny Homes' />
                         </div>

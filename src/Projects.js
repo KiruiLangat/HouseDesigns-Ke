@@ -49,7 +49,7 @@ export default function Projects() {
             <div className='service-projects-container'>
                 {projects.map(project => (
                     <div className='project-box1' key={project.id}> 
-                        <Link to={`/residentials/project-description/${project.title}`}>
+                        <Link to={`/residentials/${project.title}`}>
                             <div className='projects-img'>
                                 <img src={project.project_img_url} alt='Project Loading' loading='lazy' onLoad={(e) => e.target.style.opacity = 1} />
                             </div>
