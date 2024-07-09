@@ -18,10 +18,20 @@ const style = {
 
 
 export default function Footer() {
+
+        //function to scroll to top
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
+
 return (
     <div className='footer-container' style={style}>
             <div className='footer-left'>
-                    <Link to= '/'><img src={logo} alt='logo' className='footer-logo' /></Link>
+                    <img src={logo} alt='logo' className='footer-logo' onClick={scrollToTop}/>
                     <nav className='footer-nav'>
                             <ul>
                                     <li><Link to='/our-expertise'>Our Expertise</Link></li>
