@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom' 
 import Header from './Header'
 import Footer from './Footer'
@@ -9,6 +10,7 @@ import Institution1 from './images/institution1.png'
 import Institution2 from './images/institution2.png'
 import Institution3 from './images/institution3.png'
 import Institution4 from './images/institution4.png'
+import InstitutionImage from './images/Institutions.png'
 
 
 
@@ -20,6 +22,15 @@ const style = {
 export default function InstitutionCategory(){
     return(
         <div className='project-description' style={style}>
+            <Helmet>
+                <title>Institutions</title>
+                <meta name='description'content='Enhancing Our Learning Spaces' />
+                <meta property='og:title' content='Institutions'/>
+                <meta property='og:description' content='Enhancing Our Learning Spaces' />
+                <meta property='og:image' content={InstitutionImage} />
+                <meta property='og:url' content='https://housedesigns.co.ke/architecture/institutions' />
+                <meta name='twitter:card' content='summary' />
+            </Helmet>
             <Header />
             <div className='large-img'>
                 <img src={InstitutionImg} alt = 'Institution' />
@@ -35,7 +46,7 @@ export default function InstitutionCategory(){
                 <div className='details'>
                     <h2>Project Details</h2>
                     <p>View the institution planning on<br/> Our Masterplanning Services.</p>
-                    <Link to='/service/masterplanning'>
+                    <Link to='/masterplanning'>
                         <button>Check out the Masterplan</button>
                     </Link>
                 </div>

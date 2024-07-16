@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
@@ -44,8 +45,17 @@ export default function Projects() {
 
     return (
         <div style={style} className='projects'>
+            <Helmet>
+                <title>{projects.title}</title>
+                <meta name='description'content={projects.excerpt} />
+                <meta property='og:title' content={projects.title}/>
+                <meta property='og:description' content= {projects.excerpt} />
+                <meta property='og:image' content={projects.project_img_url} />
+                <meta property='og:url' content={`https://housedesigns.co.ke/architecture/residentials/${projects.title}`} />
+                <meta name='twitter:card' content='summary' />
+            </Helmet>
             <Header />
-            <h1 className='projects-title'>{sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} Projects</h1>
+            <h1 className='projects-title'>{sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)}</h1>
             <div className='service-projects-container'>
                 {projects.map(project => (
                     <div className='project-box1' key={project.id}> 

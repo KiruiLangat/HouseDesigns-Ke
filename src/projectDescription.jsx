@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { Helmet } from 'react-helmet'
 import { useParams } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
@@ -57,6 +58,15 @@ export default function ProjectDescription() {
 
     return (
         <div className='project-description' style={style}>
+            <Helmet>
+                <title>{project.title}</title>
+                <meta name='description'content={project.excerpt} />
+                <meta property='og:title' content={project.title}/>
+                <meta property='og:description' content= {project.excerpt} />
+                <meta property='og:image' content={project.project_img_url} />
+                <meta property='og:url' content={`https://housedesigns.co.ke/architecture/residentials/${project.title}`} />
+                <meta name='twitter:card' content='summary' />
+            </Helmet>
             <Header />
             <>
                 <div className='large-img'>

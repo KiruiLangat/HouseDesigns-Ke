@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import './Blog.css';
 import Header from './Header';
 import Footer from './Footer';
@@ -12,12 +13,12 @@ const style = {
 };
 
 export default function Blog() {
-  const [blogPost, setBlogPost] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(null);
+  const [blogPost, setBlogPost] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  React.useEffect(() => {
-    fetch('https://housedesigns.co.ke/blog/wp-json/wp/v2/posts?slug=architecture&_embed')
+  useEffect(() => {
+    fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?&_embed')
       .then(response => {
         console.log(response)
         if (!response.ok) {
@@ -47,8 +48,7 @@ export default function Blog() {
   }
 
   if (blogPost && blogPost.length > 0) {
-    // console.log(blogPost.rendered);
-    const { id, _embedded, title, excerpt , date} = blogPost[0];
+    const { slug, _embedded, title, excerpt , date} = blogPost[0];
     let featuredImage;
     if (_embedded && _embedded['wp:featuredmedia'] && _embedded['wp:featuredmedia'].length > 0) {
       featuredImage = _embedded['wp:featuredmedia'][0].source_url;
@@ -56,12 +56,25 @@ export default function Blog() {
         console.log('This post does not have a featured image');
         featuredImage = 'https://housedesigns.co.ke/blog/wp-content/uploads/2024/04/masterplanning.png';
       }
-    
+    function truncateText(text, length, viewportWidth) {
+      if (window.innerWidth <= viewportWidth && text.length > length) {
+          return text.substring(0, length) + '...';
+      } else {
+          return text;
+      }
+    }
     
       return (
         <div style={style}>
+          <Helmet>
+            <title>{title.rendered}</title>
+            <meta name='description' content={excerpt.rendered.substring(0, 160)} />
+            <meta property='og:title' content={title.rendered} />
+            <meta property='og:description' content={excerpt.rendered.substring(0, 160)} />
+            <meta property='og:image' content={featuredImage} />
+          </Helmet>
               <Header />
-              <Link to={`/posts/${id}`} className="blog-intro">
+              <Link to={`/blog/${slug}`} className="blog-intro">
                 <div className='test-img'>
                   <img src= {featuredImage} alt='featured-img' />
                 </div> 
@@ -76,15 +89,10 @@ export default function Blog() {
               <Footer />
         </div>
     );
-    function truncateText(text, length, viewportWidth) {
-      if (window.innerWidth <= viewportWidth && text.length > length) {
-          return text.substring(0, length) + '...';
-      } else {
-          return text;
-      }
-    }
-} else {
+    
+  } else {
     console.log('blogPost is not defined yet');
     return null
-  }}
+  }
+}
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import Header from './Header'
 import Footer from './Footer'
 import '@fontsource/poppins'
@@ -10,6 +11,7 @@ import ModernMarket3 from './images/modernmarket3.jpg'
 import ModernMarket4 from './images/modernmarket4.jpg'
 import ModernMarket5 from './images/modernmarket5.jpg'
 import ModernMarket6 from './images/modernmarket6.jpg'
+import CommercialImage from './images/modernmarket.jpg'
 
 
 const style = {
@@ -20,6 +22,15 @@ const style = {
 export default function CommercialCategory(){
     return(
         <div className='project-description' style={style}>
+            <Helmet>
+                <title>Commercial Projects</title>
+                <meta name='description'content='Industrialization with Style and Finese' />
+                <meta property='og:title' content='Commercial Projects'/>
+                <meta property='og:description' content='Industrialization with Style and Finese' />
+                <meta property='og:image' content={CommercialImage} />
+                <meta property='og:url' content='https://housedesigns.co.ke/architecture/commercial' />
+                <meta name='twitter:card' content='summary' />
+            </Helmet>
             <Header />
             <div className='large-img'>
                 <img src={ModernMarket5} alt = 'Modern Market' />

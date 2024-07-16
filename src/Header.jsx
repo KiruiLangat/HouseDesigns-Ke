@@ -40,7 +40,7 @@ export default function Header() {
                             </ScrollLink>
                         </li>
                         <li><Link to="/shop">Shop</Link></li>
-                        <li><Link to="/articles">Blog</Link></li>
+                        <li><Link to="/blog">Blog</Link></li>
                         <li><Link to="/contact-us">Contact Us</Link></li>
                         {/* <div className='sidebar-socials'>
                             <img src={instagram} alt='instagram' className='instagram' />
@@ -62,7 +62,7 @@ export default function Header() {
                             >About Us
                         </ScrollLink></li>
                     <li className='hideonmobile'><NavLink to="/shop">Shop</NavLink></li>
-                    <li className='hideonmobile'><NavLink to="/articles">Blog</NavLink></li>
+                    <li className='hideonmobile'><NavLink to="/blog">Blog</NavLink></li>
                     <li className='hideonmobile'><NavLink to="/contact-us">Contact Us</NavLink></li>
                     <li className='menu-button' onClick={showSidebar}><Link to="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></Link></li>
                 </ul>

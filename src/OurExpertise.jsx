@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import './OurExpertise.css'
 import '@fontsource/poppins'
 import Header from './Header'
@@ -7,6 +8,7 @@ import InteriorDesign from './images/interior-design.jpg'
 import ProjectMgmt from './images/projectMgmt.webp'
 import Masterplanning from './images/masterplanning.png'
 import architecture from './images/CM_1.jpg'
+import OurExpertiseImage from './images/CM_1.jpg'
 import arrow from './images/arrow-button.svg'
 import { Link } from 'react-router-dom'
 
@@ -17,6 +19,15 @@ const style = {
 export default function OurExpertise(){
     return(
         <div className="our-expertise" style={style}>
+           <Helmet>
+                <title>Our Expertise</title>
+                <meta name='description'content='Explore our Services' />
+                <meta property='og:title' content='Our Expertise'/>
+                <meta property='og:description' content='Explore our Services' />
+                <meta property='og:image' content={OurExpertiseImage} />
+                <meta property='og:url' content='https://housedesigns.co.ke/our-expertise' />
+                <meta name='twitter:card' content='summary' />
+            </Helmet> 
             <Header />
             <h1 className='title-services'>Explore our services</h1>
             <div className='services'>

@@ -12,7 +12,7 @@ export default function Articles() {
     const [post, setPost] = React.useState([])
 
     React.useEffect(() => {
-        fetch('https://housedesigns.co.ke/blog/wp-json/wp/v2/posts?_embed&per_page=3')
+        fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&per_page=3')
         .then(response => {
             // console.log(response)
             if (!response.ok) {
@@ -39,10 +39,10 @@ export default function Articles() {
         <h2 className='articlesDesc'>Explore our blog where we share engaging articles and breaking news <br/> in the world of architecture and design</h2>
         <div className='articles'>
             {post.map(post => (
-                <Link to={`/posts/${post.id}`} key={post.id}>
+                <Link to={`/blog/${post.slug}`} key={post.slug}>
                     <div className='article-box1'>
                         <div className='article-img'>
-                         {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
+                         {post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
                             <img src= {post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img'  />
                         )}
                         </div>
@@ -54,7 +54,7 @@ export default function Articles() {
             ))}
         </div>
         <div className='read-more'>
-            <Link to = '/articles'><h2 className='read-more-text'>Read More</h2></Link>
+            <Link to='/blog'><h2 className='read-more-text'>Read More</h2></Link>
             
         </div>
     </div>

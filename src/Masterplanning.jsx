@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import './Masterplanning.css'
 import '@fontsource/poppins'
 import Header from './Header'
@@ -19,6 +20,7 @@ import Masterplan12 from './images/institution4.png'
 import Masterplan13 from './images/Masterplanning9.png'
 import Masterplan14 from './images/Masterplanning10.png'
 import Masterplan15 from './images/Masterplanning11.png'
+import MasterImage from './images/masterplanning.png'
 
 
 const style={
@@ -28,6 +30,15 @@ const style={
 export default function Masterplanning(){
     return(
         <div className="masterplan" style={style}>
+            <Helmet>
+                <title>Masterplanning Projects</title>
+                <meta name='description'content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
+                <meta property='og:title' content='Masterplanning'/>
+                <meta property='og:description' content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
+                <meta property='og:image' content={MasterImage} />
+                <meta property='og:url' content='https://housedesigns.co.ke/masterplanning' />
+                <meta name='twitter:card' content='summary' />
+            </Helmet>
             <Header />
             <div className="large-img">
                 <img src={Masterplan} alt="institution Masterplan" />

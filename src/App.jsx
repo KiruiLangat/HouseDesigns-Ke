@@ -10,8 +10,8 @@ import Projects from './Projects'
 import ProjectDescription from './projectDescription';
 import Submission from './Submission';
 import Post from './Post';
-import ArchitectureServiceCategory from './ArchitectureServiceCategory';
-import ServiceSubCategory from './ServiceSubCategory'
+import Architecture from './Architecture';
+import Residentials from './Residentials'
 import CommercialCategory from './CommercialCategory';
 import InstitutionCategory from './InstitutionCategory';
 import Masterplanning from './Masterplanning';
@@ -26,16 +26,16 @@ export default function App() {
   return (
     <Routes>
       <Route exact path="/" element={<Homepage />} />
-      <Route path="/articles" element={<Blog />} />
+      <Route path="/blog" element={<Blog />} />
       <Route path='/our-expertise' element={<OurExpertise />} />
       <Route path='/contact-us' element={<ContactUs />} />
       <Route path='/shop' element={<Shop/>} />
       <Route path='/submission' element={<Submission/>} />
-      <Route path="/posts/:id" element={<Post />} />
-      <Route path="/architecture" element={<ArchitectureServiceCategory />} />
-      <Route path="/architecture/residentials" element={<ServiceSubCategory />} />
+      <Route path="/blog/:slug" element={<Post />} />
+      <Route path="/architecture" element={<Architecture />} />
+      <Route path="/architecture/residentials" element={<Residentials />} />
       <Route path="/residentials/:sub_category_name" element={<Projects />} />
-      <Route path='/residentials/:title' element={<ProjectDescription/>} />
+      <Route path='/residentials/:sub_category_name/:title' element={<ProjectDescription/>} />
       <Route path='/architecture/commercial' element={<CommercialCategory/>} />
       <Route path='/architecture/institutions' element={<InstitutionCategory />} />
       <Route path='/masterplanning' element={<Masterplanning />} />

@@ -89,6 +89,7 @@
     grid-template-rows: repeat(2,1fr);
     gap: 15px;
     margin: auto;
+    margin-bottom: 0;
     text-decoration: none;
     color: black;
     box-sizing: border-box;

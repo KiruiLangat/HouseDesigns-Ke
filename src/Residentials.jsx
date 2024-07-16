@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 import '@fontsource/poppins'
 import Header from './Header'
@@ -7,6 +8,7 @@ import BungalowsImg from './images/bungalows.jpg'
 import MaisonetteImg from './images/maisonettes.jpg'
 import ApartmentsImg from './images/apartments.jpg'
 import TinyHomesImg from './images/tinyhomes.jpg'
+import ResidentialImage from './images/apartments.jpg'
 
 const style = {
     fontFamily: 'Poppins',
@@ -15,8 +17,17 @@ const style = {
 export default function ServiceSubCategory(){
     return(
         <div className="projects" style={style}>
+            <Helmet>
+                <title>Residential Projects</title>
+                <meta name='description'content='Explore Our Residential Projects' />
+                <meta property='og:title' content='Residential Projects'/>
+                <meta property='og:description' content='Explore Our Residential Projects' />
+                <meta property='og:image' content={ResidentialImage} />
+                <meta property='og:url' content='https://housedesigns.co.ke/architecture/residentials' />
+                <meta name='twitter:card' content='summary' />
+            </Helmet>
             <Header />
-            <h1 className='projects-title'>Residential Projects </h1>
+            <h1 className='projects-title'>Residential Projects</h1>
                 <div className='service-projects-container'>
                     <div className='project-box1'>
                         <Link to={`/residentials/bungalows`}>
@@ -43,7 +54,7 @@ export default function ServiceSubCategory(){
                         </Link>
                     </div>
                     <div className='project-box1'>
-                        <Link to={`/residentials/tiny-homes`}>
+                        <Link to={`residentials/tiny-homes`}>
                         <div className='project-img'>
                             <img src={TinyHomesImg} alt='Tiny Homes' />
                         </div>

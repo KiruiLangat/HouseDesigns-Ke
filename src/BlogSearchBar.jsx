@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import SearchIcon from './images/SearchIcon.svg';
 import './BlogSearchBar.css';
@@ -10,7 +11,8 @@ const style = {
 };
 
 
-function SearchBar() {
+export default function SearchBar ({post}) {
+
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [category, setCategory] = useState('');
@@ -61,7 +63,7 @@ function SearchBar() {
           const categoryId = categories[0].id;
           setCategory(categorySlug);
 
-          fetch(`https://housedesigns.co.ke/blog/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
+          fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
           .then(response => {
             console.log(response)
             if (!response.ok) {
@@ -82,6 +84,13 @@ function SearchBar() {
 
   return (
     <div className="search-bar"  style={style}>
+      <Helmet>
+          <title>{post.title.rendered}</title>
+          <meta name='description' content={post.excerpt.rendered.substring(0, 160)} />
+          <meta property='og:title' content={post.title.rendered} />
+          <meta property='og:description' content={post.excerpt.rendered.substring(0, 160)} />
+          <meta property='og:image' content={post._embedded['wp:featuredmedia'][0].source_url} />
+      </Helmet>
         <div className='search-options'>
         <input
             type="text"
@@ -96,13 +105,14 @@ function SearchBar() {
             <option value="architecture">Architecture</option>
             <option value="construction">Construction</option>
             <option value="interior-design">Interior Design</option>
-            <option value="masterplanning">Master Planning</option>
+            <option value="masterplanning">Masterplanning</option>
+            <option value="urban-design">Project Management</option>
         </select>
         </div>
 
         <div className='search-results'>
           {searchResults.map (post => (
-            <Link to={`/posts/${post.id}`}  key={post.id}>
+            <Link to={`/blog/${post.slug}`}  key={post.slug}>
               <div className='search-results-container'>
                 <div className='featured-img'>
                   {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url &&(
@@ -125,5 +135,3 @@ function SearchBar() {
     </div>
   );
 }
-
-export default SearchBar;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import './BlogGrids.css';
 import '@fontsource/poppins'
@@ -13,7 +14,7 @@ export default function BlogGrids() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch('https://housedesigns.co.ke/blog/wp-json/wp/v2/posts?_embed&per_page=8')
+        fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&per_page=8')
         .then(response => {
             console.log(response)
             if (!response.ok) {
@@ -32,8 +33,15 @@ export default function BlogGrids() {
 
   return (
     <div style={style} className='grids'>
+        <Helmet>
+          <title>{posts.title.rendered}</title>
+          <meta name='description' content={posts.excerpt.rendered.substring(0, 160)} />
+          <meta property='og:title' content={posts.title.rendered} />
+          <meta property='og:description' content={posts.excerpt.rendered.substring(0, 160)} />
+          <meta property='og:image' content={posts._embedded['wp:featuredmedia'][0].source_url} />
+      </Helmet>
         {posts.map(post => (
-            <Link to={`/posts/${post.id}`} key={post.id} className='box1'>
+            <Link to={`/blog/${post.slug}`} key={post.slug} className='box1'>
                 <div className='img-box'>
                     {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
                         <img src= {post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img'  />
