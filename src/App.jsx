@@ -9,7 +9,7 @@ import Shop from './Shop'
 import Projects from './Projects'
 import ProjectDescription from './projectDescription';
 import Submission from './Submission';
-import Post from './Post';
+import Post from './BlogPost';
 import Architecture from './Architecture';
 import Residentials from './Residentials'
 import CommercialCategory from './CommercialCategory';

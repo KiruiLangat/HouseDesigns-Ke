@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import SearchIcon from './images/SearchIcon.svg';
 import './BlogSearchBar.css';
@@ -25,7 +24,7 @@ export default function SearchBar ({post}) {
     event.preventDefault();
     console.log(`You searched for: ${searchTerm}`);
 
-    fetch(`https://housedesigns.co.ke/blog/wp-json/wp/v2/posts?search=${searchTerm}&_embed`)
+    fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?search=${searchTerm}&_embed`)
       .then(response => {
         console.log(response)
         if (!response.ok) {
@@ -50,7 +49,7 @@ export default function SearchBar ({post}) {
       setSearchResults([]);
     }
     else{
-      fetch (`https://housedesigns.co.ke/blog/wp-json/wp/v2/categories?slug=${categorySlug}`)
+      fetch (`https://housedesigns.co.ke/CMS/wp-json/wp/v2/categories?slug=${categorySlug}`)
       .then(response => {
         console.log(response)
         if (!response.ok) {
@@ -60,10 +59,10 @@ export default function SearchBar ({post}) {
       })
       .then(categories => {
         if (categories.length > 0) {
-          const categoryId = categories[0].id;
+          const categorySlug = categories[0].slug;
           setCategory(categorySlug);
 
-          fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
+          fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?categories=${categorySlug}&_embed`)
           .then(response => {
             console.log(response)
             if (!response.ok) {
@@ -72,7 +71,11 @@ export default function SearchBar ({post}) {
             return response.json()
           })
           .then(data => {
-            setSearchResults(data);
+            const safeData = data.map(item => ({
+              ...item,
+              title: item.title ?? "No Title",
+            }))
+            setSearchResults(safeData);
           });
         }
       })
@@ -84,13 +87,7 @@ export default function SearchBar ({post}) {
 
   return (
     <div className="search-bar"  style={style}>
-      <Helmet>
-          <title>{post.title.rendered}</title>
-          <meta name='description' content={post.excerpt.rendered.substring(0, 160)} />
-          <meta property='og:title' content={post.title.rendered} />
-          <meta property='og:description' content={post.excerpt.rendered.substring(0, 160)} />
-          <meta property='og:image' content={post._embedded['wp:featuredmedia'][0].source_url} />
-      </Helmet>
+      
         <div className='search-options'>
         <input
             type="text"
@@ -98,7 +95,6 @@ export default function SearchBar ({post}) {
             value={searchTerm}
             onChange={handleChange}
         /> 
-
         <select value={category} onChange={handleCategoryChange}>
             <option value="/">Filter Search</option>
             <option value="popular">Popular</option>

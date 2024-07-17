@@ -9,30 +9,33 @@ import Footer from './Footer'
 
 
 
-import './Post.css';
+import './BlogPost.css';
 
 const style = {
     fontFamily: 'Poppins',
 };
 
-export default function Post() {
+export default function BlogPost() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const [previousPost, setPreviousPost] = useState(null);
   const [nextPost, setNextPost] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   // const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    setIsLoading(true) //starts loading
     fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&slug=${slug}`)
       .then(response => response.json())
       .then(data => {
         setPost(data[0]);
+        setIsLoading(false); //Ends loading after setting post
       });
-
+      
+      // Fetch all posts to determine previous and next posts
     fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed`)
       .then(response => response.json())
       .then(data => {
-        
         const currentIndex = data.findIndex(post => post.slug === slug);
         
         // Update previous post, check if current post is the first
@@ -76,6 +79,9 @@ export default function Post() {
 
   if (!post) {
     return <div className='loading'>Loading<span>...</span></div>;
+  }
+  if (isLoading) {
+    return <div className='loading'>Loading<span>...</span> </div>;
   }
 
 
