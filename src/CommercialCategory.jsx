@@ -27,7 +27,9 @@ export default function CommercialCategory(){
                 <meta name='description'content='Industrialization with Style and Finese' />
                 <meta property='og:title' content='Commercial Projects'/>
                 <meta property='og:description' content='Industrialization with Style and Finese' />
-                <meta property='og:image' content='%PUBLIC_URL%/modernmarket1.jpg' />
+                <meta property='og:image' content='https://housedesigns.co.ke/modernmarket1.jpg' />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='630' />
                 <meta property='og:url' content='https://housedesigns.co.ke/architecture/commercial' />
                 <meta name='twitter:card' content='summary' />
             </Helmet>

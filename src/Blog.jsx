@@ -72,6 +72,9 @@ export default function Blog() {
             <meta property='og:title' content={title.rendered} />
             <meta property='og:description' content={excerpt.rendered.substring(0, 160)} />
             <meta property='og:image' content={featuredImage} />
+            <meta property='og:image:width' content='1200' />
+            <meta property='og:image:height' content='630' />
+            <meta name='twitter:card' content='summary' />
           </Helmet>
               <Header />
               <Link to={`/blog/${slug}`} className="blog-intro">

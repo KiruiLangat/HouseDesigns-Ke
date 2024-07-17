@@ -25,7 +25,9 @@ function Homepage() {
         <meta name='description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
         <meta property='og:title' content='House Designs Ke' />
         <meta property='og:description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
-        <meta property='og:image' content='%PUBLIC_URL%/carousel3.jpg' />
+        <meta property='og:image' content='https://housedesigns.co.ke/carousel3.jpg' />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
         <meta property='og:url' content='https://housedesigns.co.ke' />
         <meta property='og:type' content='website' />
         <meta name='twitter:card' content='summary' /> 

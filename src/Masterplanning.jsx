@@ -35,7 +35,9 @@ export default function Masterplanning(){
                 <meta name='description'content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
                 <meta property='og:title' content='Masterplanning'/>
                 <meta property='og:description' content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
-                <meta property='og:image' content='%PUBLIC_URL%/masterplanning.png' />
+                <meta property='og:image' content='https://housedesigns.co.ke/masterplanning.png' />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='630' />
                 <meta property='og:url' content='https://housedesigns.co.ke/masterplanning' />
                 <meta name='twitter:card' content='summary' />
             </Helmet>

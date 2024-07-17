@@ -22,7 +22,9 @@ export default function ServiceSubCategory(){
                 <meta name='description'content='Explore Our Residential Projects' />
                 <meta property='og:title' content='Residential Projects'/>
                 <meta property='og:description' content='Explore Our Residential Projects' />
-                <meta property='og:image' content='%PUBLIC_URL%/apartment.jpg' />
+                <meta property='og:image' content='https://housedesigns.co.ke/apartment.jpg' />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='630' />
                 <meta property='og:url' content='https://housedesigns.co.ke/architecture/residentials' />
                 <meta name='twitter:card' content='summary' />
             </Helmet>

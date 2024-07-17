@@ -68,7 +68,9 @@ export default function ContactUs() {
                 <meta name='description'content='Get in touch with us.Reach out to us and let us create something extraordinary together.' />
                 <meta property='og:title' content='Contact Us'/>
                 <meta property='og:description' content='Get in touch with us.Reach out to us and let us create something extraordinary together' />
-                <meta property='og:image' content='%PUBLIC_URL%/projectMgmt.webp' />
+                <meta property='og:image' content='https://housedesigns.co.ke/projectMgmt.webp' />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='630' />
                 <meta property='og:url' content='https://housedesigns.co.ke/contact-us' />
                 <meta name='twitter:card' content='summary' />
             </Helmet> 

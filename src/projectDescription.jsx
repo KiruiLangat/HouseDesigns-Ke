@@ -5,7 +5,7 @@ import Header from './Header'
 import Footer from './Footer'
 import './projectDescription.css'
 import '@fontsource/poppins'
-//import { BASE_URL } from './apiConfig'
+
 
 const style ={
     fontFamily:'Poppins'
@@ -64,6 +64,8 @@ export default function ProjectDescription() {
                 <meta property='og:title' content={project.title}/>
                 <meta property='og:description' content= {project.excerpt} />
                 <meta property='og:image' content={project.project_img_url} />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='630' />
                 <meta property='og:url' content={`https://housedesigns.co.ke/architecture/residentials/${project.title}`} />
                 <meta name='twitter:card' content='summary' />
             </Helmet>

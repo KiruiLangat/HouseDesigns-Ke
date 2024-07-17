@@ -51,6 +51,8 @@ export default function Projects() {
                 <meta property='og:title' content={projects.title}/>
                 <meta property='og:description' content= {projects.excerpt} />
                 <meta property='og:image' content={projects.project_img_url} />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='630' />
                 <meta property='og:url' content={`https://housedesigns.co.ke/architecture/residentials/${projects.title}`} />
                 <meta name='twitter:card' content='summary' />
             </Helmet>
