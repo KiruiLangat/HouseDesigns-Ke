@@ -47,6 +47,7 @@ export default function SearchBar ({post}) {
 
     if (categorySlug === '/') {
       setSearchResults([]);
+      setCategory('');
     }
     else{
       fetch (`https://housedesigns.co.ke/CMS/wp-json/wp/v2/categories?slug=${categorySlug}`)
@@ -59,10 +60,10 @@ export default function SearchBar ({post}) {
       })
       .then(categories => {
         if (categories.length > 0) {
-          const categorySlug = categories[0].slug;
-          setCategory(categorySlug);
+          const categoryId = categories[0].id;
+          setCategory(categories[0].slug);
 
-          fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?categories=${categorySlug}&_embed`)
+          fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
           .then(response => {
             console.log(response)
             if (!response.ok) {
@@ -71,12 +72,10 @@ export default function SearchBar ({post}) {
             return response.json()
           })
           .then(data => {
-            const safeData = data.map(item => ({
-              ...item,
-              title: item.title ?? "No Title",
-            }))
-            setSearchResults(safeData);
-          });
+            setSearchResults(data)
+  
+          })
+           
         }
       })
       .catch(error => {
@@ -102,7 +101,7 @@ export default function SearchBar ({post}) {
             <option value="construction">Construction</option>
             <option value="interior-design">Interior Design</option>
             <option value="masterplanning">Masterplanning</option>
-            <option value="urban-design">Project Management</option>
+            <option value="project-management">Project Management</option>
         </select>
         </div>
 

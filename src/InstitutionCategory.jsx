@@ -10,7 +10,7 @@ import Institution1 from './images/institution1.png'
 import Institution2 from './images/institution2.png'
 import Institution3 from './images/institution3.png'
 import Institution4 from './images/institution4.png'
-import InstitutionImage from './images/Institutions.png'
+
 
 
 
@@ -27,7 +27,7 @@ export default function InstitutionCategory(){
                 <meta name='description'content='Enhancing Our Learning Spaces' />
                 <meta property='og:title' content='Institutions'/>
                 <meta property='og:description' content='Enhancing Our Learning Spaces' />
-                <meta property='og:image' content={InstitutionImage} />
+                <meta property='og:image' content='%PUBLIC_URL%/Institutions.png' />
                 <meta property='og:url' content='https://housedesigns.co.ke/architecture/institutions' />
                 <meta name='twitter:card' content='summary' />
             </Helmet>

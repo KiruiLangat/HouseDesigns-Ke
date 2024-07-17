@@ -1,6 +1,6 @@
 import './ContactUs.css'
 import { Link, useNavigate } from 'react-router-dom'
-
+import { Helmet } from 'react-helmet'
 import React, {useState} from 'react'
 import Header from './Header'
 import '@fontsource/poppins'
@@ -63,6 +63,15 @@ export default function ContactUs() {
 
   return (
     <div className='contact-container' style={style}>
+      <Helmet>
+                <title>Contact Us</title>
+                <meta name='description'content='Get in touch with us.Reach out to us and let us create something extraordinary together.' />
+                <meta property='og:title' content='Contact Us'/>
+                <meta property='og:description' content='Get in touch with us.Reach out to us and let us create something extraordinary together' />
+                <meta property='og:image' content='%PUBLIC_URL%/projectMgmt.webp' />
+                <meta property='og:url' content='https://housedesigns.co.ke/contact-us' />
+                <meta name='twitter:card' content='summary' />
+            </Helmet> 
       <div className='contact-header'>
         <Header />
       </div>

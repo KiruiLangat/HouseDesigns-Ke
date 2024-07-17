@@ -11,7 +11,7 @@ import ModernMarket3 from './images/modernmarket3.jpg'
 import ModernMarket4 from './images/modernmarket4.jpg'
 import ModernMarket5 from './images/modernmarket5.jpg'
 import ModernMarket6 from './images/modernmarket6.jpg'
-import CommercialImage from './images/modernmarket.jpg'
+
 
 
 const style = {
@@ -27,7 +27,7 @@ export default function CommercialCategory(){
                 <meta name='description'content='Industrialization with Style and Finese' />
                 <meta property='og:title' content='Commercial Projects'/>
                 <meta property='og:description' content='Industrialization with Style and Finese' />
-                <meta property='og:image' content={CommercialImage} />
+                <meta property='og:image' content='%PUBLIC_URL%/modernmarket1.jpg' />
                 <meta property='og:url' content='https://housedesigns.co.ke/architecture/commercial' />
                 <meta name='twitter:card' content='summary' />
             </Helmet>

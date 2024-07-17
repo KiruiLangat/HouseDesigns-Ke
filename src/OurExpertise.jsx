@@ -8,7 +8,7 @@ import InteriorDesign from './images/interior-design.jpg'
 import ProjectMgmt from './images/projectMgmt.webp'
 import Masterplanning from './images/masterplanning.png'
 import architecture from './images/CM_1.jpg'
-import OurExpertiseImage from './images/CM_1.jpg'
+
 import arrow from './images/arrow-button.svg'
 import { Link } from 'react-router-dom'
 
@@ -24,7 +24,7 @@ export default function OurExpertise(){
                 <meta name='description'content='Explore our Services' />
                 <meta property='og:title' content='Our Expertise'/>
                 <meta property='og:description' content='Explore our Services' />
-                <meta property='og:image' content={OurExpertiseImage} />
+                <meta property='og:image' content='%PUBLIC_URL%/CM_1.jpg' />
                 <meta property='og:url' content='https://housedesigns.co.ke/our-expertise' />
                 <meta name='twitter:card' content='summary' />
             </Helmet> 

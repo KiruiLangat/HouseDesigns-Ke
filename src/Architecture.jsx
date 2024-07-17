@@ -7,7 +7,6 @@ import Footer from './Footer'
 import CommercialImg from './images/commercial.jpg'
 import ResidentialsImg from './images/residentials.jpg'
 import InstitutionImg from './images/Institutions.png'
-import ArchitectureImage from './images/modernmarket.jpg'
 
 
 const style = {
@@ -23,7 +22,7 @@ export default function ArchitectureServiceCategory(){
                 <meta name='description'content='Explore Our Architecture Projects' />
                 <meta property='og:title' content='Architecture Projects'/>
                 <meta property='og:description' content='Explore Our Architecture Projects' />
-                <meta property='og:image' content={ArchitectureImage} />
+                <meta property='og:image' content='%PUBLIC_URL%/modernmarket.jpg' />
                 <meta property='og:url' content='https://housedesigns.co.ke/architecture' />
                 <meta name='twitter:card' content='summary' />
             </Helmet>

@@ -8,7 +8,7 @@ import BungalowsImg from './images/bungalows.jpg'
 import MaisonetteImg from './images/maisonettes.jpg'
 import ApartmentsImg from './images/apartments.jpg'
 import TinyHomesImg from './images/tinyhomes.jpg'
-import ResidentialImage from './images/apartments.jpg'
+
 
 const style = {
     fontFamily: 'Poppins',
@@ -22,7 +22,7 @@ export default function ServiceSubCategory(){
                 <meta name='description'content='Explore Our Residential Projects' />
                 <meta property='og:title' content='Residential Projects'/>
                 <meta property='og:description' content='Explore Our Residential Projects' />
-                <meta property='og:image' content={ResidentialImage} />
+                <meta property='og:image' content='%PUBLIC_URL%/apartment.jpg' />
                 <meta property='og:url' content='https://housedesigns.co.ke/architecture/residentials' />
                 <meta name='twitter:card' content='summary' />
             </Helmet>
