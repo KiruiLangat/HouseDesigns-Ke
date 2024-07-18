@@ -72,9 +72,16 @@ export default function Blog() {
             <meta property='og:title' content={title.rendered} />
             <meta property='og:description' content={excerpt.rendered.substring(0, 160)} />
             <meta property='og:image' content={featuredImage} />
-            <meta property='og:image:width' content='1200' />
-            <meta property='og:image:height' content='630' />
+            <meta property='og:image:width' content='300' />
+            <meta property='og:image:height' content='300' />
+            <meta property='og:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
             <meta name='twitter:card' content='summary' />
+            <meta name='twitter:title' content={title.rendered} />
+            <meta name='twitter:description' content={excerpt.rendered.substring(0, 160)} />
+            <meta name='twitter:image' content={featuredImage} />
+            <meta name='twitter:image:width' content='144' />
+            <meta name='twitter:image:height' content='144' />
+            <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
           </Helmet>
               <Header />
               <Link to={`/blog/${slug}`} className="blog-intro">

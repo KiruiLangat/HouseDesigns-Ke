@@ -93,9 +93,16 @@ export default function BlogPost() {
           <meta property='og:title' content={post.title.rendered} />
           <meta property='og:description' content={post.excerpt.rendered.substring(0, 160)} />
           <meta property='og:image' content={post._embedded['wp:featuredmedia'][0].source_url} />
-          <meta property='og:image:width' content='1200' />
-          <meta property='og:image:height' content='630' />
+          <meta property='og:image:width' content='300' />
+          <meta property='og:image:height' content='300' />
+          <meta property='og:url' content={`https://housedesigns.co.ke/blog/${post.slug}`} />
           <meta name='twitter:card' content='summary' />
+          <meta name='twitter:title' content={post.title.rendered} />
+          <meta name='twitter:description' content={post.excerpt.rendered.substring(0, 160)} />
+          <meta name='twitter:image' content={post._embedded['wp:featuredmedia'][0].source_url} />
+          <meta name='twitter:image:width' content='144' />
+          <meta name='twitter:image:height' content='144' />
+          <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${post.slug}`} />
       </Helmet>
       <Header />  
         <div className='post'>

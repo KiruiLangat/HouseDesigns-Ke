@@ -11,7 +11,7 @@ const style ={
     fontFamily:'Poppins'
 }
 
-export default function ProjectDescription() {
+export default function ProjectDescription({sub_category_name}) {
     const { title } = useParams()
     const [images, setImages] = useState([])
 
@@ -71,10 +71,16 @@ export default function ProjectDescription() {
                 <meta property='og:title' content={project.title} />
                 <meta property='og:description' content={project.details} />
                 <meta property='og:image' content={images[0]} />
-                <meta property='og:image:width' content='1200' />
-                <meta property='og:image:height' content='630' />
+                <meta property='og:image:width' content='300' />
+                <meta property='og:image:height' content='300' />
                 <meta property='og:url' content={ogUrl} />
                 <meta name='twitter:card' content='summary' />
+                <meta name='twitter:title' content={project.title} />
+                <meta name='twitter:description' content={project.details} />
+                <meta name='twitter:image' content={images[0]} />
+                <meta name='twitter:image:width' content='144' />
+                <meta name='twitter:image:height' content='144' />
+                <meta name='twitter:url' content={ogUrl} />
             </Helmet>         
             <Header />
             <>
