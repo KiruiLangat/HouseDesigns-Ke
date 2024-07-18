@@ -34,8 +34,8 @@ export default function App() {
       <Route path="/blog/:slug" element={<Post />} />
       <Route path="/architecture" element={<Architecture />} />
       <Route path="/architecture/residentials" element={<Residentials />} />
-      <Route path="/residentials/:sub_category_name" element={<Projects />} />
-      <Route path='/residentials/:sub_category_name/:title' element={<ProjectDescription/>} />
+      <Route path="/architecture/residentials/:sub_category_name" element={<Projects />} />
+      <Route path='/architecture/residentials/:sub_category_name/:title' element={<ProjectDescription/>} />
       <Route path='/architecture/commercial' element={<CommercialCategory/>} />
       <Route path='/architecture/institutions' element={<InstitutionCategory />} />
       <Route path='/masterplanning' element={<Masterplanning />} />

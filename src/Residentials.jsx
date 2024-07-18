@@ -32,7 +32,7 @@ export default function ServiceSubCategory(){
             <h1 className='projects-title'>Residential Projects</h1>
                 <div className='service-projects-container'>
                     <div className='project-box1'>
-                        <Link to={`/residentials/bungalows`}>
+                        <Link to={`/architecture/residentials/bungalows`}>
                         <div className='project-img'>
                             <img src={BungalowsImg} alt='Bungalows' />
                         </div>
@@ -40,7 +40,7 @@ export default function ServiceSubCategory(){
                         </Link>
                     </div>
                     <div className='project-box1'>
-                        <Link to={`/residentials/maisonettes`}>
+                        <Link to={`/architecture/residentials/maisonettes`}>
                         <div className='project-img'>
                             <img src={MaisonetteImg} alt='Maisonette' />
                         </div>
@@ -48,7 +48,7 @@ export default function ServiceSubCategory(){
                         </Link>
                     </div>
                     <div className='project-box1'>
-                        <Link to={`/residentials/apartments`}>
+                        <Link to={`/architecture/residentials/apartments`}>
                         <div className='project-img'>
                             <img src={ApartmentsImg} alt='Apartments' />
                         </div>
@@ -56,7 +56,7 @@ export default function ServiceSubCategory(){
                         </Link>
                     </div>
                     <div className='project-box1'>
-                        <Link to={`residentials/tiny-homes`}>
+                        <Link to={`/architecture/residentials/tiny homes`}>
                         <div className='project-img'>
                             <img src={TinyHomesImg} alt='Tiny Homes' />
                         </div>

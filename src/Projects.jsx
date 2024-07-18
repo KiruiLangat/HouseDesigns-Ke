@@ -43,25 +43,36 @@ export default function Projects() {
         fetchProjects();
     }, [sub_category_name]);
 
+    const imageMapping = {
+        bungalows: "https://housedesigns.co.ke/bungalows.png",
+        maisonettes: "https://housedesigns.co.ke/OurExpertise.jpg",
+        apartments: "https://housedesigns.co.ke/apartments.jpg",
+        tiny_homes: "https://housedesigns.co.ke/tinyhomes.jpg",
+        default: "https://housedesigns.co.ke/defaultImage.jpg",
+    }
+
+    const subCategoryImageURL = imageMapping[sub_category_name] || imageMapping.default
+
     return (
         <div style={style} className='projects'>
             <Helmet>
-                <title>{projects.title}</title>
-                <meta name='description'content={projects.excerpt} />
-                <meta property='og:title' content={projects.title}/>
-                <meta property='og:description' content= {projects.excerpt} />
-                <meta property='og:image' content={projects.project_img_url} />
-                <meta property='og:image:width' content='1200' />
-                <meta property='og:image:height' content='630' />
-                <meta property='og:url' content={`https://housedesigns.co.ke/architecture/residentials/${projects.title}`} />
-                <meta name='twitter:card' content='summary' />
+            <title>{sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)}</title>
+            <meta name='description' content={`Explore Our ${sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} House Designs and House Plans in Kenya.`} />
+            <meta property='og:title' content={sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} />
+            <meta property='og:description' content={`Explore Our ${sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} House Designs and House Plans in Kenya.`} />
+            <meta property='og:image' content={subCategoryImageURL} />
+            <meta property='og:image:width' content='1200' />
+            <meta property='og:image:height' content='630' />
+            <meta property='og:url' content={`https://housedesigns.co.ke/architecture/residentials/${sub_category_name.charAt(0).toUpperCase()+sub_category_name.slice(1)}`} />
+            <meta name='twitter:card' content='summary' />
             </Helmet>
+
             <Header />
             <h1 className='projects-title'>{sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)}</h1>
             <div className='service-projects-container'>
                 {projects.map(project => (
                     <div className='project-box1' key={project.id}> 
-                        <Link to={`/residentials/${sub_category_name}/${encodeURIComponent(project.title)}`}>
+                        <Link to={`/architecture/residentials/${sub_category_name}/${encodeURIComponent(project.title)}`}>
                             <div className='projects-img'>
                                 <img src={project.project_img_url} alt='Project Loading' loading='lazy' onLoad={(e) => e.target.style.opacity = 1} />
                             </div>
@@ -70,6 +81,7 @@ export default function Projects() {
                     </div>
                 ))}   
             </div>
+            
             <Footer />
         </div>
     )

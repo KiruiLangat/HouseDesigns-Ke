@@ -12,7 +12,7 @@ const style = {
   fontFamily: 'Poppins',
 }
 
-export default function BrowseCarousel() {
+export default function BrowseCarousel({sub_category_name}) {
   const [projects, setProjects] = useState([])
   const swiperRef = useRef(null);
 
@@ -54,18 +54,20 @@ export default function BrowseCarousel() {
         modules={[Autoplay,Pagination, Navigation]}
         className="BrowseSwiper"
         style={style}
-      >
+        >
+          
         {projects.map((project) => (
           <SwiperSlide  key={project.id}>
-            <Link to={`/residentials/project-description/${project.title}`}>
+            <Link to={`/architecture/residentials/${sub_category_name}/${project.title}`}>
               <img src={project.image_url} alt={project.title}/>
               <div className='carousel-overlay'>
                 <p>{project.title}</p>
               </div>
             </Link>
-        </SwiperSlide>
-        ))}
-        
+          </SwiperSlide>
+          ))}
+
+       
         {/* // <SwiperSlide >
         //   <img src={carousel2} alt='Maisonette'/>
         //   <div className='carousel-overlay'>

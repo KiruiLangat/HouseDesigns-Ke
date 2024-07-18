@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet' 
 import { useParams } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
@@ -33,7 +33,7 @@ export default function ProjectDescription() {
     }, [title]);
 
     const [project, setProject] = useState(null)
-
+    
     useEffect (() => {
         const fetchProject = async () => {
             try{
@@ -50,25 +50,32 @@ export default function ProjectDescription() {
             }
         }
         fetchProject();
-    }, [title]);
+    }, [title]);    
+
+    if (!project) {
+        return <div className='loading'>Loading <span>...</span></div>
+    }
+    
+    const ogUrl = `https://housedesigns.co.ke/architecture/residentials/${sub_category_name}/${project.title}`
+
 
     // useEffect(() => {
     //     console.log(project)
     // }, [project])
 
     return (
-        <div className='project-description' style={style}>
+        <div className='project-description' style={style}>   
             <Helmet>
                 <title>{project.title}</title>
-                <meta name='description'content={project.excerpt} />
-                <meta property='og:title' content={project.title}/>
-                <meta property='og:description' content= {project.excerpt} />
-                <meta property='og:image' content={project.project_img_url} />
+                <meta name='description' content={project.details} />
+                <meta property='og:title' content={project.title} />
+                <meta property='og:description' content={project.details} />
+                <meta property='og:image' content={images[0]} />
                 <meta property='og:image:width' content='1200' />
                 <meta property='og:image:height' content='630' />
-                <meta property='og:url' content={`https://housedesigns.co.ke/architecture/residentials/${project.title}`} />
+                <meta property='og:url' content={ogUrl} />
                 <meta name='twitter:card' content='summary' />
-            </Helmet>
+            </Helmet>         
             <Header />
             <>
                 <div className='large-img'>

@@ -13,7 +13,7 @@ const style = {
 }
 
 
-export default function Carousel() {
+export default function Carousel({sub_category_name}) {
   const [projects, setProjects] = useState([])
   const swiperRef = useRef(null);
 
@@ -70,7 +70,7 @@ export default function Carousel() {
       >
         {projects.map(project => ( 
           <SwiperSlide key={project.id}>
-            <Link to={`/residentials/project-description/${project.title}`}>
+            <Link to={`/architecture/residentials/${sub_category_name}/${project.title}`}>
               <img src={project.image_url} alt={project.title}/>
               <div className='carousel-overlay1'>
                 <p>{project.title}</p>

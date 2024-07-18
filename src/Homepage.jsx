@@ -28,7 +28,7 @@ function Homepage() {
         <meta property='og:image' content='https://housedesigns.co.ke/carousel3.jpg' />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='630' />
-        <meta property='og:url' content='https://housedesigns.co.ke' />
+        <meta property='og:url' content='https://housedesigns.co.ke/' />
         <meta property='og:type' content='website' />
         <meta name='twitter:card' content='summary' /> 
       </Helmet>
