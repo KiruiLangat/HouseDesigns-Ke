@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './Blog.css';
-import Header from './Header';
-import Footer from './Footer';
 import '@fontsource/poppins'
 import SearchBar from './BlogSearchBar';
 import BlogGrids from './BlogGrids';
@@ -83,7 +81,6 @@ export default function Blog() {
             <meta name='twitter:image:height' content='144' />
             <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
           </Helmet>
-              <Header />
               <Link to={`/blog/${slug}`} className="blog-intro">
                 <div className='test-img'>
                   <img src= {featuredImage} alt='featured-img' />
@@ -96,7 +93,7 @@ export default function Blog() {
               </Link>
               <SearchBar />
               <BlogGrids />
-              <Footer />
+              
         </div>
     );
     

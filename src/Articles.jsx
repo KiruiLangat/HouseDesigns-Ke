@@ -1,5 +1,5 @@
 import React from 'react'
-import arrowButton from './images/arrow-button.svg'
+//import arrowButton from './images/arrow-button.svg'
 import { Link } from 'react-router-dom'
 
 import './Articles.css'
@@ -33,10 +33,10 @@ export default function Articles() {
         return <div className='loading'>Loading<span>...</span></div>
     }
 
-  return (
+    return (
     <div className='articles-container' style={style}>
         <h1>Articles & News</h1>
-        <h2 className='articlesDesc'>Explore our blog where we share engaging articles and breaking news <br/> in the world of architecture and design</h2>
+        <h2 className='articlesDesc'>Explore our blog where we share engaging articles and breaking news <br/> in the world of architecture and design </h2>
         <div className='articles'>
             {post.map(post => (
                 <Link to={`/blog/${post.slug}`} key={post.slug}>
@@ -47,15 +47,14 @@ export default function Articles() {
                         )}
                         </div>
                         <h2 className='headline'dangerouslySetInnerHTML={{__html: post.title.rendered}} />
-                        <img src= {arrowButton} alt='arrow-button' className='arrow-button'/>
+                        {/* <img src= {arrowButton} alt='arrow-button' className='arrow-button'/> */}
                         <p>{new Date(post.date).toLocaleDateString()}</p>  
                     </div>
                 </Link>
             ))}
         </div>
         <div className='read-more'>
-            <Link to='/blog'><h2 className='read-more-text'>Read More</h2></Link>
-            
+            <Link to='/blog'><h2 className='read-more-text'>Read More</h2></Link>  
         </div>
     </div>
   )

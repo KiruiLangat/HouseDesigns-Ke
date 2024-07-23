@@ -2,8 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 import '@fontsource/poppins'
-import Header from './Header'
-import Footer from './Footer'
+
 import CommercialImg from './images/commercial.jpg'
 import ResidentialsImg from './images/residentials.jpg'
 import InstitutionImg from './images/Institutions.png'
@@ -34,7 +33,7 @@ export default function ArchitectureServiceCategory(){
                 <meta name='twitter:image:height' content='144' />
                 <meta name='twitter:url' content='https://housedesigns.co.ke/architecture' />
             </Helmet>
-            <Header />
+        
             <h1 className='projects-title'>Architecture Projects </h1>
                 <div className='service-projects-container'>
                     <div className='project-box1'>
@@ -62,7 +61,7 @@ export default function ArchitectureServiceCategory(){
                         </Link>
                     </div>
                 </div>
-            <Footer />
+           
         </div>
     )
 }

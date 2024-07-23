@@ -2,14 +2,13 @@
     padding: 5px;
     font-family: Poppins;
     font-size: 14px;
-    background: #ffff;
-    border: 1px solid #e37142;
+    color: #ed7d31;
+    border: 1px solid #6C5F5B;
+    background-color: transparent;
     border-radius: 10px;
 }
 .details button:hover{
-    background: #e37142;
-    color: white;
-    border: none;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
 }
 
 @media(max-width:760px){

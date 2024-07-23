@@ -57,6 +57,7 @@
 .getStarted-CTA p:hover {
     border-bottom: 1.5px solid #ED7D31;
 }
+
 .getStarted-CTA svg{
     margin: 0 5px;
 }
@@ -288,6 +289,7 @@
         border-bottom: 1.5px solid black;
         text-align: center;
     }
+    
     .mobileCTA svg{
         margin: 0 5px;
         width: 14px;

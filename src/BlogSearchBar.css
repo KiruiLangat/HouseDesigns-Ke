@@ -31,7 +31,7 @@ input:focus {
 } */
 .search-icon {
     position: absolute;
-    top: 38.5px;
+    top: 38px;
     left: 50px;
     justify-content: center;
     transform: translateY(-50%);
@@ -132,7 +132,7 @@ input:focus {
     }
     .search-bar input {
         margin-left: auto;
-        width: 30%;
+        width: 60%;
         font-size: 12px;
     }
     .search-bar input::placeholder{

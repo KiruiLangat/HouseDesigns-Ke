@@ -260,10 +260,11 @@ form{
         font-size: 18px;
     }
     .contact-info{
-        width: 90%;
+        width: 93%;
         margin-top: 5%;
     }
     .our-contacts{
+        margin-top: 10%;
         width: 90%;
         box-sizing: border-box;
         box-shadow: 0px 0px 10px 0.1px #00000037;
@@ -285,7 +286,7 @@ form{
         padding: 10px;
     }
     .call img{
-        width: 100%;
+        width: 30%;
         margin-bottom: 10px;
     }
     .call p{
@@ -302,7 +303,7 @@ form{
         padding: 10px;
     }
     .email img{
-        width: 100%;
+        width: 30%;
         margin-bottom: 10px;
     }
     .email p{
@@ -319,7 +320,7 @@ form{
         padding: 10px;
     }
     .whatsapp img{
-        width: 100%;
+        width: 30%;
         margin-bottom: 10px;
     }
     .whatsapp a{
@@ -329,6 +330,7 @@ form{
         margin: auto;
     }
     .form{
+        margin-top: 10%;
         width: 90%;
         box-sizing: border-box;
         box-shadow: 0px 0px 10px 0.1px #00000037;

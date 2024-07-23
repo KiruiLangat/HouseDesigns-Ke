@@ -1,0 +1,30 @@
+.shop-home{
+    margin:0 0;
+    width: 100%;
+    min-height:100vh;
+}
+.landing-page{
+    width: 93%;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-gap: 20px;
+    margin: auto;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+.landing-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 0;
+    padding: 0 5px;
+}
+.landing-content h1{
+    font-size: 40px;
+    font-weight: 500;
+    color: white;
+}
+.landing-content .highlight{
+    color: #ED7D31;
+}

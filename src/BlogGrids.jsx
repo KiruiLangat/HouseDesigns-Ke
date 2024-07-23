@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import './BlogGrids.css';
 import '@fontsource/poppins'
-import arrow from './images/arrow-button.svg'
+//import arrow from './images/arrow-button.svg'
 
 const style = {
     fontFamily: 'Poppins',
@@ -40,9 +40,9 @@ export default function BlogGrids() {
                     )}
                 </div>
                 <h2  className='post-title' dangerouslySetInnerHTML={{__html: post.title.rendered }}/>
-                <div className='arrow'>
+                {/* <div className='arrow'>
                     <img src= {arrow} alt='arrow'  />
-                </div>
+                </div> */}
                 <p>{new Date (post.date).toLocaleDateString()}</p>
             </Link>
         ))}

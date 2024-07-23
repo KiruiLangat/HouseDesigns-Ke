@@ -2,8 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import './Masterplanning.css'
 import '@fontsource/poppins'
-import Header from './Header'
-import Footer from './Footer'
 import Masterplan from './images/masterplanning.png'
 import Masterplan1 from './images/Masterplanning2.png'
 import Masterplan2 from './images/Masterplanning3.png'
@@ -47,7 +45,6 @@ export default function Masterplanning(){
                 <meta name='twitter:image:height' content='144' />
                 <meta name='twitter:url' content='https://housedesigns.co.ke/masterplanning' />
             </Helmet>
-            <Header />
             <div className="large-img">
                 <img src={Masterplan} alt="institution Masterplan" />
             </div>
@@ -72,7 +69,6 @@ export default function Masterplanning(){
             </div>
 
 
-            <Footer />
         </div>
     )
 }

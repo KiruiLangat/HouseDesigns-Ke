@@ -1,13 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Header from './Header.jsx';
+//import Header from './Header.jsx';
 import Carousel from './Carousel.jsx';
 import GetStarted from './GetStarted.jsx';
 import GetInTouch from './getInTouch.jsx';
 import BrowseProjects from './BrowseProjects.jsx';
 import AboutUs from './AboutUs.jsx';
 import Articles from './Articles.jsx';
-import Footer from './Footer.jsx';
+//import Footer from './Footer.jsx';
 
 import './Homepage.css';
 import '@fontsource/poppins';
@@ -39,14 +39,14 @@ function Homepage() {
         <meta name='twitter:url' content='https://housedesigns.co.ke/' />
 
       </Helmet>
-      <Header />
+    
       <Carousel />
       <GetStarted />
       <GetInTouch />
       <BrowseProjects />
       <AboutUs />
       <Articles />
-      <Footer />
+      
     </div>
   );
 }

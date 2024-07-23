@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { Helmet } from 'react-helmet' 
 import { useParams } from 'react-router-dom'
-import Header from './Header'
-import Footer from './Footer'
 import './projectDescription.css'
 import '@fontsource/poppins'
 
@@ -82,7 +80,6 @@ export default function ProjectDescription({sub_category_name}) {
                 <meta name='twitter:image:height' content='144' />
                 <meta name='twitter:url' content={ogUrl} />
             </Helmet>         
-            <Header />
             <>
                 <div className='large-img'>
                     <img src={images[0]} alt='project Img'/>
@@ -121,9 +118,6 @@ export default function ProjectDescription({sub_category_name}) {
                     </div>  
                 </>  
             )}
-
-            <Footer />
-
         </div>
     )
 }

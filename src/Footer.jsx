@@ -27,15 +27,14 @@ export default function Footer() {
         });
     };
 
-
 return (
     <div className='footer-container' style={style}>
             <div className='footer-left'>
                     <img src={logo} alt='logo' className='footer-logo' onClick={scrollToTop}/>
                     <nav className='footer-nav'>
                             <ul>
-                                    <li><Link to='/our-expertise'>Our Expertise</Link></li>
-                                    <li>
+                                <li><Link to='/our-expertise'>Our Expertise</Link></li>
+                                <li>
                                             <ScrollLink 
                                                     to="about-us"
                                                     spy = {true}
@@ -45,10 +44,10 @@ return (
 
                                                     >About Us
                                             </ScrollLink>
-                                    </li>
-                                    <li><Link to='/shop'>Shop</Link></li>
-                                    <li><Link to='/blog'>Blog</Link></li>
-                                    <li><Link to='/contact-us'>Contact Us</Link></li>
+                                </li>
+                                <li><Link to='/shop'>Shop</Link></li>
+                                <li><Link to='/blog'>Blog</Link></li>
+                                <li><Link to='/contact-us'>Contact Us</Link></li>
                             </ul>
                     </nav>
             </div>

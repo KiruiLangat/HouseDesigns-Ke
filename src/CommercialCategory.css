@@ -1,4 +1,16 @@
 /* Copied from projectDescription*/
+.project-description{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.project-description h1{
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+}
 .Masonry{
     width: 93%;
     display: grid;
@@ -23,11 +35,10 @@
     }
     .project-info{
         width: auto;
-        margin: auto;
+        margin-left: 10px;
     }
     .project-description h1{
-        font-size: 24px;
-        
+        font-size: 24px; 
     }
     .details h2{
         font-size: 16px;

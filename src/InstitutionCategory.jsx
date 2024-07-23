@@ -1,8 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom' 
-import Header from './Header'
-import Footer from './Footer'
 import '@fontsource/poppins'
 import './InstitutionCategory.css'
 import InstitutionImg from './images/Institutions.png'
@@ -39,7 +37,6 @@ export default function InstitutionCategory(){
                 <meta name='twitter:image:height' content='144' />
                 <meta name='twitter:url' content='https://housedesigns.co.ke/architecture/institutions' />
             </Helmet>
-            <Header />
             <div className='large-img'>
                 <img src={InstitutionImg} alt = 'Institution' />
             </div>
@@ -53,13 +50,12 @@ export default function InstitutionCategory(){
             <div className='project-info'>                
                 <div className='details'>
                     <h2>Project Details</h2>
-                    <p>View the institution planning on<br/> Our Masterplanning Services.</p>
+                    <p>View the institution planning on Our Masterplanning Services.</p>
                     <Link to='/masterplanning'>
                         <button>Check out the Masterplan</button>
                     </Link>
                 </div>
             </div>
-        <Footer />
 
         </div>
     )

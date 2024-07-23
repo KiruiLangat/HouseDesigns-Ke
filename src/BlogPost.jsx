@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {Helmet} from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import '@fontsource/poppins'
-import Header from './Header'
-import Footer from './Footer'
+
 // import arrow from './images/arrow-button.svg'
 
 
@@ -104,7 +102,6 @@ export default function BlogPost() {
           <meta name='twitter:image:height' content='144' />
           <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${post.slug}`} />
       </Helmet>
-      <Header />  
         <div className='post'>
             <div className='featured-img'>
                 {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
@@ -157,7 +154,6 @@ export default function BlogPost() {
         </div> */}
         
         
-        <Footer />
     </div>
   );
 }

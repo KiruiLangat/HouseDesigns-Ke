@@ -1,7 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Header from './Header'
-import Footer from './Footer'
+
 import '@fontsource/poppins'
 import './CommercialCategory.css'
 import ModernMarket from './images/modernmarket.jpg'
@@ -39,7 +38,6 @@ export default function CommercialCategory(){
                 <meta name='twitter:image:height' content='144' />
                 <meta name='twitter:url' content='https://housedesigns.co.ke/architecture/commercial' />
             </Helmet>
-            <Header />
             <div className='large-img'>
                 <img src={ModernMarket5} alt = 'Modern Market' />
             </div>
@@ -58,8 +56,6 @@ export default function CommercialCategory(){
                     <p>State of the art market area.</p>
                 </div>
             </div>
-        <Footer />
-
         </div>
     )
 }

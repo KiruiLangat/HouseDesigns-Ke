@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
 import './Projects.css';
 import '@fontsource/poppins'
 import { Link } from 'react-router-dom';
@@ -73,7 +71,6 @@ export default function Projects() {
             <meta name='twitter:url' content={`https://housedesigns.co.ke/architecture/residentials/${sub_category_name.charAt(0).toUpperCase()+sub_category_name.slice(1)}`} />
             </Helmet>
 
-            <Header />
             <h1 className='projects-title'>{sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)}</h1>
             <div className='service-projects-container'>
                 {projects.map(project => (
@@ -88,7 +85,6 @@ export default function Projects() {
                 ))}   
             </div>
             
-            <Footer />
         </div>
     )
 }

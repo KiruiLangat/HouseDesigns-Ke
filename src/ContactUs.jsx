@@ -2,9 +2,7 @@ import './ContactUs.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import React, {useState} from 'react'
-import Header from './Header'
 import '@fontsource/poppins'
-import Footer from './Footer'
 import Calendly from './Calendly' 
 import callicon from './images/mobileSVG.svg'
 import emailicon from './images/emailSVG.svg'
@@ -81,7 +79,6 @@ export default function ContactUs() {
                 <meta name='twitter:url' content='https://housedesigns.co.ke/contact-us' />
       </Helmet> 
       <div className='contact-header'>
-        <Header />
       </div>
       <div className='contact-welcome'>
         <h1>Get in touch with us...</h1>
@@ -136,7 +133,6 @@ export default function ContactUs() {
       </div>
         
       
-      <Footer />
       
 
     </div>

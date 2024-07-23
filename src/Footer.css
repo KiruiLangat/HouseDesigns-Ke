@@ -4,16 +4,13 @@
     margin-top: 10%;
     margin-bottom: 2%;
     width: 100%;
-    justify-content: space-between;
-
-    
+    justify-content: space-between; 
     
 }
 .footer-logo{
     width: 205px;
     height: auto;
     margin-bottom: -5%;
-
 }
 .footer-nav{
     margin-left: 10px;
