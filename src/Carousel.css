@@ -12,7 +12,7 @@ body {
   overflow: hidden;
 }
 .swiper-button-next, .swiper-button-prev {
-  color: #ED7D31;
+  color: #ED7D31 !important;
 }
 .swiper-slide{
   margin: 0;
@@ -58,7 +58,7 @@ body {
 @media (max-width: 768px) {
   .swiper-button-next,
   .swiper-button-prev{
-    display: none;
+    display: none !important;
   }
   .swiper-pagination {
     display: block;

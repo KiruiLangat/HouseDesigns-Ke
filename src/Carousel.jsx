@@ -71,7 +71,7 @@ export default function Carousel({sub_category_name}) {
         {projects.map(project => ( 
           <SwiperSlide key={project.id}>
             <Link to={`/architecture/residentials/${sub_category_name}/${project.title}`}>
-              <img src={project.image_url} alt={project.title}/>
+              <img src={project.image_url} alt={project.title} loading='lazy'/>
               <div className='carousel-overlay1'>
                 <p>{project.title}</p>
                 <p>{project.location}</p>

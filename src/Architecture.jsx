@@ -37,7 +37,7 @@ export default function ArchitectureServiceCategory(){
             <h1 className='projects-title'>Architecture Projects </h1>
                 <div className='service-projects-container'>
                     <div className='project-box1'>
-                        <Link to="/architecture/residentials">
+                        <Link to="/residentials">
                         <div className='project-img'>
                             <img src={ResidentialsImg} alt='Residential' />
                         </div>
@@ -45,7 +45,7 @@ export default function ArchitectureServiceCategory(){
                         </Link>
                     </div>
                     <div className='project-box1'>
-                        <Link to="/architecture/commercial">
+                        <Link to="/commercial">
                         <div className='project-img'>
                             <img src={CommercialImg} alt='Commercial' />
                         </div>
@@ -53,7 +53,7 @@ export default function ArchitectureServiceCategory(){
                         </Link>
                     </div>
                     <div className='project-box1'>
-                        <Link to="/architecture/institutions">
+                        <Link to="/institutions">
                         <div className='project-img'>
                             <img src={InstitutionImg} alt='Institutions' />
                         </div>

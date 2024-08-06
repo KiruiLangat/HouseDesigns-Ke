@@ -1,0 +1,150 @@
+.assurance-container{
+    width: 93%;
+    margin: auto;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;    
+    align-items: flex-start;
+}
+.assurance-container h1{
+    font-size: 36px;
+    font-weight: 300;
+    
+}
+.assurance{
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px; 
+    /* border: 1px solid rgba(0, 0, 0, 0.1);
+    
+    @media(prefers-color-scheme:dark){
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    } */
+}
+.assurance-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
+    @media(prefers-color-scheme:dark){
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
+}
+.assurance-box p{
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+}
+.assurance-box a{
+    text-decoration: none;
+    color: #ED7D31;
+    border-bottom: black;
+}
+.policies p{
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+}
+.policy-assurance{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: auto;
+    margin-top: 5%;
+    width: auto;
+       
+}
+.policy-assurance a{
+    text-decoration: none;
+    color: #00000080;
+
+    @media(prefers-color-scheme:dark){
+        color: #6C5f5B;
+    }
+}
+.policies{
+    width: auto;
+    margin: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 10px; 
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    @media (prefers-color-scheme:dark){
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+
+
+    }
+
+   
+}
+.policies:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    color: black;
+
+    @media(prefers-color-scheme:dark){
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+}
+
+@media (max-width:768px){
+    .assurance-container{
+        width: 93%;
+        margin-top: 20%;
+        display: flex;
+        flex-direction: column;
+    }
+    .assurance-container h1{
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 0;
+        
+    }
+    .assurance{
+        display: flex;
+        flex-direction: column;
+    }
+    .assurance-box{
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        padding: 5px;
+
+        @media(prefers-color-scheme:dark){
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        }
+    }
+    .policy-assurance{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .policies{
+        border: none;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        padding: 5px;
+
+        @media(prefers-color-scheme:dark){
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        }
+    }
+    .policies p{
+        color: black;
+    }
+    
+
+
+}

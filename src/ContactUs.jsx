@@ -122,7 +122,7 @@ export default function ContactUs() {
               <h3>*Message:</h3>
               <textarea name='message' placeholder='Leave a message' value={form.message} onChange={handleChange} required />
               <button type='submit'>Submit</button>
-              <Link to='/contact-us/submission'></Link>
+              <Link to='/thank-you'></Link>
           </form>
           </div>
            

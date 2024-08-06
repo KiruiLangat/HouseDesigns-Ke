@@ -27,16 +27,16 @@ export default function App() {
         style={style}
       >
         <SwiperSlide >
-            <img src={carousel2} alt='Maisonette'/>
+            <img src={carousel2} alt='Maisonette' loading='lazy'/>
         </SwiperSlide>
         <SwiperSlide >
-            <img src={carousel3} alt='Maisonette'/>
+            <img src={carousel3} alt='Maisonette' loading='lazy' />
         </SwiperSlide>
         <SwiperSlide >
-            <img src={carousel2} alt='Maisonette'/>
+            <img src={carousel2} alt='Maisonette' loading='lazy'/>
         </SwiperSlide>
         <SwiperSlide >
-            <img src={carousel3} alt='Maisonette'/>
+            <img src={carousel3} alt='Maisonette' loading='lazy'/>
         </SwiperSlide>
       </Swiper>
 

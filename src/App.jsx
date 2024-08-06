@@ -14,7 +14,7 @@ import Homepage from './Homepage';
 import Blog from './Blog';
 import OurExpertise from './OurExpertise';
 import ContactUs from './ContactUs';
-import Shop from './ShopConstruction'
+
 import Projects from './Projects'
 import ProjectDescription from './projectDescription';
 import Submission from './Submission';
@@ -24,6 +24,11 @@ import Residentials from './Residentials'
 import CommercialCategory from './CommercialCategory';
 import InstitutionCategory from './InstitutionCategory';
 import Masterplanning from './Masterplanning';
+
+//shop Navigation
+import Shop from './shop/home' //Home page of shop
+import Products from './shop/Allproducts'
+import ProductDescription from './shop/productDescription'
 
 export default function App() {
   
@@ -54,16 +59,24 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path='/our-expertise' element={<OurExpertise />} />
         <Route path='/contact-us' element={<ContactUs />} />
-        <Route path='/shop' element={<Shop/>} />
-        <Route path='/submission' element={<Submission/>} />
+        
+        <Route path='/thank-you' element={<Submission/>} />
         <Route path="/blog/:slug" element={<Post />} />
         <Route path="/architecture" element={<Architecture />} />
-        <Route path="/architecture/residentials" element={<Residentials />} />
-        <Route path="/architecture/residentials/:sub_category_name" element={<Projects />} />
-        <Route path='/architecture/residentials/:sub_category_name/:title' element={<ProjectDescription/>} />
-        <Route path='/architecture/commercial' element={<CommercialCategory/>} />
-        <Route path='/architecture/institutions' element={<InstitutionCategory />} />
+        <Route path="/residentials" element={<Residentials />} />
+        <Route path="/:sub_category_name" element={<Projects />} />
+        <Route path='/:title' element={<ProjectDescription/>} />
+        <Route path='/commercial' element={<CommercialCategory/>} />
+        <Route path='/institutions' element={<InstitutionCategory />} />
         <Route path='/masterplanning' element={<Masterplanning />} />
+
+        {/* Shop Routes */}
+        <Route path='/shop' element={<Shop/>} />
+        <Route path='/shop/:category' element={<Products/>} />
+        <Route path='/shop/:slug' element={<ProductDescription/>} />
+
+
+
       </Routes>
       <Footer />
 
