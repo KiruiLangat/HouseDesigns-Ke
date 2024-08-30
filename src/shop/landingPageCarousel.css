@@ -13,6 +13,15 @@
     
 }
 
+.option-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+
+
 .thumbs-swiper{
     width: 100%;
     height: auto;
@@ -73,6 +82,9 @@
 .thumb-color-4 {
     border-color: #FF5733;
 }
+
+
+
 
 
 @media (max-width:768px){

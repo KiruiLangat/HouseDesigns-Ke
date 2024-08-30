@@ -148,12 +148,12 @@ li a:hover::after, li a.active::after {
     align-items: center;
 }
 .icon-cart{
-    width: 15px;
+    width: 18px !important;
     margin-left: 5px;
     padding: 0;
 
     @media (prefers-color-scheme: dark) {
-        filter: invert(0.4) ;
+        color: #6C5f5B;
     }
 }
 

@@ -33,7 +33,7 @@
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-
+    padding: 10px;
     @media(prefers-color-scheme:dark){
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
     }
@@ -143,6 +143,10 @@
     }
     .policies p{
         color: black;
+
+        @media(prefers-color-scheme:dark){
+            color: #6C5f5B;
+        }
     }
     
 

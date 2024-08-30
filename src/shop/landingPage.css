@@ -78,9 +78,11 @@
     }
     .landing-text{
         font-size:24px;
+        margin-left: 10px;
     }
     .landing-subtext{
         font-size: 14px;
+        margin-left: 10px;
     }
     
 }
@@ -88,8 +90,10 @@
 @media (max-width:400px){
     .landing-text{
         font-size: 20px;
+        margin-left: 10px;
     }
     .landing-subtext{
         font-size:12px;
+        margin-left: 10px;
     }
 }

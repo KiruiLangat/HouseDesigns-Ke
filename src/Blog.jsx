@@ -81,6 +81,7 @@ export default function Blog() {
             <meta name='twitter:image:height' content='144' />
             <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
           </Helmet>
+          
               <Link to={`/blog/${slug}`} className="blog-intro">
                 <div className='test-img'>
                   <img src= {featuredImage} alt='featured-img' />

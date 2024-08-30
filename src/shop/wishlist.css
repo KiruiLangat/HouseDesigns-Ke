@@ -1,0 +1,122 @@
+.wishlist-container{
+    width:93%;
+    margin: auto;
+    padding:0;
+    
+}
+.wishlist-container h1{
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 0;
+    text-align: center;
+}
+.wishlist-information{
+    width: 93%;
+    margin: auto;
+    margin-top: 10px;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: center;
+
+ 
+    @media (prefers-color-scheme:dark){
+        border: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    
+}
+.wishlist-product{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.wishlist-product img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+.wishlist-product-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+
+}
+.wishlist-product-info h2{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.wishlist-product-info p{
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 10px;
+    color: black;
+    @media (prefers-color-scheme:dark){
+        color: #6C5f5B;
+    }
+}
+
+
+.no-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    
+}
+.no-product p{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+.no-product a{
+    font-size: 14px;
+    font-weight: 300;
+    color: #ED7D31;
+    text-decoration: none;
+    border-bottom: 1px solid #ED7D31;
+    
+}
+
+
+@media (max-width: 768px){
+    .wishlist-container h1{
+        font-size: 24px;
+        margin-top: 10%;
+        text-align: center;
+    }
+    .wishlist-information{
+        padding: 10px;
+        margin-top: 20px;
+    }
+    .wishlist-product{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .wishlist-product img{
+        margin-bottom: 10px;
+    }
+    .wishlist-product-info{
+        width: 100%;
+    }
+
+
+    .no-product{
+        margin-bottom: 20px;
+        
+    }
+    .no-product p{
+        font-size: 14px;
+        font-weight: 300;
+    }
+    .no-product a{
+        font-size: 12px;
+    }
+}

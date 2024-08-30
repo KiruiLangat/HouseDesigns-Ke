@@ -1,7 +1,7 @@
 
-const fetchProducts = async (categoryID) => {
+const fetchAllProducts = async () => {
     try {
-        const response = await fetch(`http://localhost:3001/api/products?category=${categoryID}&_embed`)
+        const response = await fetch(`http://localhost:3001/api/products`)
         if (!response.ok){
             throw new Error('Error fetching products')
         }
@@ -11,6 +11,19 @@ const fetchProducts = async (categoryID) => {
         throw error;
     }
 }
+const fetchProducts = async (categoryId) => {
+    try {
+        const response = await fetch(`http://localhost:3001/api/products?categoryId=${categoryId}`)
+        if (!response.ok){
+            throw new Error('Error fetching products')
+        }
+        return await response.json()
+    } catch (error) {
+        console.error(error)
+        throw error;
+    }
+}
+
 
 const fetchCategories = async () => {
     try {
@@ -25,4 +38,45 @@ const fetchCategories = async () => {
     }
 }
 
-export {fetchCategories, fetchProducts}
+const fetchAttributes = async (productId) => {
+    try {
+        const response = await fetch(`http://localhost:3001/api/products/${productId}/attributes`);
+        if (!response.ok) {
+            throw new Error('Error fetching attributes');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
+const fetchAttributesTerms = async (attributeName) => {
+    try {
+        const response = await fetch(`http://localhost:3001/api/attributes/terms?name=${attributeName}`);
+        if (!response.ok) {
+            throw new Error('Error fetching attribute terms');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
+
+const fetchProductVariations = async (productId) => { 
+    try{
+        const response = await fetch(`http://localhost:3001/api/products/${productId}/variations`)
+        if (!response.ok){
+            throw new Error('Error fetching variations')
+        }
+        return await response.json()
+    } catch (error) {
+        console.error(error)
+        throw error;
+    }
+} 
+
+
+export {fetchCategories, fetchAllProducts, fetchProducts, fetchAttributes, fetchProductVariations, fetchAttributesTerms}

@@ -27,8 +27,11 @@ import Masterplanning from './Masterplanning';
 
 //shop Navigation
 import Shop from './shop/home' //Home page of shop
-import Products from './shop/Allproducts'
+import HousePlans from './shop/Allproducts'
+import Wishlist from './shop/wishlist'
+import Cart from './shop/cart'
 import ProductDescription from './shop/productDescription'
+import FilteredCategoriesPage from './shop/filteredCategoriesPage';
 
 export default function App() {
   
@@ -48,6 +51,8 @@ export default function App() {
     }),
     [prefersDarkMode],
   );
+
+  
 
   return (
     <ThemeProvider theme={theme}>
@@ -72,12 +77,17 @@ export default function App() {
 
         {/* Shop Routes */}
         <Route path='/shop' element={<Shop/>} />
-        <Route path='/shop/:category' element={<Products/>} />
-        <Route path='/shop/:slug' element={<ProductDescription/>} />
+        <Route path='/house-plans' element={<HousePlans />} />
+        <Route path='/wishlist' element={<Wishlist />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/product/:slug' element={<ProductDescription />} />
+        <Route path='/shop/:category' element={<FilteredCategoriesPage />} />
 
 
 
       </Routes>
+      
+      
       <Footer />
 
     </ThemeProvider> 

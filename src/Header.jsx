@@ -4,8 +4,9 @@ import { Link as ScrollLink } from 'react-scroll';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
-import { ReactComponent as Cart } from './images/cart.svg';
 
+import ShoppingBagOutlined from '@mui/icons-material/ShoppingBagOutlined';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import logo from './images/Logo.png';
 import './Header.css';
 import '@fontsource/poppins/300.css';
@@ -63,7 +64,8 @@ export default function Header() {
                         <li >     
                             <div className='shop-nav'>
                                 <Link to="/shop"
-                                    onClick={() => setSidebarVisible(false)} >
+                                    onClick={() => setSidebarVisible(false)}
+                                    >
                                         Shop
 
                                 </Link>
@@ -71,16 +73,25 @@ export default function Header() {
                                     {dropdownVisible ? <ExpandLessIcon className='icon-less' /> : <ExpandMoreIcon className='icon-more'/> }
                                 </div>
                                 {dropdownVisible && (
-                                    <div className='shop-dropdown' onClick={() => setSidebarVisible(false)}>
-                                        <ul>
-                                            <li><Link to="/shop/home">All Products</Link></li>
-                                            <li><Link to="/submt your brief">Submit your Brief</Link></li>
+                                    <div  className='shop-dropdown' >
+                                        <ul onClick={() => setDropdownVisible(false)} >
+                                            <li><Link to="/house-plans"
+                                            onClick={() => setSidebarVisible(false)}>House Plans</Link></li>
+                                            <li><Link to="/submit your brief"
+                                            onClick={() => setSidebarVisible(false)}>Submit your Brief</Link></li>
                                             <li className='link-cart'>
-                                                <Link to="/cart">
+                                                <Link to="/cart"
+                                                onClick={() => setSidebarVisible(false)}>
                                                     Cart 
-                                                   <Cart className='icon-cart' /> 
+                                                   < ShoppingBagOutlined className='icon-cart' /> 
                                                 </Link>
                                             </li>
+                                            <li className='link-cart'>
+                                                <Link to='/wishlist'
+                                                onClick={() => setSidebarVisible(false)}>
+                                                Wishlist
+                                                <FavoriteBorderIcon className='icon-cart' />
+                                                </Link></li>
                                             <li><Link to="/profile">Profile</Link></li>
                                         </ul>
                                     </div>
@@ -113,32 +124,48 @@ export default function Header() {
                             smooth = {true}
                             duration={500}
                             offset={-70}
+
                             >About Us
                         </ScrollLink></li>
                     <li className='hideonmobile'>
                         <div className='shop-nav'>
                             <Link to="/shop"
                             onClick={() => setSidebarVisible(false)} >
-                            Shop
-
+                            Shop                            
                             </Link>
                             <div className='shop-dropdown-toggle' onClick={toggleDropdown}>
                                 {dropdownVisible ? <ExpandLessIcon className='icon-less' /> : <ExpandMoreIcon className='icon-more'/> }
                             </div>
                             {dropdownVisible && (
-                                <div className='shop-dropdown'>
-                                    <ul>
-                                        <li><Link to="/shop/home">House Plans</Link></li>
-                                        <li><Link to="/submit your brief">Submit your Brief</Link></li>
+                                <div className='shop-dropdown' >
+                                    <ul onClick={() => setDropdownVisible(false)}>
+                                        <li><Link to="/house-plans"
+                                        onClick={() => setSidebarVisible(false)}
+                                        >House Plans</Link></li>
+                                        <li><Link to="/submit your brief"
+                                        onClick={() => setSidebarVisible(false)}
+                                        >Submit your Brief</Link></li>
                                         <li >
-                                            <Link to="/cart">
+                                            <Link to="/cart"
+                                            onClick={() => setSidebarVisible(false)}>
                                                 <div className='link-cart'>
                                                    Cart 
-                                                   <Cart className='icon-cart' /> 
+                                                   <ShoppingBagOutlined className='icon-cart' /> 
                                                 </div>
                                             </Link>
                                         </li>
-                                        <li><Link to="/profile">Profile</Link></li>
+                                       <Link to='/wishlist'
+                                       onClick={() => setSidebarVisible(false)}
+                                       > 
+                                            <li className='link-cart'>
+                                            Wishlist
+                                            <FavoriteBorderIcon className='icon-cart' />                                           
+                                            </li>
+                                        </Link>
+                                        <li><Link to="/profile"
+                                        onClick={() => setSidebarVisible(false)}
+                                        >
+                                            Profile</Link></li>
                                     </ul>
                                 </div>
                             )}

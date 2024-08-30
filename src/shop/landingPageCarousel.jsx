@@ -34,10 +34,10 @@ export default function LandingPageCarousel({ onSelect }) {
                 className={`main-swiper ${shadowClasses[selectedThumb]}`}
                 initialSlide={3} // Start with option 4
             >
-                <SwiperSlide>Content for slide 1</SwiperSlide>
-                <SwiperSlide>Content for slide 2</SwiperSlide>
-                <SwiperSlide>Content for slide 3</SwiperSlide>
-                <SwiperSlide>Submit Your Brief </SwiperSlide> {/* Content for option 4 */}
+                <SwiperSlide className='option-content'>Content for slide 1</SwiperSlide>
+                <SwiperSlide className='option-content'>Content for slide 2</SwiperSlide>
+                <SwiperSlide className='option-content'>Content for slide 3</SwiperSlide>
+                <SwiperSlide className='option-content'>Submit Your Brief </SwiperSlide> {/* Content for option 4 */}
             </Swiper>
 
             {/* Thumbs Swiper */}

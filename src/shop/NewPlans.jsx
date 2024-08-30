@@ -9,6 +9,11 @@ import { ReactComponent as Floors} from '../images/floors.svg'
 import { ReactComponent as PlinthArea} from '../images/plinth.svg'
 import { ReactComponent as Arrow} from '../images/Arrow.svg'
 
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+
 import '@fontsource/poppins'
 
 const style = {
@@ -17,6 +22,29 @@ const style = {
 
 export default function NewPlans(){
     const [products, setProducts] = useState([]);
+
+    //handling Cart and Wishlist
+    const [cart, setCart] = useState([]);
+    const [ wishlist, setWishlist ] = useState([]);
+
+    const handleAddToCart = (products) => {
+        if(cart.includes(products)){
+            setCart(cart.filter(item => item !== products));
+        } else {
+            setCart([...cart,products])
+        }
+    }
+
+    const handleAddToWishlist = (products) => {
+        if(wishlist.includes(products)){
+            setWishlist(wishlist.filter(item => item !== products));
+        } else {
+            setWishlist([...wishlist,products])
+        }
+        localStorage.setItem('wishlist', JSON.stringify([...wishlist,products]));
+    }
+
+
 
     useEffect (() => {
 
@@ -40,20 +68,6 @@ export default function NewPlans(){
     
     }, []);
 
-        // const fetchData = async () => {
-        //     try {
-        //         const fetchedCategories = await fetchCategories();
-        //         const newPlansCategory = fetchedCategories.find(category => category.name === 'New Plans');
-
-
-        //         const fetchedProducts = await fetchProducts('New Plans');
-        //         setProducts(fetchedProducts.slice(0,3)); //Display only 3 products
-        //     } catch (error) {
-        //         console.log('Error Fetching Products',error);
-        //     }
-        // }
-
-        // fetchData();
 
     return(
         <div className='new-plans-container' style={style}>
@@ -64,7 +78,7 @@ export default function NewPlans(){
                     
                     <h2>Explore Our Latest House Plans and Designs</h2>
                    
-                    <Link to={`/shop/products?category=New Plans`}>
+                    <Link to={`/shop/New Plans`}>
                         <div className='plans-nav-CTA'>
                             <p>See More</p>
                             <Arrow className='icon-arrow-np' />
@@ -73,8 +87,25 @@ export default function NewPlans(){
                 </div>
                 {products.map(product => (
                     <div key={product.id} className='new-plans-card'>
-                        <Link to={`/shop/${product.slug}`}>
+                        <Link to={`/product/${product.slug}`}>
                             <img src={product.images[0].src} alt={product.name} loading='lazy' />
+                        </Link>
+                            <div className='cart-wishlist'>
+                                    <div className='wishlist' onClick={() => handleAddToWishlist(product)}>
+                                        {wishlist.includes(product) ? (
+                                            <FavoriteIcon className='icon-wishlist'/> 
+                                        ): ( 
+                                            <FavoriteBorderIcon className='icon-wishlist'/>
+                                        )}
+                                    </div>
+                                    <div className='add-cart' onClick={() => handleAddToCart(product)}>
+                                        {cart.includes(product) ? (
+                                            <ShoppingBagIcon className='icon-add-cart'/> 
+                                        ): (
+                                            <ShoppingBagOutlinedIcon className='icon-add-cart'/>
+                                        )}
+                                    </div>
+                                </div>
                             <div className='new-indicator'>
                                 < Star className='icon-indicator' />
                                 <p>New</p>
@@ -103,10 +134,12 @@ export default function NewPlans(){
                                     <p>{product.attributes.find(attr => attr.name === 'Bathrooms')?.options[0]} Bathrooms</p>
                                 </div>
                             </div>
-                        </Link>
+                        
                     </div>
                 ))}
             </div>
+            
+
         </div>
     )
 }
