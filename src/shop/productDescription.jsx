@@ -19,6 +19,8 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 import GalleryCarousel from './galleryCarousel';
 
+import { useCart, useWishlist } from './cartContext';
+
 const style = {
     fontFamily: 'Poppins',
 };
@@ -31,9 +33,12 @@ export default function ProductDescription() {
     const [selectedOption, setSelectedOption] = useState(null);
     const [selectedPrice, setSelectedPrice] = useState(null);
     const [similarProducts, setSimilarProducts] = useState([])
-    const [cart, setCart] = useState([]);
-    const [wishlist, setWishlist] = useState([]);
-    
+
+    const { cart, handleAddToCart, handleRemoveFromCart } = useCart();
+    const {handleAddToWishlist, wishlist, handleRemoveFromWishlist } = useWishlist();
+
+    const isInCart = (product) => cart.some((item) => item.slug === product.slug);
+    const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
     
     
     
@@ -110,23 +115,7 @@ export default function ProductDescription() {
             }
         }
     }
-
-    const handleAddToCart = (products) => {
-        if(cart.includes(products)){
-            setCart(cart.filter(item => item !== products));
-        } else {
-            setCart([...cart,products])
-        }
-    }
-
-    const handleAddToWishlist = (products) => {
-        if(wishlist.includes(products)){
-            setWishlist(wishlist.filter(item => item !== products));
-        } else {
-            setWishlist([...wishlist,products])
-        }
-        localStorage.setItem('wishlist', JSON.stringify([...wishlist,products]));
-    }        
+       
     
 
 
@@ -187,11 +176,12 @@ export default function ProductDescription() {
                         
                         <div className='product-to-cart'>
                             <h4>Add to Cart</h4>
-                            <Link to='/cart'>
-                                <button style={style}>
-                                    <p>{selectedPrice ? `$${selectedPrice}`: 'Select An Option' }</p>
-                                </button>
-                            </Link>
+                            <button style={style} onClick={() => {
+                                isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product);
+                            }}>
+                                <p>{selectedPrice ? `$${selectedPrice}`: 'Select An Option' }</p>
+                            </button>
+                            
                         </div>
                     </div>
                 </div>
@@ -209,14 +199,16 @@ export default function ProductDescription() {
                                 <img src={product.images[0].src} alt={product.name} loading='lazy' />
                             </Link>
                             <div className='cart-wishlist'>
-                                    <div className='wishlist' onClick={() => handleAddToWishlist(product)}>
+                                    <div className='wishlist' onClick={() =>
+                                        isInWishlist(product) ? handleRemoveFromWishlist(product) : handleAddToWishlist(product)}>
                                         {wishlist.includes(product) ? (
                                             <FavoriteIcon className='icon-wishlist'/> 
                                         ): ( 
                                             <FavoriteBorderIcon className='icon-wishlist'/>
                                         )}
                                     </div>
-                                    <div className='add-cart' onClick={() => handleAddToCart(product)}>
+                                    <div className='add-cart' onClick={() =>
+                                        isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product)}>
                                         {cart.includes(product) ? (
                                             <ShoppingBagIcon className='icon-add-cart'/> 
                                         ): (

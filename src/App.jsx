@@ -2,6 +2,9 @@ import React, {useEffect}  from 'react';
 import {useLocation} from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 //MUI Theme manipulation
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
@@ -32,6 +35,10 @@ import Wishlist from './shop/wishlist'
 import Cart from './shop/cart'
 import ProductDescription from './shop/productDescription'
 import FilteredCategoriesPage from './shop/filteredCategoriesPage';
+import CheckOutPage from './shop/checkoutPage';
+
+
+
 
 export default function App() {
   
@@ -52,13 +59,14 @@ export default function App() {
     [prefersDarkMode],
   );
 
+
+
   
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-      
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route path="/blog" element={<Blog />} />
@@ -75,20 +83,21 @@ export default function App() {
         <Route path='/institutions' element={<InstitutionCategory />} />
         <Route path='/masterplanning' element={<Masterplanning />} />
 
-        {/* Shop Routes */}
-        <Route path='/shop' element={<Shop/>} />
-        <Route path='/house-plans' element={<HousePlans />} />
-        <Route path='/wishlist' element={<Wishlist />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/product/:slug' element={<ProductDescription />} />
-        <Route path='/shop/:category' element={<FilteredCategoriesPage />} />
-
-
+        
+          {/* Shop Routes */}
+          <Route path='/shop' element={<Shop />} />
+          <Route path='/house-plans' element={<HousePlans  />} />
+          <Route path='/wishlist' element={<Wishlist  />} />
+          <Route path='/cart' element={<Cart  />} />
+          <Route path='/product/:slug' element={<ProductDescription  />} />
+          <Route path='/shop/:category' element={<FilteredCategoriesPage  />} />
+          <Route path='/shop/checkout' element={<CheckOutPage />} />
+        
+        
 
       </Routes>
-      
-      
       <Footer />
+      <ToastContainer />
 
     </ThemeProvider> 
   )

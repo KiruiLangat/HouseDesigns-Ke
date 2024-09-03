@@ -12,7 +12,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-
+import { useCart, useWishlist } from './cartContext'
 
 const style ={
     fontFamily: 'Poppins'
@@ -26,26 +26,12 @@ export default function Plans(){
     const [selectedCategory, setSelectedCategory] = useState('Popular Plans');
 
     //handling Cart and Wishlist
-    const [cart, setCart] = useState([]);
-    const [wishlist, setWishlist] = useState([]);
+    const {cart, handleAddToCart, handleRemoveFromCart} = useCart();
+    const {wishlist, handleAddToWishlist, handleRemoveFromWishlist} = useWishlist();
 
-    const handleAddToCart = (product) => {
-        if(cart.includes(product)){
-            setCart(cart.filter(item => item !== product));
-        } else {
-            setCart([...cart,product])
-        }
-    }
+    const isInCart = (product) => cart.some((item) => item.slug === product.slug);
+    const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
 
-    const handleAddToWishlist = (product) => {
-        if(wishlist.includes(product)){
-            setWishlist(wishlist.filter(item => item !== product));
-        } else {
-            setWishlist([...wishlist,product])
-        }
-    }
-
-    //Add a Loading component for each loading state
 
     useEffect (() => {
 
@@ -140,18 +126,28 @@ export default function Plans(){
                                 <img src={products[0]?.images[0]?.src} alt={products[0]?.name} loading='lazy' />
                             </Link>
                                 <div className='cart-wishlist'>
-                                    <div className='wishlist' onClick={() => handleAddToWishlist(products[0])}>
-                                        {wishlist.includes(products[0]) ? (
-                                            <FavoriteIcon className='icon-wishlist'/> 
+                                    <div className='wishlist' onClick={() =>{
+                                        isInWishlist(products[0]) ? handleRemoveFromWishlist(products[0]) : handleAddToWishlist(products[0])
+                                    }}>                                
+                                        {isInWishlist(products[0]) ? (
+                                            <FavoriteIcon className='icon-wishlist'
+                                            /> 
                                         ): ( 
-                                            <FavoriteBorderIcon className='icon-wishlist'/>
+                                            <FavoriteBorderIcon className='icon-wishlist'
+                                            />
                                         )}
                                     </div>
-                                    <div className='add-cart' onClick={() => handleAddToCart(products[0])}>
-                                        {cart.includes(products[0]) ? (
-                                            <ShoppingBagIcon className='icon-add-cart'/> 
+                                    <div className='add-cart' onClick={() =>{
+                                        isInCart(products[0]) ? handleRemoveFromCart(products[0]) :  handleAddToCart(products[0])
+                                    }}>
+                                        {isInCart(products[0]) ? (
+                                            <ShoppingBagIcon className='icon-add-cart'
+                                            
+                                            /> 
                                         ): (
-                                            <ShoppingBagOutlinedIcon className='icon-add-cart'/>
+                                            <ShoppingBagOutlinedIcon className='icon-add-cart'
+                                            
+                                            />
                                         )}
                                     </div>
                                 </div>

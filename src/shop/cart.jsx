@@ -1,40 +1,58 @@
 import React from 'react';
-import './cart.css';
+import { useCart } from './cartContext';
+import { Link } from 'react-router-dom';
+
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+import './cart.css'
 
 const style = {
-    fontFamily: 'Poppins',
-};
+    fontFamily: 'Poppins'
+}
 
-export default function Cart({ products = [] }) {
-    // Check if products array is empty
-    const isCartEmpty = products.length === 0;
+const CartPage = () => {
+  const { cart, handleRemoveFromCart } = useCart();
 
-    return (
-        <div className='cart-container' style={style}>
-            <h1>Your Cart</h1>
-            {isCartEmpty ? (
-                <div className='empty-cart'>
-                    <p>Your cart is currently empty</p>
-                    <a href='/shop'>Browse Products</a>
-                </div>
-            ) : (
-                <div className='cart-information'>
-                    {products.map((product) => (
-                        <div key={product.id} className='cart-product'>
-                            <img src={product.image} alt={product.name} />
-                            <div className='cart-product-information'>
-                                <h2>{product.name}</h2>
-                                <p>{product.description}</p>
-                                <p>${product.price}</p>
-                            </div>
+  return (
+    <div className='cart-container' style={style}>
+      <h1>Cart</h1>
+      {cart.length === 0 ? (
+      <div className='empty-cart'>
+        <p>Your cart is empty</p>
+        <Link to='/shop'>
+          Browse Plans
+        </Link>
+      </div> 
+      ) : (
+        <div className='cart-products'>
+          {cart.map((product, index) => (
+            <div key={index} className='cart-product'>
+              <Link to={`/product/${product.slug}`}>
+                <img src={product.images[0]?.src} alt={product.name} loading='lazy' />
+                
+              </Link>
+              
+              <div className='cart-product-details'>
+                    <h2>{product.name}</h2>
+                    <p>${product.price}</p>
+                    <div  className='remove-cart'>
+                        <p onClick={() => handleRemoveFromCart(product)}>Remove</p>
+
+                        <div className='checkout-from-cart'>
+                            <Link to='/shop/checkout'>
+                                <ShoppingCartIcon className='icon-cart'/>
+                                <p>Checkout</p>
+                            </Link>
                         </div>
-                    ))}
-                    <div className='cart-price'>
-                        {/* Add total price calculation if needed */}
-                        <h3>Total: ${products.reduce((acc, product) => acc + product.price, 0).toFixed(2)}</h3>
+                        
                     </div>
                 </div>
-            )}
+            </div>
+          ))}
         </div>
-    );
-}
+      )}
+    </div>
+  );
+};
+
+export default CartPage;

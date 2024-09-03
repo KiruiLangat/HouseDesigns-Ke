@@ -1,49 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useWishlist } from './cartContext';
+import { Link } from 'react-router-dom';
+
 import './wishlist.css';
-import '@fontsource/poppins';
 
 const style = {
-    fontFamily: 'Poppins'
-};
-
-export default function Wishlist({ products = [] }) {
-    const [wishlist, setWishlist] = useState([]);
-
-    useEffect(() => {
-        const savedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-        setWishlist(savedWishlist);
-    }, []);
-
-    const handleRemoveFromWishlist = (productId) => {
-        const updatedWishlist = wishlist.filter(item => item.id !== productId);
-        setWishlist(updatedWishlist);
-        localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+    fontFamily: 'Poppins',
     };
 
-    // Filter products to display only those in the wishlist
-    const wishlistProducts = products.filter(product =>
-        wishlist.some(item => item.id === product.id)
-    );
+const WishlistPage = () => {
+  const { wishlist, handleRemoveFromWishlist } = useWishlist();
 
-    return (
-        <div className='wishlist-container' style={style}>
-            <h1>Your Wishlist</h1>
-            <div className='wishlist-information'>
-                {wishlistProducts.length > 0 ? (
-                    wishlistProducts.map((product) => (
-                        <div key={product.id} className='wishlist-item'>
-                            <h3>{product.name}</h3>
-                            <a href={product.permalink}>View Product</a>
-                            <button onClick={() => handleRemoveFromWishlist(product.id)}>Remove from Wishlist</button>
-                        </div>
-                    ))
-                ) : (
-                    <div className='no-product'>
-                        <p>Your Wishlist is empty</p>
-                        <a href='/shop'>Browse Products</a>
-                    </div>
-                )}
-            </div>
+  return (
+    <div className='wishlist-container' style={style}>
+      <h1>Wishlist</h1>
+      {wishlist.length === 0 ? (
+        <div className='no-product'>
+            <p>Your wishlist is empty</p>
+            <Link to ='/shop'>
+                Save Plans for Later
+            </Link>
         </div>
-    );
-}
+      ) : (
+        <div className='wishlist-product'>
+          {wishlist.map((product, index) => (
+            <div key={index} className='wishlist-product-info'>
+                <Link to={`/product/${product.slug}`}>
+                    <img src={product.images[0]?.src} alt={product.name} loading='lazy' />
+                </Link>
+                <div className='wishlist-product-detail'>
+                    <h2>{product.name}</h2>
+                    <p>${product.price}</p> 
+               
+                    <div onClick={() => handleRemoveFromWishlist(product)} className='remove-wishlist'>
+                        <p>Remove</p>
+                    </div> 
+                
+                </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default WishlistPage;

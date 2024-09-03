@@ -2,10 +2,7 @@
     width: 93%;
     margin: auto;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
     
 }
 .cart-container h1{
@@ -30,7 +27,7 @@
     }
 }
 .empty-cart p{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 300;
     margin: 0;
     
@@ -43,6 +40,102 @@
     margin-top: 5px;
     border-bottom: 1px solid #ED7D31;
 }
+.cart-products{
+    width: 100%;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+.cart-product{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    height: 150px;
+
+    @media (prefers-color-scheme: dark) {
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+}
+.cart-product img{
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+}
+.cart-product-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;  
+    margin-left: 20px; 
+}
+.cart-product-details h2{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 0;
+
+    @media (prefers-color-scheme: dark) {
+        color: #fff;
+    }
+}
+.cart-product-details p{
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+    color: #00000080;
+    
+    @media (prefers-color-scheme: dark) {
+        color: #6C5f5B;
+    }
+}
+.remove-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.remove-cart p{
+    font-size: 14px;
+    font-weight: 300;
+    color: red;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.checkout-from-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    background-color: #ED7D31;
+    padding: 0;
+    border-radius: 10px;
+}
+.checkout-from-cart p{
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    text-align: center;
+    padding: 0;
+    margin-top: 12px;
+    align-self: first baseline !important;
+}
+.checkout-from-cart a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    @media (prefers-color-scheme: dark) {
+        color: #ED7D31 !important;
+    }
+}
+.icon-cart{
+    height: 20px !important;
+    color: black;
+}
+
+
 
 
 @media (max-width: 768px){
@@ -63,5 +156,36 @@
     }
     .empty-cart a{
         font-size: 12px;
+    }
+
+    .cart-products{
+        display: grid;
+        grid-template-columns: 1fr;
+        width:100%;
+    }
+    .cart-product{
+        width: 93%;
+        margin: auto;
+        height: 120px;
+    }
+    .cart-product img{
+        width: 200px;
+        height: 120px;
+        margin-bottom: 0;
+    }
+    .cart-product h2{
+        font-size: 16px;
+    }
+    .cart-product p{
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .checkout-from-cart{
+        padding: 0;
+        width: 100px;
+        height: 25px;
+    }
+    .icon-cart{
+        height: 15px !important;
     }
 }

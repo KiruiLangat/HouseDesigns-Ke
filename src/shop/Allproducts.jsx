@@ -17,7 +17,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
-
+import { useCart, useWishlist } from './cartContext';
 
 import { ReactComponent as Bathrooms} from '../images/bathroom.svg';
 import { ReactComponent as Bedrooms} from '../images/bedroom.svg';
@@ -42,10 +42,13 @@ export default function Allproducts({category}) {
     const [searchTerm, setSearchTerm] = useState('')
     const [filteredProducts, setFilteredProducts] = useState([])
     const [isDropdownVisible, setIsDropdownVisible] = useState(false)
-    const [wishlist, setWishlist] = useState([])
-    const [cart, setCart] = useState([])
     const [isFilterActive, setIsFilterActive] = useState(false)
 
+    const { cart, handleAddToCart, handleRemoveFromCart } = useCart()
+    const { wishlist, handleAddToWishlist, handleRemoveFromWishlist } = useWishlist()
+
+    const isInCart = (product) => cart.some((item) => item.slug === product.slug)
+    const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug)
 
 
     useEffect(() => {
@@ -179,14 +182,7 @@ export default function Allproducts({category}) {
         console.log(isPlinthAreaVisible)
     }
 
-    const handleAddToCart = (product) => {
-        console.log('Added to Cart')
-        setCart([...cart, product])
-    }
-    const handleAddToWishlist = (product) => {
-        console.log('Added to Wishlist')
-        setWishlist([...wishlist, product])
-    }
+   
 
 
     const toggleFilter = () => {
@@ -362,14 +358,16 @@ export default function Allproducts({category}) {
                                         <img src={product.images[0].src} alt={product.name} />
                                     </Link>
                                     <div className='cart-wishlist'>
-                                        <div className='wishlist' onClick={() => handleAddToWishlist(product)}>
+                                        <div className='wishlist' onClick={() =>
+                                            isInWishlist(product) ? handleRemoveFromWishlist(product) : handleAddToWishlist(product)}>
                                             {wishlist.includes(product) ? (
                                                 <FavoriteIcon className='icon-wishlist'/> 
                                             ): ( 
                                                 <FavoriteBorderIcon className='icon-wishlist'/>
                                             )}
                                         </div>
-                                        <div className='add-cart' onClick={() => handleAddToCart(product)}>
+                                        <div className='add-cart' onClick={() => 
+                                            isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product)}>
                                             {cart.includes(product) ? (
                                                 <ShoppingBagIcon className='icon-add-cart'/> 
                                             ): (

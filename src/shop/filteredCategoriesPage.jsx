@@ -18,6 +18,8 @@ import { ReactComponent as Floors } from '../images/floors.svg';
 import { ReactComponent as PlinthArea } from '../images/plinth.svg';
 import { ReactComponent as Bathrooms } from '../images/bathroom.svg';
 
+import { useCart, useWishlist } from './cartContext';
+
 
 
 const style = {
@@ -29,11 +31,14 @@ export default function FilteredCategoriesPage() {
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-    const [cart, setCart] = useState([]);
-    const [wishlist, setWishlist] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [isFilterActive, setIsFilterActive] = useState(false);
 
+    const { cart, handleAddToCart, handleRemoveFromCart } = useCart();
+    const { wishlist, handleAddToWishlist, handleRemoveFromWishlist } = useWishlist();
+
+    const isInCart = (product) => cart.some((item) => item.slug === product.slug);
+    const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
 
 
     useEffect(() => {
@@ -63,22 +68,6 @@ export default function FilteredCategoriesPage() {
         setIsDropdownVisible(!isDropdownVisible)
     }
 
-    const handleAddToCart = (product) => {
-        if(cart.includes(product)){
-            setCart(cart.filter(item => item !== product));
-        } else {
-            setCart([...cart,product])
-        }
-    }
-
-    const handleAddToWishlist = (product) => {
-        if(wishlist.includes(product)){
-            setWishlist(wishlist.filter(item => item !== product));
-        } else {
-            setWishlist([...wishlist,product])
-        }
-        localStorage.setItem('wishlist', JSON.stringify([...wishlist,product]));
-    }
 
     const handleSearch = () => {
         const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -208,14 +197,16 @@ export default function FilteredCategoriesPage() {
                                     <img src={product.images[0].src} alt={product.name} loading='lazy' />
                                 </Link>
                                 <div className='cart-wishlist'>
-                                        <div className='wishlist' onClick={() => handleAddToWishlist(product)}>
+                                        <div className='wishlist' onClick={() => 
+                                            isInWishlist(product) ? handleRemoveFromWishlist(product) : handleAddToWishlist(product)}>
                                             {wishlist.includes(product) ? (
                                                 <FavoriteIcon className='icon-wishlist'/> 
                                             ): ( 
                                                 <FavoriteBorderIcon className='icon-wishlist'/>
                                             )}
                                         </div>
-                                        <div className='add-cart' onClick={() => handleAddToCart(product)}>
+                                        <div className='add-cart' onClick={() =>
+                                            isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product)}>
                                             {cart.includes(product) ? (
                                                 <ShoppingBagIcon className='icon-add-cart'/> 
                                             ): (
