@@ -37,7 +37,7 @@ export default function ProductDescription() {
     const { cart, handleAddToCart, handleRemoveFromCart } = useCart();
     const {handleAddToWishlist, wishlist, handleRemoveFromWishlist } = useWishlist();
 
-    const isInCart = (product) => cart.some((item) => item.slug === product.slug);
+    const isInCart = (product) => cart.some((item) => item && item.slug === product.slug);
     const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
     
     
@@ -93,8 +93,7 @@ export default function ProductDescription() {
             setTerms(terms);
         } catch (error) {
             console.error(error);
-        }
-        
+        }        
     }
 
    
@@ -177,7 +176,7 @@ export default function ProductDescription() {
                         <div className='product-to-cart'>
                             <h4>Add to Cart</h4>
                             <button style={style} onClick={() => {
-                                isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product);
+                                isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product)
                             }}>
                                 <p>{selectedPrice ? `$${selectedPrice}`: 'Select An Option' }</p>
                             </button>

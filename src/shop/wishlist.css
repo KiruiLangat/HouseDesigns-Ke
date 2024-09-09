@@ -96,6 +96,7 @@
     font-size: 14px;
     font-weight: 400;
     align-self: first baseline;
+    cursor: pointer;
 }
 
 .delete-icon{

@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
   }, [wishlist]);
 
   const handleAddToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product])
+    setCart((prevCart) => [...prevCart, product]);
     toast.success('Added to cart!');
   };
 

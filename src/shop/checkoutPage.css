@@ -1,0 +1,9 @@
+.checkout-container{
+    width: 93%;
+    margin: auto;
+}
+.checkout-container h1{
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+}

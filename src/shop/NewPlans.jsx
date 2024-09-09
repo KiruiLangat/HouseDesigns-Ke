@@ -13,8 +13,9 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-
 import { useCart, useWishlist } from './cartContext'
+
+import OptionsPopUp from './optionsPopUp'
 
 import '@fontsource/poppins'
 
@@ -29,8 +30,16 @@ export default function NewPlans(){
     const { cart, handleAddToCart, handleRemoveFromCart } = useCart();
     const { wishlist, handleAddToWishlist, handleRemoveFromWishlist } = useWishlist();
 
-    const isInCart = (product) => cart.some((item) => item.slug === product.slug);
+    const isInCart = (product) => cart.some((item) =>item && item.slug === product.slug);
     const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
+
+    //Options Pop up
+    const [showOptionsPopUp, setShowOptionsPopUp] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null)
+     
+    const handleClosePopUp = () => {
+         setShowOptionsPopUp(false)
+    }
 
 
     useEffect (() => {

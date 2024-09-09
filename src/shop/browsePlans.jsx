@@ -13,6 +13,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { useCart, useWishlist } from './cartContext'
+import OptionsPopUp from './optionsPopUp'
 
 const style ={
     fontFamily: 'Poppins'
@@ -29,9 +30,16 @@ export default function Plans(){
     const {cart, handleAddToCart, handleRemoveFromCart} = useCart();
     const {wishlist, handleAddToWishlist, handleRemoveFromWishlist} = useWishlist();
 
-    const isInCart = (product) => cart.some((item) => item.slug === product.slug);
+    const isInCart = (product) => cart.some((item) =>item && item.slug === product.slug);
     const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
 
+    //Options Pop up
+    const [showOptionsPopUp, setShowOptionsPopUp] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null)
+    
+    const handleClosePopUp = () => {
+        setShowOptionsPopUp(false)
+    }
 
     useEffect (() => {
 
@@ -75,6 +83,7 @@ export default function Plans(){
 
     const desiredCategories = ['Maisonettes','Bungalows','Condos'];
 
+   
     
 
     return(
@@ -138,7 +147,8 @@ export default function Plans(){
                                         )}
                                     </div>
                                     <div className='add-cart' onClick={() =>{
-                                        isInCart(products[0]) ? handleRemoveFromCart(products[0]) :  handleAddToCart(products[0])
+                                        setSelectedProduct(products[0])
+                                        setShowOptionsPopUp(true)
                                     }}>
                                         {isInCart(products[0]) ? (
                                             <ShoppingBagIcon className='icon-add-cart'
@@ -150,6 +160,19 @@ export default function Plans(){
                                             />
                                         )}
                                     </div>
+                                    {showOptionsPopUp && (   
+                                    
+                                        <OptionsPopUp
+                                        
+                                            product={selectedProduct}
+                                            onClose={() => setShowOptionsPopUp(false)}
+                                            handleClosePopUp={handleClosePopUp}
+                                            onSelectOption={(_option) => {
+                                                isInCart(selectedProduct) ? handleRemoveFromCart(selectedProduct) :  handleAddToCart(selectedProduct)
+                                                setShowOptionsPopUp(false)
+                                            }}
+                                         />       
+                                    )}
                                 </div>
                                 <div className='preview-details-container'>
                                     <div className='preview-details-title'>
