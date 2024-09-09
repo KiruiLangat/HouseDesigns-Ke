@@ -95,15 +95,32 @@ export default function NewPlans(){
                                             <FavoriteBorderIcon className='icon-wishlist'/>
                                         )}
                                     </div>
-                                    <div className='add-cart' onClick={() =>
-                                        isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product)}>
-                                        {cart.includes(product) ? (
+                                    <div className='add-cart' onClick={() => {
+                                        setSelectedProduct(product)
+                                        setShowOptionsPopUp(true)
+                                    }}>
+                                        {isInCart(product) ? (
                                             <ShoppingBagIcon className='icon-add-cart'/> 
                                         ): (
                                             <ShoppingBagOutlinedIcon className='icon-add-cart'/>
                                         )}
-                                    </div>
+                                    
+                                        
+                                    </div>   
                                 </div>
+                                
+                                {showOptionsPopUp && (  
+                                <OptionsPopUp
+                                    
+                                        product={selectedProduct}
+                                        onClose={() => setShowOptionsPopUp(false)}
+                                        handleClosePopUp={handleClosePopUp}
+                                        onSelectOption={(_option) => {
+                                            isInCart(selectedProduct) ? handleRemoveFromCart(selectedProduct) :  handleAddToCart(selectedProduct)
+                                            setShowOptionsPopUp(false)
+                                        }}
+                                     />       
+                                    )}
                             <div className='new-indicator'>
                                 < Star className='icon-indicator' />
                                 <p>New</p>

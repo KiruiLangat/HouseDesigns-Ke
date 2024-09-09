@@ -21,9 +21,9 @@ function Homepage() {
   return (
     <div style={style}>
        <Helmet>
-        <title>House Designs Ke</title>
+        <title>House Designs</title>
         <meta name='description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
-        <meta property='og:title' content='House Designs Ke' />
+        <meta property='og:title' content='House Designs' />
         <meta property='og:description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
         <meta property='og:image' content='https://housedesigns.co.ke/carousel3.jpg' />
         <meta property='og:image:width' content='300' />
@@ -31,7 +31,7 @@ function Homepage() {
         <meta property='og:url' content='https://housedesigns.co.ke/' />
         <meta property='og:type' content='website' />
         <meta name='twitter:card' content='summary' /> 
-        <meta name='twitter:title' content='House Designs Ke' />
+        <meta name='twitter:title' content='House Designs' />
         <meta name='twitter:description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
         <meta name='twitter:image' content='https://housedesigns.co.ke/carousel3.jpg' />
         <meta name='twitter:image:width' content='144' />
