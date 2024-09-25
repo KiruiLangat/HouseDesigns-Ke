@@ -1,0 +1,143 @@
+.checkout-popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.92);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+
+    @media (prefers-color-scheme: dark){
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+}
+.checkout-popup-content{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    width: 35%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start !important;
+    
+
+    @media (prefers-color-scheme: dark){
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+}
+.checkout-popup-heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+.checkout-popup-heading h2{
+    font-size: 20px;
+    font-weight: 300;
+}
+.checkout-popup-close{
+    cursor: pointer;
+    height: 25px !important;
+    width: 25px !important;
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    border-radius: 50px;
+    padding: 2px;
+
+    @media (prefers-color-scheme: dark){
+        border: 0.5px solid rgba(255, 255, 255, 0.9);
+    }
+}
+.signup-google{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    height: 41px;
+    padding: 15px;
+    width: 100%;
+    margin-top: 20px;
+    
+    @media (prefers-color-scheme: dark){
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+   
+}
+.signup-google p{
+    font-size: 14px;
+    font-weight: 400;
+
+    @media (prefers-color-scheme: dark){
+        color: #6C5f5B;
+    }
+}
+.google-icon{
+    color: #4285F4;
+}
+.or{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #00000080;
+    font-weight: 300;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (prefers-color-scheme: dark){
+        color:#6c5f5b;
+    }
+}
+.checkout-popup-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 10px;
+    width: 100%;
+}
+.checkout-popup-input input{
+    width: 100%;
+    height: 41px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    margin: auto;
+    
+
+
+    @media (prefers-color-scheme: dark){
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: transparent;
+        color: #6C5f5B;
+    }
+}
+.checkout-popup-input button{
+    cursor: pointer;
+    height: 41px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #000;
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+    font-family: Poppins, sans-serif;
+}

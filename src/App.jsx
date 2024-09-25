@@ -91,7 +91,7 @@ export default function App() {
           <Route path='/cart' element={<Cart  />} />
           <Route path='/product/:slug' element={<ProductDescription  />} />
           <Route path='/shop/:category' element={<FilteredCategoriesPage  />} />
-          <Route path='/shop/checkout' element={<CheckOutPage />} />
+          <Route path='/checkout' element={<CheckOutPage />} />
         
         
 

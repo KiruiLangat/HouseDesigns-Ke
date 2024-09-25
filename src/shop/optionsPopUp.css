@@ -38,23 +38,30 @@
     cursor: pointer;
 }
 .options-popup-title{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    display: grid !important;
+    grid-template-columns: 1fr 3fr;
+    gap: 0;
+    align-items: first baseline;
+    justify-items: center;
+    margin-top: 0 !important;
+    padding: 0 30px;
     border-radius: 10px;
     width: 35%;
+    height: 50px;
+    
+    
 
     @media (prefers-color-scheme: dark){
-        background-color: rgba(0, 0, 0, 1);
+       
+       
     }
 }
 .options-popup-title h1{
-    font-size: 28px;
-    font-weight: 300;
-    margin-left: 10px;
+    font-size: 28px !important;
+    font-weight: 400 !important;
+    margin-left: 0 !important;
+    text-align: center;
+    
 
     
 }
@@ -69,8 +76,8 @@
     margin-bottom: 5%;
 }
 .options-popup-product img{
-    width: 150px;
-    height: 75px;
+    width: 150px !important;
+    height: 75px !important;
 }
 .options-popup-details{
     display: flex;
@@ -80,14 +87,15 @@
 
 }
 .options-popup-details h2{
-    font-size: 24px;
-    font-weight: 300;
+    font-size: 24px !important;
+    font-weight: 300 !important;
     margin: auto;
     
 }
 .options-popup-details p{
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 14px !important;
+    font-weight: 400;
+    margin-top: 0;
  
     @media (prefers-color-scheme: dark){
         color: #6C5f5B;
@@ -148,6 +156,7 @@
     border: none;
     border-radius: 10px;
     margin-top: 10px;
+    cursor: pointer;
 }
 .add-to-cart-popup p{
     margin: auto;
@@ -157,16 +166,16 @@
 @media (max-width:768px){
     .options-popup-container{
         position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 93%;
-        height: 100vh; /* Set a fixed height */
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 93% !important;
+        height: 100vh !important; /* Set a fixed height */
         overflow-y: auto; /* Enable vertical scrolling */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
+        padding: 20px !important;
         z-index: 1000;
-        margin-top: 10%;
+        margin-top: 12% !important;
         background-color: #FFFFFF;
 
         @media (prefers-color-scheme: dark){
@@ -183,41 +192,49 @@
         border: 1px solid #ED7D31;
     }
     .options-popup-title{
-        width: 100%;
-        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        width: auto;
+        
     }
     .options-popup-title h1{
-        font-size: 18px;
+        font-size: 18px !important;
+        margin: 0 !important;
     }
+    .popup-cart{
+        align-self: center;
+        justify-self: auto;
+    }
+
     .options-popup-product{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 30px;
         width: 93%;
-        margin-top: 10px;
-        height: auto;
     }
 
     .options-popup-product img{
-        width: 90px;
-        height: 60px;
-        margin-right: 0;
+        width: 90px !important;
+        height: 60px !important;
+        margin-right: 0 !important;
     }
     .options-popup-details{
         width: 100%;
         margin-top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
     }
     .options-popup-product h2{
-        font-size: 16px; 
-        margin-left: auto;
-
+        font-size: 16px !important; 
+        margin-left: 0;
     }
     .options-popup-details p{
         font-size: 12px;
         font-weight: 400;
-        margin: auto;
-        margin-left: 0 !important;
         color: #00000080;
+        margin-left: 0;
 
         @media (prefers-color-scheme: dark){
             color: #6C5f5B;

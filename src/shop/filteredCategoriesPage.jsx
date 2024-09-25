@@ -19,6 +19,7 @@ import { ReactComponent as PlinthArea } from '../images/plinth.svg';
 import { ReactComponent as Bathrooms } from '../images/bathroom.svg';
 
 import { useCart, useWishlist } from './cartContext';
+import OptionsPopUp from './optionsPopUp';
 
 
 
@@ -39,6 +40,15 @@ export default function FilteredCategoriesPage() {
 
     const isInCart = (product) => cart.some((item) =>item && item.slug === product.slug);
     const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
+
+    //Options Pop up
+    const [showOptionsPopUp, setShowOptionsPopUp] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [selectedPrice, setSelectedPrice] = useState(null)
+     
+    const handleClosePopUp = () => {
+         setShowOptionsPopUp(false)
+    }
 
 
     useEffect(() => {
@@ -205,14 +215,32 @@ export default function FilteredCategoriesPage() {
                                                 <FavoriteBorderIcon className='icon-wishlist'/>
                                             )}
                                         </div>
-                                        <div className='add-cart' onClick={() =>
-                                            isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product)}>
-                                            {cart.includes(product) ? (
+                                        <div className='add-cart' onClick={() => {
+                                            setSelectedProduct(product)
+                                            setShowOptionsPopUp(true)
+                                        }}>
+                                            {isInCart(product) ? (
                                                 <ShoppingBagIcon className='icon-add-cart'/> 
                                             ): (
                                                 <ShoppingBagOutlinedIcon className='icon-add-cart'/>
                                             )}
                                         </div>
+
+                                        {showOptionsPopUp && selectedProduct === product && (  
+                                        <OptionsPopUp
+                                                
+                                                product={selectedProduct}
+                                                onClose={() => setShowOptionsPopUp(false)}
+                                                setSelectedPrice={setSelectedPrice}
+                                                selectedPrice={selectedPrice}
+                                                handleClosePopUp={handleClosePopUp}
+                                                onSelectOption={(_option) => {
+                                                    isInCart(selectedProduct) ? handleRemoveFromCart(selectedProduct) :  handleAddToCart(selectedProduct, selectedPrice)
+                                                    setShowOptionsPopUp(false)
+                                                }}
+                                            />       
+                                        )}
+
                                     </div>
                                 <div className='filtered-products-card-title'>
                                     <h3>{product.name}</h3>

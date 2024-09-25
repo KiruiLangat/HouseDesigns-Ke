@@ -36,6 +36,9 @@ export default function NewPlans(){
     //Options Pop up
     const [showOptionsPopUp, setShowOptionsPopUp] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null)
+    const [selectedPrice, setSelectedPrice] = useState(null)
+    const [selectedOption, setSelectedOption] = useState(null)
+    
      
     const handleClosePopUp = () => {
          setShowOptionsPopUp(false)
@@ -106,21 +109,29 @@ export default function NewPlans(){
                                         )}
                                     
                                         
-                                    </div>   
+                                    </div> 
+                                    
+                                    {showOptionsPopUp && selectedProduct === product && (  
+                                        <OptionsPopUp
+                                                
+                                                product={selectedProduct}
+                                                setSelectedPrice={setSelectedPrice}
+                                                selectedPrice={selectedPrice}
+                                                setSelectedOption={setSelectedOption}
+                                                selectedOption={selectedOption}
+                                                onClose={() => setShowOptionsPopUp(false)}
+                                                handleClosePopUp={handleClosePopUp}
+                                                onSelectOption={(_option) => {
+                                                    isInCart(selectedProduct) ? handleRemoveFromCart(selectedProduct) : 
+                                                    handleAddToCart(selectedProduct, selectedProduct, selectedOption)
+                                                    setShowOptionsPopUp(false)
+                                                }}
+                                            />       
+                                    )}
+
                                 </div>
                                 
-                                {showOptionsPopUp && (  
-                                <OptionsPopUp
-                                    
-                                        product={selectedProduct}
-                                        onClose={() => setShowOptionsPopUp(false)}
-                                        handleClosePopUp={handleClosePopUp}
-                                        onSelectOption={(_option) => {
-                                            isInCart(selectedProduct) ? handleRemoveFromCart(selectedProduct) :  handleAddToCart(selectedProduct)
-                                            setShowOptionsPopUp(false)
-                                        }}
-                                     />       
-                                    )}
+                                
                             <div className='new-indicator'>
                                 < Star className='icon-indicator' />
                                 <p>New</p>

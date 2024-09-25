@@ -35,7 +35,8 @@ export default function Plans(){
 
     //Options Pop up
     const [showOptionsPopUp, setShowOptionsPopUp] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState(null)
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [selectedPrice, setSelectedPrice] = useState(null);
     
     const handleClosePopUp = () => {
         setShowOptionsPopUp(false)
@@ -166,9 +167,11 @@ export default function Plans(){
                                         
                                             product={selectedProduct}
                                             onClose={() => setShowOptionsPopUp(false)}
+                                            setSelectedPrice={setSelectedPrice}
+                                            selectedprice={selectedPrice}
                                             handleClosePopUp={handleClosePopUp}
                                             onSelectOption={(_option) => {
-                                                isInCart(selectedProduct) ? handleRemoveFromCart(selectedProduct) :  handleAddToCart(selectedProduct)
+                                                isInCart(selectedProduct) ? handleRemoveFromCart(selectedProduct) :  handleAddToCart(selectedProduct, selectedPrice)
                                                 setShowOptionsPopUp(false)
                                             }}
                                          />       

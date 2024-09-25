@@ -98,6 +98,20 @@ app.get('/api/products/:productId/variations', async (req, res) => {
     }
 });
 
+app.post('/api/checkout', async (req, res) => {
+    const { order } = req.body;
+    try {
+        const response = await fetchFromWooCommerce('orders', {
+            method: 'POST',
+            body: JSON.stringify(order),
+        });
+        res.json(response);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+});
+
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });

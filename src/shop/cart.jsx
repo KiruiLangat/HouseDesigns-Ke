@@ -26,33 +26,38 @@ export default function CartPage (){
             {cart.map((product, index) => (
                 product ? (
                 <div key={index} className='cart-product'>
-                <Link to={`/product/${product.slug}`}>
-                {product.images && product.images.length > 0 && (
-                    <img src={product.images[0].src} alt={product.name} loading='lazy' />
-                )}
+                    <Link to={`/product/${product.slug}`}>
+                    {product.images && product.images.length > 0 && (
+                        <img src={product.images[0].src} alt={product.name} loading='lazy' />
+                    )}
+                        
+                    </Link>
                     
-                </Link>
-                
-                <div className='cart-product-details'>
-                        <h2>{product.name}</h2>
-                        <p>${product.price}</p>
-                        <div  className='remove-cart'>
-                            <p onClick={() => handleRemoveFromCart(product)}>Remove</p>
-
-                            <div className='checkout-from-cart'>
-                                <Link to='/shop/checkout'>
-                                    <ShoppingCartIcon className='shopping-cart'/>
-                                    <p>Checkout</p>
-                                </Link>
-                            </div>
+                    <div className='cart-product-details'>
+                            <h2>{product.name}</h2>
+                            <p>{product.selectedOptionDescription}</p>
                             
-                        </div>
+                            <div  className='remove-cart'>
+                                {product.selectedPrice !== null ? (
+                                <h3>${product.selectedPrice}</h3>
+                            ) : (
+                                <h3>No price selected</h3>
+                            )}
+                                <p onClick={() => handleRemoveFromCart(product)}>Remove</p>                          
+                            </div>
                     </div>
                 </div>
                 ) : null
             ))}
+            
         </div>
       )}
+        <div className='checkout-from-cart'>
+            <Link to='/checkout'>
+                <ShoppingCartIcon className='shopping-cart'/>
+                <p>Checkout</p>
+            </Link>
+        </div>
     </div>
   );
 };

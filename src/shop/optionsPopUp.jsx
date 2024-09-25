@@ -109,7 +109,7 @@ export default function OptionsPopUp({ product, handleClosePopUp }) {
                 </ul>
             </div>
                 <button className='add-to-cart-popup' style={style} onClick={() => {
-                    isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product)
+                    isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product, selectedPrice, selectedOption)
                     }}>
                     <p>{selectedPrice ? `$${selectedPrice}`: 'Select An Option' }</p>
                 </button>

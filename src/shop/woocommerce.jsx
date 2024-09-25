@@ -78,5 +78,19 @@ const fetchProductVariations = async (productId) => {
     }
 } 
 
-
-export {fetchCategories, fetchAllProducts, fetchProducts, fetchAttributes, fetchProductVariations, fetchAttributesTerms}
+const checkoutOrder = async () => {
+    try{
+        const response = await fetch(`http://localhost:3001/api/checkout`)
+        if (!response.ok){
+            throw new Error('Error fetching checkout')
+        }
+        return await response.json()
+    } catch (error) {
+        console.error(error)
+        throw error;
+    }
+}
+export {fetchCategories, fetchAllProducts, fetchProducts,
+     fetchAttributes, fetchProductVariations, fetchAttributesTerms,
+     checkoutOrder
+    }
