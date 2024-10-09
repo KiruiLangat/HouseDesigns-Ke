@@ -21,7 +21,7 @@ export default function LandingPage(){
     const getHighlightStyle = () => {
         switch (selectedOption) {
             case 'Option 1':
-                return {color: '#FF33A1'}
+                return {color: '#33fffc'}
             case 'Option 2':
                 return {color: '#33FF57'}
             case 'Option 3':

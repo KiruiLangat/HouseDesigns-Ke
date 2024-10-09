@@ -90,7 +90,36 @@ const checkoutOrder = async () => {
         throw error;
     }
 }
+
+const createNewUser = async (userData) => {
+    try{
+        const response = await fetch(`http://localhost:3001/api/users`)
+        if (!response.ok){
+            throw new Error('Error creating user')
+        }
+        return await response.json()
+    } catch (error) {
+        console.error(error)
+        throw error;
+    }
+}
+
+const newOrder = async () => {
+    try{
+        const response = await fetch(`http://localhost:3001/api/orders`)
+        if (!response.ok){
+            throw new Error('Error creating order')
+        }
+        return await response.json()
+    } catch (error) {
+        console.error(error)
+        throw error;
+    }
+}
+
+
+
 export {fetchCategories, fetchAllProducts, fetchProducts,
      fetchAttributes, fetchProductVariations, fetchAttributesTerms,
-     checkoutOrder
+     checkoutOrder, createNewUser, newOrder
     }

@@ -138,6 +138,37 @@
     background-color: #000;
     color: white;
     font-size: 12px;
-    font-weight: 300;
+    font-weight: 400;
     font-family: Poppins, sans-serif;
+
+    @media (prefers-color-scheme:dark){
+        background-color:#ffffff80 ;
+    }
+
+}
+.checkout-popup-input button:hover{
+
+    @media (prefers-color-scheme:dark){
+        background-color: #333;
+    }
+}
+.checkout-popup-login{
+    margin: auto;
+    margin-top: 20px;
+}
+.checkout-popup-login p{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+
+@media (max-width:768px){
+   .checkout-popup-content{
+    width: 80%;
+    margin: auto;
+   }
+   .checkout-popup-close{
+    height: 20px !important;
+    width: 20px !important;
+   }
 }

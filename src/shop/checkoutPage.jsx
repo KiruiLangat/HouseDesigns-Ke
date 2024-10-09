@@ -2,13 +2,14 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import './checkoutPage.css'
 import { useCart } from './cartContext'
-import { checkoutOrder } from './woocommerce'
+import { checkoutOrder, createNewUser, newOrder } from './woocommerce'
 
 import SignupLoginPopUp from './signupLoginPopUp'
 
 
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import CloseIcon from '@mui/icons-material/Close'
 
 import mPesa from '../images/mpesa.svg'
 import payPal from '../images/paypal.svg'
@@ -28,19 +29,35 @@ export default function CheckOutPage(){
 
     //Signup popup
     const [showSignupPopUp, setShowSignupPopUp] = useState(false)
+    const [hasClosedPopup, setHasClosedPopup] = useState(false)
 
-    const handleClosePopUp = () => {
-        setShowSignupPopUp(false)
-    }
-    
+    //continue checkout
+    const [continueCheckout, setContinueCheckout] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+
     useEffect(() => {
         checkoutOrder()
+        newOrder()
+        createNewUser()
     }, [])
+
+
+    
+    
+   
 
     const handleCheckout = async () => {
         try {
-            const response = await checkoutOrder()
-            console.log(response)
+            await checkoutOrder()
+
+            const userData = {
+                firstName: 'John',
+                lastName: 'Doe',
+                email: 'user@example.com',
+                phone: '0712345678',
+            };
+            await createNewUser(userData)
+
         } catch (error) {
             console.error(error)
         }
@@ -70,6 +87,21 @@ export default function CheckOutPage(){
         setIsMpesa(false)
         setIsCard(false)
     }
+    
+    const handleClosePopUp = () => {
+        setShowSignupPopUp(false)
+        setContinueCheckout(true)
+        setIsLoading(true)
+        setHasClosedPopup(true)
+
+        setTimeout(() => {
+            setIsLoading(false)
+
+        }, 3000)
+    }
+
+    
+
 
     return (
         <div className='checkout-container' style={style}>
@@ -180,9 +212,14 @@ export default function CheckOutPage(){
                         <div className='order-button'>
                         
                             <button onClick={() => {
-                                handleCheckout()
-                                setShowSignupPopUp(true)
-                            }}>
+                                if (!hasClosedPopup) {
+                                    setShowSignupPopUp(true)
+                                } else {
+                                    setContinueCheckout(true)
+                                } 
+                                                              
+                            }}onClose={handleCheckout} 
+                            >
                                 Checkout <span>${totalPrice.toFixed(2)}</span>
                             </button>
                             <p style={{fontSize:'14px', fontWeight:'300', marginTop:'20px', marginBottom:'0'}}>
@@ -201,11 +238,25 @@ export default function CheckOutPage(){
             )} 
             
             {showSignupPopUp && (
-                            <SignupLoginPopUp
-                                handleClosePopUp={handleClosePopUp}
-                                
-                            />
-                        )}
+                <SignupLoginPopUp
+                    handleClosePopUp={handleClosePopUp}
+                />
+            )}
+            {continueCheckout && (
+                <div className='loading-screen' >
+                {isLoading ? (
+                    <div className='loading'>Loading<span>...</span> Please wait while we process your payment.</div>
+                ):(
+                    <div className='error-to-whatsapp'>
+                        <CloseIcon onClick={handleClosePopUp} cursor={'pointer'} />
+                        <h2>Error, Kindly Contact Us via WhatsApp:</h2>
+                        <a href='https://wa.me/254710478088' target='_blank' rel='noreferrer'>
+                            <button >WhatsApp</button>
+                        </a>
+                    </div>
+                )}
+                </div>
+            )}
         </div>
     )
 }

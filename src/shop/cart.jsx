@@ -52,12 +52,17 @@ export default function CartPage (){
             
         </div>
       )}
-        <div className='checkout-from-cart'>
-            <Link to='/checkout'>
-                <ShoppingCartIcon className='shopping-cart'/>
+      
+        <Link to='/checkout'>
+            <button className='checkout-from-cart'>
+                <ShoppingCartIcon  className='shopping-cart'/>
                 <p>Checkout</p>
-            </Link>
-        </div>
+            </button>
+        </Link>
+      
+      
+      
+        
     </div>
   );
 };
