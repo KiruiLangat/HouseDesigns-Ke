@@ -1,8 +1,9 @@
-body{
-    width: 100%;
-    min-height: 100vh;
-    margin: 0;
+.blog-container{
+    margin: auto;
     padding: 0;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
 }
 @keyframes dot {
     0%, 20% {
@@ -87,19 +88,18 @@ body{
     margin-left: 10px;
 }
 .excerpt{
-    font-size: 18px;
+    font-size: 14px;
     word-wrap: break-word;
     font-weight: 300;
     margin-left: 10px;
     margin-top: 0;
-    margin-bottom: -5px;
     white-space: nowarap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .date{
     font-weight: 300;
-    font-size: 14px;
+    font-size: 12px;
     margin-left: 10px;
     margin-bottom: 10px;
     margin-top: 0;

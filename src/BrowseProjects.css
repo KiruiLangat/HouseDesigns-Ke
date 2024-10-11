@@ -1,5 +1,6 @@
 .projects-container {
     width: 93%;
+    max-width: 1200px;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 6fr 10fr;

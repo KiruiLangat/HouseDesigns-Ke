@@ -1,10 +1,12 @@
 .plans-container{
     width: 100%;
+    max-width: 1200px;
     height: auto;
     margin: auto;
+    margin-top: 5%;
 }
 .browse-plans{
-    width: 93%;
+    width: 100%;
     margin: auto;
 }
 .plans-title{

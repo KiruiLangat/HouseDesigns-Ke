@@ -18,7 +18,7 @@ export default function AboutUs() {
     <div className='aboutus-container'>
       <div id = 'about-us'  className='about-us'>Get to Know us!</div>
       <img src = {colorScheme} alt='colorScheme' className='color-scheme' />
-      <div>
+      <div className='workflow-title'>
         <div className='our-workflow'>OUR WORKFLOW</div>
         <h2 className='our-workflow-mobile'>OUR WORKFLOW</h2>
         <img src = {titleMarker} alt='titleMarker' className='title-marker' />
@@ -71,12 +71,12 @@ export default function AboutUs() {
         </div>    
       </div>
       <h2 className='our-team-mobile'>OUR LEAD TEAM</h2>
-      <div className='ourTeam-box'>
-        <div className='team-title-box'>
+      <div className='team-title-box'>
+          <div className='our-team'>OUR LEAD TEAM</div>
           <img src = {titleMarker} alt='titleMarker4' className='title-marker4'/>
-          <div className='our-team'>OUR LEAD TEAM</div> 
-          
         </div>
+        <div className='ourTeam-box'>
+        
         <div className='team-members'>
           <div className='member1-box'>
             <div className='member-img'>

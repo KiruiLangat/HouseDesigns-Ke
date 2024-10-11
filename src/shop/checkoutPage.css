@@ -1,5 +1,6 @@
 .checkout-container{
     width: 93%;
+    max-width: 1200px;
     margin: auto;
 }
 .checkout-container h1{

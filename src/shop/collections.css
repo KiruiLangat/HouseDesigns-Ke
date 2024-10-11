@@ -1,5 +1,6 @@
 .collections{
     width: 93%;
+    max-width: 1200px;
     height: auto;
     padding: 0;
     display: flex;
@@ -30,8 +31,8 @@
 }
 .collections-card-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
     width: 100%;
     margin: auto;
 }

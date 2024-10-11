@@ -1,5 +1,6 @@
 .new-plans-container{
-    width: 100%;
+    width: 93%;
+    max-width: 1200px;
     margin: auto;
     padding: 0;
     display: flex;
@@ -9,7 +10,7 @@
     
 }
 .new-plans{
-    width: 93%;
+    width: 100%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -31,7 +32,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-left: 10px;
     width: 100%;
     margin-bottom: 0;
 }
@@ -39,7 +39,6 @@
     font-size: 28px;
     font-weight: 300;
     margin-bottom: -20px;
-    margin-left: 10px;
 }
 .new-plans-heading h2{
     font-size: 18px;
@@ -80,7 +79,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items:flex-start;
     width: 32%;
     border-radius: 10px;
     border: 1px solid #0000000D;

@@ -3,8 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 5%;
-    width: 100%;  
+    width: 93%;  
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 5%; 
     height: auto;
 }
 .about-us{
@@ -25,22 +27,28 @@
 .color-scheme:hover{
     transform: scale(1.5);
 }
+.workflow-title{
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 .our-workflow{
     position: absolute;
     left: 138px;
     margin-top: 10%;
     color: black;
     font-size: 20px;
-    font-family: Poppins;
     font-weight: 300;
     word-wrap: break-word;
 }
 
 .title-marker{
-    position: absolute;
+    
     left: 113px;
     margin-top: 10%;
     height: 30px;
+    position: absolute;
 }
 
 .workflow{
@@ -175,15 +183,18 @@
     margin: auto;
     margin-top: 5px;
 }
-
+.team-title-box{
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 .ourTeam-box{
     margin-top: 10%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
-.team-title-box{
-    display: flex;
+    position: relative;
 }
 .title-marker4{
     width: 18px;

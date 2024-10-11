@@ -5,14 +5,15 @@
 }
 
 .projects{
-    width: 100%;
-    margin: 0;
+    width: 93%;
+    max-width: 1440px;
+    margin: auto;
     padding: 0;
 }
 .projects-title{
     font-size: 36px;
     font-weight: 300;
-    margin-top: 3%;
+    margin-top: 5%;
     text-align: center;
 }
 .service-projects-container{

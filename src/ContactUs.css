@@ -1,13 +1,14 @@
 .contact-container{
-    margin: 0;
+    margin: auto;
     padding: 0;
-    width: 100%;
+    width: 93%;
+    max-width: 1440px;
     min-height: 100vh;
 }
 .contact-welcome h1{
     font-size: 36px;
     font-weight: 400;
-    margin-top: 3%;
+    margin-top: 5%;
     text-align: center;
 }
 .contact-welcome p{
@@ -62,6 +63,10 @@
     padding: 15px;
     margin: auto;
     width: 100%;
+
+    @media (prefers-color-scheme: dark) {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
     
 }
 .our-contacts h2{
@@ -160,7 +165,9 @@
     padding: 15px;
     margin: 5% auto;
     
-    
+    @media (prefers-color-scheme: dark) {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 }
 form{
     width: 100%;
@@ -186,10 +193,13 @@ form{
     font-size: 16px;
     font-family: Poppins;
     width: 93%;
+    height: 40px;
     background-color: #ffffff;
     margin: 5px;
     justify-content: flex-start;
     border: none;
+    border-radius: 10px;
+    padding: 0 10px;
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.3);
 }
 .form textarea{

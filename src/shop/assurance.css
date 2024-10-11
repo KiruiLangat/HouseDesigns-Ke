@@ -1,5 +1,6 @@
 .assurance-container{
     width: 93%;
+    max-width: 1200px;
     margin: auto;
     margin-top: 10%;
     display: flex;
@@ -34,6 +35,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     padding: 10px;
+
     @media(prefers-color-scheme:dark){
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
     }

@@ -1,12 +1,13 @@
 .our-expertise{
-    width: 100%;
+    width: 93%;
+    max-width: 1440px;
+    margin: auto;
     padding: 0;
-    margin: 0;
 }
 .title-services{
     font-size: 36px;
     font-weight: 300;
-    margin-top: 3%;
+    margin-top: 5%;
     text-align: center;
 }
 .services{

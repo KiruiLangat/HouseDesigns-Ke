@@ -1,10 +1,13 @@
 .footer-container{
     display: flex;
     flex-direction: row;
+    margin:auto;
     margin-top: 10%;
     margin-bottom: 2%;
     width: 100%;
+    max-width: 1200px;
     justify-content: space-between; 
+    
     
 }
 .footer-logo{

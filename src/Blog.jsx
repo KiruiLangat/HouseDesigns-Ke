@@ -63,7 +63,7 @@ export default function Blog() {
     }
     
       return (
-        <div style={style}>
+        <div className='blog-container' style={style}>
           <Helmet>
             <title>{title.rendered}</title>
             <meta name='description' content={excerpt.rendered.substring(0, 160)} />
