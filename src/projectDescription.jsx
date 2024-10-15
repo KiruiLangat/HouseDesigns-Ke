@@ -9,7 +9,7 @@ const style ={
     fontFamily:'Poppins'
 }
 
-export default function ProjectDescription({sub_category_name}) {
+export default function ProjectDescription() {
     const { title } = useParams()
     const [images, setImages] = useState([])
 
@@ -54,7 +54,7 @@ export default function ProjectDescription({sub_category_name}) {
         return <div className='loading'>Loading <span>...</span></div>
     }
     
-    const ogUrl = `https://housedesigns.co.ke/architecture/residentials/${sub_category_name}/${project.title}`
+    const ogUrl = `https://housedesigns.co.ke/${project.title}`
 
 
     // useEffect(() => {

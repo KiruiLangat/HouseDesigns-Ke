@@ -1,7 +1,7 @@
 
 const fetchAllProducts = async () => {
     try {
-        const response = await fetch(`http://localhost:3001/api/products`)
+        const response = await fetch(`/api/products`)
         if (!response.ok){
             throw new Error('Error fetching products')
         }
@@ -13,7 +13,7 @@ const fetchAllProducts = async () => {
 }
 const fetchProducts = async (categoryId) => {
     try {
-        const response = await fetch(`http://localhost:3001/api/products?categoryId=${categoryId}`)
+        const response = await fetch(`/api/products?categoryId=${categoryId}`)
         if (!response.ok){
             throw new Error('Error fetching products')
         }
@@ -27,7 +27,7 @@ const fetchProducts = async (categoryId) => {
 
 const fetchCategories = async () => {
     try {
-        const response = await fetch('http://localhost:3001/api/categories')
+        const response = await fetch('/api/categories')
         if (!response.ok){
             throw new Error('Error fetching categories')
         }
@@ -40,7 +40,7 @@ const fetchCategories = async () => {
 
 const fetchAttributes = async (productId) => {
     try {
-        const response = await fetch(`http://localhost:3001/api/products/${productId}/attributes`);
+        const response = await fetch(`/api/products/${productId}/attributes`);
         if (!response.ok) {
             throw new Error('Error fetching attributes');
         }
@@ -53,7 +53,7 @@ const fetchAttributes = async (productId) => {
 
 const fetchAttributesTerms = async (attributeName) => {
     try {
-        const response = await fetch(`http://localhost:3001/api/attributes/terms?name=${attributeName}`);
+        const response = await fetch(`/api/attributes/terms?name=${attributeName}`);
         if (!response.ok) {
             throw new Error('Error fetching attribute terms');
         }
@@ -67,7 +67,7 @@ const fetchAttributesTerms = async (attributeName) => {
 
 const fetchProductVariations = async (productId) => { 
     try{
-        const response = await fetch(`http://localhost:3001/api/products/${productId}/variations`)
+        const response = await fetch(`/api/products/${productId}/variations`)
         if (!response.ok){
             throw new Error('Error fetching variations')
         }
@@ -80,7 +80,7 @@ const fetchProductVariations = async (productId) => {
 
 const checkoutOrder = async () => {
     try{
-        const response = await fetch(`http://localhost:3001/api/checkout`)
+        const response = await fetch(`/api/checkout`)
         if (!response.ok){
             throw new Error('Error fetching checkout')
         }
@@ -93,7 +93,7 @@ const checkoutOrder = async () => {
 
 const createNewUser = async (userData) => {
     try{
-        const response = await fetch(`http://localhost:3001/api/users`)
+        const response = await fetch(`/api/users`)
         if (!response.ok){
             throw new Error('Error creating user')
         }
@@ -106,7 +106,7 @@ const createNewUser = async (userData) => {
 
 const newOrder = async () => {
     try{
-        const response = await fetch(`http://localhost:3001/api/orders`)
+        const response = await fetch(`/api/orders`)
         if (!response.ok){
             throw new Error('Error creating order')
         }

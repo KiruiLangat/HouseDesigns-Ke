@@ -78,16 +78,16 @@ return (
                                     <a href="https://wa.me/+254710478088" target="_blank" rel="noopener noreferrer" className='whatsapp-link' >
                                             <img src={whatsapp} alt='whatsapp' className='mobileIcon' />
                                     </a>
-                                    <a href="tel:+254701478088" className='mobile-ref-link' >
+                                    <a href="tel:+254710478088" className='mobile-ref-link' >
                                             <img src={mobile} alt='mobile' className='mobileIcon' />
                                     </a>
-                                    <a href="www.twitter.com/" className='twitter-link'>
+                                    <a href="www.x.com/housedesignske?s=11" className='twitter-link'>
                                         <img src={twitter} alt='twitter' className='mobileIcon' />
                                     </a>
-                                    <a href="www.linkedin.com/" className='linkedin-link'>
+                                    <a href="www.linkedin.com/company/house-designs-ke/" className='linkedin-link'>
                                         <img src={linkedIn} alt='LinkedIn' className='mobileIcon' />
                                     </a>
-                                    <a href="www.instagram.com/" className='instagram-link'>
+                                    <a href="www.instagram.com/housedesignskenya?igsh=c3hpcHJnaWZwNDVp" className='instagram-link'>
                                         <img src={instagram} alt='instagram' className='mobileIcon' />
                                     </a>
                             </div>

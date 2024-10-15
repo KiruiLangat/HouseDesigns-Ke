@@ -332,7 +332,7 @@
 
 @media (max-width:768px){
     .plans-container{
-        width: 100%;
+        width: auto;
         height: auto;
         margin: auto;
     }

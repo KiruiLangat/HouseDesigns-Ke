@@ -58,7 +58,7 @@ export default function BrowseCarousel({sub_category_name}) {
           
         {projects.map((project) => (
           <SwiperSlide  key={project.id}>
-            <Link to={`/architecture/residentials/${sub_category_name}/${project.title}`}>
+            <Link to={`/${project.title}`}>
               <img src={project.image_url} alt={project.title}/>
               <div className='carousel-overlay'>
                 <p>{project.title}</p>

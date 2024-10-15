@@ -73,7 +73,7 @@ export default function App() {
         <Route path='/our-expertise' element={<OurExpertise />} />
         <Route path='/contact-us' element={<ContactUs />} />
         
-        <Route path='/thank-you' element={<Submission/>} />
+        <Route path='/submission-successful' element={<Submission/>} />
         <Route path="/blog/:slug" element={<Post />} />
         <Route path="/architecture" element={<Architecture />} />
         <Route path="/residentials" element={<Residentials />} />

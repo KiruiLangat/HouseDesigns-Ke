@@ -2,13 +2,13 @@
     margin: auto;
     width: 100%;
     max-width: 1200px;
-    height: 580px;
+    height:auto;
     overflow: hidden;
     margin-top: 0;
     margin-bottom: 0;
 }
 .landing-page{
-    width: 93%;
+    width: 100%;
     height: max-content;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -17,7 +17,7 @@
    
 }
 .landing-content{
-    width: 100%;
+    width: 93%;
     display: flex;
     flex-direction: column;
     margin-top: 10px;
@@ -28,6 +28,7 @@
     font-weight: 500;
     color: black;  
 }
+
 @media (prefers-color-scheme: dark){
     .landing-text{
         color: white !important;
@@ -83,6 +84,7 @@
         font-size: 14px;
         margin-left: 10px;
     }
+   
     
 }
 

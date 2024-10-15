@@ -1,5 +1,5 @@
 .new-plans-container{
-    width: 93%;
+    width: 100%;
     max-width: 1200px;
     margin: auto;
     padding: 0;
@@ -207,13 +207,16 @@
 
 @media (max-width: 768px){
     .new-plans-container{
-        width: 100%;
+        width: auto;
         margin: auto;
         padding: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin-top: 20%;
+    }
+    .new-plans{
+        width: 93%;
     }
 
     .new-plans h1{

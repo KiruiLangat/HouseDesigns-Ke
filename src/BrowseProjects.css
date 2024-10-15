@@ -38,7 +38,7 @@
    }
    .projects-container{
         grid-template-columns: 1fr;
-        width: auto;
+        width: 93%;
    }
    .projects-intro-message-mobile{
         display: flex;
