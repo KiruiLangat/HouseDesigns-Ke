@@ -23,15 +23,15 @@ export default function OurExpertise(){
                 <meta property='og:title' content='Our Expertise'/>
                 <meta property='og:description' content='Explore our Services' />
                 <meta property='og:image' content='https://housedesigns.co.ke/CM_1.jpg' />
-                <meta property='og:image:width' content='300' />
-                <meta property='og:image:height' content='300' />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='600' />
                 <meta property='og:url' content='https://housedesigns.co.ke/our-expertise' />
                 <meta name='twitter:card' content='summary' />
                 <meta name='twitter:title' content='Our Expertise' />
                 <meta name='twitter:description' content='Explore our Services' />
                 <meta name='twitter:image' content='https://housedesigns.co.ke/CM_1.jpg' />
-                <meta name='twitter:image:width' content='144' />
-                <meta name='twitter:image:height' content='144' />
+                <meta name='twitter:image:width' content='1024' />
+                <meta name='twitter:image:height' content='512' />
                 <meta name='twitter:url' content='https://housedesigns.co.ke/our-expertise' />
             </Helmet> 
             

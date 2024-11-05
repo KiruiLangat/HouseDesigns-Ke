@@ -16,7 +16,7 @@ export default function ProjectDescription() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const response = await fetch(`/api/residentials/project-description/${title}`)
+                const response = await fetch(`/api/residentials/project-images/${title}`)
                 console.log(title)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -69,15 +69,15 @@ export default function ProjectDescription() {
                 <meta property='og:title' content={project.title} />
                 <meta property='og:description' content={project.details} />
                 <meta property='og:image' content={images[0]} />
-                <meta property='og:image:width' content='300' />
-                <meta property='og:image:height' content='300' />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='600' />
                 <meta property='og:url' content={ogUrl} />
                 <meta name='twitter:card' content='summary' />
                 <meta name='twitter:title' content={project.title} />
                 <meta name='twitter:description' content={project.details} />
                 <meta name='twitter:image' content={images[0]} />
-                <meta name='twitter:image:width' content='144' />
-                <meta name='twitter:image:height' content='144' />
+                <meta name='twitter:image:width' content='1024' />
+                <meta name='twitter:image:height' content='512' />
                 <meta name='twitter:url' content={ogUrl} />
             </Helmet>         
             <>

@@ -106,9 +106,6 @@
 
 }
 
-
-
-
 .no-product{
     width: 93%;
     display: flex;
@@ -142,6 +139,11 @@
 
 
 @media (max-width: 768px){
+    .wishlist-container{
+        width: 93%;
+        margin: auto;
+        padding: 0;
+    }
     .wishlist-container h1{
         font-size: 24px;
         margin-top: 10%;
@@ -175,7 +177,10 @@
 
 
     .no-product{
+        margin: auto;
+        margin-top: 20px;
         margin-bottom: 20px;
+        
         
     }
     .no-product p{

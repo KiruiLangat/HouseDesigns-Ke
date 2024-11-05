@@ -53,13 +53,13 @@ return (
             </div>
             <div className='footer-right'>
                     <div className='footer-socials'>
-                        <a href="www.instagram.com/">
+                        <a href="https://instagram.com/housedesignskenya?igsh=c3hpcHJnaWZwNDVp">
                             <img src={instagram} alt='instagram' className='instagram' />
                         </a>
-                        <a href="www.x.com/">
+                        <a href="https://x.com/housedesignske?s=11">
                             <img src={twitter} alt='twitter' className='twitter' />
                         </a>
-                        <a href="www.linkedin.com/">
+                        <a href="https://linkedin.com/company/house-designs-ke/">
                             <img src={linkedIn} alt='LinkedIn' className='linkedin' />
                         </a>
                             <ScrollLink 
@@ -81,13 +81,13 @@ return (
                                     <a href="tel:+254710478088" className='mobile-ref-link' >
                                             <img src={mobile} alt='mobile' className='mobileIcon' />
                                     </a>
-                                    <a href="www.x.com/housedesignske?s=11" className='twitter-link'>
+                                    <a href="https://x.com/housedesignske?s=11" className='twitter-link'>
                                         <img src={twitter} alt='twitter' className='mobileIcon' />
                                     </a>
-                                    <a href="www.linkedin.com/company/house-designs-ke/" className='linkedin-link'>
+                                    <a href="https://linkedin.com/company/house-designs-ke/" className='linkedin-link'>
                                         <img src={linkedIn} alt='LinkedIn' className='mobileIcon' />
                                     </a>
-                                    <a href="www.instagram.com/housedesignskenya?igsh=c3hpcHJnaWZwNDVp" className='instagram-link'>
+                                    <a href="https://instagram.com/housedesignskenya?igsh=c3hpcHJnaWZwNDVp" className='instagram-link'>
                                         <img src={instagram} alt='instagram' className='mobileIcon' />
                                     </a>
                             </div>

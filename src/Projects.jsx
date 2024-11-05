@@ -59,15 +59,15 @@ export default function Projects() {
             <meta property='og:title' content={sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} />
             <meta property='og:description' content={`Explore Our ${sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} House Designs and House Plans in Kenya.`} />
             <meta property='og:image' content={subCategoryImageURL} />
-            <meta property='og:image:width' content='300' />
-            <meta property='og:image:height' content='300' />
+            <meta property='og:image:width' content='1200' />
+            <meta property='og:image:height' content='600' />
             <meta property='og:url' content={`https://housedesigns.co.ke/architecture/residentials/${sub_category_name.charAt(0).toUpperCase()+sub_category_name.slice(1)}`} />
             <meta name='twitter:card' content='summary' />
             <meta name='twitter:title' content={sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} />
             <meta name='twitter:description' content={`Explore Our ${sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} House Designs and House Plans in Kenya.`} />
             <meta name='twitter:image' content={subCategoryImageURL} />
-            <meta name='twitter:image:width' content='144' />
-            <meta name='twitter:image:height' content='144' />
+            <meta name='twitter:image:width' content='1024' />
+            <meta name='twitter:image:height' content='512' />
             <meta name='twitter:url' content={`https://housedesigns.co.ke/architecture/residentials/${sub_category_name.charAt(0).toUpperCase()+sub_category_name.slice(1)}`} />
             </Helmet>
 
@@ -75,7 +75,7 @@ export default function Projects() {
             <div className='service-projects-container'>
                 {projects.map(project => (
                     <div className='project-box1' key={project.id}> 
-                        <Link to={`/${project.title}`}>
+                        <Link to={`/projects/${sub_category_name}/${project.title}`}>
                             <div className='projects-img'>
                                 <img src={project.project_img_url} alt='Project Loading' loading='lazy' onLoad={(e) => e.target.style.opacity = 1} />
                             </div>

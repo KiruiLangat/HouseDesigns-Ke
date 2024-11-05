@@ -78,7 +78,7 @@ export default function App() {
         <Route path="/architecture" element={<Architecture />} />
         <Route path="/residentials" element={<Residentials />} />
         <Route path="/:sub_category_name" element={<Projects />} />
-        <Route path='/:title' element={<ProjectDescription/>} />
+        <Route path='/projects/:sub_category_name/:title' element={<ProjectDescription/>} />
         <Route path='/commercial' element={<CommercialCategory/>} />
         <Route path='/institutions' element={<InstitutionCategory />} />
         <Route path='/masterplanning' element={<Masterplanning />} />

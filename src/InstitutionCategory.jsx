@@ -26,15 +26,15 @@ export default function InstitutionCategory(){
                 <meta property='og:title' content='Institutions'/>
                 <meta property='og:description' content='Enhancing Our Learning Spaces' />
                 <meta property='og:image' content='https://housedesigns.co.ke/Institutions.png' />
-                <meta property='og:image:width' content='300' />
-                <meta property='og:image:height' content='300' />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='600' />
                 <meta property='og:url' content='https://housedesigns.co.ke/architecture/institutions' />
                 <meta name='twitter:card' content='summary' />
                 <meta name='twitter:title' content='Institutions' />
                 <meta name='twitter:description' content='Enhancing Our Learning Spaces' />
                 <meta name='twitter:image' content='https://housedesigns.co.ke/Institutions.png' />
-                <meta name='twitter:image:width' content='144' />
-                <meta name='twitter:image:height' content='144' />
+                <meta name='twitter:image:width' content='1024' />
+                <meta name='twitter:image:height' content='512' />
                 <meta name='twitter:url' content='https://housedesigns.co.ke/architecture/institutions' />
             </Helmet>
             <div className='large-img'>
