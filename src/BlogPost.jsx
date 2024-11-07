@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet, HelmetProvider} from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-// import arrow from './images/arrow-button.svg'
+
 
 
 
@@ -84,76 +84,76 @@ export default function BlogPost() {
 
 
   return (
-    <div style={style} className='post-container'>
-      <Helmet>
-          <title>{post.title.rendered}</title>
-          <meta name='description' content={post.excerpt.rendered.substring(0, 160)} />
-          <meta property='og:title' content={post.title.rendered} />
-          <meta property='og:description' content={post.excerpt.rendered.substring(0, 160)} />
-          <meta property='og:image' content={post._embedded['wp:featuredmedia'][0].source_url} />
-          <meta property='og:image:width' content='1200' />
-          <meta property='og:image:height' content='600' />
-          <meta property='og:url' content={`https://housedesigns.co.ke/blog/${post.slug}`} />
-          <meta name='twitter:card' content='summary' />
-          <meta name='twitter:title' content={post.title.rendered} />
-          <meta name='twitter:description' content={post.excerpt.rendered.substring(0, 160)} />
-          <meta name='twitter:image' content={post._embedded['wp:featuredmedia'][0].source_url} />
-          <meta name='twitter:image:width' content='144' />
-          <meta name='twitter:image:height' content='144' />
-          <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${post.slug}`} />
-      </Helmet>
-        <div className='post'>
-            <div className='featured-img'>
-                {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
-                    <img src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' />
-                )}
-            </div>
-            <div className='content'>
-                <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-                <p>{new Date(post.date).toLocaleDateString()}</p>
-                <div className='post-content' dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-            </div>
-        </div>
-        <div className='blog-navigation'>
-          <div className='previous'>
-            {previousPost && (
-              <Link to={`/blog/${previousPost.slug}`}>
-                <h2>● Previous Post</h2>
-              </Link>
-            )}
+    <HelmetProvider>
+      <div style={style} className='post-container'>
+        <Helmet>
+            <title>{post.title.rendered}</title>
+            <meta name='title' content={post.title.rendered} />
+            <meta name='description' content={post.excerpt.rendered.substring(0, 160)} />
+            <meta property='og:title' content={post.title.rendered} />
+            <meta property='og:description' content={post.excerpt.rendered.substring(0, 160)} />
+            <meta property='og:image' content={post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].source_url : 'default-image-url'} />
+            <meta property='og:url' content={`https://housedesigns.co.ke/blog/${post.slug}`} />
+            <meta name='twitter:card' content='summary_large_image' />
+            <meta name='twitter:title' content={post.title.rendered} />
+            <meta name='twitter:description' content={post.excerpt.rendered.substring(0, 160)} />
+            <meta name='twitter:image' content={post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].source_url : 'default-image-url'} />
+            <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${post.slug}`} />
+        </Helmet>
+          <div className='post'>
+              <div className='featured-img'>
+                  {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
+                      <img src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' />
+                  )}
+              </div>
+              <div className='content'>
+                  <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+                  <p>{new Date(post.date).toLocaleDateString()}</p>
+                  <div className='post-content' dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+              </div>
           </div>
-          <div className='next'>
-            {nextPost && (
-                <Link to={`/blog/${nextPost.slug}`}>
-                    <h2>Next Post ●</h2>
+          <div className='blog-navigation'>
+            <div className='previous'>
+              {previousPost && (
+                <Link to={`/blog/${previousPost.slug}`}>
+                  <h2>● Previous Post</h2>
                 </Link>
-            )}
+              )}
+            </div>
+            <div className='next'>
+              {nextPost && (
+                  <Link to={`/blog/${nextPost.slug}`}>
+                      <h2>Next Post ●</h2>
+                  </Link>
+              )}
+            </div>
           </div>
-        </div>
-        
-        {/* Related Articles borrowed Component from BlogGrids. To alter the fetch 
-        condition to specific category
-         */}
-         
-        {/* <div className='RelatedArticles'>Related Articles</div>
-        <div style={style} className='grids'>
-        {posts.map(post => (
-            <Link to={`/posts/${post.id}`} key={post.id} className='box1'>
-                <div className='img-box'>
-                    {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
-                        <img src= {post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img'  />
-                    )}
-                </div>
-                <h2  className='post-title' dangerouslySetInnerHTML={{__html: post.title.rendered }}/>
-                <div className='arrow'>
-                    <img src= {arrow} alt='arrow'  />
-                </div>
-                <p>{new Date (post.date).toLocaleDateString()}</p>
-            </Link>
-          ))}
-        </div> */}
-        
-        
-    </div>
+          
+          
+          {/* Related Articles borrowed Component from BlogGrids. To alter the fetch 
+          condition to specific category
+          */}
+          
+          {/* <div className='RelatedArticles'>Related Articles</div>
+          <div style={style} className='grids'>
+          {posts.map(post => (
+              <Link to={`/posts/${post.id}`} key={post.id} className='box1'>
+                  <div className='img-box'>
+                      {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
+                          <img src= {post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img'  />
+                      )}
+                  </div>
+                  <h2  className='post-title' dangerouslySetInnerHTML={{__html: post.title.rendered }}/>
+                  <div className='arrow'>
+                      <img src= {arrow} alt='arrow'  />
+                  </div>
+                  <p>{new Date (post.date).toLocaleDateString()}</p>
+              </Link>
+            ))}
+          </div> */}
+          
+          
+      </div>
+    </HelmetProvider>
   );
 }

@@ -1,6 +1,6 @@
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import './ContactUs.css'
 import { Link, useNavigate } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
 import React, {useState} from 'react'
 import '@fontsource/poppins'
 import Calendly from './Calendly' 
@@ -60,11 +60,12 @@ export default function ContactUs() {
   };
 
   return (
+    <HelmetProvider>
     <div className='contact-container' style={style}>
       <Helmet>
                 <title>Contact Us</title>
+                <meta name='title' content='Contact Us' />
                 <meta name='description'content='Get in touch with us.Reach out to us and let us create something extraordinary together.' />
-                <meta property='og:title' content='Contact Us'/>
                 <meta property='og:description' content='Get in touch with us. Reach out to us and let us create something extraordinary together' />
                 <meta property='og:image' content='https://housedesigns.co.ke/projectMgmt.webp' />
                 <meta property='og:image:width' content='1200' />
@@ -136,5 +137,6 @@ export default function ContactUs() {
       
 
     </div>
+    </HelmetProvider>
   )
 }

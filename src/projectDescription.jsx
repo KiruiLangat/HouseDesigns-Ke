@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { Helmet } from 'react-helmet' 
+import { Helmet, HelmetProvider } from 'react-helmet-async' 
 import { useParams } from 'react-router-dom'
 import './projectDescription.css'
 import '@fontsource/poppins'
@@ -57,14 +57,14 @@ export default function ProjectDescription() {
     const ogUrl = `https://housedesigns.co.ke/${project.title}`
 
 
-    // useEffect(() => {
-    //     console.log(project)
-    // }, [project])
+  
 
     return (
+        <HelmetProvider>
         <div className='project-description' style={style}>   
             <Helmet>
                 <title>{project.title}</title>
+                <meta name='title' content={project.title} />
                 <meta name='description' content={project.details} />
                 <meta property='og:title' content={project.title} />
                 <meta property='og:description' content={project.details} />
@@ -119,5 +119,6 @@ export default function ProjectDescription() {
                 </>  
             )}
         </div>
+        </HelmetProvider>
     )
 }

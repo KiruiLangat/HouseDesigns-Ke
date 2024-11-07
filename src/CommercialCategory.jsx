@@ -1,5 +1,5 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 import '@fontsource/poppins'
 import './CommercialCategory.css'
@@ -20,9 +20,11 @@ const style = {
 
 export default function CommercialCategory(){
     return(
+        <HelmetProvider>
         <div className='project-description' style={style}>
             <Helmet>
                 <title>Commercial Projects</title>
+                <meta name='title' content='Commercial Projects' />
                 <meta name='description'content='Industrialization with Style and Finese' />
                 <meta property='og:title' content='Commercial Projects'/>
                 <meta property='og:description' content='Industrialization with Style and Finese' />
@@ -57,5 +59,6 @@ export default function CommercialCategory(){
                 </div>
             </div>
         </div>
+        </HelmetProvider>
     )
 }

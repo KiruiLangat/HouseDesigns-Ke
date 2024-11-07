@@ -1,5 +1,5 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import '@fontsource/poppins'
 
@@ -15,9 +15,11 @@ const style = {
 
 export default function ServiceSubCategory(){
     return(
+        <HelmetProvider>
         <div className="projects" style={style}>
             <Helmet>
                 <title>Residential Projects</title>
+                <meta name='title' content='Residential Projects' />
                 <meta name='description'content='Explore Our Residential Projects' />
                 <meta property='og:title' content='Residential Projects'/>
                 <meta property='og:description' content='Explore Our Residential Projects' />
@@ -69,5 +71,6 @@ export default function ServiceSubCategory(){
                     </div>
                 </div>
         </div>
+        </HelmetProvider>
     )
 }

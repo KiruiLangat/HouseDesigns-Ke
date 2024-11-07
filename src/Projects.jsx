@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import './Projects.css';
 import '@fontsource/poppins'
@@ -52,9 +52,11 @@ export default function Projects() {
     const subCategoryImageURL = imageMapping[sub_category_name] || imageMapping.default
 
     return (
+        <HelmetProvider>
         <div style={style} className='projects'>
             <Helmet>
             <title>{sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)}</title>
+            <meta name='title' content={sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} />
             <meta name='description' content={`Explore Our ${sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} House Designs and House Plans in Kenya.`} />
             <meta property='og:title' content={sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} />
             <meta property='og:description' content={`Explore Our ${sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} House Designs and House Plans in Kenya.`} />
@@ -86,5 +88,6 @@ export default function Projects() {
             </div>
             
         </div>
+        </HelmetProvider>
     )
 }

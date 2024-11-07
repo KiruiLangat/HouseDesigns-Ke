@@ -1,13 +1,11 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import './OurExpertise.css'
 import '@fontsource/poppins'
 import InteriorDesign from './images/interior-design.jpg'
 import ProjectMgmt from './images/projectMgmt.webp'
 import Masterplanning from './images/masterplanning.png'
 import architecture from './images/CM_1.jpg'
-
-//import arrow from './images/arrow-button.svg'
 import { Link } from 'react-router-dom'
 
 const style = {
@@ -16,9 +14,11 @@ const style = {
 
 export default function OurExpertise(){
     return(
+        <HelmetProvider>
         <div className="our-expertise" style={style}>
            <Helmet>
                 <title>Our Expertise</title>
+                <meta name='title' content='Our Expertise' />
                 <meta name='description'content='Explore our Services' />
                 <meta property='og:title' content='Our Expertise'/>
                 <meta property='og:description' content='Explore our Services' />
@@ -95,6 +95,6 @@ export default function OurExpertise(){
                 </div>
             </div> 
         </div>
-
+        </HelmetProvider>
     )
 }

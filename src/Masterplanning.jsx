@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import './Masterplanning.css'
 import '@fontsource/poppins'
 import Masterplan from './images/masterplanning.png'
@@ -27,9 +27,11 @@ const style={
 
 export default function Masterplanning(){
     return(
+        <HelmetProvider>
         <div className="masterplan" style={style}>
             <Helmet>
                 <title>Masterplanning Projects</title>
+                <meta name='title' content='Masterplanning Projects' />
                 <meta name='description'content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
                 <meta property='og:title' content='Masterplanning'/>
                 <meta property='og:description' content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
@@ -70,5 +72,6 @@ export default function Masterplanning(){
 
 
         </div>
+        </HelmetProvider>
     )
 }

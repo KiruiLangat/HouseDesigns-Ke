@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 //import Header from './Header.jsx';
 import Carousel from './Carousel.jsx';
 import GetStarted from './GetStarted.jsx';
@@ -19,11 +19,12 @@ const style = {
 
 function Homepage() {
   return (
+    <HelmetProvider>
     <div style={style}>
        <Helmet>
         <title>House Designs</title>
+        <meta name='title' content='House Designs' />
         <meta name='description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
-        <meta property='og:title' content='House Designs' />
         <meta property='og:description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
         <meta property='og:image' content='https://housedesigns.co.ke/carousel3.jpg' />
         <meta property='og:image:width' content='1200' />
@@ -48,6 +49,7 @@ function Homepage() {
       <Articles />
       
     </div>
+    </HelmetProvider>
   );
 }
 
