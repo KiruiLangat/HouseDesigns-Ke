@@ -1,27 +1,25 @@
 import React from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
 import '@fontsource/poppins'
-
-import CommercialImg from './images/commercial.jpg'
-import ResidentialsImg from './images/residentials.jpg'
-import InstitutionImg from './images/Institutions.png'
-
+import styles from '../assets/styles/Projects.module.css'
+import CommercialImg from '../assets/images/commercial.jpg'
+import ResidentialsImg from '../assets/images/residentials.jpg'
+import InstitutionImg from '../assets/images/Institutions.png'
 
 const style = {
     fontFamily: 'Poppins',
 }
 
-export default function ArchitectureServiceCategory(){
-
-    return(
-        <HelmetProvider>
-        <div className="projects" style={style}>
-            <Helmet>
+export default function ArchitectureServiceCategory() {
+    return (
+        <div className={styles.projects} style={style}>
+            <Head>
                 <title>Architecture Projects</title>
                 <meta name='title' content='Architecture Projects' />
-                <meta name='description'content='Explore Our Architecture Projects' />
-                <meta property='og:title' content='Architecture Projects'/>
+                <meta name='description' content='Explore Our Architecture Projects' />
+                <meta property='og:title' content='Architecture Projects' />
                 <meta property='og:description' content='Explore Our Architecture Projects' />
                 <meta property='og:image' content='https://housedesigns.co.ke/modernmarket.jpg' />
                 <meta property='og:image:width' content='1200' />
@@ -34,37 +32,41 @@ export default function ArchitectureServiceCategory(){
                 <meta name='twitter:image:width' content='1024' />
                 <meta name='twitter:image:height' content='512' />
                 <meta name='twitter:url' content='https://housedesigns.co.ke/architecture' />
-            </Helmet>
-        
-            <h1 className='projects-title'>Architecture Projects </h1>
-                <div className='service-projects-container'>
-                    <div className='project-box1'>
-                        <Link to="/residentials">
-                        <div className='project-img'>
-                            <img src={ResidentialsImg} alt='Residential' />
-                        </div>
-                        <h2>Residentials</h2>
-                        </Link>
-                    </div>
-                    <div className='project-box1'>
-                        <Link to="/commercial">
-                        <div className='project-img'>
-                            <img src={CommercialImg} alt='Commercial' />
-                        </div>
-                        <h2>commercial</h2>
-                        </Link>
-                    </div>
-                    <div className='project-box1'>
-                        <Link to="/institutions">
-                        <div className='project-img'>
-                            <img src={InstitutionImg} alt='Institutions' />
-                        </div>
-                        <h2>Institutions</h2>
-                        </Link>
-                    </div>
+            </Head>
+
+            <h1 className={styles.projectsTitle}>Architecture Projects</h1>
+            <div className={styles.serviceProjectsContainer}>
+                <div className={styles.projectBox1}>
+                    <Link href="/residentials">
+                        <a>
+                            <div className={styles.projectImg}>
+                                <Image src={ResidentialsImg} alt='Residential' />
+                            </div>
+                            <h2>Residentials</h2>
+                        </a>
+                    </Link>
                 </div>
-           
+                <div className={styles.projectBox1}>
+                    <Link href="/commercial">
+                        <a>
+                            <div className={styles.projectImg}>
+                                <Image src={CommercialImg} alt='Commercial' />
+                            </div>
+                            <h2>Commercial</h2>
+                        </a>
+                    </Link>
+                </div>
+                <div className={styles.projectBox1}>
+                    <Link href="/institutions">
+                        <a>
+                            <div className={styles.projectImg}>
+                                <Image src={InstitutionImg} alt='Institutions' />
+                            </div>
+                            <h2>Institutions</h2>
+                        </a>
+                    </Link>
+                </div>
+            </div>
         </div>
-        </HelmetProvider>
     )
 }

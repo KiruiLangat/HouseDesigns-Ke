@@ -1,17 +1,13 @@
 import React from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-//import Header from './Header.jsx';
+import Head from 'next/head';
 import Carousel from '../components/Carousel.jsx';
-import GetStarted from '../src/GetStarted.jsx';
-import GetInTouch from '../src/getInTouch.jsx';
+import GetStarted from '../ccomponents/GetStarted.jsx';
+import GetInTouch from '../components/getInTouch.jsx';
 import BrowseProjects from '../components/BrowseProjects.jsx';
 import AboutUs from '../components/AboutUs.jsx';
 import Articles from '../components/Articles.jsx';
-//import Footer from './Footer.jsx';
-
-import './Homepage.css';
+import styles from '../styles/Homepage.module.css';
 import '@fontsource/poppins';
-
 
 const style = {
   fontFamily: 'Poppins',
@@ -19,9 +15,8 @@ const style = {
 
 function Homepage() {
   return (
-    <HelmetProvider>
-    <div style={style}>
-       <Helmet>
+    <div className={styles.container} style={style}>
+      <Head>
         <title>House Designs</title>
         <meta name='title' content='House Designs' />
         <meta name='description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
@@ -38,8 +33,7 @@ function Homepage() {
         <meta name='twitter:image:width' content='1024' />
         <meta name='twitter:image:height' content='512' />
         <meta name='twitter:url' content='https://housedesigns.co.ke/' />
-
-      </Helmet>
+      </Head>
     
       <Carousel />
       <GetStarted />
@@ -47,9 +41,7 @@ function Homepage() {
       <BrowseProjects />
       <AboutUs />
       <Articles />
-      
     </div>
-    </HelmetProvider>
   );
 }
 

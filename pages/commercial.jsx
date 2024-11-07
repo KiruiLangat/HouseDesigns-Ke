@@ -1,31 +1,28 @@
 import React from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import Head from 'next/head'
+import Image from 'next/image'
 
 import '@fontsource/poppins'
-import './CommercialCategory.css'
-import ModernMarket from './images/modernmarket.jpg'
-import ModernMarket1 from './images/modernmarket1.jpg'
-import ModernMarket2 from './images/modernmarket2.jpg'
-import ModernMarket3 from './images/modernmarket3.jpg'
-import ModernMarket4 from './images/modernmarket4.jpg'
-import ModernMarket5 from './images/modernmarket5.jpg'
-import ModernMarket6 from './images/modernmarket6.jpg'
-
-
+import styles from '../assets/styles/Commercial.module.css'
+import ModernMarket from '../assets/images/modernmarket.jpg'
+import ModernMarket1 from '../assets/images/modernmarket1.jpg'
+import ModernMarket2 from '../assets/images/modernmarket2.jpg'
+import ModernMarket3 from '../assets/images/modernmarket3.jpg'
+import ModernMarket4 from '../assets/images/modernmarket4.jpg'
+import ModernMarket5 from '../assets/images/modernmarket5.jpg'
+import ModernMarket6 from '../assets/images/modernmarket6.jpg'
 
 const style = {
     fontFamily: 'Poppins'
 }
 
-
 export default function CommercialCategory(){
     return(
-        <HelmetProvider>
-        <div className='project-description' style={style}>
-            <Helmet>
+        <div className={styles.projectDescription} style={style}>
+            <Head>
                 <title>Commercial Projects</title>
                 <meta name='title' content='Commercial Projects' />
-                <meta name='description'content='Industrialization with Style and Finese' />
+                <meta name='description' content='Industrialization with Style and Finese' />
                 <meta property='og:title' content='Commercial Projects'/>
                 <meta property='og:description' content='Industrialization with Style and Finese' />
                 <meta property='og:image' content='https://housedesigns.co.ke/modernmarket1.jpg' />
@@ -39,26 +36,25 @@ export default function CommercialCategory(){
                 <meta name='twitter:image:width' content='1024' />
                 <meta name='twitter:image:height' content='512' />
                 <meta name='twitter:url' content='https://housedesigns.co.ke/architecture/commercial' />
-            </Helmet>
-            <div className='large-img'>
-                <img src={ModernMarket5} alt = 'Modern Market' />
+            </Head>
+            <div className={styles.largeImg}>
+                <Image src={ModernMarket5} alt='Modern Market' />
             </div>
-            <div className='Masonry'>
-                <img src ={ModernMarket1} alt='Modern Market' />
-                <img src ={ModernMarket2} alt='Modern Market' />
-                <img src ={ModernMarket3} alt='Modern Market' />
-                <img src ={ModernMarket4} alt='Modern Market' />
-                <img src ={ModernMarket} alt='Modern Market' />
-                <img src ={ModernMarket6} alt='Modern Market' />
+            <div className={styles.masonry}>
+                <Image src={ModernMarket1} alt='Modern Market' />
+                <Image src={ModernMarket2} alt='Modern Market' />
+                <Image src={ModernMarket3} alt='Modern Market' />
+                <Image src={ModernMarket4} alt='Modern Market' />
+                <Image src={ModernMarket} alt='Modern Market' />
+                <Image src={ModernMarket6} alt='Modern Market' />
             </div>
             <h1>Modern Market</h1>
-            <div className='project-info'>                
-                <div className='details'>
+            <div className={styles.projectInfo}>                
+                <div className={styles.details}>
                     <h2>Project Details</h2>
                     <p>State of the art market area.</p>
                 </div>
             </div>
         </div>
-        </HelmetProvider>
     )
 }

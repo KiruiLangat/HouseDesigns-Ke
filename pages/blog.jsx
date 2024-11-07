@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import './Blog.css';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../assets/styles/Blog.module.css';
 import '@fontsource/poppins';
-import SearchBar from './BlogSearchBar';
-import BlogGrids from './BlogGrids';
+import SearchBar from '../components/BlogSearchBar';
+import BlogGrids from '../components/BlogGrids';
 
 const style = {
     fontFamily: 'Poppins',
@@ -64,41 +65,39 @@ export default function Blog() {
     }
 
     return (
-      <HelmetProvider>
-        <div className='blog-container' style={style}>
-          <Helmet>
-            <title>{title.rendered}</title>
-            <meta name='title' content={title.rendered} />
-            <meta name='description' content={excerpt.rendered.substring(0, 160)} />
-            <meta property='og:title' content={title.rendered} />
-            <meta property='og:description' content={excerpt.rendered.substring(0, 160)} />
-            <meta property='og:image' content={featuredImage} />
-            <meta property='og:image:width' content='1260' />
-            <meta property='og:image:height' content='600' />
-            <meta property='og:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
-            <meta name='twitter:card' content='summary' />
-            <meta name='twitter:title' content={title.rendered} />
-            <meta name='twitter:description' content={excerpt.rendered.substring(0, 160)} />
-            <meta name='twitter:image' content={featuredImage} />
-            <meta name='twitter:image:width' content='1024' />
-            <meta name='twitter:image:height' content='512' />
-            <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
-          </Helmet>
+      <div className={styles.blogContainer} style={style}>
+        <Head>
+          <title>{title.rendered}</title>
+          <meta name='title' content={title.rendered} />
+          <meta name='description' content={excerpt.rendered.substring(0, 160)} />
+          <meta property='og:title' content={title.rendered} />
+          <meta property='og:description' content={excerpt.rendered.substring(0, 160)} />
+          <meta property='og:image' content={featuredImage} />
+          <meta property='og:image:width' content='1260' />
+          <meta property='og:image:height' content='600' />
+          <meta property='og:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
+          <meta name='twitter:card' content='summary' />
+          <meta name='twitter:title' content={title.rendered} />
+          <meta name='twitter:description' content={excerpt.rendered.substring(0, 160)} />
+          <meta name='twitter:image' content={featuredImage} />
+          <meta name='twitter:image:width' content='1024' />
+          <meta name='twitter:image:height' content='512' />
+          <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
+        </Head>
 
-          <Link to={`/blog/${slug}`} className="blog-intro">
-            <div className='test-img'>
-              <img src={featuredImage} alt='featured-img' />
-            </div>
-            <div className='overlay-info'>
-              <h2 dangerouslySetInnerHTML={{ __html: title ? title.rendered : '' }}></h2>
-              <p className='excerpt' dangerouslySetInnerHTML={{ __html: excerpt ? truncateText(excerpt.rendered, 100, 768) : '' }}></p>
-              <p className='date'>{date ? new Date(date).toLocaleDateString() : ''}</p>
-            </div>
-          </Link>
-          <SearchBar />
-          <BlogGrids />
-        </div>
-      </HelmetProvider>
+        <Link href={`/blog/${slug}`} className={styles.blogIntro}>
+          <div className={styles.testImg}>
+            <Image src={featuredImage} alt='featured-img' width={1260} height={600} />
+          </div>
+          <div className={styles.overlayInfo}>
+            <h2 dangerouslySetInnerHTML={{ __html: title ? title.rendered : '' }}></h2>
+            <p className={styles.excerpt} dangerouslySetInnerHTML={{ __html: excerpt ? truncateText(excerpt.rendered, 100, 768) : '' }}></p>
+            <p className={styles.date}>{date ? new Date(date).toLocaleDateString() : ''}</p>
+          </div>
+        </Link>
+        <SearchBar />
+        <BlogGrids />
+      </div>
     );
   } else {
     console.log('blogPost is not defined yet');

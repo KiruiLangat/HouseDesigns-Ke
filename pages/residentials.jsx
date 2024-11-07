@@ -1,26 +1,20 @@
 import React from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
-import '@fontsource/poppins'
-
-import BungalowsImg from './images/bungalows.jpg'
-import MaisonetteImg from './images/maisonettes.jpg'
-import ApartmentsImg from './images/apartments.jpg'
-import TinyHomesImg from './images/tinyhomes.jpg'
-
-
-const style = {
-    fontFamily: 'Poppins',
-}
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+import styles from '../assets/styles/Projects.module.css'
+import BungalowsImg from '../assets/images/bungalows.jpg'
+import MaisonetteImg from '../assets/images/maisonettes.jpg'
+import ApartmentsImg from '../assets/images/apartments.jpg'
+import TinyHomesImg from '../assets/images/tinyhomes.jpg'
 
 export default function ServiceSubCategory(){
     return(
-        <HelmetProvider>
-        <div className="projects" style={style}>
-            <Helmet>
+        <div className={styles.projects}>
+            <Head>
                 <title>Residential Projects</title>
                 <meta name='title' content='Residential Projects' />
-                <meta name='description'content='Explore Our Residential Projects' />
+                <meta name='description' content='Explore Our Residential Projects' />
                 <meta property='og:title' content='Residential Projects'/>
                 <meta property='og:description' content='Explore Our Residential Projects' />
                 <meta property='og:image' content='https://housedesigns.co.ke/apartment.jpg' />
@@ -34,43 +28,50 @@ export default function ServiceSubCategory(){
                 <meta name='twitter:image:width' content='1024' />
                 <meta name='twitter:image:height' content='512' />
                 <meta name='twitter:url' content='https://housedesigns.co.ke/architecture/residentials' />
-            </Helmet>
-            <h1 className='projects-title'>Residential Projects</h1>
-                <div className='service-projects-container'>
-                    <div className='project-box1'>
-                        <Link to={`/bungalows`}>
-                        <div className='project-img'>
-                            <img src={BungalowsImg} alt='Bungalows' />
-                        </div>
-                        <h2>Bungalows</h2>
+            </Head>
+            <h1 className={styles.projectsTitle}>Residential Projects</h1>
+                <div className={styles.serviceProjectsContainer}>
+                    <div className={styles.projectBox}>
+                        <Link href="/bungalows">
+                        <a>
+                            <div className={styles.projectImg}>
+                                <Image src={BungalowsImg} alt='Bungalows' />
+                            </div>
+                            <h2>Bungalows</h2>
+                        </a>
                         </Link>
                     </div>
-                    <div className='project-box1'>
-                        <Link to={`/maisonettes`}>
-                        <div className='project-img'>
-                            <img src={MaisonetteImg} alt='Maisonette' />
-                        </div>
-                        <h2>Maisonettes</h2>
+                    <div className={styles.projectBox}>
+                        <Link href="/maisonettes">
+                        <a>
+                            <div className={styles.projectImg}>
+                                <Image src={MaisonetteImg} alt='Maisonette' />
+                            </div>
+                            <h2>Maisonettes</h2>
+                        </a>
                         </Link>
                     </div>
-                    <div className='project-box1'>
-                        <Link to={`/apartments`}>
-                        <div className='project-img'>
-                            <img src={ApartmentsImg} alt='Apartments' />
-                        </div>
-                        <h2>Apartments</h2>
+                    <div className={styles.projectBox}>
+                        <Link href="/apartments">
+                        <a>
+                            <div className={styles.projectImg}>
+                                <Image src={ApartmentsImg} alt='Apartments' />
+                            </div>
+                            <h2>Apartments</h2>
+                        </a>
                         </Link>
                     </div>
-                    <div className='project-box1'>
-                        <Link to={`/tiny homes`}>
-                        <div className='project-img'>
-                            <img src={TinyHomesImg} alt='Tiny Homes' />
-                        </div>
-                        <h2>Tiny Homes</h2>
+                    <div className={styles.projectBox}>
+                        <Link href="/tiny homes">
+                        <a>
+                            <div className={styles.projectImg}>
+                                <Image src={TinyHomesImg} alt='Tiny Homes' />
+                            </div>
+                            <h2>Tiny Homes</h2>
+                        </a>
                         </Link>
                     </div>
                 </div>
         </div>
-        </HelmetProvider>
     )
 }

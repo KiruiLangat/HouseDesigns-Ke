@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
- 
+
+//Global Styles
+import '../assets/styles/Projects.css'
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
