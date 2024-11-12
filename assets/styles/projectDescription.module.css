@@ -4,21 +4,20 @@
     100% { background-color: #eee; }
 }
 
-
-.project-description{
+.projectDescription {
     width: 100%;
     max-width: 1200px;
     margin: auto;
     padding: 0;
     min-height: 100vh;
 }
-.large-img{
+.largeImg {
     width: 93%;
     height: auto;
     border-radius: 10px;
     margin: auto;
 }
-.large-img img{
+.largeImg img {
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -26,7 +25,7 @@
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
     margin-bottom: 5px;
 }
-.masonry{
+.masonry {
     width: 93%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -35,13 +34,13 @@
     margin: auto;
     
 }
-.image-container{
+.imageContainer {
     border-radius: 10px;
     background-color: #eee;
     height: 350px;
     animation: blinking 1s infinite;
 }
-.masonry img{
+.masonry img {
     width: 100%;
     height: 350px;
     border-radius: 10px;
@@ -51,82 +50,81 @@
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
-.project-info{
+.projectInfo {
     width: 93%;
     height: auto;
     margin: auto;
     display: flex;
 }
-.project-description h1{
+.projectDescription h1 {
     font-size: 36px;
     font-weight: 400;
     text-align: center;
 }
-.descriptions{
+.descriptions {
     margin-left: 10%;
     
 }
-.description1 h2{
+.description1 h2 {
     font-size: 24px;
     font-weight: 400;
 }
-.description1 p{
+.description1 p {
     font-size: 18px;
     font-weight: 300;
 }
-.description2 h2{
+.description2 h2 {
     font-size: 24px;
     font-weight: 400;
 }
-.description2 p{
+.description2 p {
     font-size: 18px;
     font-weight: 300;
 }
-.description3 h2{
+.description3 h2 {
     font-size: 24px;
     font-weight: 400;
 }
-.description3 p{
+.description3 p {
     font-size: 18px;
     font-weight: 300;
 }
-.details{
+.details {
     margin-left:15%;   
     
 }
-.details h2{
+.details h2 {
     font-size: 24px;
     font-weight: 400;
 }
-.details p{
+.details p {
     font-size: 18px;
     font-weight: 300;
 }
 
-
 @media (max-width:768px){
-    .large-img{
+    .largeImg {
         margin-top: 2%;
     }
-     .project-info{
+     .projectInfo {
         width: auto;
         margin: auto;
      }
-    .project-description h1{
+    .projectDescription h1 {
         font-size: 24px;
         
     }
-    .description1 h2, .description2 h2, .description3 h2, .details h2{
+    .description1 h2, .description2 h2, .description3 h2, .details h2 {
         font-size: 16px;
     }
-    .description1 p, .description2 p, .description3 p, .details p{
+    .description1 p, .description2 p, .description3 p, .details p {
         font-size: 14px;
     }
-    .image-container{
+    .imageContainer {
         height: 105px;
         animation: blinking 1.5s infinite;
     }
-    .masonry img{
+    .masonry Img {
         width: 100%;
         height: 105px;
         object-fit: cover;

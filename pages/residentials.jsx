@@ -8,9 +8,13 @@ import MaisonetteImg from '../assets/images/maisonettes.jpg'
 import ApartmentsImg from '../assets/images/apartments.jpg'
 import TinyHomesImg from '../assets/images/tinyhomes.jpg'
 
+const style = {
+    fontFamily: 'Poppins',
+};
+
 export default function ServiceSubCategory(){
     return(
-        <div className={styles.projects}>
+        <div className={styles.projects} style={style}>
             <Head>
                 <title>Residential Projects</title>
                 <meta name='title' content='Residential Projects' />
@@ -32,40 +36,40 @@ export default function ServiceSubCategory(){
             <h1 className={styles.projectsTitle}>Residential Projects</h1>
                 <div className={styles.serviceProjectsContainer}>
                     <div className={styles.projectBox}>
-                        <Link href="/bungalows">
+                        <Link href="/bungalows" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={BungalowsImg} alt='Bungalows' />
+                                <Image src={BungalowsImg} alt='Bungalows' layout='fixed' />
                             </div>
                             <h2>Bungalows</h2>
                         </a>
                         </Link>
                     </div>
                     <div className={styles.projectBox}>
-                        <Link href="/maisonettes">
+                        <Link href="/maisonettes" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={MaisonetteImg} alt='Maisonette' />
+                                <Image src={MaisonetteImg} alt='Maisonette' layout='fixed' />
                             </div>
                             <h2>Maisonettes</h2>
                         </a>
                         </Link>
                     </div>
                     <div className={styles.projectBox}>
-                        <Link href="/apartments">
+                        <Link href="/apartments" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={ApartmentsImg} alt='Apartments' />
+                                <Image src={ApartmentsImg} alt='Apartments' layout='fixed' />
                             </div>
                             <h2>Apartments</h2>
                         </a>
                         </Link>
                     </div>
                     <div className={styles.projectBox}>
-                        <Link href="/tiny homes">
+                        <Link href="/tiny homes" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={TinyHomesImg} alt='Tiny Homes' />
+                                <Image src={TinyHomesImg} alt='Tiny Homes' layout='fixed'/>
                             </div>
                             <h2>Tiny Homes</h2>
                         </a>

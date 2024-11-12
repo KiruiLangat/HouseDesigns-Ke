@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { useParams } from 'react-router-dom';
-import './Projects.css';
-import '@fontsource/poppins'
-import { Link } from 'react-router-dom';
-
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../../assets/styles/Projects.module.css';
+import '@fontsource/poppins';
 
 const style = {
     fontFamily: 'Poppins',
@@ -15,30 +15,33 @@ const subCategoryMap = {
     maisonettes: 2,
     apartments: 3,
     tiny_homes: 4,
-}
+};
 
 export default function Projects() {
-    const[ projects, setProjects ] = useState([])
-    const { sub_category_name } = useParams()
+    const [projects, setProjects] = useState([]);
+    const router = useRouter();
+    const { sub_category_name } = router.query;
 
     useEffect(() => {
         const fetchProjects = async () => {
-            try{
-                const subCategoryId = subCategoryMap[sub_category_name]
-                const response = await fetch(`/api/residentials/${subCategoryId}`)
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+            try {
+                const subCategoryId = subCategoryMap[sub_category_name];
+                const response = await fetch(`/api/residentials/${subCategoryId}`);
 
-            const data = await response.json()
-            console.log(data)
-            setProjects(data)
-        } catch (error) {
-            console.error(error) 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log(data);
+                setProjects(data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        if (sub_category_name) {
+            fetchProjects();
         }
-        }
-        fetchProjects();
     }, [sub_category_name]);
 
     const imageMapping = {
@@ -47,47 +50,46 @@ export default function Projects() {
         apartments: "https://housedesigns.co.ke/apartments.jpg",
         tiny_homes: "https://housedesigns.co.ke/tinyhomes.jpg",
         default: "https://housedesigns.co.ke/defaultImage.jpg",
-    }
+    };
 
-    const subCategoryImageURL = imageMapping[sub_category_name] || imageMapping.default
+    const subCategoryImageURL = imageMapping[sub_category_name] || imageMapping.default;
 
     return (
-        <HelmetProvider>
-        <div style={style} className='projects'>
-            <Helmet>
-            <title>{sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)}</title>
-            <meta name='title' content={sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} />
-            <meta name='description' content={`Explore Our ${sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} House Designs and House Plans in Kenya.`} />
-            <meta property='og:title' content={sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} />
-            <meta property='og:description' content={`Explore Our ${sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} House Designs and House Plans in Kenya.`} />
-            <meta property='og:image' content={subCategoryImageURL} />
-            <meta property='og:image:width' content='1200' />
-            <meta property='og:image:height' content='600' />
-            <meta property='og:url' content={`https://housedesigns.co.ke/architecture/residentials/${sub_category_name.charAt(0).toUpperCase()+sub_category_name.slice(1)}`} />
-            <meta name='twitter:card' content='summary' />
-            <meta name='twitter:title' content={sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} />
-            <meta name='twitter:description' content={`Explore Our ${sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)} House Designs and House Plans in Kenya.`} />
-            <meta name='twitter:image' content={subCategoryImageURL} />
-            <meta name='twitter:image:width' content='1024' />
-            <meta name='twitter:image:height' content='512' />
-            <meta name='twitter:url' content={`https://housedesigns.co.ke/architecture/residentials/${sub_category_name.charAt(0).toUpperCase()+sub_category_name.slice(1)}`} />
-            </Helmet>
+        <div style={style} className={styles.projects}>
+            <Head>
+                <title>{sub_category_name?.charAt(0).toUpperCase() + sub_category_name?.slice(1)}</title>
+                <meta name='title' content={sub_category_name?.charAt(0).toUpperCase() + sub_category_name?.slice(1)} />
+                <meta name='description' content={`Explore Our ${sub_category_name?.charAt(0).toUpperCase() + sub_category_name?.slice(1)} House Designs and House Plans in Kenya.`} />
+                <meta property='og:title' content={sub_category_name?.charAt(0).toUpperCase() + sub_category_name?.slice(1)} />
+                <meta property='og:description' content={`Explore Our ${sub_category_name?.charAt(0).toUpperCase() + sub_category_name?.slice(1)} House Designs and House Plans in Kenya.`} />
+                <meta property='og:image' content={subCategoryImageURL} />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='600' />
+                <meta property='og:url' content={`https://housedesigns.co.ke/architecture/residentials/${sub_category_name?.charAt(0).toUpperCase() + sub_category_name?.slice(1)}`} />
+                <meta name='twitter:card' content='summary' />
+                <meta name='twitter:title' content={sub_category_name?.charAt(0).toUpperCase() + sub_category_name?.slice(1)} />
+                <meta name='twitter:description' content={`Explore Our ${sub_category_name?.charAt(0).toUpperCase() + sub_category_name?.slice(1)} House Designs and House Plans in Kenya.`} />
+                <meta name='twitter:image' content={subCategoryImageURL} />
+                <meta name='twitter:image:width' content='1024' />
+                <meta name='twitter:image:height' content='512' />
+                <meta name='twitter:url' content={`https://housedesigns.co.ke/architecture/residentials/${sub_category_name?.charAt(0).toUpperCase() + sub_category_name?.slice(1)}`} />
+            </Head>
 
-            <h1 className='projects-title'>{sub_category_name.charAt(0).toUpperCase() + sub_category_name.slice(1)}</h1>
-            <div className='service-projects-container'>
+            <h1 className={styles.projectsTitle}>{sub_category_name?.charAt(0).toUpperCase() + sub_category_name?.slice(1)}</h1>
+            <div className={styles.serviceProjectsContainer}>
                 {projects.map(project => (
-                    <div className='project-box1' key={project.id}> 
-                        <Link to={`/projects/${sub_category_name}/${project.title}`}>
-                            <div className='projects-img'>
-                                <img src={project.project_img_url} alt='Project Loading' loading='lazy' onLoad={(e) => e.target.style.opacity = 1} />
-                            </div>
-                            <h2>{project.title}</h2>
+                    <div className={styles.projectBox1} key={project.id}>
+                        <Link href={`/projects/${sub_category_name}/${project.title}`}>
+                            <a>
+                                <div className={styles.projectsImg}>
+                                    <Image src={project.project_img_url} alt='Project Loading' layout='fill' objectFit='cover' loading='lazy' />
+                                </div>
+                                <h2>{project.title}</h2>
+                            </a>
                         </Link>
                     </div>
-                ))}   
+                ))}
             </div>
-            
         </div>
-        </HelmetProvider>
-    )
+    );
 }

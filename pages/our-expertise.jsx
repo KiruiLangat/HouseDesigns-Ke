@@ -3,10 +3,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../assets/styles/OurExpertise.module.css'
 import '@fontsource/poppins'
-import InteriorDesign from '../public/images/interior-design.jpg'
-import ProjectMgmt from '../public/images/projectMgmt.webp'
-import Masterplanning from '../public/images/masterplanning.png'
-import architecture from '../public/images/CM_1.jpg'
+import InteriorDesign from '../assets/images/interior-design.jpg'
+import ProjectMgmt from '../assets/images/projectMgmt.webp'
+import Masterplanning from '../assets/images/masterplanning.png'
+import architecture from '../assets/images/CM_1.jpg'
 import Link from 'next/link'
 
 const style = {
@@ -40,7 +40,7 @@ export default function OurExpertise(){
                 <div className={styles.service1}>
                     <Link href="/architecture"> 
                         <div className={styles.service1Img}>
-                            <Image src={architecture} alt='architecture' layout='responsive' />
+                            <Image src={architecture} alt='architecture' layout='fixed' />
                         </div>
                         <h2>Architecture</h2>
                         <div className={styles.arrowServices}>
@@ -54,7 +54,7 @@ export default function OurExpertise(){
                 <div className={styles.service1}>
                     <Link href="">
                         <div className={styles.service1Img}>
-                            <Image src={InteriorDesign} alt='interior design' layout='responsive' />
+                            <Image src={InteriorDesign} alt='interior design' layout='fixed' />
                         </div>
                         <h2>Interior Design</h2>
                         <div className={styles.arrowServices}>
@@ -68,7 +68,7 @@ export default function OurExpertise(){
                 <div className={styles.service1}>
                     <Link href='/contact-us'>
                         <div className={styles.service1Img}>
-                            <Image src={ProjectMgmt} alt='project-management' layout='responsive' />
+                            <Image src={ProjectMgmt} alt='project-management' layout='fixed' />
                         </div>
                         <h2>Project Management</h2>
                         <div className={styles.arrowServices}>
@@ -82,7 +82,7 @@ export default function OurExpertise(){
                 <div className={styles.service1}>
                     <Link href='/masterplanning'>
                         <div className={styles.service1Img}>
-                            <Image src={Masterplanning} alt='masterplanning' layout='responsive' />
+                            <Image src={Masterplanning} alt='masterplanning' layout='fixed' />
                         </div>
                         <h2>Master Planning</h2>
                         <div className={styles.arrowServices}>

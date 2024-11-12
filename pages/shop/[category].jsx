@@ -1,15 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import {fetchAllProducts } from '../shop/woocommerce';
-import { Link, useParams } from 'react-router-dom';
-import TuneIcon from '@mui/icons-material/Tune'
-
-import './filteredCategoriesPage.css'
+import React, { useState, useEffect } from 'react';
+import { fetchAllProducts } from '../shop/woocommerce';
+import { useRouter } from 'next/router';
+import TuneIcon from '@mui/icons-material/Tune';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../../assets/styles/shop/filteredCategoriesPage.module.css';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBag';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -21,14 +22,13 @@ import { ReactComponent as Bathrooms } from '../images/bathroom.svg';
 import { useCart, useWishlist } from '../shop/cartContext';
 import OptionsPopUp from '../shop/optionsPopUp';
 
-
-
 const style = {
     fontFamily: 'Poppins'
-}
+};
 
 export default function FilteredCategoriesPage() {
-    const {category} = useParams();
+    const router = useRouter();
+    const { category } = router.query;
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -38,90 +38,83 @@ export default function FilteredCategoriesPage() {
     const { cart, handleAddToCart, handleRemoveFromCart } = useCart();
     const { wishlist, handleAddToWishlist, handleRemoveFromWishlist } = useWishlist();
 
-    const isInCart = (product) => cart.some((item) =>item && item.slug === product.slug);
+    const isInCart = (product) => cart.some((item) => item && item.slug === product.slug);
     const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
 
-    //Options Pop up
+    // Options Pop up
     const [showOptionsPopUp, setShowOptionsPopUp] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
-    const [selectedPrice, setSelectedPrice] = useState(null)
-     
+    const [selectedPrice, setSelectedPrice] = useState(null);
+
     const handleClosePopUp = () => {
-         setShowOptionsPopUp(false)
-    }
-
+        setShowOptionsPopUp(false);
+    };
 
     useEffect(() => {
-        if(selectedCategory) {
-            fetchAllProducts(selectedCategory)
-            .then(data => 
-                setProducts(data))
+        if (selectedCategory) {
+            fetchAllProducts(selectedCategory).then((data) => setProducts(data));
         }
-    }, [selectedCategory])
-    
+    }, [selectedCategory]);
+
     useEffect(() => {
-        setSelectedCategory(category)
-    }, [category])
-
-
+        setSelectedCategory(category);
+    }, [category]);
 
     const formatCategoryName = (name) => {
         if (!name) return 'Category';
         return name
             .split('-')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');
     };
 
-
     const toggleDropdown = () => {
-        setIsDropdownVisible(!isDropdownVisible)
-    }
-
+        setIsDropdownVisible(!isDropdownVisible);
+    };
 
     const handleSearch = () => {
-        const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
+        const filteredProducts = products.filter((product) =>
+            product.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
         setProducts(filteredProducts);
-    }
+    };
 
     const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value)
-    }
-    
-    const toggleFilter = () => {
-        setIsFilterActive(!isFilterActive)
-    }
+        setSearchTerm(e.target.value);
+    };
 
-    
-    return(
-        <div className='filtered-categories-page' style={style}>
-            <div className='filtered-categories-products'>
+    const toggleFilter = () => {
+        setIsFilterActive(!isFilterActive);
+    };
+
+    return (
+        <div className={styles.filteredCategoriesPage} style={style}>
+            <div className={styles.filteredCategoriesProducts}>
                 <h1>{formatCategoryName(selectedCategory)}</h1>
-                
-                <div className='filter-search'>
-                    <div 
-                    className={`filter-title ${isFilterActive ? 'active' : ''}`} 
-                    onClick={toggleFilter}
+
+                <div className={styles.filterSearch}>
+                    <div
+                        className={`${styles.filterTitle} ${isFilterActive ? styles.active : ''}`}
+                        onClick={toggleFilter}
                     >
-                        <TuneIcon className='icon-tune'/>
-                        <p>Filters</p> 
+                        <TuneIcon className={styles.iconTune} />
+                        <p>Filters</p>
                     </div>
-                    
                 </div>
-                <div className='filtered-products-container'>
-                    <div className='filter-of-categories'>
-                        <div className='filtered-category-attributes'>
-                            <div className={`filter-attributes ${isFilterActive ? 'show' : ''}`}>
-                                <div className='attribute-1' onClick={toggleDropdown}>
+                <div className={styles.filteredProductsContainer}>
+                    <div className={styles.filterOfCategories}>
+                        <div className={styles.filteredCategoryAttributes}>
+                            <div className={`${styles.filterAttributes} ${isFilterActive ? styles.show : ''}`}>
+                                <div className={styles.attribute1} onClick={toggleDropdown}>
                                     <h3>Bedrooms</h3>
                                     {isDropdownVisible ? (
-                                        <ArrowDropUpIcon className='icon-drop'/>
+                                        <ArrowDropUpIcon className={styles.iconDrop} />
                                     ) : (
-                                        <ArrowDropDownIcon className='icon-drop'/>
+                                        <ArrowDropDownIcon className={styles.iconDrop} />
                                     )}
                                 </div>
                                 {isDropdownVisible && (
-                                    <div className='attribute-1-options'>
+                                    <div className={styles.attribute1Options}>
                                         <p>1 Bedroom</p>
                                         <p>2 Bedrooms</p>
                                         <p>3 Bedrooms</p>
@@ -129,16 +122,16 @@ export default function FilteredCategoriesPage() {
                                         <p>5 Bedrooms</p>
                                     </div>
                                 )}
-                                <div className='attribute-1' onClick={toggleDropdown}>
+                                <div className={styles.attribute1} onClick={toggleDropdown}>
                                     <h3>Bathrooms</h3>
                                     {isDropdownVisible ? (
-                                        <ArrowDropUpIcon className='icon-drop'/>
+                                        <ArrowDropUpIcon className={styles.iconDrop} />
                                     ) : (
-                                        <ArrowDropDownIcon className='icon-drop'/>
+                                        <ArrowDropDownIcon className={styles.iconDrop} />
                                     )}
                                 </div>
                                 {isDropdownVisible && (
-                                    <div className='attribute-1-options'>
+                                    <div className={styles.attribute1Options}>
                                         <p>1 Bathroom</p>
                                         <p>2 Bathrooms</p>
                                         <p>3 Bathrooms</p>
@@ -146,16 +139,16 @@ export default function FilteredCategoriesPage() {
                                         <p>5 Bathrooms</p>
                                     </div>
                                 )}
-                                <div className='attribute-1' onClick={toggleDropdown}>
+                                <div className={styles.attribute1} onClick={toggleDropdown}>
                                     <h3>Floors</h3>
                                     {isDropdownVisible ? (
-                                        <ArrowDropUpIcon className='icon-drop'/>
+                                        <ArrowDropUpIcon className={styles.iconDrop} />
                                     ) : (
-                                        <ArrowDropDownIcon className='icon-drop'/>
+                                        <ArrowDropDownIcon className={styles.iconDrop} />
                                     )}
                                 </div>
                                 {isDropdownVisible && (
-                                    <div className='attribute-1-options'>
+                                    <div className={styles.attribute1Options}>
                                         <p>1 Floor</p>
                                         <p>2 Floors</p>
                                         <p>3 Floors</p>
@@ -163,16 +156,16 @@ export default function FilteredCategoriesPage() {
                                         <p>5 Floors</p>
                                     </div>
                                 )}
-                                <div className='attribute-1' onClick={toggleDropdown}>
+                                <div className={styles.attribute1} onClick={toggleDropdown}>
                                     <h3>Plinth Area</h3>
                                     {isDropdownVisible ? (
-                                        <ArrowDropUpIcon className='icon-drop'/>
+                                        <ArrowDropUpIcon className={styles.iconDrop} />
                                     ) : (
-                                        <ArrowDropDownIcon className='icon-drop'/>
+                                        <ArrowDropDownIcon className={styles.iconDrop} />
                                     )}
                                 </div>
                                 {isDropdownVisible && (
-                                    <div className='attribute-1-options'>
+                                    <div className={styles.attribute1Options}>
                                         <p>100m<sup>2</sup></p>
                                         <p>200m<sup>2</sup></p>
                                         <p>300m<sup>2</sup></p>
@@ -180,102 +173,117 @@ export default function FilteredCategoriesPage() {
                                         <p>500m<sup>2</sup></p>
                                     </div>
                                 )}
-                                
-
                             </div>
                         </div>
+                    </div>
 
-                        
-                    </div>
-                    
-                    
-                    <div className='filtered-products'>
-                    <div className='filter-search-bar'>
-                        <SearchIcon  className='icon-search-products' onClick={() => handleSearch()}/>
-                        <input 
-                        type='text'
-                        placeholder='Search for Products'
-                        onChange={handleSearchChange}
-                        value={searchTerm}
-                        />
-                    </div>
-                    
-                        <div className='category-products'>
-                        {products.map(product => (
-                            <div key={product.id} className='filtered-products-card'>
-                                <Link to={`/product/${product.slug}`}>
-                                    <img src={product.images[0].src} alt={product.name} loading='lazy' />
-                                </Link>
-                                <div className='cart-wishlist'>
-                                        <div className='wishlist' onClick={() => 
-                                            isInWishlist(product) ? handleRemoveFromWishlist(product) : handleAddToWishlist(product)}>
+                    <div className={styles.filteredProducts}>
+                        <div className={styles.filterSearchBar}>
+                            <SearchIcon className={styles.iconSearchProducts} onClick={() => handleSearch()} />
+                            <input
+                                type='text'
+                                placeholder='Search for Products'
+                                onChange={handleSearchChange}
+                                value={searchTerm}
+                            />
+                        </div>
+
+                        <div className={styles.categoryProducts}>
+                            {products.map((product) => (
+                                <div key={product.id} className={styles.filteredProductsCard}>
+                                    <Link href={`/product/${product.slug}`}>
+                                        <Image
+                                            src={product.images[0].src}
+                                            alt={product.name}
+                                            loading='lazy'
+                                            width={500}
+                                            height={500}
+                                        />
+                                    </Link>
+                                    <div className={styles.cartWishlist}>
+                                        <div
+                                            className={styles.wishlist}
+                                            onClick={() =>
+                                                isInWishlist(product)
+                                                    ? handleRemoveFromWishlist(product)
+                                                    : handleAddToWishlist(product)
+                                            }
+                                        >
                                             {wishlist.includes(product) ? (
-                                                <FavoriteIcon className='icon-wishlist'/> 
-                                            ): ( 
-                                                <FavoriteBorderIcon className='icon-wishlist'/>
+                                                <FavoriteIcon className={styles.iconWishlist} />
+                                            ) : (
+                                                <FavoriteBorderIcon className={styles.iconWishlist} />
                                             )}
                                         </div>
-                                        <div className='add-cart' onClick={() => {
-                                            setSelectedProduct(product)
-                                            setShowOptionsPopUp(true)
-                                        }}>
+                                        <div
+                                            className={styles.addCart}
+                                            onClick={() => {
+                                                setSelectedProduct(product);
+                                                setShowOptionsPopUp(true);
+                                            }}
+                                        >
                                             {isInCart(product) ? (
-                                                <ShoppingBagIcon className='icon-add-cart'/> 
-                                            ): (
-                                                <ShoppingBagOutlinedIcon className='icon-add-cart'/>
+                                                <ShoppingBagIcon className={styles.iconAddCart} />
+                                            ) : (
+                                                <ShoppingBagOutlinedIcon className={styles.iconAddCart} />
                                             )}
                                         </div>
 
-                                        {showOptionsPopUp && selectedProduct === product && (  
-                                        <OptionsPopUp
-                                                
+                                        {showOptionsPopUp && selectedProduct === product && (
+                                            <OptionsPopUp
                                                 product={selectedProduct}
                                                 onClose={() => setShowOptionsPopUp(false)}
                                                 setSelectedPrice={setSelectedPrice}
                                                 selectedPrice={selectedPrice}
                                                 handleClosePopUp={handleClosePopUp}
                                                 onSelectOption={(_option) => {
-                                                    isInCart(selectedProduct) ? handleRemoveFromCart(selectedProduct) :  handleAddToCart(selectedProduct, selectedPrice)
-                                                    setShowOptionsPopUp(false)
+                                                    isInCart(selectedProduct)
+                                                        ? handleRemoveFromCart(selectedProduct)
+                                                        : handleAddToCart(selectedProduct, selectedPrice);
+                                                    setShowOptionsPopUp(false);
                                                 }}
-                                            />       
+                                            />
                                         )}
+                                    </div>
+                                    <div className={styles.filteredProductsCardTitle}>
+                                        <h3>{product.name}</h3>
+                                        <h4>From ${product.price}</h4>
+                                    </div>
 
-                                    </div>
-                                <div className='filtered-products-card-title'>
-                                    <h3>{product.name}</h3>
-                                    <h4>From ${product.price}</h4>
-                                </div>
+                                    <div className={styles.filteredProductsCardDetail}>
+                                        <div className={styles.newPlansCardDetails}>
+                                            <Bedrooms className={styles.iconGrid} />
+                                            <p>
+                                                {product.attributes.find((attr) => attr.name === 'Bedrooms')?.options[0]}{' '}
+                                                Bedrooms
+                                            </p>
+                                        </div>
 
-                                <div className='filtered-products-card-detail'>
-                                    <div className='new-plans-card-details'>
-                                        <Bedrooms className='icon-grid'/>
-                                        <p>{product.attributes.find(attr => attr.name === 'Bedrooms')?.options[0]} Bedrooms</p>
-                                    </div>
-                                    
-                                    <div className='new-plans-card-details'>
-                                        <Floors className='icon-grid-floors'/>
-                                        <p>{product.attributes.find(attr => attr.name === 'Floors')?.options[0]} Floor(s)</p>
-                                    </div>
-                                    <div className='new-plans-card-details'>
-                                        <PlinthArea className='icon-grid' />
-                                        <p>{product.attributes.find(attr => attr.name === 'Plinth Area')?.options[0]}</p>
-                                    </div>
-                                    <div className='new-plans-card-details'>
-                                        <Bathrooms className='icon-grid' />
-                                        <p>{product.attributes.find(attr => attr.name === 'Bathrooms')?.options[0]} Bathrooms</p>
+                                        <div className={styles.newPlansCardDetails}>
+                                            <Floors className={styles.iconGridFloors} />
+                                            <p>
+                                                {product.attributes.find((attr) => attr.name === 'Floors')?.options[0]}{' '}
+                                                Floor(s)
+                                            </p>
+                                        </div>
+                                        <div className={styles.newPlansCardDetails}>
+                                            <PlinthArea className={styles.iconGrid} />
+                                            <p>{product.attributes.find((attr) => attr.name === 'Plinth Area')?.options[0]}</p>
+                                        </div>
+                                        <div className={styles.newPlansCardDetails}>
+                                            <Bathrooms className={styles.iconGrid} />
+                                            <p>
+                                                {product.attributes.find((attr) => attr.name === 'Bathrooms')?.options[0]}{' '}
+                                                Bathrooms
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            
-                            </div>
-                        ))}
+                            ))}
                         </div>
                     </div>
                 </div>
-
-                
             </div>
-
         </div>
-    )
+    );
 }

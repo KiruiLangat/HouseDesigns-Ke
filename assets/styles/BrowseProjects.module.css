@@ -1,59 +1,71 @@
-.projects-container {
+.projectsContainer {
     width: 93%;
     max-width: 1200px;
-    height: 100%;
+    
     display: grid;
     grid-template-columns: 1fr 6fr 10fr;
     margin: auto;
     align-items: center;
     margin-top: 5%;
 }
+.sideBracket {
+    width: 61px;
+    height: 510px;
+}
+.sideBracket img {
+    width: 100%;
+    height: 100%;
+}
 
-.projects-intro {
+.projectsIntro {
     display: flex;
     flex-direction: column;
-    justify-content:baseline;
-    align-items:baseline;
+    justify-content: baseline;
+    align-items: baseline;
     margin-top: auto;
     margin-bottom: auto;
 }
-.projects-intro h1{
+.projectsIntro h1 {
     font-size: 28px;
     font-weight: 400;
 }
-.projects-intro p{
+.projectsIntro p {
     font-size: 18px;
     font-weight: 300;
     word-wrap: break-word;
+
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B !important;
+    }
 }
 
-
-.projects-intro-message-mobile{
+.projectsIntroMessageMobile {
     display: none;
 }
 
-@media (max-width:768px){
-   .sidebracket, .projects-intro{
+@media (max-width: 768px) {
+    .sideBracket, .projectsIntro {
         display: none;
-   }
-   .projects-container{
+    }
+    .projectsContainer {
         grid-template-columns: 1fr;
         width: 93%;
-   }
-   .projects-intro-message-mobile{
+        height: auto;
+    }
+    .projectsIntroMessageMobile {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-top: 10%;
-   }
-    .projects-intro-message-mobile h1{
-          font-size: 24px;
-          font-weight: 400;
+    }
+    .projectsIntroMessageMobile h1 {
+        font-size: 24px;
+        font-weight: 400;
     }
 }
-@media (max-width:400px){
-    .projects-intro-message-mobile h1{
+@media (max-width: 400px) {
+    .projectsIntroMessageMobile h1 {
         font-size: 20px;
     }
 }

@@ -1,25 +1,11 @@
-body{
-    background-color: #ffffff;
-    width:100%;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    cursor:crosshair;
-}
 .dropdown-arrow{
     margin: auto;
 }
 @media (max-width:768px){
-    body{
-        width: 100%;
-    }
+    
 }
 @media (max-width:425px){
-    body{
-        width: 100%;
-    }
+   
 }
 
 

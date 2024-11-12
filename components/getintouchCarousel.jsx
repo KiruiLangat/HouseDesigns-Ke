@@ -4,12 +4,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import carousel3 from '../assets/images/carousel3.jpg';
 import carousel2 from '../assets/images/carousel2.jpg';
+
+import '../assets/styles/getintouchCarousel.module.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import '../assets/styles/getintouchCarousel.css';
 import '@fontsource/poppins';
-import styles from '../assets/styles/getintouchCarousel.module.css'; // Import the CSS module
+import styles from '../assets/styles/getintouchCarousel.module.css';
 
 export default function App() {
   return (
@@ -20,19 +21,19 @@ export default function App() {
         pagination={{ clickable: true, el: '.swiper-pagination' }}
         navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
         modules={[Autoplay, Pagination, Navigation]}
-        className={`CTASwiper ${styles.fontFamily}`} // Apply the CSS module class
+        className={styles.CTASwiper} // Apply the CSS module class
       >
         <SwiperSlide>
-          <Image src={carousel2} alt='Maisonette' loading='lazy' />
+          <Image src={carousel2} alt='Maisonette' loading='lazy'layout='fill' objectFit='cover' />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={carousel3} alt='Maisonette' loading='lazy' />
+          <Image src={carousel3} alt='Maisonette' loading='lazy'layout='fill' objectFit='cover'  />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={carousel2} alt='Maisonette' loading='lazy' />
+          <Image src={carousel2} alt='Maisonette' loading='lazy'layout='fill' objectFit='cover'/>
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={carousel3} alt='Maisonette' loading='lazy' />
+          <Image src={carousel3} alt='Maisonette' loading='lazy'layout='fill' objectFit='cover'/>
         </SwiperSlide>
       </Swiper>
     </>

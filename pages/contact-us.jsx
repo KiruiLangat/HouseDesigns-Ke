@@ -1,12 +1,13 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import styles from '../assets/styles/ContactUs.module.css'
-import Calendly from './Calendly'
-import callicon from '../public/images/mobileSVG.svg'
-import emailicon from '../public/images/emailSVG.svg'
-import whatsappicon from '../public/images/whataspp-black-svg.svg'
+import Calendly from '../components/Calendly'
+import callicon from '../assets/images/mobileSVG.svg'
+import emailicon from '../assets/images/emailSVG.svg'
+import whatsappicon from '../assets/images/whataspp-black-svg.svg'
 
 const style = {
   fontFamily: 'Poppins'

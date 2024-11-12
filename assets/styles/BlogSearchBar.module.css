@@ -23,7 +23,7 @@
     color: black;
     font-weight: 300;   
 }  
-input:focus {
+.search-bar input:focus {
     outline: none;
 }
 /* input:focus::placeholder {

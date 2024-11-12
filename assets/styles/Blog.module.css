@@ -30,7 +30,7 @@
     } */
   }
   
-  .loading {
+.loading {
     color: black;
     font-family: Poppins;
     display: flex;
@@ -40,7 +40,7 @@
     font-size: 20px;
     animation: dot 1.09s infinite;
     min-height: 50vh;
-  }
+}
 .blog-intro{
     display: flex;
     justify-content: center;
@@ -108,9 +108,6 @@
 
 
 @media (max-width:768px){
-    body{
-        width: 100%;
-    }
     .test-img{
         margin-top: 2%;
         width: 93%;

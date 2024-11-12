@@ -3,10 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import styles from '../assets/styles/Carousel.module.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import styles from '../assets/styles/Carousel.module.css';
 import '@fontsource/poppins';
 
 const style = {
@@ -57,16 +57,21 @@ export default function Carousel({ sub_category_name }) {
         slidesPerView={1}
         slidesPerGroup={1}
         pagination={{ clickable: true, el: '.swiper-pagination' }}
-        navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
+        navigation={{ 
+          nextEl: '.swiper-button-next', 
+          prevEl: '.swiper-button-prev',
+          nextElStyle: { color: '#ED7D31' },
+          prevElStyle: { color: '#ED7D31' },
+        }}
         modules={[Autoplay, Pagination, Navigation]}
         className={styles.mySwiper}
         style={style}
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>
-            <Link href={`/projects/${sub_category_name}/${project.title}`}>
+            <Link href={`/projects/${sub_category_name}/${project.title}`} legacyBehavior>
               <a>
-                <Image src={project.image_url} alt={project.title} layout="responsive" width={500} height={300} />
+                <Image src={project.image_url} alt={project.title} layout="fill" objectFit='cover' width={500} height={300} />
                 <div className={styles.carouselOverlay1}>
                   <p>{project.title}</p>
                   <p>{project.location}</p>

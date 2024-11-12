@@ -17,11 +17,11 @@ export default function GetInTouch() {
         <div className={styles.getintouchContainer} style={style}>
             <GetInTouchCarousel />
             <div className={styles.getintouchDetails}>
-                <div className={styles.thedetails}>
+                <div className={styles.theDetails}>
                     <h1>Get your Dream House Today!</h1>
-                    <div className={styles.getintouchLinesandicons}>
-                        <div className={styles.topline}></div>
-                        <div className={styles.getintouchContacticons}>
+                    <div className={styles.getintouchLinesAndIcons}>
+                        <div className={styles.topLine}></div>
+                        <div className={styles.getintouchContactIcons}>
                             <div className={styles.getintouchWhatsappIcon}>
                                 <Image src={WhatsApp} alt='WhatsApp-Icon' />
                             </div>
@@ -32,7 +32,7 @@ export default function GetInTouch() {
                                 <Image src={EmailIcon} alt='Email-Icon' />
                             </div>
                         </div>
-                        <div className={styles.bottomline}></div>
+                        <div className={styles.bottomLine}></div>
                     </div>
                     <Link href='/contact-us'>
                         <div className={styles.getintouchCTA}>
@@ -43,7 +43,7 @@ export default function GetInTouch() {
                         </div>
                     </Link>
                 </div>
-                <div className={styles.getintouchSidebracket}>
+                <div className={styles.getintouchSideBracket}>
                     <Image src={sideBracket} alt='sideBracket' />
                 </div>
             </div>

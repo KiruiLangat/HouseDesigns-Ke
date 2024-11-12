@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Image from 'next/image'
 import styles from '../assets/styles/GetStarted.module.css'
 import '@fontsource/poppins'
 import InteriorDesign from '../assets/images/interior-design.png'
-import PMgt from './images/pmgt.png'
+import PMgt from '../assets/images/pmgt.png'
 import Masterplanning from '../assets/images/masterplanningIcon.png'
 import Architecture from '../assets/images/Architecture.png'
 import sideBracket from '../assets/images/sideBracket.png'
@@ -18,16 +19,18 @@ export default function GetStarted() {
     <div className={styles.getStarted} style={style}>
 
         <div className={styles.getStartedBox1}>
-            <div className={styles.sidebracket}>
+            <div className={styles.sideBracket}>
                 <Image src={sideBracket} alt='sideBracket'/>
             </div>
             <div className={styles.getStartedIntro}>
                 <h1> Our Expertise </h1>
                 <h2>View our services and let's get you started</h2>
-                <Link href='/our-expertise'>
+                <Link href='/our-expertise' legacyBehavior>
                     <div className={styles.getStartedCTA}>
                         <p>Get Started </p>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Arrow 7" d="M15.7071 8.70711C16.0976 8.31658 16.0976 7.68342 15.7071 7.29289L9.34315 0.928932C8.95262 0.538408 8.31946 0.538408 7.92893 0.928932C7.53841 1.31946 7.53841 1.95262 7.92893 2.34315L13.5858 8L7.92893 13.6569C7.53841 14.0474 7.53841 14.6805 7.92893 15.0711C8.31946 15.4616 8.95262 15.4616 9.34315 15.0711L15.7071 8.70711ZM0 9H15V7H0L0 9Z" fill="#ED7D31"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="Arrow 7" d="M15.7071 8.70711C16.0976 8.31658 16.0976 7.68342 15.7071 7.29289L9.34315 0.928932C8.95262 0.538408 8.31946 0.538408 7.92893 0.928932C7.53841 1.31946 7.53841 1.95262 7.92893 2.34315L13.5858 8L7.92893 13.6569C7.53841 14.0474 7.53841 14.6805 7.92893 15.0711C8.31946 15.4616 8.95262 15.4616 9.34315 15.0711L15.7071 8.70711ZM0 9H15V7H0L0 9Z" fill="#ED7D31"/>
+                        </svg>
                     </div>
                 </Link>
             </div> 
@@ -81,7 +84,7 @@ export default function GetStarted() {
                 </div>
             </div>
             
-            <Link href='/our-expertise'>
+            <Link href='/our-expertise' legacyBehavior>
                 <div className={styles.mobileCTA}>
                     <p>Get Started</p>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Arrow 7" d="M15.7071 8.70711C16.0976 8.31658 16.0976 7.68342 15.7071 7.29289L9.34315 0.928932C8.95262 0.538408 8.31946 0.538408 7.92893 0.928932C7.53841 1.31946 7.53841 1.95262 7.92893 2.34315L13.5858 8L7.92893 13.6569C7.53841 14.0474 7.53841 14.6805 7.92893 15.0711C8.31946 15.4616 8.95262 15.4616 9.34315 15.0711L15.7071 8.70711ZM0 9H15V7H0L0 9Z" fill="#ED7D31"/></svg>

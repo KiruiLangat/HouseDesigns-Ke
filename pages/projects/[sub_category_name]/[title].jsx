@@ -1,16 +1,17 @@
-import React, {useEffect, useState} from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async' 
-import { useParams } from 'react-router-dom'
-import './projectDescription.css'
+import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import Image from 'next/image'
+import Head from 'next/head'
+import styles from '../../../assets/styles/projectDescription.module.css'
 import '@fontsource/poppins'
 
-
-const style ={
-    fontFamily:'Poppins'
+const style = {
+    fontFamily: 'Poppins'
 }
 
 export default function ProjectDescription() {
-    const { title } = useParams()
+    const router = useRouter()
+    const { title } = router.query
     const [images, setImages] = useState([])
 
     useEffect(() => {
@@ -27,42 +28,40 @@ export default function ProjectDescription() {
                 console.error(error)
             }
         }
-        fetchImages();
+        if (title) {
+            fetchImages();
+        }
     }, [title]);
 
     const [project, setProject] = useState(null)
-    
-    useEffect (() => {
+
+    useEffect(() => {
         const fetchProject = async () => {
-            try{
+            try {
                 const response = await fetch(`/api/residentials/project-details/${title}`)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json()
                 setProject(data)
-                
-            } catch (error){
+            } catch (error) {
                 console.error(error)
-
             }
         }
-        fetchProject();
-    }, [title]);    
+        if (title) {
+            fetchProject();
+        }
+    }, [title]);
 
     if (!project) {
-        return <div className='loading'>Loading <span>...</span></div>
+        return <div className={styles.loading}>Loading <span>...</span></div>
     }
-    
+
     const ogUrl = `https://housedesigns.co.ke/${project.title}`
 
-
-  
-
     return (
-        <HelmetProvider>
-        <div className='project-description' style={style}>   
-            <Helmet>
+        <div className={styles.projectDescription} style={style}>
+            <Head>
                 <title>{project.title}</title>
                 <meta name='title' content={project.title} />
                 <meta name='description' content={project.details} />
@@ -79,46 +78,44 @@ export default function ProjectDescription() {
                 <meta name='twitter:image:width' content='1024' />
                 <meta name='twitter:image:height' content='512' />
                 <meta name='twitter:url' content={ogUrl} />
-            </Helmet>         
+            </Head>
             <>
-                <div className='large-img'>
-                    <img src={images[0]} alt='project Img'/>
+                <div className={styles.largeImg}>
+                    <Image src={images[0]} alt='project Img' layout='responsive' width={1200} height={600} />
                 </div>
-                <div className='masonry'>
+                <div className={styles.masonry}>
                     {images.slice(1).map((image, index) => (
-                        <div key={index} className='image-container'>
-                            <img  src={image} alt={`img${index + 1}`} onLoad={(e) => e.target.style.opacity = 1} loading='lazy'/>
+                        <div key={index} className={styles.imageContainer}>
+                            <Image src={image} alt={`img${index + 1}`} layout='responsive' width={1200} height={600} onLoad={(e) => e.target.style.opacity = 1} loading='lazy' />
                         </div>
-                        
                     ))}
                 </div>
             </>
             {project && (
                 <>
                     <h1>{project.title}</h1>
-                    <div className='project-info'>                
-                        <div className='descriptions'>
-                            <div className='description1'>
+                    <div className={styles.projectInfo}>
+                        <div className={styles.descriptions}>
+                            <div className={styles.description1}>
                                 <h2>Location</h2>
                                 <p>{project.location}</p>
                             </div>
-                            <div className='description2'>
+                            <div className={styles.description2}>
                                 <h2>Plinth Area</h2>
                                 <p>{project.plinth_area}</p>
                             </div>
-                            <div className='description3'>
+                            <div className={styles.description3}>
                                 <h2>Status</h2>
                                 <p>{project.project_status}</p>
                             </div>
                         </div>
-                        <div className='details'>
+                        <div className={styles.details}>
                             <h2>Project Details</h2>
                             <p>{project.details}</p>
-                        </div>   
-                    </div>  
-                </>  
+                        </div>
+                    </div>
+                </>
             )}
         </div>
-        </HelmetProvider>
     )
 }

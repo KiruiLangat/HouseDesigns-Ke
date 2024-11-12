@@ -9,19 +9,21 @@
     margin-top: 50px;
     padding: 0;  
 }
-.getStarted-box1{
+.getStartedBox1{
     display: grid;
     grid-template-columns: 1fr 10fr;
 }
-.sidebracket{
+.sideBracket{
     width: 61px;
-    height: 510px;
+    height: 510px !important;
+    margin: auto;
+    
 }
-.sidebracket img{
+.sideBracket Img{
     width: 100%;
     height: 100%;
 }
-.getStarted-intro{
+.getStartedIntro{
     display: flex;
     flex-direction: column;
     align-items: baseline;
@@ -29,41 +31,50 @@
     margin-top: auto;
     margin-bottom: auto;
 }
-.getStarted-intro h1{
+.getStartedIntro h1{
     font-size: 28px;
     font-weight: 400;
 }
-.getStarted-intro h2{
+.getStartedIntro h2{
     font-size: 18px;
     font-weight: 300;
     word-wrap: break-word;
+
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B !important;
+    }
 }
-.getStarted-intro a{
+.getStartedIntro a{
     text-decoration: none;
     color: black;
     
+    
 }
-.getStarted-CTA{
+.getStartedCTA{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin: auto;
 }
 
-.getStarted-CTA p{
+.getStartedCTA p{
     font-size: 16px;
     font-weight: 300;
     border-bottom: 1.5px solid black;
+
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B !important;
+        border-bottom: #6C5F5B 1.5px solid !important;
+    }
 }
-.getStarted-CTA p:hover {
+.getStartedCTA p:hover {
     border-bottom: 1.5px solid #ED7D31;
 }
 
-.getStarted-CTA svg{
+.getStartedCTA svg{
     margin: 0 5px;
 }
-.getStarted-box2{
+.getStartedBox2{
     display: grid;
     width: auto;
     margin: auto;
@@ -72,7 +83,25 @@
     grid-template-rows: 1fr 1fr;
     gap: 20px;
 }
-.Arch-box{
+.getStartedBox2 Img{
+
+    @media (prefers-color-scheme: dark) {
+        filter: invert(1) grayscale(100%);
+    }
+}
+.getStartedBox2 p {
+
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B !important;
+    }
+}
+.getStartedBox2 h2{
+    
+        @media (prefers-color-scheme: dark) {
+            color: white;
+        }
+}
+.archBox{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,14 +112,14 @@
     padding: 15px 2px;
    
 }
-.arch-icon{
+.archIcon{
     width: 60px;
     height: 60px;
     margin: auto;
     margin-top: 5px;
 
 }
-.Arch-box h2{
+.archBox h2{
     text-align: center;
     font-size: 20px;
     font-weight: 400;
@@ -101,13 +130,13 @@
     height: 0;
     border: 1px #ED7D31 solid;
 }
-.Arch-box p{
+.archBox p{
     word-break: break-word;
     text-align: center;
     font-size: 16px;
     font-weight: 300;
 }
-.Interior-box{
+.interiorBox{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,13 +146,13 @@
     border-radius:10px;
     padding: 15px 2px;
 }
-.Interior-icon{
+.interiorIcon{
     width: 60px;
     height: 60px;
     margin: auto;
     margin-top: 5px;
 }
-.Interior-box h2{
+.interiorBox h2{
     text-align: center;
     font-size: 20px;
     font-weight: 400;
@@ -134,13 +163,13 @@
     height: 0;
     border: 1px #ED7D31 solid;
 }
-.Interior-box p{
+.interiorBox p{
     word-break: break-word;
     text-align: center;
     font-size: 16px;
     font-weight: 300;
 }
-.PMgt-box{
+.pmgtBox{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -150,13 +179,13 @@
     border-radius:10px;
     padding: 15px 2px;
 }
-.PMgt-icon{
+.pmgtIcon{
     width: 60px;
     height: 60px;
     margin: auto;
     margin-top: 5px;
 }
-.PMgt-box h2{
+.pmgtBox h2{
     text-align: center;
     font-size: 20px;
     font-weight: 400;
@@ -167,13 +196,13 @@
     height: 0;
     border: 1px #ED7D31 solid;
 }
-.PMgt-box p{
+.pmgtBox p{
     word-break: break-word;
     text-align: center;
     font-size: 16px;
     font-weight: 300;
 }
-.Masterplan-box{
+.masterplanBox{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -183,13 +212,13 @@
     border-radius:10px;
     padding: 15px 2px;
 }
-.Masterplan-icon{
+.masterplanIcon{
     width: 60px;
     height: 60px;
     margin: auto;
     margin-top: 5px;
 }
-.Masterplan-box h2{
+.masterplanBox h2{
     text-align: center;
     font-size: 20px;
     font-weight: 400;
@@ -200,20 +229,20 @@
     height: 0;
     border: 1px #ED7D31 solid;
 }
-.Masterplan-box p{
+.masterplanBox p{
     word-break: break-word;
     text-align: center;
     font-size: 16px;
     font-weight: 300;
 }
 
-.mobile-services{
+.mobileServices{
     display: none;
 }
 
 
 @media (max-width: 768px) {
-    .getStarted-box1, .getStarted-box2{
+    .getStartedBox1, .getStartedBox2{
         display: none;
     }
     .getStarted{
@@ -224,7 +253,13 @@
         height: 100%;
         margin: auto;
     }
-    .mobile-services{
+    .getStartedBox2 Img{
+
+        @media (prefers-color-scheme: dark) {
+            filter: invert(1) hue-rotate(180deg);
+        }
+    }
+    .mobileServices{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -234,12 +269,12 @@
         margin-top: 10%;
         
     }
-    .mobile-services h1{
+    .mobileServices h1{
         text-align: center;
         font-size: 24px;
         font-weight: 400;
     }
-    .services-container{
+    .servicesContainer{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -249,7 +284,7 @@
         gap: 10px;
         
     }
-    .icon-container{
+    .iconContainer{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -260,13 +295,27 @@
         padding: 5px;
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        @media (prefers-color-scheme:dark){
+            box-shadow: 0 2px 6px 0 rgba(255, 255, 255, 0.1)
+        }
     }
-    .icon-container h2{
+    .iconContainer h2{
         font-size: 16px;
         font-weight: 400;
         text-align: center;
+
+        @media (prefers-color-scheme: dark) {
+            color: #6C5F5B;
+        }
     }
-    .mobile-icon{
+    .iconContainer Img{
+
+        @media (prefers-color-scheme: dark) {
+            filter: invert(1) hue-rotate(180deg);
+        }
+    }
+    .mobileIcon{
         width: 45px;
         height: 45px;
         margin: auto;
@@ -277,11 +326,11 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin-top: 20%;
+        margin-top: 5%;
         width: 100%;
         align-self: center; 
     }
-    .mobile-services a{
+    .mobileServices a{
         text-decoration: none;
         color: black;
         margin: auto;
@@ -291,6 +340,11 @@
         font-weight: 300;
         border-bottom: 1.5px solid black;
         text-align: center;
+
+        @media (prefers-color-scheme: dark) {
+            color: #6C5F5B !important;
+            border-bottom: #6C5F5B 1.5px solid !important;
+        }
     }
     
     .mobileCTA svg{
@@ -301,14 +355,14 @@
 
 }
 @media (max-width: 400px) {
-    .mobile-services h1{
+    .mobileServices h1{
         font-size: 20px;
     }
-    .mobile-icon{
+    .mobileIcon{
         width: 40px;
         height: 40px;
     }
-    .icon-container h2{
+    .iconContainer h2{
         font-size: 14px;
     }
     .mobileCTA p{
@@ -319,11 +373,11 @@
     }
 }
 @media (max-width: 320px) {
-    .mobile-icon{
+    .mobileIcon{
         width: 35px;
         height: 35px;
     }
-    .icon-container h2{
+    .iconContainer h2{
         font-size: 12px;
     }
     .mobileCTA{
@@ -336,4 +390,4 @@
         width: 10px;
     }
 }
-    
+

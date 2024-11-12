@@ -8,7 +8,7 @@ export default function BrowseProjects() {
     return (
         <div className={styles.projectsContainer}>
             
-            <div className={styles.sidebracket}>
+            <div className={styles.sideBracket}>
                 <Image src={sideBracket} alt="sideBracket" />
             </div>
             

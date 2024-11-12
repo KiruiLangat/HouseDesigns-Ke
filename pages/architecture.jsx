@@ -37,7 +37,7 @@ export default function ArchitectureServiceCategory() {
             <h1 className={styles.projectsTitle}>Architecture Projects</h1>
             <div className={styles.serviceProjectsContainer}>
                 <div className={styles.projectBox1}>
-                    <Link href="/residentials">
+                    <Link href="/residentials" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
                                 <Image src={ResidentialsImg} alt='Residential' />
@@ -47,7 +47,7 @@ export default function ArchitectureServiceCategory() {
                     </Link>
                 </div>
                 <div className={styles.projectBox1}>
-                    <Link href="/commercial">
+                    <Link href="/commercial" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
                                 <Image src={CommercialImg} alt='Commercial' />
@@ -57,7 +57,7 @@ export default function ArchitectureServiceCategory() {
                     </Link>
                 </div>
                 <div className={styles.projectBox1}>
-                    <Link href="/institutions">
+                    <Link href="/institutions" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
                                 <Image src={InstitutionImg} alt='Institutions' />

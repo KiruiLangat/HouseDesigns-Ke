@@ -1,4 +1,4 @@
-.aboutus-container{
+.aboutusContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,31 +9,35 @@
     margin-top: 5%; 
     height: auto;
 }
-.about-us{
+.aboutUs {
     color: black;
     font-size: 28px;
     font-family: Poppins;
     font-weight: 400;
     word-wrap: break-word;
-    margin-top:auto;
+    margin-top: auto;
     height: auto;
+
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
 }
-.color-scheme{
+.colorScheme {
     margin-top: 30px;
     width: 10%;
     height: auto;
     transition: transform 0.5s ease-in-out;
 }
-.color-scheme:hover{
+.colorScheme:hover {
     transform: scale(1.5);
 }
-.workflow-title{
+.workflowTitle {
     top: 0;
     width: 100%;
     height: 100%;
     position: relative;
 }
-.our-workflow{
+.ourWorkflow {
     position: absolute;
     left: 138px;
     margin-top: 10%;
@@ -41,52 +45,56 @@
     font-size: 20px;
     font-weight: 300;
     word-wrap: break-word;
-}
 
-.title-marker{
-    
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
+}
+.titleMarker {
     left: 113px;
     margin-top: 10%;
     height: 30px;
     position: absolute;
 }
-
-.workflow{
+.workflow {
     margin-top: 20%;
     justify-content: center;
     width: auto;
     transition: transform 0.5s ease-in;
 }
-.workflow:hover{
+.workflow:hover {
     transform: scale(0.7);
 }
-.view-services{
+.viewServices {
     position: relative;
     align-items: flex-end;
-    left:38%;  
+    left: 38%;  
     top: -45px;
-    
 }
-.view-services a{
+.viewServices a {
     text-decoration: none;
     color: black;
     font-size: 18px;
     font-weight: 300;
-    
 }
-.view-services p{
+.viewServices p {
     border-bottom: 1.5px solid black;
+
+
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B;
+        border-bottom: 1.5px solid #6C5F5B;
+    }
 }
-.view-services p:hover{
+.viewServices p:hover {
     border-bottom: 1.5px solid #ED7D31;
 }
-.view-services svg{
+.viewServices svg {
     margin-left: 105%;
     margin-top: -22%;
     position: absolute;    
 }
-
-.mobile-workflow{
+.mobileWorkflow {
     display: none;
 }
 .philosophy {
@@ -95,7 +103,7 @@
     height: 100%;
     position: relative;
 }
-.our-philosophy{
+.ourPhilosophy {
     left: 138px;
     top: 0;
     position: absolute;
@@ -105,105 +113,129 @@
     font-weight: 300;
     line-height: 50px;
     word-wrap: break-word;
-}
 
-.title-marker2{
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
+}
+.titleMarker2 {
     width: 18px;
     height: 30px;
     left: 113px;
     top: 9px;
     position: absolute;
 }
-.philosophy-tables{
+.philosophyTables {
     width: 93%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: auto;
     margin-top: 15%;
-    
 }
-.philosophy-tables h2{
+.philosophyTables h2 {
     font-size: 18px;
     font-weight: 300;
     text-align: center;
     margin: 10px;
+
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
 }
-.philosophy-tables p{
+.philosophyTables p {
     font-size: 14px;
     font-weight: 300;
     text-align: center;
     margin: 10px;
-}
-.simplicity-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    line-height: 40px;
-    border-radius: 20px;
-    border: 1px rgba(79, 74, 69, 0.14) solid;
-    margin: 0 10px;
-}
-.simplicity-box:hover{
-    background-color: #ED7D3124;
-}
-.infinite-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    line-height: 40px;
-    border-radius: 20px;
-    border: 1px rgba(79, 74, 69, 0.14) solid;
-    margin: 0 10px;
-}
-.infinite-box:hover{
-    background-color: #ED7D3124;
-}
-.resilience-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    line-height: 40px;
-    border-radius: 20px;
-    border: 1px rgba(79, 74, 69, 0.14) solid;
-    margin: 0 10px;
-}
-.resilience-box:hover{
-    background-color: #ED7D3124;
-}
 
-.simplicity-icon, .infinite-icon, .resilience-icon{
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B;
+    }
+}
+.simplicityBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: 1px rgba(79, 74, 69, 0.14) solid;
+    margin: 0 10px;
+}
+.simplicityBox:hover {
+    background-color: #ED7D3124;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
+}
+.infiniteBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: 1px rgba(79, 74, 69, 0.14) solid;
+    margin: 0 10px;
+}
+.infiniteBox:hover {
+    background-color: #ED7D3124;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
+}
+.resilienceBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: 1px rgba(79, 74, 69, 0.14) solid;
+    margin: 0 10px;
+}
+.resilienceBox:hover {
+    background-color: #ED7D3124;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
+}
+.simplicityIcon, .infiniteIcon, .resilienceIcon {
     width: 45px;
     height: 40px;
     margin: auto;
     margin-top: 5px;
 }
-.team-title-box{
+.teamTitleBox {
     top: 80px;
     width: 100%;
     height: 100%;
     position: relative;
 }
-.ourTeam-box{
+.ourTeamBox {
     margin-top: 10%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
 }
-.title-marker4{
+.titleMarker4 {
     width: 18px;
     height: 30px;
     left: 113px;
     margin-top: 9px;
     position: absolute;
 }
-.our-team{
+.ourTeam {
     left: 138px;
     position: absolute;
     color: black;
@@ -213,31 +245,32 @@
     line-height: 50px;
     word-wrap: break-word;
 
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
 }
-.team-members{
+.teamMembers {
     display: flex;
     margin-top: 12%;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
-.member-img{
+.memberImg {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin: auto;
 }
-.member-img img{
+.memberImg Img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     margin-bottom: 5px;
 }
-.member2-box img{
+.member2Box Img {
     width: 95%;
-    
 }
-
-.member1-box{
+.member1Box {
     width: 385.24px;
     height: auto;
     left: 37px;
@@ -246,10 +279,14 @@
     box-sizing: border-box;
     margin: 0 20px;  
 }
-.member1-box:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+.member1Box:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+
+    @media (prefers-color-scheme: dark) {
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
 }
-.member2-box{
+.member2Box {
     width: 385.24px;
     height: auto;
     left: 447px;
@@ -257,11 +294,14 @@
     border: 1px rgba(79, 74, 69, 0.14) solid;
     margin: 0 20px;
 }
-.member2-box:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1); 
+.member2Box:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+    @media (prefers-color-scheme: dark) {
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
 }
-  
-.member1-name{
+.member1Name {
     text-align: start;
     margin-left: 10px;
     font-size: 20px;
@@ -269,61 +309,52 @@
     font-weight: 400;
     margin-top: 5px;
 }
-.member1-title{
+.member1Title {
     text-align: start;
     margin-left: 10px;
     font-size: 16px;
     font-family: Poppins;
     font-weight: 300;
     margin-top: -10px;
-
 }
-.member2-name{
+.member2Name {
     text-align: start;
     margin-left: 10px;
     font-size: 20px;
     font-family: Poppins;
     font-weight: 400;
     margin-top: 5px;
-
 }
-.member2-title{
+.member2Title {
     text-align: start;
     margin-left: 10px;
     font-size: 16px;
     font-family: Poppins;
     font-weight: 300;
     margin-top: -10px;
-
 }
-.mobile-philosophy, .our-workflow-mobile, .our-philosophy-mobile, .our-team-mobile{
+.mobilePhilosophy, .ourWorkflowMobile, .ourPhilosophyMobile, .ourTeamMobile {
     display: none;
 }
-
-
-
-@media (max-width:768px){
-    .workflow, .philosophy-tables, .title-marker2, .title-marker4, .our-workflow, .our-philosophy, .our-team{
+@media (max-width: 768px) {
+    .workflow, .philosophyTables, .titleMarker2, .titleMarker4, .ourWorkflow, .ourPhilosophy, .ourTeam {
         display: none;
-    
     }
-
-    .aboutus-container{
-       margin: auto;
-       margin-top: auto;
-       
+    .aboutusContainer {
+        margin: auto;
+        margin-top: auto;
     }
-    .about-us{
+    .aboutUs {
         display: block;
         font-size: 24px;
         text-align: center;
         margin-top: 15%;
     }
-    .color-scheme{
+    .colorScheme {
         display: block;
         margin-top: 1px;
     }
-    .our-workflow-mobile{
+    .ourWorkflowMobile {
         display: block;
         text-align: center;
         font-size: 16px;
@@ -331,7 +362,7 @@
         margin-top: 40%;
         margin-bottom: 0;
     }
-    .our-workflow::after {
+    .ourWorkflow::after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -341,48 +372,42 @@
         background: #ED7D31;
         transition: width 0.3s;
     }
-      
-    .our-workflow:hover::after {
+    .ourWorkflow:hover::after {
         width: 100%;
     }
-
-    .title-marker{
+    .titleMarker {
         display: none;
-        
     }
-    .mobile-workflow{
+    .mobileWorkflow {
         display: block;
         margin-top: 5%;
     }
-    .view-services{
+    .viewServices {
         position: relative;
         left: 0;
         top: 0;
         margin-top: 20px;        
     }
-    .view-services a{
+    .viewServices a {
         font-size: 18px;
     }
-    .view-services svg{
+    .viewServices svg {
         width: 14px;
     }
-    .our-philosophy-mobile{
+    .ourPhilosophyMobile {
         display: block;
         font-size: 16px;
         text-align: center;
         font-weight: 300;
         margin-bottom: 0;
     }
-   
-    .mobile-philosophy{
-        display:grid;
+    .mobilePhilosophy {
+        display: grid;
         margin-top: 28%;
-        
     }
-    .mobile-simplicity{
+    .mobileSimplicity {
         display: flex;
         justify-items: center;
-        
         border: #ED7D31;
         border-radius: 10px;
         padding: 5px;
@@ -390,80 +415,75 @@
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
     }
-    .mobile-simplicity-icon{
+    .mobileSimplicityIcon {
         width: 31px;
         height: auto;
         margin: 10px;
-        
     }
-    .mobile-simplicity-title{
+    .mobileSimplicityTitle {
         font-size: 15px;
         margin: 10px;
     }
-    .mobile-infinite{
+    .mobileInfinite {
         display: flex;
         justify-items: center;
-        
         border-radius: 10px;
         padding: 5px;
         margin: 15px;
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
     }
-    .mobile-infinite-icon{
+    .mobileInfiniteIcon {
         width: 35px;
         height: auto;
         margin: 10px;
     }
-    .mobile-infinite-title{
+    .mobileInfiniteTitle {
         font-size: 15px;
         margin: 10px;
     }
-
-    .mobile-resilience{
+    .mobileResilience {
         display: flex;
         justify-items: center; 
-        
         border-radius: 10px;
         padding: 5px;
         margin: 15px;
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
-    .mobile-resilience-icon{
+    .mobileResilienceIcon {
         width: 30px;
         height: auto;
         margin: 10px;
     }
-    .mobile-resilience-title{
+    .mobileResilienceTitle {
         font-size: 15px;
         margin: 10px;
     }
-    .ourTeam-box{
+    .ourTeamBox {
         margin-top: 15%;
     }
-    .team-title-box{
+    .teamTitleBox {
         display: flex;
         align-content: center;
         width: auto;
         height: auto;  
     }
-    .our-team-mobile{
+    .ourTeamMobile {
         display: block;
         font-size: 16px;
         font-weight: 300;
         text-align: center;
         margin-top: 20%;
         margin-bottom: 0;
-        
     }
-    .team-members{
+    .teamMembers {
         display: grid;
         margin-top: 0;
         justify-content: center;
         justify-content: space-between;
     }
-    .member1-box{
+    .member1Box {
         width: 100%;
         height: auto;
         margin: auto;
@@ -471,12 +491,12 @@
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     } 
-    .member-img > img{
+    .memberImg > img {
         margin: 5px;
         height: 300px;
         width: auto;
     }
-    .member2-box{
+    .member2Box {
         width: 100%;
         height: auto;
         margin: auto;
@@ -484,45 +504,43 @@
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     } 
-    .member2-box > img{
+    .member2Box > img {
         margin: auto;
     }
-    .member1-name,  .member2-name{
+    .member1Name, .member2Name {
         text-align: center;
         font-size: 15px;
     }
-    .member1-title, .member2-title{
+    .member1Title, .member2Title {
         text-align: center;
         font-size: 14px;
     }
-   
 }
-
-@media (max-width:400px){
-    .about-us{
+@media (max-width: 400px) {
+    .aboutUs {
         margin-top: 15%;
         font-size: 20px;
     }
-    .our-workflow-mobile{
+    .ourWorkflowMobile {
         margin-top: 30%;
         font-size: 15px;
     }
-    .mobile-workflow{
+    .mobileWorkflow {
         width: 90%;
     }
-    .view-services a{
+    .viewServices a {
         font-size: 16px;
     }
-    .our-philosophy-mobile{
+    .ourPhilosophyMobile {
         font-size: 16px;
     }
 }
-@media (max-width:320px){
-    .about-us{
+@media (max-width: 320px) {
+    .aboutUs {
         margin-top: 15%;
         font-size: 20px;
     }
-    .view-services a{
+    .viewServices a {
         font-size: 16px;
     }
 }

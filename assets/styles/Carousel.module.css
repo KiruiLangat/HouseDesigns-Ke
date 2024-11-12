@@ -1,9 +1,4 @@
-body {
-  height: 100%;
-}
-
-
-.swiper {
+.mySwiper {
   top: 0;
   width: 93%;
   max-width: 1200px;
@@ -14,6 +9,10 @@ body {
 }
 .swiper-button-next, .swiper-button-prev {
   color: #ED7D31 !important;
+
+  @media (prefers-color-scheme: dark) {
+    color: #ED7D31 !important;
+  }
 }
 .swiper-slide{
   margin: 0;
@@ -22,7 +21,7 @@ body {
 .swiper-pagination{
   display: none;
 }
-.swiper-slide img {
+.swiper-slide Img {
   margin: 0;
   width: 100%;
   height: 100%;
@@ -30,7 +29,7 @@ body {
   box-shadow: none;
   border-radius: 10px;
 }
-.carousel-overlay1{
+.carouselOverlay1{
   position: absolute;
   bottom: 0;
   width: 20%;
@@ -49,7 +48,7 @@ body {
   to{ opacity: 1; }
   
 }
-.carousel-overlay1 p{
+.carouselOverlay1 p{
   margin-left: 20px;
   font-size: 16px;
   color: #ED7D31;
@@ -67,7 +66,7 @@ body {
   .swiper-pagination-bullet {
     background-color: #ED7D31;
   }
-  .swiper {
+  .mySwiper {
     padding: 0;
     margin: 10px;
     height: 300px;
@@ -83,14 +82,14 @@ body {
     background-color: transparent;
     box-shadow: none;
   }
-  .carousel-overlay1{
+  .carouselOverlay1{
     display: flex;
     width: 100%;
     height: 40px;
     justify-content: space-around;
     margin: 0;
   }
-  .carousel-overlay1 p{
+  .carouselOverlay1 p{
     font-size: 12px;
     box-shadow: #ED7D3124;
   }

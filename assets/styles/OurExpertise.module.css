@@ -1,10 +1,10 @@
-.our-expertise{
+.ourExpertise{
     width: 93%;
     max-width: 1440px;
     margin: auto;
     padding: 0;
 }
-.title-services{
+.titleServices{
     font-size: 36px;
     font-weight: 300;
     margin-top: 5%;
@@ -27,23 +27,27 @@
     height: auto;
     margin: auto;
     margin-bottom: 10%; 
-    position: relative
+    position: relative;
 }
-
 .service1:hover{
     background-color: #ED7D3124;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1)
+    }
 }
-.service1-img{
+.service1Img{
     width: 100%;
-    height: 280px;
+    height: 250px;
     border-radius: 10px;
 }
-.service1-img img{
+.service1Img Img{
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
-.arrow-services{
+.arrowServices{
     position: absolute;
     top: 92%;
     left: 95%;
@@ -51,7 +55,7 @@
     width: 20%;
     height: auto;
 }
-.arrow-services img{
+.arrowServices img{
     width: 40%;
     height: auto;
     border: rgba(0, 0, 0, 0.1) 1px solid;
@@ -65,38 +69,48 @@
     text-decoration: none;
     color: black;
     border-bottom: none;
+
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B;
+    }
 }
 .service1 a{
     text-decoration: none;
 }
 
 @media (max-width:768px){
-    .our-expertise{
+    .ourExpertise{
         width: 100%;
     }
-    .arrow-services{
+    .arrowServices{
         display: none;
     }
-    .landing-img{
+    .landingImg{
         width: auto;
         margin: auto;
         height: 300px;    
     }
-    .landing-img img{
+    .landingImg img{
         width: 100%;
         height: 100%;
         border-radius: 10px;
+    }
+    .service1{
+        @media (prefers-color-scheme: dark) {
+            background-color: transparent;
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        }
     }
     .service1 h2{
         text-align: center;
         font-size: 16px;
         font-weight: 300;
     }
-    .service1-img{
+    .service1Img{
         width: 100%;
         height: 200px;
     }
-    .title-services{
+    .titleServices{
         font-size: 24px;
         font-weight: 300;
         margin-top: 8%;
@@ -108,6 +122,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
     }
 
 }

@@ -9,6 +9,7 @@
     margin: auto;
     top: 0;
 
+    
 }
 
 .logo {
@@ -17,14 +18,14 @@
     margin-left: 10px;
 }
 
-ul {
+.header ul {
     display: flex;
     list-style: none;
     align-items: first baseline;
 
 }
 
-li {
+.header li {
     margin-top: 5px;
     font-size: 15px;
     font-weight: 300;
@@ -32,13 +33,17 @@ li {
     margin-right:35px;
 }
 
-li a {
+.header li a {
     text-decoration: none;
     color: black;
     align-items: center;
 
+    @media (prefers-color-scheme: dark) {
+        color: #6C5f5B;
+    }
+
 }
-li a::after{
+.header li a::after{
     content: '';
     display: block;
     width: 0;
@@ -48,7 +53,7 @@ li a::after{
 
 }
 
-li a:hover::after, li a.active::after {
+.desktopMenu li a:hover::after, .desktopMenu li a.active::after {
    width: 100%;
 }
 
@@ -69,6 +74,10 @@ li a:hover::after, li a.active::after {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: #121212;
+    }
 }
 .sidebar.show{
     display: flex;
@@ -82,19 +91,23 @@ li a:hover::after, li a.active::after {
     width: 100%;
     padding-left: 50px;
 }
-.menu-button{
+.menuButton{
     display: none;
     padding-right: 5px;
     align-items: center;
 
+    @media (prefers-color-scheme: dark) {
+        fill: #6C5f5B;
+    }
+
 }
-.shop-nav{
+.shopNav{
     position: relative;
     display: flex;
     flex-direction: row;
     
 }
-.icon-less , .icon-more{
+.iconLess , .iconMore{
     cursor: pointer;
     color: black;
 
@@ -102,15 +115,15 @@ li a:hover::after, li a.active::after {
         color: #6C5f5B;
     }
 }
-.icon-less:hover , .icon-more:hover{
+.iconLess:hover , .iconMore:hover{
     color: #ED7341;
 
 }
-.shop-dropdown-toggle{
+.shopDropdownToggle{
     cursor: pointer;
     margin-left: 5px;
 }
-.shop-dropdown{
+.shopDropdown{
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -125,30 +138,35 @@ li a:hover::after, li a.active::after {
 
     @media (prefers-color-scheme: dark) {
         background-color: #121212;
-        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 18px 0 rgba(255, 255, 255, 0.1);
     }
 
 }
-.shop-dropdown ul{
+.shopDropdown ul{
     display: flex;
     flex-direction: column;
     list-style: none;
     padding: 0 0 10px;
     margin-left: 10px;
     margin-bottom: 0;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: #121212;
+        box-shadow: 0 10px 18px 0 rgba(255, 255, 255, 0.1);
+    }
 }
-.shop-dropdown li{
+.shopDropdown li{
     margin-bottom: 0;
     margin-top: 0;
     padding: 10px 5px 5px 0;
     font-size: 14px;
     /* width: fit-content; */
 }
-.link-cart{
+.linkCart{
     display: flex;
     align-items: center;
 }
-.icon-cart{
+.iconCart{
     width: 18px !important;
     margin-left: 5px;
     padding: 0;
@@ -175,6 +193,11 @@ li a:hover::after, li a.active::after {
         top:0;
         z-index: 9999;
         height: 66px;
+
+        @media (prefers-color-scheme: dark) {
+            background-color: #121212;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
     }
     .logo{
         width: 130px;
@@ -182,24 +205,45 @@ li a:hover::after, li a.active::after {
         margin-left: -10px;
     }
 
-   .hideonmobile{
+   .hideOnMobile{
         display: none;
     }
 
-    .menu-button{
+    .menuButton{
         display: block;
         margin-right:40px;
         justify-self: center;
         align-items: center ;
     }
+    .menuButton svg {
+        fill: black;
+
+        @media (prefers-color-scheme: dark) {
+            fill: #6C5f5B;
+        }
+    }
+
+    .closeIcon svg{
+        fill: black;
+
+        @media (prefers-color-scheme: dark) {
+            fill: #6C5f5B !important;
+        }
+    }
+   
     .sidebar{
         width: 55%;
         height: max-content;
         padding: 5px;
         border-radius: 10px;
         box-shadow: 0px 0px 10px 0.1px #00000037;
+
+        @media (prefers-color-scheme: dark) {
+            background-color: #121212;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
     }
-    .sidebar-socials{
+    .sidebarSocials{
         width: 100%;
         align-items: center;
         padding: 15px;
@@ -220,22 +264,29 @@ li a:hover::after, li a.active::after {
         height: auto;
     }
 
-    .shop-nav{
+    .shopNav{
         margin: auto;
         width: auto;
     }
     
     
-   .shop-dropdown-toggle{
+   .shopDropdownToggle{
         margin-right: 60px;
    }
-   .shop-dropdown ul{
-        margin: auto;  
+   .shopDropdown ul{
+        margin: auto; 
+        border-radius: 10px; 
+
+        @media(prefers-color-scheme:dark){
+            background-color: #121212;
+            box-shadow: 0 10px 18px 0 rgba(255, 255, 255, 0.1);
+        }
+        
    }
-   .shop-dropdown li{
+   .shopDropdown li{
         padding: auto;    
    }
-    .link-cart a{
+    .linkCart a{
         display: flex;
         align-items: center;
         justify-content: flex-start !important;

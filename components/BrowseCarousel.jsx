@@ -56,7 +56,7 @@ export default function BrowseCarousel({ sub_category_name }) {
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>
-            <Link href={`/projects/${sub_category_name}/${project.title}`}>
+            <Link href={`/projects/${sub_category_name}/${project.title}`} legacyBehavior>
               <a>
                 <Image src={project.image_url} alt={project.title} layout="responsive" width={500} height={300} />
                 <div className={styles.carouselOverlay}>
