@@ -12,7 +12,7 @@ const style = {
     fontFamily: 'Poppins'
 }
 
-export default function OptionsPopUp({ product, handleClosePopUp }) { 
+const OptionsPopUp = ({ product, handleClosePopUp }) => { 
     const [terms, setTerms] = useState([]); 
     const [variations, setVariations] = useState([]);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -108,3 +108,5 @@ export default function OptionsPopUp({ product, handleClosePopUp }) {
         </div>
     )
 }
+
+export default OptionsPopUp;

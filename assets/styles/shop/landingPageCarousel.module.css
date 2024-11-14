@@ -1,52 +1,48 @@
-.landing-carousel{
+.landingCarousel {
     width: 100%;
     height: 100%;
-    
 }
-.main-swiper{
+
+.mainSwiper {
     width: 100%;
     height: 350px;
     box-sizing: border-box;
     border-radius: 10px;
     box-sizing: border-box;
     margin-top: -20px;
-    
 }
 
-.option-content{
+.optionContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;    
+    text-align: center;
 }
 
-
-.thumbs-swiper{
+.thumbsSwiper {
     width: 100%;
     height: auto;
     margin: auto;
     margin-top: 20px;
-    overflow: hidden;  
-    box-shadow: none !important; 
-   
+    overflow: hidden;
+    box-shadow: none !important;
 }
 
-.main-swiper-shadow-1 {
+.mainSwiperShadow1 {
     box-shadow: 0 4px 160px 10px #33fffc !important;
 }
 
-.main-swiper-shadow-2 {
+.mainSwiperShadow2 {
     box-shadow: 0 4px 160px 10px #33FF57 !important;
 }
 
-.main-swiper-shadow-3 {
+.mainSwiperShadow3 {
     box-shadow: 0 4px 160px 10px #3357FF !important;
 }
 
-.main-swiper-shadow-4 {
-    box-shadow: 0px 4px 160px 10px  #FF5733 !important;
-    
+.mainSwiperShadow4 {
+    box-shadow: 0px 4px 160px 10px #FF5733 !important;
 }
 
 .thumb {
@@ -63,61 +59,54 @@
     font-weight: 300;
 }
 
-.thumb-active {
+.thumbActive {
     opacity: 1;
 }
 
-.thumb-color-1 {
+.thumbColor1 {
     border-color: #33fffc;
 }
 
-.thumb-color-2 {
+.thumbColor2 {
     border-color: #33FF57;
 }
 
-.thumb-color-3 {
+.thumbColor3 {
     border-color: #3357FF;
 }
 
-.thumb-color-4 {
+.thumbColor4 {
     border-color: #FF5733;
 }
 
-
-
-
-
-@media (max-width:768px){
-    .landing-carousel{
+@media (max-width: 768px) {
+    .landingCarousel {
         width: 100% !important;
     }
-    .main-swiper{
+    .mainSwiper {
         width: 90%;
         height: 300px;
         box-sizing: border-box;
     }
-    .thumb{
+    .thumb {
         font-size: 12px;
-        height: 25px;        
+        height: 25px;
     }
-    .thumbs-swiper{
+    .thumbsSwiper {
         width: 80%;
         box-shadow: none;
     }
-
-
 }
 
-@media (max-width:400px){
-    .main-swiper{
+@media (max-width: 400px) {
+    .mainSwiper {
         width: 80%;
         height: 250px;
         margin-top: 0;
     }
-    .thumbs-swiper{
+    .thumbsSwiper {
         width: 70%;
     }
-  
 }
 
 

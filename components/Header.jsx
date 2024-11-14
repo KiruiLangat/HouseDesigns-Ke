@@ -76,17 +76,17 @@ export default function Header() {
                                     <div className={styles.shopDropdown}> {/* Updated className */}
                                         <ul onClick={() => setDropdownVisible(false)}>
                                             <li>
-                                                <Link href="/house-plans" passHref legacyBehavior>
+                                                <Link href="/shop/house-plans" passHref legacyBehavior>
                                                     <a onClick={() => setSidebarVisible(false)}>House Plans</a>
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link href="/submit-your-brief" passHref legacyBehavior>
+                                                <Link href="/shop/submit-your-brief" passHref legacyBehavior>
                                                     <a onClick={() => setSidebarVisible(false)}>Submit your Brief</a>
                                                 </Link>
                                             </li>
                                             <li className={styles.linkCart}> {/* Updated className */}
-                                                <Link href="/cart" passHref legacyBehavior>
+                                                <Link href="/shop/cart" passHref legacyBehavior>
                                                     <a onClick={() => setSidebarVisible(false)}>
                                                         Cart
                                                         <ShoppingBagOutlined className={styles.iconCart} /> {/* Updated className */}
@@ -94,7 +94,7 @@ export default function Header() {
                                                 </Link>
                                             </li>
                                             <li className={styles.linkCart}> {/* Updated className */}
-                                                <Link href="/wishlist" passHref legacyBehavior>
+                                                <Link href="/shop/wishlist" passHref legacyBehavior>
                                                     <a onClick={() => setSidebarVisible(false)}>
                                                         Wishlist
                                                         <FavoriteBorderIcon className={styles.iconCart} /> {/* Updated className */}
@@ -152,17 +152,17 @@ export default function Header() {
                                 <div className={styles.shopDropdown}> {/* Updated className */}
                                     <ul onClick={() => setDropdownVisible(false)}>
                                         <li>
-                                            <Link href="/house-plans" passHref legacyBehavior>
+                                            <Link href="/shop/house-plans" passHref legacyBehavior>
                                                 <a onClick={() => setSidebarVisible(false)}>House Plans</a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/submit-your-brief" passHref legacyBehavior>
+                                            <Link href="/shop/submit-your-brief" passHref legacyBehavior>
                                                 <a onClick={() => setSidebarVisible(false)}>Submit your Brief</a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/cart" passHref legacyBehavior>
+                                            <Link href="/shop/cart" passHref legacyBehavior>
                                                 <a onClick={() => setSidebarVisible(false)}>
                                                     <div className={styles.linkCart}> {/* Updated className */}
                                                         Cart
@@ -171,7 +171,7 @@ export default function Header() {
                                                 </a>
                                             </Link>
                                         </li>
-                                        <Link href="/wishlist" passHref legacyBehavior>
+                                        <Link href="/shop/wishlist" passHref legacyBehavior>
                                             <a onClick={() => setSidebarVisible(false)}>
                                                 <li className={styles.linkCart}> {/* Updated className */}
                                                     Wishlist
@@ -180,7 +180,7 @@ export default function Header() {
                                             </a>
                                         </Link>
                                         <li>
-                                            <Link href="/profile" passHref legacyBehavior>
+                                            <Link href="/shop/profile" passHref legacyBehavior>
                                                 <a onClick={() => setSidebarVisible(false)}>Profile</a>
                                             </Link>
                                         </li>

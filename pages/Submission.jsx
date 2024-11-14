@@ -17,7 +17,7 @@ const style = {
 export default function Submission() {
   return (
     <div style={style} className={styles.submissionPrompt}>
-        <Link href='/contact-us'>
+        <Link href='/contact-us' legacyBehavior>
           <a>
             <Image src={Cancel} alt='cancel-icon' className={styles.cancelIcon} />
           </a>
@@ -30,7 +30,7 @@ export default function Submission() {
         <div className={styles.shopPrompt}>
             <h2>In the meantime</h2>
             <Image src={Shoppingbag} alt='shoppingbag-icon' className={styles.shoppingbagIcon}/>
-            <Link href='/shop'>
+            <Link href='/shop' legacyBehavior>
               <a>
                 <h2>Check out new plans in our Shop</h2>
                 <Image src={Arrow} alt='arrow-icon' className={styles.arrowIcon}/>

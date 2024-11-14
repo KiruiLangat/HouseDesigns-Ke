@@ -8,7 +8,7 @@ const style = {
     fontFamily: 'Poppins',
 };
 
-export default function LandingPage() {
+const LandingPage = () => {
     const [selectedOption, setSelectedOption] = useState(null);
 
     const handleOptionSelect = (option) => {
@@ -53,3 +53,5 @@ export default function LandingPage() {
         </div>
     );
 }
+
+export default LandingPage;

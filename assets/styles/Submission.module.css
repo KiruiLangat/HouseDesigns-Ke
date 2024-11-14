@@ -1,4 +1,4 @@
-.submission-prompt{
+.submissionPrompt {
     width: 100%;
     height: 100vh;
     margin: 0;
@@ -8,7 +8,7 @@
     align-items: center;
     flex-direction: column;
 }
-.cancel-icon{
+.cancelIcon {
     position: absolute;
     top: 0;
     left: 0;
@@ -16,31 +16,37 @@
     padding: 20px;
     cursor: pointer;
 }
-.message{
+.message {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 0 3%;
-    
 }
-.message img{
+.message img {
     width: 15%;
     height: auto;
 }
-.message h1{
+.message h1 {
     font-size: 36px;
     font-weight: 400;
     text-align: center;
     margin-bottom: 0;
-    
+
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
 }
-.message p{
+.message p {
     font-size: 18px;
     font-weight: 300;
-    text-align: center;;
+    text-align: center;
+
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B;
+    }
 }
-.shop-prompt{
+.shopPrompt {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     width: 70%;
@@ -51,66 +57,80 @@
     justify-content: center;
     position: relative;
     transition: all 0.3s ease-in-out;
+
+    @media (prefers-color-scheme: dark) {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 }
-.shop-prompt:hover{
+.shopPrompt:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
+
+    @media (prefers-color-scheme: dark) {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 }
-.shop-prompt h2{
+.shopPrompt h2 {
     font-size: 18px;
-    font-weight: 300; 
+    font-weight: 300;
+
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
 }
-.shoppingbag-icon{
+.shoppingbagIcon {
     width: 8%;
     height: auto;
 }
-.arrow-icon{
+.arrowIcon {
     position: absolute;
-    top:81%;
+    top: 81%;
     left: 64%;
     cursor: pointer;
-    
 }
-.shop-prompt a{
+.shopPrompt a {
     text-decoration: none;
     color: black;
+
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B;
+    }
 }
 
-@media (max-width:760px){
-    .submission-prompt{
+@media (max-width: 760px) {
+    .submissionPrompt {
         width: 100%;
         height: auto;
     }
-    .cancel-icon{
+    .cancelIcon {
         margin: 10px;
         padding: 10px;
     }
-    .message{
-        margin:10%;
+    .message {
+        margin: 10%;
     }
-    .message img{
+    .message img {
         width: 15%;
         margin-top: 10%;
     }
-    .message h1{
+    .message h1 {
         font-size: 24px;
     }
-    .message p{
+    .message p {
         font-size: 16px;
     }
-    .shop-prompt{
+    .shopPrompt {
         width: 90%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    .shop-prompt h2{
+    .shopPrompt h2 {
         font-size: 16px;
-       
     }
-    .shop-prompt a{
+    .shopPrompt a {
         font-size: 14px;
     }
-    .arrow-icon{
-        top:76%;
+    .arrowIcon {
+        top: 76%;
         left: 79%;
         width: 4%;
         height: auto;

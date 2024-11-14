@@ -6,7 +6,6 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
           <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/androidIcon32px.png" />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchAllProducts } from '../shop/woocommerce';
+import { fetchAllProducts } from '../../services/shop/woocommerce';
 import { useRouter } from 'next/router';
 import TuneIcon from '@mui/icons-material/Tune';
 import Image from 'next/image';
@@ -14,13 +14,13 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBag';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import SearchIcon from '@mui/icons-material/Search';
 
-import { ReactComponent as Bedrooms } from '../images/bedroom.svg';
-import { ReactComponent as Floors } from '../images/floors.svg';
-import { ReactComponent as PlinthArea } from '../images/plinth.svg';
-import { ReactComponent as Bathrooms } from '../images/bathroom.svg';
+import { ReactComponent as Bedrooms } from '../../assets/images/bedroom.svg';
+import { ReactComponent as Floors } from '../../assets/images/floors.svg';
+import { ReactComponent as PlinthArea } from '../../assets/images/plinth.svg';
+import { ReactComponent as Bathrooms } from '../../assets/images/bathroom.svg';
 
-import { useCart, useWishlist } from '../shop/cartContext';
-import OptionsPopUp from '../shop/optionsPopUp';
+import { useCart, useWishlist } from '../../services/shop/cartContext';
+import OptionsPopUp from '../../components/shop/optionsPopUp';
 
 const style = {
     fontFamily: 'Poppins'
@@ -191,7 +191,7 @@ export default function FilteredCategoriesPage() {
                         <div className={styles.categoryProducts}>
                             {products.map((product) => (
                                 <div key={product.id} className={styles.filteredProductsCard}>
-                                    <Link href={`/product/${product.slug}`}>
+                                    <Link href={`/shop/product/${product.slug}`}>
                                         <Image
                                             src={product.images[0].src}
                                             alt={product.name}

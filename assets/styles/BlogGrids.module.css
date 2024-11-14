@@ -24,27 +24,40 @@
 }
 .box1:hover{
     background-color: #ED7D3124;
+
+    @media (prefers-color-scheme: dark){
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
 }
 .box1 h2{
     font-size: 16px;
     font-weight: 300;
     word-wrap: break-word;
     margin: 5px 10px;
-    color: black;   
+    color: black;  
+    
+    @media (prefers-color-scheme:dark){
+        color: white;
+    }
 }
 .box1 p{
     font-size: 12px;
     margin: 10px 10px;
     color: black; 
+
+    @media (prefers-color-scheme:dark){
+        color: #6C5F5B;
+    }
 }
-.img-box{
+.imgBox{
     width: 100%;
     height: 150px;
     border-radius: 10px;
     margin-bottom: 10px;
 
 }
-.img-box img{
+.imgBox img{
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -74,9 +87,10 @@
         grid-template-rows: repeat(4, 1fr);
     }
     .box1 h2{
-        font-size: 14px;
+        font-size: 12px;
+        font-weight: 300;
     }
-    .post-title{
+    .postTitle{
         white-space: normal;
         overflow: visible;
     }

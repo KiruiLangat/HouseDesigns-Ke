@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -6,26 +6,24 @@ dotenv.config();
 const consumerKey = process.env.WC_CONSUMER_KEY;
 const consumerSecret = process.env.WC_CONSUMER_SECRET;
 
-export const fetchFromWooCommerce = async (endpoint, params = {}, method = 'GET', body = null) => {
-  const url = new URL(`https://housedesigns.co.ke/CMS/wp-json/wc/v3/${endpoint}`);
-  const headers = new fetch.Headers();
-  headers.append('Authorization', 'Basic ' + Buffer.from(`${consumerKey}:${consumerSecret}`).toString('base64'));
-  headers.append('Content-Type', 'application/json');
+const api = new WooCommerceRestApi({
+  url: 'https://housedesigns.co.ke/CMS',
+  consumerKey: consumerKey,
+  consumerSecret: consumerSecret,
+  version: 'wc/v3'
+});
 
-  Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+export const fetchFromWooCommerce = async (endpoint, params = {}, method = 'GET', body = null) => {
+  params.fields = 'id,name,slug,price,images,attributes,options,short_description,description,categories,variations,thumbnails';
 
   try {
-    const response = await fetch(url, {
-      method,
-      headers,
-      body: body ? JSON.stringify(body) : null,
-    });
-    if (!response.ok) {
-      throw new Error(`Error fetching ${endpoint}: ${response.statusText}`);
+    const response = await api.get(endpoint, params);
+    if (!response) {
+      throw new Error(`Error fetching ${endpoint}: No response`);
     }
-    return await response.json();
+    return response.data;
   } catch (error) {
-    console.error(error);
+    console.error(`Error fetching ${endpoint}:`, error.response ? error.response.data : error.message);
     throw error;
   }
 };

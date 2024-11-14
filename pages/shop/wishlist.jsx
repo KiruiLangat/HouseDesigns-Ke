@@ -26,7 +26,7 @@ const WishlistPage = () => {
         <div className={styles.wishlistProduct}>
           {wishlist.map((product, index) => (
             <div key={index} className={styles.wishlistProductInfo}>
-                <Link href={`/product/${product.slug}`}>
+                <Link href={`/shop/product/${product.slug}`}>
                     <a>
                         <Image src={product.images[0]?.src} alt={product.name} loading='lazy' width={200} height={200} />
                     </a>

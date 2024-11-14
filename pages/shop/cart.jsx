@@ -27,7 +27,7 @@ export default function CartPage (){
             {cart.map((product, index) => (
                 product ? (
                 <div key={index} className={styles.cartProduct}>
-                    <Link href={`/product/${product.slug}`}>
+                    <Link href={`/shop/product/${product.slug}`}>
                     {product.images && product.images.length > 0 && (
                         <Image src={product.images[0].src} alt={product.name} loading='lazy' width={100} height={100} />
                     )}
@@ -54,7 +54,7 @@ export default function CartPage (){
         </div>
       )}
       
-        <Link href='/checkout'>
+        <Link href='/shop/checkout'>
             <button className={styles.checkoutFromCart}>
                 <ShoppingCartIcon  className={styles.shoppingCart}/>
                 <p>Checkout</p>

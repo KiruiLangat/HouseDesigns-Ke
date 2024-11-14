@@ -20,7 +20,7 @@ const style = {
     fontFamily: 'Poppins'
 };
 
-export default function Plans() {
+const BrowsePlans = () => {
     // Fetching categories from woocommerce
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
@@ -212,3 +212,5 @@ export default function Plans() {
         </div>
     );
 }
+
+export default BrowsePlans;

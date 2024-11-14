@@ -11,7 +11,7 @@ const style = {
     fontFamily: 'Poppins'
 }
 
-export default function Assurance() {
+const Assurance = () => {
     return (
         <div className={styles.assuranceContainer} style={style}>
             <h1>We Care for Our Clients...</h1>
@@ -63,3 +63,5 @@ export default function Assurance() {
         </div>
     )
 }
+
+export default Assurance;

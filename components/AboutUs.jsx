@@ -84,7 +84,7 @@ export default function AboutUs() {
           </div>
           <div className={styles.member2Box}>
             <div className={styles.memberImg}>
-              <Image src={Jonathan} alt='Jonathan' />
+              <Image src={Jonathan} alt='Jonathan' layout='responsive' />
             </div>
             <h2 className={styles.member2Name}>Jonathan Munyao</h2>
             <h3 className={styles.member2Title}>Design Director</h3>

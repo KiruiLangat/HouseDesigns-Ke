@@ -6,10 +6,10 @@ import styles from '../../../assets/styles/shop/productDescription.module.css';
 
 import '@fontsource/poppins';
 import { fetchAllProducts, fetchAttributesTerms, fetchProductVariations } from './woocommerce';
-import { ReactComponent as Bedrooms } from '../images/bedroom.svg';
-import { ReactComponent as Bathrooms } from '../images/bathroom.svg';
-import { ReactComponent as Floors } from '../images/floors.svg';
-import { ReactComponent as PlinthArea } from '../images/plinth.svg';
+import { ReactComponent as Bedrooms } from '../../../assets/images/bedroom.svg';
+import { ReactComponent as Bathrooms } from '../../../assets/images/bathroom.svg';
+import { ReactComponent as Floors } from '../../../assets/images/floors.svg';
+import { ReactComponent as PlinthArea } from '../../../assets/images/plinth.svg';
 
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
@@ -18,9 +18,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
-import GalleryCarousel from './galleryCarousel';
+import GalleryCarousel from '../../../components/shop/galleryCarousel';
 
-import { useCart, useWishlist } from './cartContext';
+import { useCart, useWishlist } from '../../../services/shop/cartContext';
 
 const style = {
     fontFamily: 'Poppins',
@@ -177,7 +177,7 @@ export default function ProductDescription() {
                 <div className={styles.similarProductsList}>
                     {similarProducts.map((product) => (
                         <div key={product.id} className={styles.similarProducts}>
-                            <Link href={`/product/${product.slug}`}>
+                            <Link href={`/shop/product/${product.slug}`}>
                                 <a>
                                     <Image src={product.images[0].src} alt={product.name} width={500} height={500} />
                                 </a>

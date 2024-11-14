@@ -359,7 +359,7 @@
         text-align: center;
         font-size: 16px;
         font-weight: 300;
-        margin-top: 40%;
+        margin-top:10%;
         margin-bottom: 0;
     }
     .ourWorkflow::after {
@@ -413,12 +413,18 @@
         padding: 5px;
         margin: 15px;
         box-sizing: border-box;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+        
+        @media (prefers-color-scheme: dark) {
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        }
     }
     .mobileSimplicityIcon {
         width: 31px;
         height: auto;
         margin: 10px;
+
+
     }
     .mobileSimplicityTitle {
         font-size: 15px;
@@ -432,6 +438,10 @@
         margin: 15px;
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+
+        @media (prefers-color-scheme: dark) {
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        }
     }
     .mobileInfiniteIcon {
         width: 35px;
@@ -450,6 +460,10 @@
         margin: 15px;
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        @media (prefers-color-scheme: dark) {
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        }
     }
     .mobileResilienceIcon {
         width: 30px;
@@ -483,6 +497,12 @@
         justify-content: center;
         justify-content: space-between;
     }
+    .teamMembers h3{
+
+        @media (prefers-color-scheme: dark) {
+            color: #6C5F5B;
+        }
+    }
     .member1Box {
         width: 100%;
         height: auto;
@@ -490,6 +510,10 @@
         margin-bottom: 20px;
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        @media (prefers-color-scheme: dark) {
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        }
     } 
     .memberImg > img {
         margin: 5px;
@@ -503,6 +527,10 @@
         margin-bottom: 10px;
         box-sizing: border-box;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        @media (prefers-color-scheme: dark) {
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        }
     } 
     .member2Box > img {
         margin: auto;

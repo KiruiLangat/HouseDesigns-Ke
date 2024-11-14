@@ -36,7 +36,7 @@ export default function BlogGrids() {
             <Link href={`/blog/${post.slug}`} key={post.slug} className={styles.box1}>
                 <div className={styles.imgBox}>
                     {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
-                        <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='responsive' width={500} height={300} />
+                        <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='fixed' width={500} height={300} />
                     )}
                 </div>
                 <h2 className={styles.postTitle} dangerouslySetInnerHTML={{__html: post.title.rendered }}/>

@@ -1,4 +1,4 @@
-.assurance-container{
+.assuranceContainer {
     width: 93%;
     max-width: 1200px;
     margin: auto;
@@ -7,12 +7,11 @@
     flex-direction: column;    
     align-items: flex-start;
 }
-.assurance-container h1{
+.assuranceContainer h1 {
     font-size: 36px;
     font-weight: 300;
-    
 }
-.assurance{
+.assurance {
     width: 100%;
     margin: auto;
     display: grid;
@@ -27,7 +26,7 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
     } */
 }
-.assurance-box{
+.assuranceBox {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,32 +39,31 @@
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
     }
 }
-.assurance-box p{
+.assuranceBox p {
     font-size: 14px;
     font-weight: 300;
     text-align: center;
 }
-.assurance-box a{
+.assuranceBox a {
     text-decoration: none;
     color: #ED7D31;
     border-bottom: black;
 }
-.policies p{
+.policies p {
     margin-top: 20px;
     font-size: 14px;
     font-weight: 300;
     text-align: center;
 }
-.policy-assurance{
+.policyAssurance {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
     margin: auto;
     margin-top: 5%;
     width: auto;
-       
 }
-.policy-assurance a{
+.policyAssurance a {
     text-decoration: none;
     color: #00000080;
 
@@ -73,7 +71,7 @@
         color: #6C5f5B;
     }
 }
-.policies{
+.policies {
     width: auto;
     margin: 10px;
     text-align: center;
@@ -84,14 +82,9 @@
 
     @media (prefers-color-scheme:dark){
         border: 1px solid rgba(255, 255, 255, 0.1);
-
-
-
     }
-
-   
 }
-.policies:hover{
+.policies:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     color: black;
 
@@ -102,23 +95,22 @@
 }
 
 @media (max-width:768px){
-    .assurance-container{
+    .assuranceContainer {
         width: 93%;
         margin-top: 20%;
         display: flex;
         flex-direction: column;
     }
-    .assurance-container h1{
+    .assuranceContainer h1 {
         font-size: 36px;
         font-weight: 300;
         margin-bottom: 0;
-        
     }
-    .assurance{
+    .assurance {
         display: flex;
         flex-direction: column;
     }
-    .assurance-box{
+    .assuranceBox {
         width: 100%;
         height: auto;
         margin-top: 20px;
@@ -130,11 +122,11 @@
             box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
         }
     }
-    .policy-assurance{
+    .policyAssurance {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    .policies{
+    .policies {
         border: none;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
         padding: 5px;
@@ -143,14 +135,11 @@
             box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
         }
     }
-    .policies p{
+    .policies p {
         color: black;
 
         @media(prefers-color-scheme:dark){
             color: #6C5f5B;
         }
     }
-    
-
-
 }

@@ -24,7 +24,7 @@ const style = {
     fontFamily: 'Poppins'
 }
 
-export default function NewPlans() {
+const NewPlans = () => {
     const [products, setProducts] = useState([]);
 
     //handling Cart and Wishlist
@@ -155,3 +155,5 @@ export default function NewPlans() {
         </div>
     )
 }
+
+export default NewPlans;

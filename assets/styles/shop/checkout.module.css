@@ -1,29 +1,28 @@
-.checkout-container{
+.checkoutContainer {
     width: 93%;
     max-width: 1200px;
     margin: auto;
 }
-.checkout-container h1{
+.checkoutContainer h1 {
     font-size: 36px;
     font-weight: 300;
     text-align: center;
 }
-.checkout-order{
+.checkoutOrder {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     gap: 20px;
     margin-top: 50px;
 }
-.order-container{
+.orderContainer {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 10px;
     border-radius: 10px;
     margin-top: 0;
-   
 }
-.checkout-product{
+.checkoutProduct {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: 1px solid rgba(0,0,0,0.2);
@@ -33,46 +32,42 @@
     @media (prefers-color-scheme: dark) {
         border: 1px solid rgba(255,255,255,0.1);
     }
-
 }
-.checkout-product img{
-    width:250px;
+.checkoutProduct img {
+    width: 250px;
     height: 130px;
     border-radius: 10px;
     margin-top: 10px;
     margin-left: 10px;
-
 }
-.checkout-product-details{
+.checkoutProductDetails {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     margin-left: 5px !important;
-
 }
-.checkout-product-details h2{
+.checkoutProductDetails h2 {
     font-size: 18px;
     font-weight: 300;
     margin-top: 5px;
 }
-.checkout-product-details p{
+.checkoutProductDetails p {
     font-size: 12px;
     font-weight: 400;
-    margin-top:0;
+    margin-top: 0;
     color: #00000080;
-
 
     @media (prefers-color-scheme: dark) {
         color: #6C5f5B;
     }
 }
-.checkout-product-details h3{
+.checkoutProductDetails h3 {
     font-size: 12px;
     font-weight: 400;
     margin-top: 5px;
 }
-.total-price{
+.totalPrice {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -84,9 +79,8 @@
     @media (prefers-color-scheme: dark) {
         border-top: 2px solid rgba(255, 255, 255, 0.1);
     }
-    
 }
-.total-price h2{
+.totalPrice h2 {
     font-size: 14px;
     font-weight: 300;
     margin-top: 10px;
@@ -94,9 +88,8 @@
     @media (prefers-color-scheme: dark) {
         color: #ffffff80;
     }
-    
 }
-.total-price p{
+.totalPrice p {
     font-size: 20px;
     font-weight: 500;
     margin-top: 10px;
@@ -105,7 +98,7 @@
         color: #ffffff80;
     }
 }
-.checkout-details{
+.checkoutDetails {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -117,13 +110,13 @@
         border: 1px solid rgba(255,255,255,0.1);
     }
 }
-.checkout-details h2{
+.checkoutDetails h2 {
     font-size: 18px;
     font-weight: 400;
     margin-left: 10px;
     margin-bottom: 0;
 }
-.personal-info{
+.personalInfo {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -131,7 +124,7 @@
     margin-top: 0 !important;  
     margin-left: 0;
 }
-.personal-info input{
+.personalInfo input {
     height: 30px;
     width: 45%;
     border-radius: 10px;
@@ -141,51 +134,47 @@
     font-family: Poppins, sans-serif;
     padding: 0 10px;
 
-
     @media (prefers-color-scheme: dark) {
         border: 1px solid rgba(255,255,255,0.1);
         color: #ffffff80;
     }
 }
-.personal-info input::placeholder{
+.personalInfo input::placeholder {
     font-size: 12px;
     font-weight: 300 !important;
     padding-left: 10px;
 }
-.payment-type{
+.paymentType {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.payment-type svg{
+.paymentType svg {
     margin-left: 20px;
 }
-.mpesa-payment{
+.mpesaPayment {
     display: flex;
     flex-direction: column;
     margin-top: 0;
-
 }
-.mpesa-button, .paypal-button, .card-button{
+.mpesaButton, .paypalButton, .cardButton {
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
 }
-.mpesa-button p, .paypal-button p, .card-button p{
+.mpesaButton p, .paypalButton p, .cardButton p {
     font-size: 14px;
     font-weight: 400;
-    
 }
-
-.mpesa-details{
+.mpesaDetails {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     margin-left: 20px;
 }
-.mpesa-details p{
+.mpesaDetails p {
     font-size: 14px;
     font-weight: 300;
     margin-top: 10px;
@@ -194,11 +183,11 @@
         color: #6C5f5B;
     }
 }
-.mpesa-details img{
+.mpesaDetails img {
     border-radius: 10px;
     height: 35px;
 }
-.mpesa-input{
+.mpesaInput {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -206,7 +195,7 @@
     gap: 20px;
     width: 100%;
 }
-.mpesa-input input{
+.mpesaInput input {
     width: 100%;
     height: 30px;
     border-radius: 10px;
@@ -220,18 +209,16 @@
         color: #ffffff80;
     }
 }
-
-::placeholder{
+::placeholder {
     font-size: 12px;
     font-weight: 300;
     padding-left: 10px;
     font-family: Poppins, sans-serif;
 }
-
-.mpesa-input button{
+.mpesaInput button {
     cursor: pointer;
     width: 200px;
-    height:30px;
+    height: 30px;
     border-radius: 10px;
     background-color: black;
     border: none;
@@ -242,12 +229,12 @@
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
     }
 }
-.paypal-payment img{
+.paypalPayment img {
     border-radius: 5px;
     height: 20px;
     margin-left: 10px;
 }
-.paypal-details{
+.paypalDetails {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -255,7 +242,7 @@
     margin-left: 20px;
     width: 100%;
 }
-.paypal-details p{
+.paypalDetails p {
     font-size: 14px;
     font-weight: 300;
     margin-left: 10px;
@@ -265,7 +252,7 @@
         color: #6C5f5B;
     }
 }
-.paypal-details button{
+.paypalDetails button {
     cursor: pointer;
     margin-left: 10px;
     height: 30px;
@@ -280,17 +267,15 @@
 
     @media (prefers-color-scheme: dark) {
         background-color: white;
-        
-        
     }
 }
-.card-payment img{
+.cardPayment img {
     border-radius: 10px;
     height: 20px;
     padding: 1px;
     margin-left: 10px;
 }
-.card-details{
+.cardDetails {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -299,7 +284,7 @@
     gap: 10px;
     margin-left: 20px;
 }
-.card-details input{
+.cardDetails input {
     width: 300px;
     height: 30px;
     border-radius: 10px;
@@ -311,9 +296,8 @@
         border: 1px solid rgba(255,255,255,0.1);
         color: #ffffff80;
     }
-
 }
-.order-button{
+.orderButton {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -322,7 +306,7 @@
     width: 100%;
     align-self: center;
 }
-.order-button button{
+.orderButton button {
     cursor: pointer;
     height: 61px;
     border-radius: 10px;
@@ -334,21 +318,21 @@
     font-weight: 300;
     font-family: Poppins, sans-serif;
 }
-.order-button button:hover{
+.orderButton button:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 
     @media (prefers-color-scheme: dark) {
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
     }
 }
-.only-for-mobile{
+.onlyForMobile {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: first baseline;
     gap: 20px;
 }
-.error-to-whatsapp{
+.errorToWhatsapp {
     position: fixed;
     top: 0;
     left: 0;
@@ -362,13 +346,11 @@
     justify-content: center;
     align-items: center;
 
-    @media (prefers-color-scheme:dark){
+    @media (prefers-color-scheme: dark) {
         background-color: #000000bf;
     }
-
 }
-
-.error-to-whatsapp button{
+.errorToWhatsapp button {
     height: 30px;
     width: auto;
     border-radius: 10px;
@@ -380,41 +362,39 @@
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
-.error-to-whatsapp button:hover{
-    transform: scale(1.1) ;
+.errorToWhatsapp button:hover {
+    transform: scale(1.1);
 }
-
-
-@media (max-width: 768px){
-    .checkout-container{
+@media (max-width: 768px) {
+    .checkoutContainer {
         width: 100%;
         margin: auto;
     }
-    .checkout-container h1{
+    .checkoutContainer h1 {
         font-size: 24px;
         font-weight: 300;
         text-align: center;
         margin-top: 10%;
         margin-bottom: 0;
     }
-    .checkout-order{
+    .checkoutOrder {
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
         width: 100%;
     }
-    .checkout-product{
+    .checkoutProduct {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        gap:10px;
+        gap: 10px;
     }
-    .checkout-product img{
+    .checkoutProduct img {
         width: 150px;
         height: 100px;
         border-radius: 10px;
     }
-    .checkout-product-details{
+    .checkoutProductDetails {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -422,22 +402,22 @@
         margin-left: 0;
         gap: 0;
     }
-    .checkout-product-details h2{
+    .checkoutProductDetails h2 {
         font-size: 16px;
         font-weight: 300;
         margin-top: 5px;
     }
-    .checkout-product-details p{
+    .checkoutProductDetails p {
         font-size: 11px;
         font-weight: 400;
-        margin-top:0;
+        margin-top: 0;
     }
-    .checkout-product-details h3{
+    .checkoutProductDetails h3 {
         font-size: 12px;
         font-weight: 300;
         margin-top: 0;
     }
-    .total-price{
+    .totalPrice {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -450,16 +430,16 @@
             border-top: 2px solid rgba(255, 255, 255, 0.1);
         }
     }
-    .total-price h2{
+    .totalPrice h2 {
         font-size: 14px;
         font-weight: 300;
         margin-top: 10px;
-        
+
         @media (prefers-color-scheme: dark) {
             color: #ffffff80;
         }
     }
-    .total-price p{
+    .totalPrice p {
         font-size: 20px;
         font-weight: 500;
         margin-top: 10px;
@@ -468,7 +448,7 @@
             color: #ffffff80;
         }
     }
-    .checkout-details{
+    .checkoutDetails {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -476,13 +456,13 @@
         width: 93%;
         margin: auto;
     }
-    .checkout-details h2{
+    .checkoutDetails h2 {
         font-size: 18px;
         font-weight: 300;
         margin-left: 10px;
         margin-bottom: 0;
     }
-    .personal-info{
+    .personalInfo {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
@@ -490,7 +470,7 @@
         margin-top: 0 !important;  
         margin-left: 0;
     }
-    .personal-info input{
+    .personalInfo input {
         height: 30px;
         width: 100%;
         border-radius: 10px;
@@ -501,14 +481,14 @@
             color: #ffffff80;
         }
     }
-    .mpesa-details{
+    .mpesaDetails {
         width: 93%;
     }
-    .mpesa-details img{
+    .mpesaDetails img {
         border-radius: 10px;
         height: 25px;
     }
-    .mpesa-details p, .paypal-details p, .card-details p{
+    .mpesaDetails p, .paypalDetails p, .cardDetails p {
         font-size: 12px;
         font-weight: 300;
         margin-top: 10px;
@@ -517,13 +497,11 @@
             color: #6C5f5B;
         }
     }
-
-    .error-to-whatsapp{
+    .errorToWhatsapp {
         width: 100%;
         height: 100%;
-        
     }
-    .error-to-whatsapp h2{
+    .errorToWhatsapp h2 {
         text-align: center;
         font-size: 18px;
     }

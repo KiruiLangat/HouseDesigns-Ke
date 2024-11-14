@@ -109,7 +109,7 @@ export default function SearchBar ({post}) {
               <div className={styles.searchResultsContainer}>
                 <div className={styles.featuredImg}>
                   {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url &&(
-                  <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' width={100} height={100} />
+                  <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' width={100} height={100}/>
                   )}
                 </div> 
                 <h2 dangerouslySetInnerHTML={{__html: post.title.rendered}}/>

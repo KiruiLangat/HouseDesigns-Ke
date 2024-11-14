@@ -6,7 +6,7 @@ const fetchAllProducts = async () => {
         }
         return await response.json();
     } catch (error) {
-        console.error(error);
+        console.error('Error in fetchAllProducts:', error);
         throw error;
     }
 };
@@ -32,7 +32,7 @@ const fetchCategories = async () => {
         }
         return await response.json();
     } catch (error) {
-        console.error(error);
+        console.error('Error in fetchCategories:', error.message);
         throw error;
     }
 };

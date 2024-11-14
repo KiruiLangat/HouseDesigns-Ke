@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { fetchAllProducts, fetchCategories, fetchAttributes } from '../shop/woocommerce';
+import { fetchAllProducts, fetchCategories, fetchAttributes } from '../../services/shop/woocommerce';
 import TuneIcon from '@mui/icons-material/Tune';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -12,12 +12,12 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import { useCart, useWishlist } from '../shop/cartContext';
+import { useCart, useWishlist } from '../../services/shop/cartContext';
 import { ReactComponent as Bathrooms } from '../../assets/images/bathroom.svg';
 import { ReactComponent as Bedrooms } from '../../assets/images/bedroom.svg';
 import { ReactComponent as Floors } from '../../assets/images/floors.svg';
 import { ReactComponent as PlinthArea } from '../../assets/images/plinth.svg';
-import OptionsPopUp from '../components/shop/optionsPopUp';
+import OptionsPopUp from '../../components/shop/optionsPopUp';
 import styles from '../../assets/styles/shop/Allproducts.module.css';
 import '@fontsource/poppins';
 
@@ -322,7 +322,7 @@ export default function Allproducts({ category }) {
                             {filteredProducts &&
                                 filteredProducts.map((product) => (
                                     <div key={product.id} className={styles.productsCard}>
-                                        <Link href={`/product/${product.slug}`}>
+                                        <Link href={`/shop/product/${product.slug}`}>
                                             <Image src={product.images[0].src} alt={product.name} width={200} height={200} />
                                         </Link>
                                         <div className={styles.cartWishlist}>

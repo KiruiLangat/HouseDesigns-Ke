@@ -1,4 +1,4 @@
-.loading-terms{
+.loadingTerms {
     color: #6C5f5B !important;
     background-color: black;
     width: 150px;
@@ -7,7 +7,7 @@
     text-align: center;
 }
 
-.options-popup-container{
+.optionsPopupContainer {
     position: fixed;
     top: 0;
     right: 0;
@@ -20,11 +20,12 @@
     align-items: center;
     z-index: 10000;
 
-    @media (prefers-color-scheme: dark){
+    @media (prefers-color-scheme: dark) {
         background-color: rgba(0, 0, 0, 0.89);
     }
 }
-.close-icon{
+
+.closeIcon {
     position: absolute;
     top: 50px;
     left: 50px;
@@ -37,7 +38,8 @@
     padding: 2px;
     cursor: pointer;
 }
-.options-popup-title{
+
+.optionsPopupTitle {
     display: grid !important;
     grid-template-columns: 1fr 3fr;
     gap: 0;
@@ -48,25 +50,21 @@
     border-radius: 10px;
     width: 35%;
     height: 50px;
-  
-    
 
-    @media (prefers-color-scheme: dark){
-        
-       
+    @media (prefers-color-scheme: dark) {
+        /* ...existing code... */
     }
 }
-.options-popup-title h1{
+
+.optionsPopupTitle h1 {
     font-size: 28px !important;
     font-weight: 400 !important;
     margin-left: 0 !important;
     text-align: center;
     margin-bottom: 10px;
-    
-
-    
 }
-.options-popup-product{
+
+.optionsPopupProduct {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
@@ -76,33 +74,36 @@
     height: 70px;
     margin-bottom: 5%;
 }
-.options-popup-product img{
+
+.optionsPopupProduct img {
     width: 150px !important;
     height: 75px !important;
 }
-.options-popup-details{
+
+.optionsPopupDetails {
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: flex-start;
-
 }
-.options-popup-details h2{
+
+.optionsPopupDetails h2 {
     font-size: 24px !important;
     font-weight: 300 !important;
     margin: 0;
-    
 }
-.options-popup-details p{
+
+.optionsPopupDetails p {
     font-size: 14px !important;
     font-weight: 400;
     margin-top: 0;
- 
-    @media (prefers-color-scheme: dark){
+
+    @media (prefers-color-scheme: dark) {
         color: #6C5f5B;
     }
 }
-.options-pop-up{
+
+.optionsPopUp {
     width: 35%;
     display: flex;
     flex-direction: column;
@@ -110,11 +111,13 @@
     align-items: flex-start;
     margin-top: -50px;
 }
-.options-pop-up h2{
+
+.optionsPopUp h2 {
     font-size: 18px;
     font-weight: 300;
 }
-.options-pop-up ul{
+
+.optionsPopUp ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,9 +125,9 @@
     margin-top: -10px;
     margin-left: -30px;
     margin-bottom: 0;
-    
 }
-.options-pop-up li{
+
+.optionsPopUp li {
     font-size: 16px;
     font-weight: 300;
     width: 100%;
@@ -132,22 +135,22 @@
     border-radius: 10px;
     cursor: pointer;
 
-    @media (prefers-color-scheme: dark){
+    @media (prefers-color-scheme: dark) {
         background-color: rgba(0, 0, 0, 0.9);
     }
-
 }
-.options-pop-up p{
+
+.optionsPopUp p {
     font-size: 12px;
     font-weight: 400;
     margin-top: 0;
 
-    @media (prefers-color-scheme: dark){
+    @media (prefers-color-scheme: dark) {
         color: #6C5f5B;
     }
 }
 
-.add-to-cart-popup{
+.addToCartPopup {
     width: 35%;
     height: 50px;
     background-color: #ED7D31;
@@ -159,13 +162,14 @@
     margin-top: 10px;
     cursor: pointer;
 }
-.add-to-cart-popup p{
+
+.addToCartPopup p {
     margin: auto;
     text-align: center;
 }
 
-@media (max-width:768px){
-    .options-popup-container{
+@media (max-width: 768px) {
+    .optionsPopupContainer {
         position: fixed;
         top: 50% !important;
         left: 50% !important;
@@ -179,83 +183,91 @@
         margin-top: 12% !important;
         background-color: #FFFFFF;
 
-        @media (prefers-color-scheme: dark){
+        @media (prefers-color-scheme: dark) {
             background-color: #00000D;
         }
-        
-         
     }
-    .close-icon{
+
+    .closeIcon {
         padding: 5px;
         left: 0;
         top: 30px;
         color: #ED7D31;
         border: 1px solid #ED7D31;
     }
-    .options-popup-title{
+
+    .optionsPopupTitle {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
         width: auto;
-        
     }
-    .options-popup-title h1{
+
+    .optionsPopupTitle h1 {
         font-size: 18px !important;
         margin: 0 !important;
     }
-    .popup-cart{
+
+    .popupCart {
         align-self: center;
         justify-self: auto;
     }
 
-    .options-popup-product{
+    .optionsPopupProduct {
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 30px;
         width: 93%;
     }
 
-    .options-popup-product img{
+    .optionsPopupProduct img {
         width: 90px !important;
         height: 60px !important;
         margin-right: 0 !important;
     }
-    .options-popup-details{
+
+    .optionsPopupDetails {
         width: 100%;
         margin-top: 0;
         display: flex !important;
         justify-content: center !important;
         align-items: flex-start !important;
     }
-    .options-popup-product h2{
-        font-size: 16px !important; 
+
+    .optionsPopupProduct h2 {
+        font-size: 16px !important;
         margin-left: 0;
     }
-    .options-popup-details p{
+
+    .optionsPopupDetails p {
         font-size: 12px;
         font-weight: 400;
         color: #00000080;
         margin-left: 0;
 
-        @media (prefers-color-scheme: dark){
+        @media (prefers-color-scheme: dark) {
             color: #6C5f5B;
         }
     }
-    .options-pop-up{
+
+    .optionsPopUp {
         width: 100%;
         margin: auto;
         margin-top: 0;
         margin-bottom: 0;
     }
-    .options-pop-up h2{
+
+    .optionsPopUp h2 {
         font-size: 14px;
         font-weight: 400;
     }
-    .options-pop-up ul{
+
+    .optionsPopUp ul {
         width: 100%;
         margin-bottom: 0 !important;
     }
-    .options-pop-up li{
+
+    .optionsPopUp li {
         font-size: 12px;
         height: auto;
         width: 100%;
@@ -263,28 +275,30 @@
         z-index: 100;
         background-color: #0000000D;
 
-        @media (prefers-color-scheme:dark){
+        @media (prefers-color-scheme: dark) {
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
             background-color: rgba(0, 0, 0, 0.9);
         }
     }
-    .options-pop-up p{
+
+    .optionsPopUp p {
         font-size: 10px;
         margin-bottom: 0;
         color: #00000080;
 
-        @media (prefers-color-scheme: dark){
+        @media (prefers-color-scheme: dark) {
             color: #6C5f5B;
         }
     }
-    .add-to-cart-popup{
+
+    .addToCartPopup {
         width: 93%;
         margin: auto;
         margin-top: 10px;
         height: 41px;
     }
-    .add-to-cart-popup p{
+
+    .addToCartPopup p {
         font-size: 12px;
     }
-
 }

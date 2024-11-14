@@ -1,58 +1,56 @@
-.shop-home{
+.shopHome {
     margin: auto;
     width: 100%;
     max-width: 1200px;
-    height:auto;
+    height: auto;
     overflow: hidden;
     margin-top: 0;
     margin-bottom: 0;
 }
-.landing-page{
+.landingPage {
     width: 100%;
     height: max-content;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 8px;
     margin: auto;
-   
 }
-.landing-content{
+.landingContent {
     width: 93%;
     display: flex;
     flex-direction: column;
     margin-top: 10px;
     padding: 0 5px;
 }
-.landing-text{
+.landingText {
     font-size: 40px;
     font-weight: 500;
-    color: black;  
+    color: black;
 }
 
-@media (prefers-color-scheme: dark){
-    .landing-text{
+@media (prefers-color-scheme: dark) {
+    .landingText {
         color: white !important;
     }
 }
-.landing-text .highlight{
+.landingText .highlight {
     color: #ED7D31;
 }
 
-.landing-subtext{
+.landingSubtext {
     font-size: 18px;
     font-weight: 300;
-    
 }
-@media (prefers-color-scheme: dark){
-    .landing-subtext{
+@media (prefers-color-scheme: dark) {
+    .landingSubtext {
         color: #6C5F5B;
     }
 }
-.landing-subtext .highlight-subtext{
+.landingSubtext .highlightSubtext {
     color: #ED7D31;
 }
 
-.landing-options{
+.landingOptions {
     width: 450px;
     height: 500px;
     display: flex;
@@ -63,12 +61,12 @@
     margin-top: 0;
 }
 
-@media (max-width:768px){
-    .shop-home{
+@media (max-width: 768px) {
+    .shopHome {
         width: 100%;
         min-height: 100vh;
     }
-    .landing-page{
+    .landingPage {
         width: 100%;
         margin: auto;
         display: flex;
@@ -76,25 +74,23 @@
         justify-content: center;
         align-items: center;
     }
-    .landing-text{
-        font-size:24px;
+    .landingText {
+        font-size: 24px;
         margin-left: 10px;
     }
-    .landing-subtext{
+    .landingSubtext {
         font-size: 14px;
         margin-left: 10px;
     }
-   
-    
 }
 
-@media (max-width:400px){
-    .landing-text{
+@media (max-width: 400px) {
+    .landingText {
         font-size: 20px;
         margin-left: 10px;
     }
-    .landing-subtext{
-        font-size:12px;
+    .landingSubtext {
+        font-size: 12px;
         margin-left: 10px;
     }
 }

@@ -42,7 +42,7 @@ export default function Articles() {
                     <div className={styles.articleBox1}>
                         <div className={styles.articleImg}>
                          {post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
-                            <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='fill' objectFit='cover' />
+                            <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='responsive' width={100} height={100} />
                         )}
                         </div>
                         <h2 className={styles.headline} dangerouslySetInnerHTML={{__html: post.title.rendered}} />

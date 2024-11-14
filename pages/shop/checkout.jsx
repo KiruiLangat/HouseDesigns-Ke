@@ -106,7 +106,7 @@ export default function CheckOutPage() {
                     <div className={styles.orderContainer}>
                         {cart.map((product) => (
                             <div className={styles.checkoutProduct} key={product.id}>
-                                <Link href={`/product/${product.slug}`}>
+                                <Link href={`/shop/product/${product.slug}`}>
                                     <a>
                                         {product.images && product.images.length > 0 && (
                                             <Image src={product.images[0].src} alt={product.name} loading='lazy' width={100} height={100} />
@@ -210,7 +210,7 @@ export default function CheckOutPage() {
                             </button>
                             <p style={{ fontSize: '14px', fontWeight: '300', marginTop: '20px', marginBottom: '0' }}>
                                 Not yet done? <span>
-                                    <Link href='/house-plans'>
+                                    <Link href='/shop/house-plans'>
                                         <a style={{ color: '#ED7D31', textDecoration: 'none' }}>
                                             Browse All Products
                                         </a>

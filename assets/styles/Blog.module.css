@@ -1,4 +1,4 @@
-.blog-container{
+.blogContainer{
     margin: auto;
     padding: 0;
     width: 100%;
@@ -12,6 +12,8 @@
         .25em 0 0 rgba(0,0,0,0),
         .5em 0 0 rgba(0,0,0,0);
     }
+
+    
     /* 40% {
       color: white;
       text-shadow:
@@ -41,32 +43,32 @@
     animation: dot 1.09s infinite;
     min-height: 50vh;
 }
-.blog-intro{
+.blogIntro{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: relative;
 }
-.blog-intro h1{
+.blogIntro h1{
     font-size: 36px;
     margin: 0;
     padding: 0;
     color: black;
     font-family: Poppins;
 }
-.test-img{
+.testImg{
     width: 93%;
     border-radius: 10px;
     height: 480px;
 }
-.test-img img{
+.testImg img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
-.overlay-info{
+.overlayInfo{
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -79,7 +81,7 @@
     border-radius: 10px;
     height: 35%;
 }
-.overlay-info h2{
+.overlayInfo h2{
     font-size: 24px;
     font-family: Poppins;
     font-weight: 400;
@@ -108,45 +110,66 @@
 
 
 @media (max-width:768px){
-    .test-img{
+    .testImg{
         margin-top: 2%;
         width: 93%;
         height: 300px;
         box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2); 
     }
-    .test-img img{
+    .testImg img{
         width: 100%;
         height: 100%;
     }
-    .overlay-info{
-        height: 50%;
+    .overlayInfo{
+        height: 45%;
+        width: 93%;
         margin-bottom: 0;
     }
-    .overlay-info h2{
-        font-size: 18px;
-        font-weight: 300;     
+    .overlayInfo h2{
+        font-size: 14px;
+        font-weight: 400;     
     }
     .excerpt{
-        
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 300;
         white-space: normal;
         overflow: visible;
+        
     }
     .date{
         font-size: 10px;
+
+        @media (prefers-color-scheme:dark){
+            color: white;
+        }
     }
    
 }
-@media (max-width:320px){
-    .overlay-info h2{
-        font-size: 16px;
+@media (max-width:400px){
+    .overlayInfo h2{
+        font-size: 14px;
     }
     .excerpt{
-        font-size: 13px;
+        font-size: 12px;
+        font-weight: 300;
+        margin-bottom: 0;
        
     }
     .date{
         font-size: 10px;
+    }
+}
+@media (max-width:320px){
+    .overlayInfo h2{
+        font-size: 14px;
+    }
+    .excerpt{
+        font-size: 11px;
+        font-weight: 300;
+        margin-bottom: 0;
+       
+    }
+    .date{
+        font-size: 8px;
     }
 }

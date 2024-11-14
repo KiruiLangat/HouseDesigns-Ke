@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
+import { CartProvider } from '../services/shop/cartContext';
 
 
 import Header from '../components/Header';
@@ -31,10 +32,12 @@ export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
-      <ToastContainer />
+      <CartProvider>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+        <ToastContainer />
+      </CartProvider>
     </ThemeProvider>
   );
 }

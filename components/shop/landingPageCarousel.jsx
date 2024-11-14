@@ -39,7 +39,6 @@ export default function LandingPageCarousel({ onSelect }) {
                 <SwiperSlide className={styles.optionContent}>Content for slide 3</SwiperSlide>
                 <SwiperSlide className={styles.optionContent}>Submit Your Brief</SwiperSlide> {/* Content for option 4 */}
             </Swiper>
-
             {/* Thumbs Swiper */}
             <Swiper
                 onSwiper={setThumbsSwiper}

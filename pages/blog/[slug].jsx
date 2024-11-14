@@ -77,7 +77,7 @@ export default function BlogPost() {
         <div className={styles.post}>
           <div className={styles.featuredImg}>
             {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
-              <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='responsive' width={700} height={475} />
+              <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='fixed' width={700} height={475} />
             )}
           </div>
           <div className={styles.content}>
@@ -89,7 +89,7 @@ export default function BlogPost() {
         <div className={styles.blogNavigation}>
           <div className={styles.previous}>
             {previousPost && (
-              <Link href={`/blog/${previousPost.slug}`}>
+              <Link href={`/blog/${previousPost.slug}`} legacyBehavior>
                 <a>
                   <h2>● Previous Post</h2>
                 </a>
@@ -98,7 +98,7 @@ export default function BlogPost() {
           </div>
           <div className={styles.next}>
             {nextPost && (
-              <Link href={`/blog/${nextPost.slug}`}>
+              <Link href={`/blog/${nextPost.slug}`} legacyBehavior>
                 <a>
                   <h2>Next Post ●</h2>
                 </a>

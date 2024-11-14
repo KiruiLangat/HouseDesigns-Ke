@@ -1,4 +1,4 @@
-.collections{
+.collections {
     width: 93%;
     max-width: 1200px;
     height: auto;
@@ -10,16 +10,16 @@
     margin: auto;
     margin-top: 10%;
 }
-.collections-title{
+.collectionsTitle {
     width: 93%;
     display: block;
 }
-.collections-title h1{
+.collectionsTitle h1 {
     font-size: 28px;
     font-weight: 300;
     margin-bottom: 0;
 }
-.collections-title h2{
+.collectionsTitle h2 {
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 5px;
@@ -29,27 +29,27 @@
         color: #6C5f5B;
     }
 }
-.collections-card-container{
+.collectionsCardContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     width: 100%;
     margin: auto;
 }
-.collections-card{
+.collectionsCard {
     width: 100%;
     height: auto;
     margin-top: 20px;
     border-radius: 10px;
 }
-.collections-card:hover{
+.collectionsCard:hover {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
 
     @media (prefers-color-scheme:dark){
         box-shadow: 0 4px 8px 0 rgba(255,255,255,0.1);
     }
 }
-.collections-card img{
+.collectionsCard img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -57,14 +57,14 @@
     filter:blur(5px);
     transition: filter 0.5s ease;
 }
-.collections-card img:hover{
+.collectionsCard img:hover {
     filter: blur(0);
 }
-.collections-card a{
+.collectionsCard a {
     text-decoration: none;
     color: black;
 }
-.collections-card h3{
+.collectionsCard h3 {
     font-size: 16px;
     font-weight: 300;
     margin-top: 10px;
@@ -77,33 +77,33 @@
     }
 }
 
-@media (max-width:768px){
-    .collections{
+@media (max-width:768px) {
+    .collections {
         width: 93%;
         margin-top: 20%;
         display: flex;
         flex-direction: column;
     }
-    .collections-title{
+    .collectionsTitle {
         width: 100%;
         display: block;
     }
-    .collections-title h1{
+    .collectionsTitle h1 {
         font-size: 24px;
         font-weight: 300;
         margin-bottom: 0;
     }
-    .collections-title h2{
+    .collectionsTitle h2 {
         font-size: 14px;
     }
-    .collections-card-container{
+    .collectionsCardContainer {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
         width: 100%;
         margin: auto;
     }
-    .collections-card{
+    .collectionsCard {
         width: 100%;
         height: auto;
         margin-top: 20px;
@@ -115,7 +115,7 @@
             box-shadow: 0 4px 8px 0 rgba(255,255,255,0.1);
         }
     }
-    .collections-card img{
+    .collectionsCard img {
         width: 100%;
         height: 150px;
         object-fit: cover;
@@ -123,7 +123,7 @@
         filter:none;
         
     }
-    .collections-card h3{
+    .collectionsCard h3 {
         font-size: 16px;
         font-weight: 300;
         margin-top: 10px;

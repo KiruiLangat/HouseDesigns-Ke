@@ -12,7 +12,7 @@ const style = {
     fontFamily: 'Poppins',
 };
 
-export default function Collections() {
+const Collections = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -56,3 +56,5 @@ export default function Collections() {
         </div>
     );
 }
+
+export default Collections;
