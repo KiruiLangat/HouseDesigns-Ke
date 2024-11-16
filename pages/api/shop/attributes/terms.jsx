@@ -1,4 +1,4 @@
-import { fetchFromWooCommerce } from '../../../services/fetchWooCommerce';
+import { fetchFromWooCommerce } from '../../../../services/fetchWooCommerce';
 
 export default async function handler(req, res) {
   const { name } = req.query;

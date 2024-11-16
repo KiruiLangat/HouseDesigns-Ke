@@ -1,10 +1,55 @@
+@keyframes dot {
+    0%, 20% {
+      color: rgba(0,0,0,0);
+      text-shadow:
+        .25em 0 0 rgba(0,0,0,0),
+        .5em 0 0 rgba(0,0,0,0);
+
+        @media (prefers-color-scheme: dark) {
+            color: rgba(255, 255, 255, 0);
+            text-shadow:
+              .25em 0 0 rgba(255, 255, 255, 0),
+              .5em 0 0 rgba(255, 255, 255, 0);
+          }
+    }
+    30% {
+      color: black;
+      text-shadow:
+        .25em 0 0 black,
+        .5em 0 0 black;
+
+        @media (prefers-color-scheme: dark) {
+            color: white;
+            text-shadow:
+              .25em 0 0 white,
+              .5em 0 0 white;
+          }
+    }
+    40% {
+      color: black;
+      text-shadow:
+        .25em 0 0 black,
+        .5em 0 0 black;
+
+        @media (prefers-color-scheme: dark) {
+            color: white;
+            text-shadow:
+              .25em 0 0 white,
+              .5em 0 0 white;
+          }
+    }
+
+}
 .loadingTerms {
-    color: #6C5f5B !important;
+    color: #6C5F5B !important;
     background-color: black;
-    width: 150px;
-    font-size: 12px;
     border-radius: 10px;
-    text-align: center;
+    padding: 10px;
+    margin-top: 0;
+    font-size: 12px;
+    text-align: left;
+    justify-self: flex-start;
+    animation: dot 1.09s infinite;
 }
 
 .optionsPopupContainer {
@@ -18,10 +63,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 10000;
+    z-index: 100000;
 
     @media (prefers-color-scheme: dark) {
-        background-color: rgba(0, 0, 0, 0.89);
+        background-color: rgba(0, 0, 0, 0.92);
     }
 }
 
@@ -112,12 +157,20 @@
     margin-top: -50px;
 }
 
+.radioChecked, .radioUnchecked{
+    width: 20px !important;
+    margin-right: 10px;
+    color: #ED7D31;
+    margin-left: 0;
+}
+
 .optionsPopUp h2 {
     font-size: 18px;
     font-weight: 300;
 }
 
 .optionsPopUp ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,12 +178,14 @@
     margin-top: -10px;
     margin-left: -30px;
     margin-bottom: 0;
+    gap:10px
 }
 
 .optionsPopUp li {
     font-size: 16px;
     font-weight: 300;
     width: 100%;
+    padding: 2px 5px;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     cursor: pointer;
@@ -144,6 +199,7 @@
     font-size: 12px;
     font-weight: 400;
     margin-top: 0;
+    
 
     @media (prefers-color-scheme: dark) {
         color: #6C5f5B;
@@ -169,6 +225,12 @@
 }
 
 @media (max-width: 768px) {
+    .loadingTerms{
+        border-radius: 10px;
+        padding: 5px;
+        font-size: 10px;
+        margin-right: 20%;
+    }
     .optionsPopupContainer {
         position: fixed;
         top: 50% !important;
@@ -177,9 +239,9 @@
         width: 93% !important;
         height: 100vh !important; /* Set a fixed height */
         overflow-y: auto; /* Enable vertical scrolling */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(181, 174, 174, 0.1);
         padding: 20px !important;
-        z-index: 1000;
+        z-index: 100000;
         margin-top: 12% !important;
         background-color: #FFFFFF;
 
@@ -199,7 +261,8 @@
     .optionsPopupTitle {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 0px;
+        align-items: center;
         width: auto;
     }
 
@@ -271,6 +334,7 @@
         font-size: 12px;
         height: auto;
         width: 100%;
+        padding: 2px;
         margin-bottom: 0;
         z-index: 100;
         background-color: #0000000D;
@@ -284,6 +348,7 @@
     .optionsPopUp p {
         font-size: 10px;
         margin-bottom: 0;
+        padding: 3px;
         color: #00000080;
 
         @media (prefers-color-scheme: dark) {

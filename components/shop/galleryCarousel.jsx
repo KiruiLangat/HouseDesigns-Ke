@@ -8,6 +8,7 @@ import { Scrollbar, Thumbs } from 'swiper/modules';
 
 import 'swiper/swiper-bundle.css';
 import 'swiper/css/scrollbar';
+import { color } from '@mui/system';
 
 const style = {
     fontFamily: 'Poppins',
@@ -38,11 +39,11 @@ export default function PdCarousel({ images, product }) {
             {/* Thumbnails */}
             <Swiper
                 onSwiper={setThumbsSwiper}
-                spaceBetween={10}
+                spaceBetween={5}
                 slidesPerView={images.length}
                 height={250}
+                width={150}
                 objectFit={'fill'}
-                borderColor={'black'}
                 freeMode={true}
                 watchSlidesProgress={true}
                 direction={'vertical'}
@@ -54,7 +55,7 @@ export default function PdCarousel({ images, product }) {
                         onClick={() => handleImageChange(index)}
                         className={`${styles.thumb} ${selectedThumb === index ? styles.thumbActive : ''}`}
                     >
-                        <Image src={src} alt={`${index + 1}`} layout="fill" objectFit="cover" />
+                        <Image src={src} alt={`${index + 1}`} layout="fill" objectFit="cover" style={{borderRadius: '10px' }} />
                     </SwiperSlide>
                 ))}
             </Swiper>

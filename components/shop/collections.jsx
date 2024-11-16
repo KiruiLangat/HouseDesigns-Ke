@@ -37,7 +37,7 @@ const Collections = () => {
             <div className={styles.collectionsCardContainer}>
                 {filteredCategories.map((category) => (
                     <div key={category.id} className={styles.collectionsCard}>
-                        <Link href={`/shop/${category.slug}`}>
+                        <Link href={`/shop/${category.slug}`} legacyBehavior>
                             <a>
                                 <Image 
                                     src={category.image ? category.image.src : '/default-thumbnail.jpg'} 

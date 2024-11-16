@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-
 import styles from '../../assets/styles/shop/landingPage.module.css';
 import '@fontsource/poppins';
-import LandingCarousel from './landingPageCarousel';
+import LandingCarousel from './LandingPageCarousel';
 
 const style = {
     fontFamily: 'Poppins',
 };
 
-const LandingPage = () => {
+export default function LandingPage() {
     const [selectedOption, setSelectedOption] = useState(null);
 
     const handleOptionSelect = (option) => {
@@ -52,6 +51,4 @@ const LandingPage = () => {
             </div>
         </div>
     );
-}
-
-export default LandingPage;
+};

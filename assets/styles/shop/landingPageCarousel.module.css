@@ -9,7 +9,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     box-sizing: border-box;
-    margin-top: -20px;
+    margin-top: 40px;
 }
 
 .optionContent {
@@ -95,6 +95,13 @@
     .thumbsSwiper {
         width: 80%;
         box-shadow: none;
+    }
+    .optionContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 }
 

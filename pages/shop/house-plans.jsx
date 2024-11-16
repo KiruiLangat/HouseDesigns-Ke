@@ -17,7 +17,7 @@ import { ReactComponent as Bathrooms } from '../../assets/images/bathroom.svg';
 import { ReactComponent as Bedrooms } from '../../assets/images/bedroom.svg';
 import { ReactComponent as Floors } from '../../assets/images/floors.svg';
 import { ReactComponent as PlinthArea } from '../../assets/images/plinth.svg';
-import OptionsPopUp from '../../components/shop/optionsPopUp';
+import OptionsPopUp from '../../components/shop/OptionsPopUp';
 import styles from '../../assets/styles/shop/Allproducts.module.css';
 import '@fontsource/poppins';
 

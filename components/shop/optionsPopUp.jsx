@@ -62,9 +62,7 @@ const OptionsPopUp = ({ product, handleClosePopUp }) => {
 
     if (!terms || terms.length === 0) {
         return (
-            <div className={styles.loadingTerms}>
-            Loading<span>...</span>
-            </div>
+            <div className={styles.loadingTerms}>loading<span>...</span></div>
         );
     }
     

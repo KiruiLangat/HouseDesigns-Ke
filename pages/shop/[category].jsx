@@ -20,7 +20,7 @@ import { ReactComponent as PlinthArea } from '../../assets/images/plinth.svg';
 import { ReactComponent as Bathrooms } from '../../assets/images/bathroom.svg';
 
 import { useCart, useWishlist } from '../../services/shop/cartContext';
-import OptionsPopUp from '../../components/shop/optionsPopUp';
+import OptionsPopUp from '../../components/shop/OptionsPopUp';
 
 const style = {
     fontFamily: 'Poppins'
@@ -115,11 +115,7 @@ export default function FilteredCategoriesPage() {
                                 </div>
                                 {isDropdownVisible && (
                                     <div className={styles.attribute1Options}>
-                                        <p>1 Bedroom</p>
-                                        <p>2 Bedrooms</p>
-                                        <p>3 Bedrooms</p>
-                                        <p>4 Bedrooms</p>
-                                        <p>5 Bedrooms</p>
+                                        <p>Bedrooms</p>
                                     </div>
                                 )}
                                 <div className={styles.attribute1} onClick={toggleDropdown}>
@@ -132,11 +128,7 @@ export default function FilteredCategoriesPage() {
                                 </div>
                                 {isDropdownVisible && (
                                     <div className={styles.attribute1Options}>
-                                        <p>1 Bathroom</p>
-                                        <p>2 Bathrooms</p>
-                                        <p>3 Bathrooms</p>
-                                        <p>4 Bathrooms</p>
-                                        <p>5 Bathrooms</p>
+                                        <p>Bathroom</p>
                                     </div>
                                 )}
                                 <div className={styles.attribute1} onClick={toggleDropdown}>
@@ -149,11 +141,7 @@ export default function FilteredCategoriesPage() {
                                 </div>
                                 {isDropdownVisible && (
                                     <div className={styles.attribute1Options}>
-                                        <p>1 Floor</p>
-                                        <p>2 Floors</p>
-                                        <p>3 Floors</p>
-                                        <p>4 Floors</p>
-                                        <p>5 Floors</p>
+                                        <p>Floors</p>
                                     </div>
                                 )}
                                 <div className={styles.attribute1} onClick={toggleDropdown}>
@@ -167,10 +155,6 @@ export default function FilteredCategoriesPage() {
                                 {isDropdownVisible && (
                                     <div className={styles.attribute1Options}>
                                         <p>100m<sup>2</sup></p>
-                                        <p>200m<sup>2</sup></p>
-                                        <p>300m<sup>2</sup></p>
-                                        <p>400m<sup>2</sup></p>
-                                        <p>500m<sup>2</sup></p>
                                     </div>
                                 )}
                             </div>

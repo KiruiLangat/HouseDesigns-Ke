@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../../assets/styles/shop/newPlans.module.css'
-import { ReactComponent as Star } from '../../assets/images/stars.svg'
 import { fetchCategories, fetchProducts } from '../../services/shop/woocommerce'
-import { ReactComponent as Bathrooms } from '../../assets/images/bathroom.svg'
-import { ReactComponent as Bedrooms } from '../../assets/images/bedroom.svg'
-import { ReactComponent as Floors } from '../../assets/images/floors.svg'
-import { ReactComponent as PlinthArea } from '../../assets/images/plinth.svg'
-import { ReactComponent as Arrow } from '../../assets/images/Arrow.svg'
+import Star from '../../assets/images/stars.svg';
+import Bedrooms from '../../assets/images/bedroom.svg';
+import Bathrooms from '../../assets/images/bathroom.svg';
+import Floors from '../../assets/images/floors.svg';
+import PlinthArea from '../../assets/images/plinth.svg';
+import Arrow from '../../assets/images/Arrow.svg';
 
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -16,13 +16,17 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { useCart, useWishlist } from '../../services/shop/cartContext'
 
-import OptionsPopUp from './optionsPopUp'
+import OptionsPopUp from './OptionsPopUp'
 
 import '@fontsource/poppins'
 
 const style = {
     fontFamily: 'Poppins'
 }
+
+const SvgImage = ({ src, alt, className }) => (
+    <Image src={src} alt={alt} className={className} />
+)
 
 const NewPlans = () => {
     const [products, setProducts] = useState([]);
@@ -74,13 +78,13 @@ const NewPlans = () => {
                     <Link href={`/shop/New Plans`}>
                         <div className={styles.plansNavCTA}>
                             <p>See More</p>
-                            <Arrow className={styles.iconArrowNp} />
+                            <SvgImage src={Arrow} alt="Arrow" className={styles.iconArrowNp} />
                         </div>
                     </Link>
                 </div>
                 {products.map(product => (
                     <div key={product.id} className={styles.newPlansCard}>
-                        <Link href={`/product/${product.slug}`}>
+                        <Link href={`/shop/product/${product.slug}`}>
                             <Image src={product.images[0].src} alt={product.name} loading='lazy' width={500} height={500} />
                         </Link>
                         <div className={styles.cartWishlist}>
@@ -122,7 +126,7 @@ const NewPlans = () => {
                         </div>
 
                         <div className={styles.newIndicator}>
-                            <Star className={styles.iconIndicator} />
+                            <SvgImage src={Star} alt="New" className={styles.iconIndicator} />
                             <p>New</p>
                         </div>
                         <div className={styles.newPlansCardTitle}>
@@ -132,20 +136,20 @@ const NewPlans = () => {
 
                         <div className={styles.newPlansCardDetail}>
                             <div className={styles.newPlansCardDetails}>
-                                <Bedrooms className={styles.iconGrid} />
+                                <SvgImage src={Bedrooms} alt="Bedrooms" className={styles.iconGrid} />
                                 <p>{product.attributes.find(attr => attr.name === 'Bedrooms')?.options[0]} Bedrooms</p>
                             </div>
 
                             <div className={styles.newPlansCardDetails}>
-                                <Floors className={styles.iconGridFloors} />
+                                <SvgImage src={Floors} alt="Floors" className={styles.iconGridFloors} />
                                 <p>{product.attributes.find(attr => attr.name === 'Floors')?.options[0]} Floor(s)</p>
                             </div>
                             <div className={styles.newPlansCardDetails}>
-                                <PlinthArea className={styles.iconGrid} />
+                                <SvgImage src={PlinthArea} alt="Plinth Area" className={styles.iconGrid} />
                                 <p>{product.attributes.find(attr => attr.name === 'Plinth Area')?.options[0]}</p>
                             </div>
                             <div className={styles.newPlansCardDetails}>
-                                <Bathrooms className={styles.iconGrid} />
+                                <SvgImage src={Bathrooms} alt="Bathrooms" className={styles.iconGrid} />
                                 <p>{product.attributes.find(attr => attr.name === 'Bathrooms')?.options[0]} Bathrooms</p>
                             </div>
                         </div>

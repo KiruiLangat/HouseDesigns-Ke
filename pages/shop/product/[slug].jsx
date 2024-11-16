@@ -5,11 +5,11 @@ import Link from 'next/link';
 import styles from '../../../assets/styles/shop/productDescription.module.css';
 
 import '@fontsource/poppins';
-import { fetchAllProducts, fetchAttributesTerms, fetchProductVariations } from './woocommerce';
-import { ReactComponent as Bedrooms } from '../../../assets/images/bedroom.svg';
-import { ReactComponent as Bathrooms } from '../../../assets/images/bathroom.svg';
-import { ReactComponent as Floors } from '../../../assets/images/floors.svg';
-import { ReactComponent as PlinthArea } from '../../../assets/images/plinth.svg';
+import { fetchAllProducts, fetchAttributesTerms, fetchProductVariations } from '../../../services/shop/woocommerce';
+import Bedrooms from '../../../assets/images/bedroom.svg';
+import Bathrooms from '../../../assets/images/bathroom.svg';
+import Floors from '../../../assets/images/floors.svg';
+import PlinthArea from '../../../assets/images/plinth.svg';
 
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
@@ -18,13 +18,17 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
-import GalleryCarousel from '../../../components/shop/galleryCarousel';
+import GalleryCarousel from '../../../components/shop/GalleryCarousel';
 
 import { useCart, useWishlist } from '../../../services/shop/cartContext';
 
 const style = {
     fontFamily: 'Poppins',
 };
+
+const SvgImage = ({ src, alt, className }) => (
+    <Image src={src} alt={alt} className={className} />
+);
 
 export default function ProductDescription() {
     const router = useRouter();
@@ -122,19 +126,19 @@ export default function ProductDescription() {
                     <div className={styles.attributesDescription}>
                         <div className={styles.productDescFeatures}>
                             <div className={styles.productDescFeature}>
-                                <Bedrooms className={styles.icon} />
+                                <SvgImage src={Bedrooms} alt={'Bedrooms'} className={styles.icon} />
                                 <p>{product.attributes.find((attr) => attr.name === 'Bedrooms')?.options} Bedrooms</p>
                             </div>
                             <div className={styles.productDescFeature}>
-                                <Bathrooms className={styles.icon} />
+                                <SvgImage src={Bathrooms} alt={'Bathrooms'} className={styles.icon} />
                                 <p>{product.attributes.find((attr) => attr.name === 'Bathrooms')?.options} Bathrooms</p>
                             </div>
                             <div className={styles.productDescFeature}>
-                                <Floors className={styles.iconFloors} />
+                                <SvgImage src={Floors} alt={'Floors'} className={styles.iconFloors} />
                                 <p>{product.attributes.find((attr) => attr.name === 'Floors')?.options} Floor(s)</p>
                             </div>
                             <div className={styles.productDescFeature}>
-                                <PlinthArea className={styles.icon} />
+                                <SvgImage src={PlinthArea} alt={'Plinth Area'} className={styles.icon} />
                                 <p>{product.attributes.find((attr) => attr.name === 'Plinth Area')?.options}</p>
                             </div>
                         </div>
@@ -177,7 +181,7 @@ export default function ProductDescription() {
                 <div className={styles.similarProductsList}>
                     {similarProducts.map((product) => (
                         <div key={product.id} className={styles.similarProducts}>
-                            <Link href={`/shop/product/${product.slug}`}>
+                            <Link href={`/shop/product/${product.slug}`} legacyBehavior>
                                 <a>
                                     <Image src={product.images[0].src} alt={product.name} width={500} height={500} />
                                 </a>
@@ -216,19 +220,19 @@ export default function ProductDescription() {
                             </div>
                             <div className={styles.newPlansCardDetail}>
                                 <div className={styles.newPlansCardDetails}>
-                                    <Bedrooms className={styles.iconGrid} />
+                                    <SvgImage src={Bedrooms} alt={'Bedrooms'} className={styles.iconGrid} />
                                     <p>{product.attributes.find((attr) => attr.name === 'Bedrooms')?.options[0]} Bedrooms</p>
                                 </div>
                                 <div className={styles.newPlansCardDetails}>
-                                    <Floors className={styles.iconGridFloors} />
+                                    <SvgImage src={Floors} alt={'Floors'} className={styles.iconGridFloors} />
                                     <p>{product.attributes.find((attr) => attr.name === 'Floors')?.options[0]} Floor(s)</p>
                                 </div>
                                 <div className={styles.newPlansCardDetails}>
-                                    <PlinthArea className={styles.iconGrid} />
+                                    <SvgImage src={PlinthArea} alt={'Plinth Area'} className={styles.iconGrid} />
                                     <p>{product.attributes.find((attr) => attr.name === 'Plinth Area')?.options[0]}</p>
                                 </div>
                                 <div className={styles.newPlansCardDetails}>
-                                    <Bathrooms className={styles.iconGrid} />
+                                    <SvgImage src={Bathrooms} alt={'Bathrooms'} className={styles.iconGrid} />
                                     <p>{product.attributes.find((attr) => attr.name === 'Bathrooms')?.options[0]} Bathrooms</p>
                                 </div>
                             </div>

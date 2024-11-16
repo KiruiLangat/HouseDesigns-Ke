@@ -22,8 +22,8 @@ export default function LandingPageCarousel({ onSelect }) {
         }
     }, [selectedThumb, thumbsSwiper]);
 
-    const thumbColors = ['thumb-color-1', 'thumb-color-2', 'thumb-color-3', 'thumb-color-4'];
-    const shadowClasses = ['main-swiper-shadow-1', 'main-swiper-shadow-2', 'main-swiper-shadow-3', 'main-swiper-shadow-4'];
+    const thumbColors = ['thumbColor1', 'thumbColor2', 'thumbColor3', 'thumbColor4'];
+    const shadowClasses = ['mainSwiperShadow1', 'mainSwiperShadow2', 'mainSwiperShadow3', 'mainSwiperShadow4'];
 
     return (
         <div className={styles.landingCarousel}>

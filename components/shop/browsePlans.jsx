@@ -3,22 +3,26 @@ import { fetchCategories, fetchProducts } from '../../services/shop/woocommerce'
 import styles from '../../assets/styles/shop/browsePlans.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ReactComponent as Stars } from '../../assets/images/stars.svg';
-import { ReactComponent as Bedroom } from '../../assets/images/bedroom.svg';
-import { ReactComponent as Bathroom } from '../../assets/images/bathroom.svg';
-import { ReactComponent as Floors } from '../../assets/images/floors.svg';
-import { ReactComponent as PlinthArea } from '../../assets/images/plinth.svg';
-import { ReactComponent as Arrow } from '../../assets/images/Arrow.svg';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { useCart, useWishlist } from '../../services/shop/cartContext';
-import OptionsPopUp from './optionsPopUp';
+import OptionsPopUp from './OptionsPopUp';
+import Stars from '../../assets/images/stars.svg';
+import Bedroom from '../../assets/images/bedroom.svg';
+import Bathroom from '../../assets/images/bathroom.svg';
+import Floors from '../../assets/images/floors.svg';
+import PlinthArea from '../../assets/images/plinth.svg';
+import Arrow from '../../assets/images/Arrow.svg';
 
 const style = {
     fontFamily: 'Poppins'
 };
+
+const SvgImage = ({ src, alt, className }) => (
+    <Image src={src} alt={alt} className={className} />
+);
 
 const BrowsePlans = () => {
     // Fetching categories from woocommerce
@@ -114,7 +118,7 @@ const BrowsePlans = () => {
                         <Link href={`/shop/${selectedCategory}`}>
                             <div className={styles.plansNav}>
                                 <p>See More</p>
-                                <Arrow className={styles.iconArrow} />
+                                <SvgImage src={Arrow} alt="Arrow" className={styles.iconArrow} />
                             </div>
                         </Link>
                     </div>
@@ -122,7 +126,7 @@ const BrowsePlans = () => {
                     {products.length > 0 && (
                         <div className={styles.landingPlans}>
                             <div className={styles.bigPlanSample}>
-                                <Link href={`/product/${products[0]?.slug}`}>
+                                <Link href={`/shop/product/${products[0]?.slug}`}>
                                     <Image src={products[0]?.images[0]?.src} alt={products[0]?.name} loading='lazy' width={500} height={500} />
                                 </Link>
                                 <div className={styles.cartWishlist}>
@@ -162,7 +166,7 @@ const BrowsePlans = () => {
                                 <div className={styles.previewDetailsContainer}>
                                     <div className={styles.previewDetailsTitle}>
                                         <div className={styles.starPlan}>
-                                            <Stars className={styles.iconPopular} />
+                                            <SvgImage src={Stars} alt="Stars" className={styles.iconPopular} />
                                             <p>Most Popular Plan</p>
                                         </div>
                                         <div className={styles.previewDetailsTitlePricing}>
@@ -173,19 +177,19 @@ const BrowsePlans = () => {
                                     <div className={styles.previewDetails}>
                                         <div className={styles.previewDetailsInfo}>
                                             <div className={styles.Bedrooms}>
-                                                <Bedroom className={styles.icon} />
+                                                <SvgImage src={Bedroom} alt="Bedroom" className={styles.icon} />
                                                 <p>{products[0].attributes.find(attr => attr.name === 'Bedrooms')?.options[0]} Bedrooms</p>
                                             </div>
                                             <div className={styles.Bathrooms}>
-                                                <Bathroom className={styles.icon} />
+                                                <SvgImage src={Bathroom} alt="Bathroom" className={styles.icon} />
                                                 <p>{products[0].attributes.find(attr => attr.name === 'Bathrooms')?.options[0]} Bathrooms</p>
                                             </div>
                                             <div className={styles.Floors}>
-                                                <Floors className={styles.iconFloors} />
+                                                <SvgImage src={Floors} alt="Floors" className={styles.iconFloors} />
                                                 <p>{products[0].attributes.find(attr => attr.name === 'Floors')?.options[0]} Floor(s)</p>
                                             </div>
                                             <div className={styles.Plinth}>
-                                                <PlinthArea className={styles.icon} />
+                                                <SvgImage src={PlinthArea} alt="Plinth Area" className={styles.icon} />
                                                 <p>{products[0].attributes.find(attr => attr.name === 'Plinth Area')?.options[0]}</p>
                                             </div>
                                         </div>
@@ -196,7 +200,7 @@ const BrowsePlans = () => {
                                 {products[0].images.length >= 2 ? (
                                     products[0].images.slice(1, 3).map((image, index) => (
                                         <div key={index} className={styles.bpsi1}>
-                                            <Link href={`/products/${products[0].slug}`}>
+                                            <Link href={`/shop/product/${products[0].slug}`}>
                                                 <Image src={image.src} alt={products[0].name} loading='lazy' width={500} height={500} />
                                             </Link>
                                         </div>

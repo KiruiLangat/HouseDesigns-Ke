@@ -34,27 +34,27 @@ const Assurance = () => {
                 </div>
             </div>
             <div className={styles.policyAssurance}>
-                <Link href='/privacy-policy'>
+                <Link href='/shop/privacy-policy'>
                     <div className={styles.policies}>
                         <p>Privacy Policy</p>
                     </div>
                 </Link>
-                <Link href='/terms-conditions'> 
+                <Link href='/shop/terms-conditions'> 
                     <div className={styles.policies}>
                         <p>Terms & Conditions</p>
                     </div>
                 </Link>
-                <Link href='/terms-of-service'>
+                <Link href='/shop/terms-of-service'>
                     <div className={styles.policies}>
                         <p>Terms of Service</p>
                     </div>
                 </Link>
-                <Link href='/refund-policy'>
+                <Link href='/shop/refund-policy'>
                     <div className={styles.policies}>
                         <p>Refund Policy</p>
                     </div>
                 </Link>
-                <Link href='/faqs'>
+                <Link href='/shop/faqs'>
                     <div className={styles.policies}>
                         <p>FAQs?</p>
                     </div>

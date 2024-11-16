@@ -39,10 +39,16 @@
 }
 .categories {
     padding-left: 0 !important;
+    list-style: none;
+    display: flex;
+    flex-direction:row;
 }
 .categories li {
     padding-left: 0 !important;
     margin-top: 0;
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: 300;
 }
 .defaultCategory {
     color: #ED7D31;
@@ -125,7 +131,7 @@
     width: 27px;
     margin: 5px;
     top: 10px;
-    z-index: 10;
+    z-index: 1;
     background-color: #fffffd;
     border-radius: 10px;
     @media (prefers-color-scheme: dark) {
@@ -154,7 +160,7 @@
 .starPlan {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin-top: 0;
 }
@@ -168,7 +174,9 @@
     }
 }
 .iconPopular {
-    width: 15px;
+    width: 15px !important;
+    height: 15px !important;
+    
 }
 .previewDetailsContainer {
     display: grid;
@@ -235,21 +243,21 @@
 }
 .icon {
     margin-top: 10px;
-    width: 30px;
-    height: auto;
+    width: 25px !important;
+    height: 25px !important;
     @media (prefers-color-scheme: dark) {
         filter: invert(0.9) hue-rotate(180deg);
     }
 }
 .iconFloors {
     margin-top: 10px;
-    width: 30px;
-    height: 30px;
+    width: 25px !important;
+    height: 25px !important;
     @media (prefers-color-scheme: dark) {
-        filter: invert(0.9) hue-rotate(180deg);
+        filter: invert(0.9) hue-rotate(180deg) !important;
     }
 }
-.bedrooms, .bathrooms, .floors, .plinth {
+.Bedrooms, .Bathrooms, .Floors, .Plinth {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -327,6 +335,7 @@
         font-size: 12px;
         text-align: left;
         margin: auto;
+        margin-left: 0;
     }
     .plansNav {
         display: flex;
@@ -371,6 +380,10 @@
         @media (prefers-color-scheme: dark) {
             color: #6C5f5B;
         }
+    }
+    .iconPopular{
+        width: 12px !important;
+        height: 12px !important;
     }
     .previewDetailsTitlePricing {
         display: flex;
