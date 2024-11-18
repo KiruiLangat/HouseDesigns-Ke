@@ -13,19 +13,23 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { useCart, useWishlist } from '../../services/shop/cartContext';
-import { ReactComponent as Bathrooms } from '../../assets/images/bathroom.svg';
-import { ReactComponent as Bedrooms } from '../../assets/images/bedroom.svg';
-import { ReactComponent as Floors } from '../../assets/images/floors.svg';
-import { ReactComponent as PlinthArea } from '../../assets/images/plinth.svg';
+import Bathrooms from '../../assets/images/bathroom.svg';
+import Bedrooms from '../../assets/images/bedroom.svg';
+import Floors from '../../assets/images/floors.svg';
+import PlinthArea from '../../assets/images/plinth.svg';
 import OptionsPopUp from '../../components/shop/OptionsPopUp';
-import styles from '../../assets/styles/shop/Allproducts.module.css';
+import styles from '../../assets/styles/shop/HousePlans.module.css';
 import '@fontsource/poppins';
 
 const style = {
     fontFamily: 'Poppins',
 };
 
-export default function Allproducts({ category }) {
+const SvgImage = ({ src, alt, className }) => {
+    return <Image src={src} alt={alt} className={className} />;
+}
+
+export default function HousePlans({ category }) {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('all');
@@ -375,23 +379,23 @@ export default function Allproducts({ category }) {
                                         </div>
                                         <div className={styles.productsCardDetail}>
                                             <div className={styles.productsCardDetails}>
-                                                <Bedrooms className={styles.iconGrid} />
+                                                <SvgImage src={Bedrooms} alt="Bedrooms" className={styles.iconGrid} />
                                                 <p>
                                                     {product.attributes.find((attr) => attr.name === 'Bedrooms')?.options[0]} Bedrooms
                                                 </p>
                                             </div>
                                             <div className={styles.productsCardDetails}>
-                                                <Floors className={styles.iconGridFloors} />
+                                                <SvgImage src={Floors} alt="Floors" className={styles.iconGridFloors} />
                                                 <p>
                                                     {product.attributes.find((attr) => attr.name === 'Floors')?.options[0]} Floor(s)
                                                 </p>
                                             </div>
                                             <div className={styles.productsCardDetails}>
-                                                <PlinthArea className={styles.iconGrid} />
+                                                <SvgImage src={PlinthArea} alt="Plinth Area" className={styles.iconGrid} />
                                                 <p>{product.attributes.find((attr) => attr.name === 'Plinth Area')?.options[0]}</p>
                                             </div>
                                             <div className={styles.productsCardDetails}>
-                                                <Bathrooms className={styles.iconGrid} />
+                                                <SvgImage src={Bathrooms} alt="Bathrooms" className={styles.iconGrid} />
                                                 <p>
                                                     {product.attributes.find((attr) => attr.name === 'Bathrooms')?.options[0]} Bathrooms
                                                 </p>

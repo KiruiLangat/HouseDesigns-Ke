@@ -4,4 +4,5 @@ export default {
     images: {
         domains: ['housedesigns.co.ke'],
     },
+    output:'export',
 };

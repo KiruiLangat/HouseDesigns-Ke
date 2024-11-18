@@ -339,10 +339,49 @@
     border-radius: 10px;
     margin-bottom: 0;
 }
+.cartWishlist {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    right: 0;
+    width: 27px;
+    margin: 5px;
+    top: 10px;
+    z-index: 10;
+    background-color: #fffffd;
+    border-radius: 10px;
+    @media (prefers-color-scheme: dark) {
+        background-color: #000000;
+    }
+}
+.wishlist, .addCart {
+    margin: 5px;
+}
+.iconWishlist {
+    cursor: pointer;
+    @media (prefers-color-scheme: dark) {
+        color: #6C5f5B;
+    }
+}
+.addCart {
+    align-self: center !important;
+}
+.iconAddCart {
+    cursor: pointer;
+    align-self: center;
+    @media (prefers-color-scheme: dark) {
+        color: #6C5f5B;
+    }
+}
 .productsCardDetail {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
     margin-top: 10px;
+    
 }
 .productsCardTitle {
     display: flex;
@@ -387,6 +426,24 @@
 
     @media(prefers-color-scheme:dark){
         color: #6C5f5B;
+    }
+}
+
+.iconGrid {
+    width: 25px !important;
+    height: auto !important;
+
+    @media (prefers-color-scheme:dark){
+        filter: invert(0.9) hue-rotate(180deg);
+    }
+
+}
+.iconGridFloors {
+    width: 25px !important;
+    height: 25px !important;
+
+    @media (prefers-color-scheme:dark){
+        filter: invert(0.9) hue-rotate(180deg);
     }
 }
 

@@ -31,12 +31,14 @@
     font-weight: 300;
     padding: 10px;
     margin-right:35px;
+    cursor: pointer;
 }
 
 .header li a {
     text-decoration: none;
     color: black;
     align-items: center;
+    cursor: pointer;
 
     @media (prefers-color-scheme: dark) {
         color: #6C5f5B;

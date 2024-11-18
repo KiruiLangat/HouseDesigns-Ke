@@ -55,6 +55,7 @@ export default function Header() {
                         <li>
                             <ScrollLink
                                 to="about-us"
+                                cursor="pointer"
                                 spy={true}
                                 smooth={true}
                                 duration={500}
