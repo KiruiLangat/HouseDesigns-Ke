@@ -31,8 +31,12 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
   }, [wishlist]);
 
-  const handleAddToCart = (product) => {
-    setCart([...cart, product]);
+  const handleAddToCart = (product, selectedPrice, selectedOption) => {
+    setCart((prevCart) => {
+      const updatedCart = [...prevCart, { ...product, selectedPrice, selectedOptionDescription: selectedOption.description }];
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      return updatedCart;
+    });
     toast.success('Added to cart');
   };
 

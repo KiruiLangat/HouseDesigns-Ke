@@ -98,6 +98,14 @@
         color: #ffffff80;
     }
 }
+
+.radioChecked, .radioUnchecked{
+    width: 20px !important;
+    margin-right: 10px;
+    color: #ED7D31;
+    margin-left: 0;
+}
+
 .checkoutDetails {
     display: flex;
     flex-direction: column;
@@ -209,7 +217,7 @@
         color: #ffffff80;
     }
 }
-::placeholder {
+.mpesaInput input::placeholder {
     font-size: 12px;
     font-weight: 300;
     padding-left: 10px;

@@ -92,12 +92,12 @@ export default function CheckOutPage() {
     }
 
     return (
-        <div className={styles.checkoutContainer} style={style}>
+        <div className={styles.checkoutContainer} style={{ fontFamily: 'Poppins' }}>
             <h1>Complete Your Order!</h1>
             {cart.length === 0 ? (
                 <div className={styles.emptyCart}>
                     <p>Add Items to Cart</p>
-                    <Link href="/cart">
+                    <Link href="/shop/cart" legacyBehavior>
                         <a>Go to Cart</a>
                     </Link>
                 </div>
@@ -106,7 +106,7 @@ export default function CheckOutPage() {
                     <div className={styles.orderContainer}>
                         {cart.map((product) => (
                             <div className={styles.checkoutProduct} key={product.id}>
-                                <Link href={`/shop/product/${product.slug}`}>
+                                <Link href={`/shop/product/${product.slug}`} legacyBehavior>
                                     <a>
                                         {product.images && product.images.length > 0 && (
                                             <Image src={product.images[0].src} alt={product.name} loading='lazy' width={100} height={100} />
@@ -210,7 +210,7 @@ export default function CheckOutPage() {
                             </button>
                             <p style={{ fontSize: '14px', fontWeight: '300', marginTop: '20px', marginBottom: '0' }}>
                                 Not yet done? <span>
-                                    <Link href='/shop/house-plans'>
+                                    <Link href='/shop/house-plans' legacyBehavior>
                                         <a style={{ color: '#ED7D31', textDecoration: 'none' }}>
                                             Browse All Products
                                         </a>

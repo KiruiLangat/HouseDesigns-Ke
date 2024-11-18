@@ -39,6 +39,7 @@ export default function CartPage (){
                             <p>{product.selectedOptionDescription}</p>
                             
                             <div className={styles.removeCart}>
+                                {console.log('Selected Price:', product.selectedPrice)}
                                 {product.selectedPrice !== null ? (
                                 <h3>${product.selectedPrice}</h3>
                             ) : (
