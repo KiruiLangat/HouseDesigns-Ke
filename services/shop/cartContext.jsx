@@ -8,6 +8,7 @@ const WishlistContext = createContext();
 export const useCart = () => useContext(CartContext);
 export const useWishlist = () => useContext(WishlistContext);
 
+// A provider Component
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);

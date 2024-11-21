@@ -182,6 +182,43 @@
     height: 200px;
     border-radius: 10px;
 }
+.cartWishlist {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    right: 0;
+    width: 27px;
+    margin: 5px;
+    top: 10px;
+   
+    background-color: #fffffd;
+    border-radius: 10px;
+    @media (prefers-color-scheme: dark) {
+        background-color: #000000;
+    }
+}
+.wishlist, .addCart {
+    margin: 5px;
+}
+.iconWishlist {
+    cursor: pointer;
+    @media (prefers-color-scheme: dark) {
+        color: #6C5f5B;
+    }
+}
+.addCart {
+    align-self: center !important;
+}
+.iconAddCart {
+    cursor: pointer;
+    align-self: center;
+    @media (prefers-color-scheme: dark) {
+        color: #6C5f5B;
+    }
+}
 .filteredProductsCardTitle {
     flex-direction: row;
     align-items: baseline;
@@ -207,7 +244,7 @@
 }
 .filteredProductsCardDetail {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     width: 100%;
     margin-top: 10px;
@@ -215,6 +252,40 @@
     border-radius: 10px;
     @media (prefers-color-scheme: dark) {
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
+}
+.newPlansCardDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: auto;
+    width: auto;
+    
+}
+.iconGrid {
+    width: 20px !important;
+    height: 20px !important;
+
+    @media (prefers-color-scheme:dark){
+        filter: invert(0.9) hue-rotate(180deg);
+    }
+
+}
+.iconGridFloors {
+    width: 20px !important;
+    height: 20px !important;
+
+    @media (prefers-color-scheme:dark){
+        filter: invert(0.9) hue-rotate(180deg);
+    }
+}
+.newPlansCardDetails p{
+    font-size: 12px;
+    font-weight: 300;
+
+    @media (prefers-color-scheme:dark){
+        color: #6C5f5B;
     }
 }
 @media (max-width: 768px) {
@@ -315,5 +386,8 @@
         width: 100%;
         height: 250px;
         border-radius: 10px;
+    }
+    .filteredProductsCardDetail{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }

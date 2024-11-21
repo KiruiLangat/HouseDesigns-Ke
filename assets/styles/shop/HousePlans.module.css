@@ -304,7 +304,7 @@
 .products {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 5px;
+    grid-gap: 10px;
     margin-top: 20px;
 }
 .productsCard {
@@ -350,7 +350,6 @@
     width: 27px;
     margin: 5px;
     top: 10px;
-    z-index: 10;
     background-color: #fffffd;
     border-radius: 10px;
     @media (prefers-color-scheme: dark) {
@@ -368,6 +367,7 @@
 }
 .addCart {
     align-self: center !important;
+    
 }
 .iconAddCart {
     cursor: pointer;
@@ -430,8 +430,8 @@
 }
 
 .iconGrid {
-    width: 25px !important;
-    height: auto !important;
+    width: 20px !important;
+    height: 20px !important;
 
     @media (prefers-color-scheme:dark){
         filter: invert(0.9) hue-rotate(180deg);
@@ -439,8 +439,8 @@
 
 }
 .iconGridFloors {
-    width: 25px !important;
-    height: 25px !important;
+    width: 20px !important;
+    height: 20px !important;
 
     @media (prefers-color-scheme:dark){
         filter: invert(0.9) hue-rotate(180deg);

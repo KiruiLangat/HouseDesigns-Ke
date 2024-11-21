@@ -63,10 +63,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 100000;
+    z-index: 3;
 
     @media (prefers-color-scheme: dark) {
-        background-color: rgba(0, 0, 0, 0.92);
+        background-color: rgba(0, 0, 0, 0.95);
     }
 }
 

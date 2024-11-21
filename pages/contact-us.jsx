@@ -50,14 +50,14 @@ export default function ContactUs() {
         <meta name='title' content='Contact Us' />
         <meta name='description' content='Get in touch with us. Reach out to us and let us create something extraordinary together.' />
         <meta property='og:description' content='Get in touch with us. Reach out to us and let us create something extraordinary together' />
-        <meta property='og:image' content='https://housedesigns.co.ke/projectMgmt.webp' />
+        <meta property='og:image' content='/projectMgmt.webp' />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='600' />
         <meta property='og:url' content='https://housedesigns.co.ke/contact-us' />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:title' content='Contact Us' />
         <meta name='twitter:description' content='Get in touch with us. Reach out to us and let us create something extraordinary together' />
-        <meta name='twitter:image' content='https://housedesigns.co.ke/projectMgmt.webp' />
+        <meta name='twitter:image' content='/projectMgmt.webp' />
         <meta name='twitter:image:width' content='1024' />
         <meta name='twitter:image:height' content='512' />
         <meta name='twitter:url' content='https://housedesigns.co.ke/contact-us' />
