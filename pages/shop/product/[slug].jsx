@@ -20,6 +20,7 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 import GalleryCarousel from '../../../components/shop/GalleryCarousel';
+import OptionsPopUp from '../../../components/shop/OptionsPopUp';
 
 import { useCart, useWishlist } from '../../../services/shop/cartContext';
 
@@ -40,9 +41,13 @@ export default function ProductDescription() {
     const [selectedOption, setSelectedOption] = useState(null);
     const [selectedPrice, setSelectedPrice] = useState(null);
     const [similarProducts, setSimilarProducts] = useState([]);
+    const [showOptionsPopUp, setShowOptionsPopUp] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
     const { cart, handleAddToCart, handleRemoveFromCart } = useCart();
     const { handleAddToWishlist, wishlist, handleRemoveFromWishlist } = useWishlist();
+
+   
 
     const isInCart = (product) => cart.some((item) => item && item.slug === product.slug);
     const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
@@ -83,6 +88,10 @@ export default function ProductDescription() {
         fetchSimilarProducts();
     }, [product]);
 
+    const handleClosePopUp = () => {
+        setShowOptionsPopUp(false);
+    };
+    
     const getServiceOptionTerms = async () => {
         try {
             const terms = await fetchAttributesTerms('Service Option');
@@ -222,16 +231,32 @@ export default function ProductDescription() {
                                 </div>
                                 <div
                                     className={styles.addCart}
-                                    onClick={() =>
-                                        isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product)
-                                    }
+                                    onClick={() => {
+                                        setSelectedProduct(product);
+                                        setShowOptionsPopUp(true);
+                                    }}
                                 >
                                     {cart.includes(product) ? (
                                         <ShoppingBagIcon className={styles.iconAddCart} />
                                     ) : (
                                         <ShoppingBagOutlinedIcon className={styles.iconAddCart} />
-                                    )}
+                                    )}                    
                                 </div>
+                                {showOptionsPopUp && selectedProduct === product && (
+                                                <OptionsPopUp
+                                                    product={selectedProduct}
+                                                    onClose={() => setShowOptionsPopUp(false)}
+                                                    setSelectedPrice={setSelectedPrice}
+                                                    selectedPrice={selectedPrice}
+                                                    handleClosePopUp={handleClosePopUp}
+                                                    onSelectOption={(_option) => {
+                                                        isInCart(selectedProduct)
+                                                            ? handleRemoveFromCart(selectedProduct)
+                                                            : handleAddToCart(selectedProduct, selectedPrice);
+                                                        setShowOptionsPopUp(false);
+                                                    }}
+                                                />
+                                            )}
                             </div>
                             <div className={styles.similarProductsTitle}>
                                 <h3>{product.name}</h3>
