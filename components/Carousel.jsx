@@ -69,7 +69,7 @@ export default function Carousel({ sub_category_name }) {
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>
-            <Link href={`/projects/${sub_category_name}/${project.title}`} legacyBehavior>
+            <Link href={`/projects/${project.title}`} legacyBehavior>
               <a>
                 <Image src={project.image_url} alt={project.title} layout="fill" objectFit='cover' width={500} height={300} />
                 <div className={styles.carouselOverlay1}>

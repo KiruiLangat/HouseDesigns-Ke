@@ -30,7 +30,7 @@
     width: auto;
 }
 .filterIcon {
-    height: 10px;
+    width: 18px;
     @media (prefers-color-scheme: dark) {
         color: #6C5f5B;
     }
@@ -69,6 +69,9 @@
     @media (prefers-color-scheme: dark) {
         color: #6C5f5b;
     }
+}
+.filterSearchBar > input:focus {
+    outline: none;
 }
 .filterSearchBar > text {
     font-size: 14px;
@@ -116,6 +119,12 @@
     align-items: flex-start;
     width: 100%;
     gap: 10px;
+}
+.iconDrop{
+
+    @media (prefers-color-scheme:dark){
+        fill: #6C5f5B;
+    }
 }
 .attribute1 {
     cursor: pointer;
@@ -286,6 +295,15 @@
 
     @media (prefers-color-scheme:dark){
         color: #6C5f5B;
+    }
+}
+.iconSearchProducts{
+    width: 20px !important;
+    height: 20px !important;
+    margin-left: 5px;
+
+    @media (prefers-color-scheme:dark){
+        fill: #6C5f5B;
     }
 }
 @media (max-width: 768px) {

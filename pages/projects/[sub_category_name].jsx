@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -17,41 +17,15 @@ const subCategoryMap = {
     tiny_homes: 4,
 };
 
-export default function Projects() {
-    const [projects, setProjects] = useState([]);
-    const router = useRouter();
-    const { sub_category_name } = router.query;
+const imageMapping = {
+    bungalows: "https://housedesigns.co.ke/bungalows.png",
+    maisonettes: "https://housedesigns.co.ke/OurExpertise.jpg",
+    apartments: "https://housedesigns.co.ke/apartments.jpg",
+    tiny_homes: "https://housedesigns.co.ke/tinyhomes.jpg",
+    default: "https://housedesigns.co.ke/defaultImage.jpg",
+};
 
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const subCategoryId = subCategoryMap[sub_category_name];
-                const response = await fetch(`/api/residentials/${subCategoryId}`);
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const data = await response.json();
-                console.log(data);
-                setProjects(data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        if (sub_category_name) {
-            fetchProjects();
-        }
-    }, [sub_category_name]);
-
-    const imageMapping = {
-        bungalows: "https://housedesigns.co.ke/bungalows.png",
-        maisonettes: "https://housedesigns.co.ke/OurExpertise.jpg",
-        apartments: "https://housedesigns.co.ke/apartments.jpg",
-        tiny_homes: "https://housedesigns.co.ke/tinyhomes.jpg",
-        default: "https://housedesigns.co.ke/defaultImage.jpg",
-    };
-
+export default function Projects({ projects, sub_category_name }) {
     const subCategoryImageURL = imageMapping[sub_category_name] || imageMapping.default;
 
     return (
@@ -92,4 +66,25 @@ export default function Projects() {
             </div>
         </div>
     );
+}
+
+export async function getStaticPaths() {
+    const paths = Object.keys(subCategoryMap).map(sub_category_name => ({
+        params: { sub_category_name }
+    }));
+
+    return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+    const subCategoryId = subCategoryMap[params.sub_category_name];
+    const response = await fetch(`https://housedesigns.co.ke/api/residentials/${subCategoryId}`);
+    const projects = await response.json();
+
+    return {
+        props: {
+            projects,
+            sub_category_name: params.sub_category_name
+        }
+    };
 }

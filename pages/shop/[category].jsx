@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useCart, useWishlist } from '../../services/shop/cartContext';
 import { fetchAllProducts } from '../../services/shop/woocommerce';
 import { useRouter } from 'next/router';
 import TuneIcon from '@mui/icons-material/Tune';
@@ -17,7 +18,7 @@ import Floors from '../../assets/images/floors.svg';
 import PlinthArea from '../../assets/images/plinth.svg';
 import Bathrooms from '../../assets/images/bathroom.svg';
 
-import { useCart, useWishlist } from '../../services/shop/cartContext';
+
 import OptionsPopUp from '../../components/shop/OptionsPopUp';
 
 const style = {
@@ -40,7 +41,12 @@ export default function FilteredCategoriesPage() {
     const { cart, handleAddToCart, handleRemoveFromCart } = useCart();
     const { wishlist, handleAddToWishlist, handleRemoveFromWishlist } = useWishlist();
 
-    const isInCart = (product) => cart.some((item) => item && item.slug === product.slug);
+    const isInCart = (product) => {
+        const result = cart.some((item) => item && item.slug === product.slug);
+        console.log(`Product: ${product.name}, isInCart: ${result}`);
+        return result;
+    };
+
     const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
 
     // Options Pop up
@@ -81,8 +87,8 @@ export default function FilteredCategoriesPage() {
         setProducts(filteredProducts);
     };
 
-    const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value);
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);
     };
 
     const toggleFilter = () => {
@@ -99,7 +105,7 @@ export default function FilteredCategoriesPage() {
                         className={`${styles.filterTitle} ${isFilterActive ? styles.active : ''}`}
                         onClick={toggleFilter}
                     >
-                        <TuneIcon className={styles.iconTune} />
+                        <TuneIcon className={styles.filterIcon} />
                         <p>Filters</p>
                     </div>
                 </div>
@@ -204,8 +210,10 @@ export default function FilteredCategoriesPage() {
                                         <div
                                             className={styles.addCart}
                                             onClick={() => {
-                                                setSelectedProduct(product);
-                                                setShowOptionsPopUp(true);
+                                                console.log(`Clicked on product: ${product.name}`);
+                                                isInCart(product)
+                                                    ? handleRemoveFromCart(product)
+                                                    : handleAddToCart(product);
                                             }}
                                         >
                                             {isInCart(product) ? (

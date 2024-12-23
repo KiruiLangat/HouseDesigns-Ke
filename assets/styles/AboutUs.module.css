@@ -269,6 +269,8 @@
 }
 .member2Box Img {
     width: 95%;
+    align-self: center;
+    margin-left: 10px;
 }
 .member1Box {
     width: 385.24px;
@@ -308,6 +310,7 @@
     font-family: Poppins;
     font-weight: 400;
     margin-top: 5px;
+
 }
 .member1Title {
     text-align: start;
@@ -316,6 +319,10 @@
     font-family: Poppins;
     font-weight: 300;
     margin-top: -10px;
+
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B;
+    }
 }
 .member2Name {
     text-align: start;
@@ -332,6 +339,10 @@
     font-family: Poppins;
     font-weight: 300;
     margin-top: -10px;
+
+    @media (prefers-color-scheme: dark) {
+        color: #6C5F5B;
+    }
 }
 .mobilePhilosophy, .ourWorkflowMobile, .ourPhilosophyMobile, .ourTeamMobile {
     display: none;
@@ -429,6 +440,7 @@
     .mobileSimplicityTitle {
         font-size: 15px;
         margin: 10px;
+        
     }
     .mobileInfinite {
         display: flex;
@@ -451,6 +463,7 @@
     .mobileInfiniteTitle {
         font-size: 15px;
         margin: 10px;
+       
     }
     .mobileResilience {
         display: flex;
@@ -473,6 +486,13 @@
     .mobileResilienceTitle {
         font-size: 15px;
         margin: 10px;
+        
+    }
+
+    .mobileInfiniteTitle, .mobileResilienceTitle, .mobileSimplicityTitle {
+        @media (prefers-color-scheme: dark) {
+            color: #6C5F5B;
+        }
     }
     .ourTeamBox {
         margin-top: 15%;
@@ -532,8 +552,9 @@
             box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
         }
     } 
-    .member2Box > img {
+    .member2Box Img {
         margin: auto;
+        margin-left: 10px;
     }
     .member1Name, .member2Name {
         text-align: center;
@@ -550,11 +571,13 @@
         font-size: 20px;
     }
     .ourWorkflowMobile {
-        margin-top: 30%;
         font-size: 15px;
+        margin-top: 15%;
+        margin-bottom: 0;
     }
     .mobileWorkflow {
         width: 90%;
+        
     }
     .viewServices a {
         font-size: 16px;

@@ -33,21 +33,21 @@ export default function Masterplanning() {
                 <meta name='description' content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
                 <meta property='og:title' content='Masterplanning' />
                 <meta property='og:description' content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
-                <meta property='og:image' content='https://housedesigns.co.ke/masterplanning.png' />
+                <meta property='og:image' content='/masterplanning.png' />
                 <meta property='og:image:width' content='1200' />
                 <meta property='og:image:height' content='600' />
                 <meta property='og:url' content='https://housedesigns.co.ke/masterplanning' />
                 <meta name='twitter:card' content='summary' />
                 <meta name='twitter:title' content='Masterplanning' />
                 <meta name='twitter:description' content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
-                <meta name='twitter:image' content='https://housedesigns.co.ke/masterplanning.png' />
+                <meta name='twitter:image' content='/masterplanning.png' />
                 <meta name='twitter:image:width' content='1024' />
                 <meta name='twitter:image:height' content='512' />
                 <meta name='twitter:url' content='https://housedesigns.co.ke/masterplanning' />
             </Head>
             <div className={styles.masterplan} style={style}>
                 <div className={styles.largeImg}>
-                    <Image src={Masterplan} alt="institution Masterplan" />
+                    <Image src={Masterplan} alt="institution Masterplan" width={'700px'} height={'430px'} />
                 </div>
                 <h1 className={styles.masterplanTitle}>Masterplanning Services</h1>
                 <h2>University of Isiolo</h2>

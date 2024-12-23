@@ -266,11 +266,11 @@
 
     @media (prefers-color-scheme: dark) {
         border: 1px solid rgba(255, 255, 255, 0.1);
-        background-color: #12121212;
+        
     }
 }
 
-.productsSearchBar > input {
+.productsSearchBar input {
     width: 100%;
     border-radius: 10px;
     border: transparent;
@@ -281,13 +281,25 @@
 
     @media (prefers-color-scheme: dark) {
         color: #6C5f5b;
+        border: transparent !important;
     }
 }
-.productsSearchBar > text {
-    font-size: 14px;
+.productsSearchBar input:focus {
+    outline: none;
+    border: transparent;
+    border-radius: 10px;
+    padding: 5px; 
+    background-color: transparent; 
     font-weight: 300;
 
-    
+    @media (prefers-color-scheme: dark) {
+        color: #6C5f5b;
+        border: transparent;
+    }
+}
+.productsSearchBar text {
+    font-size: 14px;
+    font-weight: 300;
 
 }
 .productsSearchBar :placeholder-shown {

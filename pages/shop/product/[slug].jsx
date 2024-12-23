@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../../../assets/styles/shop/productDescription.module.css';
@@ -113,6 +114,24 @@ export default function ProductDescription() {
 
     return (
         <div className={styles.productDescContainer} style={style}>
+            <Head>
+                <title>{product.name}</title>
+                <meta name='title' content={product.name} />
+                <meta name='description' content={product.description} />
+                <meta property='og:title' content={product.name} />
+                <meta property='og:description' content={product.description} />
+                <meta property='og:image' content={product.images[0].src} />
+                <meta property='og:image:width' content='1200' />
+                <meta property='og:image:height' content='600' />
+                <meta property='og:url' content={`https://housedesigns.co.ke/shop/product/${product.slug}`} />
+                <meta name='twitter:card' content='summary' />
+                <meta name='twitter:title' content={product.name} />
+                <meta name='twitter:description' content={product.description} />
+                <meta name='twitter:image' content={product.images[0].src} />
+                <meta name='twitter:image:width' content='1024' />
+                <meta name='twitter:image:height' content='512' />
+                <meta name='twitter:url' content={`https://housedesigns.co.ke/shop/product/${product.slug}`} />
+            </Head>
             <div className={styles.productLanding}>
                 <div className={styles.productDesc}>
                     {product.images && product.images.length > 0 ? (

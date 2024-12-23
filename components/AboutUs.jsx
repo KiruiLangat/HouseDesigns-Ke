@@ -77,14 +77,14 @@ export default function AboutUs() {
         <div className={styles.teamMembers}>
           <div className={styles.member1Box}>
             <div className={styles.memberImg}>
-              <Image src={Kelvin} alt='Kelvin' />
+              <Image src={Kelvin} alt='Kelvin'  />
             </div>
             <h2 className={styles.member1Name}>Kelvin Maundu</h2>
             <h3 className={styles.member1Title}>Managing Director</h3>
           </div>
           <div className={styles.member2Box}>
             <div className={styles.memberImg}>
-              <Image src={Jonathan} alt='Jonathan' layout='responsive' />
+              <Image src={Jonathan} alt='Jonathan' width={'100px'} height={'200px'} />
             </div>
             <h2 className={styles.member2Name}>Jonathan Munyao</h2>
             <h3 className={styles.member2Title}>Design Director</h3>

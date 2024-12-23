@@ -115,10 +115,6 @@ export default function HousePlans({ category }) {
         setSearchTerm(event.target.value);
     };
 
-    const handleSearch = (event) => {
-        event.preventDefault();
-        console.log('Search');
-    };
 
     useEffect(() => {
         setFilteredProducts(
@@ -314,7 +310,7 @@ export default function HousePlans({ category }) {
                     </div>
                     <div className={styles.productsSearch}>
                         <div className={styles.productsSearchBar}>
-                            <SearchIcon className={styles.iconSearchProducts} onClick={() => handleSearch()} />
+                            <SearchIcon className={styles.iconSearchProducts} />
                             <input
                                 type="text"
                                 placeholder="Search for Products"

@@ -1,3 +1,17 @@
+@keyframes blinking {
+    0% { background-color: #eee; }
+    50% { background-color: #e5e5e5; }
+    100% { background-color: #eee; }
+}
+
+@media (prefers-color-scheme: dark) {
+    @keyframes blinking {
+        0% { background-color: #6d6a6a; }
+        50% { background-color: #3a3a3a; }
+        100% { background-color: #333; }
+    }
+}
+
 .plansContainer {
     width: 100%;
     max-width: 1200px;
@@ -36,12 +50,14 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+   
 }
 .categories {
     padding-left: 0 !important;
     list-style: none;
     display: flex;
     flex-direction:row;
+
 }
 .categories li {
     padding-left: 0 !important;
@@ -49,15 +65,19 @@
     margin-right: 20px;
     font-size: 14px;
     font-weight: 300;
+    
 }
+/* ADD A LOADING EFFECT */
+
 .defaultCategory {
     color: #ED7D31;
 }
 .defaultCategoryUnselected {
+    color: black;
+
     @media (prefers-color-scheme: dark) {
         color: white;
     }
-    color: black;
 }
 .selectedCategory {
     color: #ED7D31;

@@ -122,7 +122,7 @@ export default function CheckOutPage() {
                                         ) : (
                                             <h3>No price selected</h3>
                                         )}
-                                        <p style={{ color: 'red' }} onClick={() => handleRemoveFromCart(product)}>Remove</p>
+                                        <p style={{ color: 'red', cursor:'pointer' }} onClick={() => handleRemoveFromCart(product)}>Remove</p>
                                     </div>
                                 </div>
                             </div>

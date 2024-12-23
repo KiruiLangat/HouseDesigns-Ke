@@ -39,7 +39,7 @@ export default function ServiceSubCategory(){
                         <Link href="/bungalows" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={BungalowsImg} alt='Bungalows' layout='fixed' />
+                                <Image src={BungalowsImg} alt='Bungalows'  />
                             </div>
                             <h2>Bungalows</h2>
                         </a>
@@ -49,7 +49,7 @@ export default function ServiceSubCategory(){
                         <Link href="/maisonettes" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={MaisonetteImg} alt='Maisonette' layout='fixed' />
+                                <Image src={MaisonetteImg} alt='Maisonette'  />
                             </div>
                             <h2>Maisonettes</h2>
                         </a>
@@ -59,7 +59,7 @@ export default function ServiceSubCategory(){
                         <Link href="/apartments" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={ApartmentsImg} alt='Apartments' layout='fixed' />
+                                <Image src={ApartmentsImg} alt='Apartments'  />
                             </div>
                             <h2>Apartments</h2>
                         </a>
@@ -69,7 +69,7 @@ export default function ServiceSubCategory(){
                         <Link href="/tiny homes" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={TinyHomesImg} alt='Tiny Homes' layout='fixed'/>
+                                <Image src={TinyHomesImg} alt='Tiny Homes' />
                             </div>
                             <h2>Tiny Homes</h2>
                         </a>

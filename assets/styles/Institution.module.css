@@ -1,3 +1,59 @@
+.largeImg {
+    width: 93%;
+    height: auto;
+    border-radius: 10px;
+    margin: auto;
+}
+.largeImg Img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    margin-bottom: 5px;
+}
+.masonry {
+    width: 93%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    gap:10px;
+    margin: auto;
+    
+}
+.masonry Img {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+.projectInfo {
+    width: 93%;
+    height: auto;
+    margin: auto;
+    display: flex;
+}
+.details {
+    margin-left:15%;   
+    
+}
+.projectDescription h1 {
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+}
+.details h2 {
+    font-size: 24px;
+    font-weight: 400;
+}
+.details p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
 .details button{
     padding: 5px;
     font-family: Poppins;
@@ -14,5 +70,25 @@
 @media(max-width:760px){
     .details button{
         font-size: 12px;
+    }
+    .projectDescription h1 {
+        font-size: 24px;
+        
+    }
+    .description1 h2, .description2 h2, .description3 h2, .details h2 {
+        font-size: 16px;
+    }
+    .description1 p, .description2 p, .description3 p, .details p {
+        font-size: 14px;
+    }
+    .masonry {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .masonry Img{
+        width: 100%;
+        height:auto;
+        object-fit: cover;
+        transition: opacity 0.5s ease-in-out;
     }
 }
