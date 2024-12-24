@@ -79,6 +79,14 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const subCategoryId = subCategoryMap[params.sub_category_name];
     const response = await fetch(`https://housedesigns.co.ke/api/residentials/${subCategoryId}`);
+
+    if (!response.ok) {
+        console.error(`Failed to fetch data for sub_category_name: ${params.sub_category_name}`);
+        return {
+            notFound: true,
+        };
+    }
+
     const projects = await response.json();
 
     return {

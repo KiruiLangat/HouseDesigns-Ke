@@ -12,7 +12,9 @@ const db_config = {
   connectionLimit: 10,
   queueLimit: 0,
   waitForConnections: true,
-  connectTimeout: 30000
+  connectTimeout: 30000,
+  acquireTimeout: 30000,
+  timeout: 30000
 };
 
 let pool;

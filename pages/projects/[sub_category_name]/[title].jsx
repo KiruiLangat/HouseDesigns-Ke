@@ -80,33 +80,52 @@ export default function ProjectDescription({ project, images }) {
 }
 
 export async function getStaticPaths() {
-    const res = await fetch('https://housedesigns.co.ke/api/residentials/project-titles')
-    const titles = await res.json()
+    try {
+        const res = await fetch('https://housedesigns.co.ke/api/residentials/project-titles')
+        if (!res.ok) {
+            throw new Error('Network response was not ok')
+        }
+        const titles = await res.json()
 
-    const paths = titles.map((title) => ({
-        params: { title }
-    }))
+        const paths = titles.map((title) => ({
+            params: { title }
+        }))
 
-    return { paths, fallback: true }
+        return { paths, fallback: true }
+    } catch (error) {
+        console.error('Error fetching project titles:', error)
+        return { paths: [], fallback: true }
+    }
 }
 
 export async function getStaticProps({ params }) {
     const { title } = params
 
-    const [projectRes, imagesRes] = await Promise.all([
-        fetch(`https://housedesigns.co.ke/api/residentials/project-details/${title}`),
-        fetch(`https://housedesigns.co.ke/api/residentials/project-images/${title}`)
-    ])
+    try {
+        const [projectRes, imagesRes] = await Promise.all([
+            fetch(`https://housedesigns.co.ke/api/residentials/project-details/${title}`),
+            fetch(`https://housedesigns.co.ke/api/residentials/project-images/${title}`)
+        ])
 
-    const [project, images] = await Promise.all([
-        projectRes.json(),
-        imagesRes.json()
-    ])
+        if (!projectRes.ok || !imagesRes.ok) {
+            throw new Error('Network response was not ok')
+        }
 
-    return {
-        props: {
-            project,
-            images
+        const [project, images] = await Promise.all([
+            projectRes.json(),
+            imagesRes.json()
+        ])
+
+        return {
+            props: {
+                project,
+                images
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching project details or images:', error)
+        return {
+            notFound: true
         }
     }
 }
