@@ -4,7 +4,6 @@ import Carousel from '../components/Carousel.jsx';
 import GetStarted from '../components/GetStarted.jsx';
 import GetInTouch from '../components/getInTouch.jsx';
 import BrowseProjects from '../components/BrowseProjects.jsx';
-import AboutUs from '../components/AboutUs.jsx';
 import Articles from '../components/Articles.jsx';
 import styles from '../assets/styles/Homepage.module.css';
 import '@fontsource/poppins';
@@ -39,7 +38,6 @@ function Homepage() {
       <GetStarted />
       <GetInTouch />
       <BrowseProjects />
-      <AboutUs />
       <Articles />
     </div>
   );

@@ -53,17 +53,9 @@ export default function Header() {
                             </Link>
                         </li>
                         <li>
-                            <ScrollLink
-                                to="about-us"
-                                cursor="pointer"
-                                spy={true}
-                                smooth={true}
-                                duration={500}
-                                offset={-70}
-                                onClick={() => setSidebarVisible(false)}
-                            >
-                                About Us
-                            </ScrollLink>
+                            <Link href="/about-us" passHref legacyBehavior>
+                                <a onClick={() => setSidebarVisible(false)}>About Us</a>
+                            </Link>
                         </li>
                         <li>
                             <div className={styles.shopNav}> {/* Updated className */}
@@ -131,15 +123,9 @@ export default function Header() {
                         </Link>
                     </li>
                     <li className={styles.hideOnMobile}> {/* Updated className */}
-                        <ScrollLink
-                            to="about-us"
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            offset={-70}
-                        >
-                            About Us
-                        </ScrollLink>
+                        <Link href="/about-us" passHref legacyBehavior>
+                            <a>About Us</a>
+                        </Link>
                     </li>
                     <li className={styles.hideOnMobile}> {/* Updated className */}
                         <div className={styles.shopNav}> {/* Updated className */}

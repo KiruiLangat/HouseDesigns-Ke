@@ -36,7 +36,7 @@ export default function ServiceSubCategory(){
             <h1 className={styles.projectsTitle}>Residential Projects</h1>
                 <div className={styles.serviceProjectsContainer}>
                     <div className={styles.projectBox}>
-                        <Link href="/bungalows" legacyBehavior>
+                        <Link href="/projects/bungalows" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
                                 <Image src={BungalowsImg} alt='Bungalows'  />
@@ -46,7 +46,7 @@ export default function ServiceSubCategory(){
                         </Link>
                     </div>
                     <div className={styles.projectBox}>
-                        <Link href="/maisonettes" legacyBehavior>
+                        <Link href="/projects/maisonettes" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
                                 <Image src={MaisonetteImg} alt='Maisonette'  />
@@ -56,7 +56,7 @@ export default function ServiceSubCategory(){
                         </Link>
                     </div>
                     <div className={styles.projectBox}>
-                        <Link href="/apartments" legacyBehavior>
+                        <Link href="/projects/apartments" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
                                 <Image src={ApartmentsImg} alt='Apartments'  />
@@ -66,7 +66,7 @@ export default function ServiceSubCategory(){
                         </Link>
                     </div>
                     <div className={styles.projectBox}>
-                        <Link href="/tiny homes" legacyBehavior>
+                        <Link href="/projects/tiny homes" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
                                 <Image src={TinyHomesImg} alt='Tiny Homes' />

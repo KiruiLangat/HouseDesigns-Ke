@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Head from 'next/head'
@@ -9,10 +9,51 @@ const style = {
     fontFamily: 'Poppins'
 }
 
-export default function ProjectDescription({ project, images }) {
+export default function ProjectDescription() {
     const router = useRouter()
+    const { title } = router.query
+    const [images, setImages] = useState([])
 
-    if (router.isFallback) {
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const response = await fetch(`/api/residentials/project-images/${title}`)
+                console.log(title)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json()
+                setImages(data)
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        if (title) {
+            fetchImages();
+        }
+    }, [title]);
+
+    const [project, setProject] = useState(null)
+
+    useEffect(() => {
+        const fetchProject = async () => {
+            try {
+                const response = await fetch(`/api/residentials/project-details/${title}`)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json()
+                setProject(data)
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        if (title) {
+            fetchProject();
+        }
+    }, [title]);
+
+    if (!project) {
         return <div className={styles.loading}>Loading <span>...</span></div>
     }
 
@@ -77,55 +118,4 @@ export default function ProjectDescription({ project, images }) {
             )}
         </div>
     )
-}
-
-export async function getStaticPaths() {
-    try {
-        const res = await fetch('https://housedesigns.co.ke/api/residentials/project-titles')
-        if (!res.ok) {
-            throw new Error('Network response was not ok')
-        }
-        const titles = await res.json()
-
-        const paths = titles.map((title) => ({
-            params: { title }
-        }))
-
-        return { paths, fallback: true }
-    } catch (error) {
-        console.error('Error fetching project titles:', error)
-        return { paths: [], fallback: true }
-    }
-}
-
-export async function getStaticProps({ params }) {
-    const { title } = params
-
-    try {
-        const [projectRes, imagesRes] = await Promise.all([
-            fetch(`https://housedesigns.co.ke/api/residentials/project-details/${title}`),
-            fetch(`https://housedesigns.co.ke/api/residentials/project-images/${title}`)
-        ])
-
-        if (!projectRes.ok || !imagesRes.ok) {
-            throw new Error('Network response was not ok')
-        }
-
-        const [project, images] = await Promise.all([
-            projectRes.json(),
-            imagesRes.json()
-        ])
-
-        return {
-            props: {
-                project,
-                images
-            }
-        }
-    } catch (error) {
-        console.error('Error fetching project details or images:', error)
-        return {
-            notFound: true
-        }
-    }
 }
