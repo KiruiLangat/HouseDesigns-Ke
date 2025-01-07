@@ -15,7 +15,7 @@ import Jonathan from '../assets/images/Jonathan2.png'
 export default function AboutUs() {
   return (
     <div className={styles.aboutusContainer}>
-      <div id='about-us' className={styles.aboutUs}>Get to Know us!</div>
+      <div className={styles.aboutUs}>Get to Know us!</div>
       <Image src={colorScheme} alt='colorScheme' className={styles.colorScheme} />
       <div className={styles.workflowTitle}>
         <div className={styles.ourWorkflow}>OUR WORKFLOW</div>

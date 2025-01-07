@@ -46,15 +46,14 @@
 }
 .getStartedIntro a{
     text-decoration: none;
-    color: black;
-    
-    
+    color: black;   
 }
 .getStartedCTA{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    cursor: pointer;
 }
 
 .getStartedCTA p{
@@ -83,23 +82,21 @@
     grid-template-rows: 1fr 1fr;
     gap: 20px;
 }
-.getStartedBox2 Img{
 
+.getStartedBox2 Img{
     @media (prefers-color-scheme: dark) {
         filter: invert(1) grayscale(100%);
     }
 }
 .getStartedBox2 p {
-
     @media (prefers-color-scheme: dark) {
         color: #6C5F5B !important;
     }
 }
 .getStartedBox2 h2{
-    
-        @media (prefers-color-scheme: dark) {
-            color: white;
-        }
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
 }
 .archBox{
     display: flex;

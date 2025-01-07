@@ -3,6 +3,13 @@
     50% { background-color: #e5e5e5; }
     100% { background-color: #eee; }
 }
+@media (prefers-color-scheme: dark){
+    @keyframes blinking {
+        0% { background-color: #6C5F5B; }
+        50% { background-color: #6C5F5B; }
+        100% { background-color: #6C5F5B; }
+    }
+}
 
 .projects{
     width: 93%;
