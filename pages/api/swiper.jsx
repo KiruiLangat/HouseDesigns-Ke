@@ -9,7 +9,7 @@ export default function handler(req, res) {
       } else {
         res.json(results);
       }
-    });
+    })
   } else {
     res.status(405).json({ error: 'Method Not Allowed' });
   }
