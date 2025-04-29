@@ -2,11 +2,13 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/housedes/public_html/housedesigns
-    - /bin/cp -R .next/static $DEPLOYPATH/_next/static
-    - /bin/cp -R public/* $DEPLOYPATH/public/
-    - /bin/cp -R .next/standalone/* $DEPLOYPATH
-    - /bin/cp .next/standalone/.next/server $DEPLOYPATH/.next/server
+    - /bin/rsync -avh --delete .next/static $DEPLOYPATH/_next/static
+    - /bin/rsync -avh --delete public/ $DEPLOYPATH/public/
+    - /bin/rsync -avh --delete .next/standalone/ $DEPLOYPATH/
+    - /bin/mkdir -p $DEPLOYPATH/.next/server
+    - /bin/rsync -avh --delete .next/standalone/.next/server/ $DEPLOYPATH/.next/server/
     - /bin/cp package.json $DEPLOYPATH
-    - /bin/cp next.config.js $DEPLOYPATH
+    - /bin/cp next.config.mjs $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH/.next
     - /bin/cp -R .next/standalone/.next/required-server-files.json $DEPLOYPATH/.next/
     - echo "Deployment completed successfully!"
