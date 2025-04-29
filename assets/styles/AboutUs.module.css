@@ -82,8 +82,8 @@
 
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B;
-        border-bottom: 1.5px solid #6C5F5B;
+        color: #ffffff;
+        border-bottom: 1.5px solid #ffffff;
     }
 }
 .viewServices p:hover {
@@ -149,7 +149,7 @@
     margin: 10px;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B;
+        color: #a8a8a8;
     }
 }
 .simplicityBox {
@@ -162,6 +162,11 @@
     border-radius: 20px;
     border: 1px rgba(79, 74, 69, 0.14) solid;
     margin: 0 10px;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
 }
 .simplicityBox:hover {
     background-color: #ED7D3124;
@@ -181,6 +186,11 @@
     border-radius: 20px;
     border: 1px rgba(79, 74, 69, 0.14) solid;
     margin: 0 10px;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
 }
 .infiniteBox:hover {
     background-color: #ED7D3124;
@@ -200,6 +210,11 @@
     border-radius: 20px;
     border: 1px rgba(79, 74, 69, 0.14) solid;
     margin: 0 10px;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
 }
 .resilienceBox:hover {
     background-color: #ED7D3124;
@@ -280,6 +295,11 @@
     border: 1px rgba(79, 74, 69, 0.14) solid;
     box-sizing: border-box;
     margin: 0 20px;  
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
 }
 .member1Box:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
@@ -295,6 +315,11 @@
     border-radius: 10px;
     border: 1px rgba(79, 74, 69, 0.14) solid;
     margin: 0 20px;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
 }
 .member2Box:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -321,7 +346,7 @@
     margin-top: -10px;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B;
+        color: #a8a8a8;
     }
 }
 .member2Name {
@@ -341,7 +366,7 @@
     margin-top: -10px;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B;
+        color: #a8a8a8;
     }
 }
 .mobilePhilosophy, .ourWorkflowMobile, .ourPhilosophyMobile, .ourTeamMobile {

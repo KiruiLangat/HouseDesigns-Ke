@@ -2,8 +2,11 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/housedes/public_html/housedesigns
-    - npm install
-    - npm run build
-    - cp -R .next/static $DEPLOYPATH/_next/static
-    - cp -R public $DEPLOYPATH/public
-    - cp -R .next/standalone/* $DEPLOYPATH
+    - /bin/cp -R .next/static $DEPLOYPATH/_next/static
+    - /bin/cp -R public/* $DEPLOYPATH/public/
+    - /bin/cp -R .next/standalone/* $DEPLOYPATH
+    - /bin/cp .next/standalone/.next/server $DEPLOYPATH/.next/server
+    - /bin/cp package.json $DEPLOYPATH
+    - /bin/cp next.config.js $DEPLOYPATH
+    - /bin/cp -R .next/standalone/.next/required-server-files.json $DEPLOYPATH/.next/
+    - echo "Deployment completed successfully!"
