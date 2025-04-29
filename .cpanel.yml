@@ -2,4 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/housedes/public_html/housedesigns
-    - /bin/cp/ -R * $DEPLOYPATH
+    - npm install
+    - npm run build
+    - cp -R .next/static $DEPLOYPATH/_next/static
+    - cp -R public $DEPLOYPATH/public
+    - cp -R .next/standalone/* $DEPLOYPATH

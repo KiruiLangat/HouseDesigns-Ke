@@ -53,6 +53,11 @@
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     text-decoration: none;
     color: black;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
 }
 
 .projectBox1:hover{
@@ -71,7 +76,7 @@
     color: black;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B;
+        color: #ffffff;
     }
     
 }
@@ -129,6 +134,11 @@
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     text-decoration: none;
     color: black;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
 }
 .projectBox:hover{
     background-color: #ED7D3124;
@@ -147,7 +157,7 @@
     color: black;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B;
+        color: #ffffff;
     }
 }
 .projectBox a{
