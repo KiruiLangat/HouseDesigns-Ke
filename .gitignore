@@ -7,8 +7,12 @@
 
 # server
 .env
-.next
 out
+
+# Allow .next/standalone and .next/static for deployment
+.next/*
+!.next/standalone/
+!.next/static/
 
 # testing
 /coverage
