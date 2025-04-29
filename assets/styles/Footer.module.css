@@ -17,6 +17,18 @@
     margin-left: 10px;
     margin-bottom: 10%;
 }
+
+.footerNav a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 300;
+
+    @media (prefers-color-scheme:dark){
+        color: #ffffff;
+    }
+}
+
 .footerNav ul{
     display: flex;
     flex-direction: row;
@@ -34,7 +46,7 @@
     text-decoration: none;
 
     @media (prefers-color-scheme:dark){
-        color: #6C5F5B;
+        color: #ffffff;
     }
     
 }
@@ -50,7 +62,18 @@
 .footerSocials{
     margin: 10px;
     padding: 5px;
+    text-decoration: none;
 }
+
+.footerSocials a{
+    text-decoration: none;
+    color:#000000;
+
+    @media (prefers-color-scheme:dark){
+        color: #ffffff;
+    }
+}
+
 .footerRight p{
     font-size: 14px;
     font-weight: 300;
@@ -58,7 +81,7 @@
     text-align: center;
 
     @media (prefers-color-scheme:dark){
-        color: #6C5F5B;
+        color: #ffffff;
     }
 }
 .twitter{
@@ -70,11 +93,13 @@
     width: 45px;
     height: 45px;
 }
+
 .arrowUp{
     width: 20%;
     height: auto;
     margin-left: 40px;
     transform:rotate(90deg);
+    
 }
 .arrowUp:hover{
     background-color: #ED7D31;
@@ -140,6 +165,16 @@
         margin:auto;
         align-items: center;
         width: auto;
+    }
+    .mobileSocials a{
+        text-decoration: none;
+        color: #000000;
+        font-size: 15px;
+        font-weight: 300;
+
+        @media (prefers-color-scheme:dark){
+            color: #ffffff;
+        }
     }
     .mobileIcon{
        width: 100%;

@@ -20,8 +20,9 @@ export default function Articles() {
             return response.json()
         })
         .then(data => {
-            setPost(data);
-            // console.log('Posts:', data)
+            console.log('Number of posts received:', data.length);
+            // Ensure we only use the first 3 posts
+            setPost(data.slice(0, 3));
         })
         .catch(error => {
             console.error('Error:', error)

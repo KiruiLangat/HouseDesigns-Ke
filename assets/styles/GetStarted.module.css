@@ -37,11 +37,11 @@
 }
 .getStartedIntro h2{
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 200;
     word-wrap: break-word;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B !important;
+        color: #ffffff;
     }
 }
 .getStartedIntro a{
@@ -62,8 +62,8 @@
     border-bottom: 1.5px solid black;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B !important;
-        border-bottom: #6C5F5B 1.5px solid !important;
+        color: #ffffff;
+        border-bottom: #ffffff 1.5px solid;
     }
 }
 .getStartedCTA p:hover {
@@ -90,12 +90,12 @@
 }
 .getStartedBox2 p {
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B !important;
+        color: #ffffff;
     }
 }
 .getStartedBox2 h2{
     @media (prefers-color-scheme: dark) {
-        color: white;
+        color: #ffffff;
     }
 }
 .archBox{
@@ -299,11 +299,11 @@
     }
     .iconContainer h2{
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 300;
         text-align: center;
 
         @media (prefers-color-scheme: dark) {
-            color: #6C5F5B;
+            color: #ffffff;
         }
     }
     .iconContainer Img{
@@ -339,8 +339,8 @@
         text-align: center;
 
         @media (prefers-color-scheme: dark) {
-            color: #6C5F5B !important;
-            border-bottom: #6C5F5B 1.5px solid !important;
+            color: #ffffff;
+            border-bottom: #ffffff 1.5px solid !important;
         }
     }
     

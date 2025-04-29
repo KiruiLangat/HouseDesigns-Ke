@@ -10,6 +10,13 @@ import linkedIn from '../assets/images/linkedinSVG.svg'
 import whatsapp from '../assets/images/whataspp-black-svg.svg'
 import mobile from '../assets/images/mobileSVG.svg'
 import arrowUp from '../assets/images/left-arrow.svg'
+
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import XIcon from '@mui/icons-material/X';
+
 import '@fontsource/poppins'
 
 const style = {
@@ -43,13 +50,13 @@ export default function Footer() {
             <div className={styles.footerRight}>
                 <div className={styles.footerSocials}>
                     <a href="https://instagram.com/housedesignskenya?igsh=c3hpcHJnaWZwNDVp">
-                        <Image src={instagram} alt='instagram' className={styles.instagram} />
+                        <InstagramIcon className={styles.instagram} />
                     </a>
                     <a href="https://x.com/housedesignske?s=11">
-                        <Image src={twitter} alt='twitter' className={styles.twitter} />
+                        <XIcon className={styles.twitter} />
                     </a>
                     <a href="https://linkedin.com/company/house-designs-ke/">
-                        <Image src={linkedIn} alt='LinkedIn' className={styles.linkedin} />
+                        <LinkedInIcon className={styles.linkedin} />
                     </a>
                     <ScrollLink 
                         to="header"
@@ -64,19 +71,19 @@ export default function Footer() {
                 <div className={styles.mobileFooterSocials}>
                     <div className={styles.mobileSocials}>
                         <a href="https://wa.me/+254710478088" target="_blank" rel="noopener noreferrer" className={styles.whatsappLink}>
-                            <Image src={whatsapp} alt='whatsapp' className={styles.mobileIcon} />
+                            <WhatsAppIcon className={styles.mobileIcon} />
                         </a>
                         <a href="tel:+254710478088" className={styles.mobileRefLink}>
-                            <Image src={mobile} alt='mobile' className={styles.mobileIcon} />
+                            <LocalPhoneIcon alt='mobile' className={styles.mobileIcon} />
                         </a>
                         <a href="https://x.com/housedesignske?s=11" className={styles.twitterLink}>
-                            <Image src={twitter} alt='twitter' className={styles.mobileIcon} />
+                            <XIcon className={styles.mobileIcon} />
                         </a>
                         <a href="https://linkedin.com/company/house-designs-ke/" className={styles.linkedinLink}>
-                            <Image src={linkedIn} alt='LinkedIn' className={styles.mobileIcon} />
+                            <LinkedInIcon className={styles.mobileIcon} />
                         </a>
                         <a href="https://instagram.com/housedesignskenya?igsh=c3hpcHJnaWZwNDVp" className={styles.instagramLink}>
-                            <Image src={instagram} alt='instagram' className={styles.mobileIcon} />
+                            <InstagramIcon className={styles.mobileIcon} />
                         </a>
                     </div>
                     <p>© 2024, All Rights Reserved</p>

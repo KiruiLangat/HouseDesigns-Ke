@@ -35,7 +35,7 @@
     word-wrap: break-word;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B !important;
+        color: #ffffff;
     }
 }
 

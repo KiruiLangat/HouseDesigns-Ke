@@ -7,9 +7,7 @@
     max-width: 1200px;
     box-sizing: border-box;
     margin: auto;
-    top: 0;
-
-    
+    top: 0; 
 }
 
 .logo {
@@ -39,9 +37,11 @@
     color: black;
     align-items: center;
     cursor: pointer;
+    font-size: 15px;
+    font-weight: 300;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #ffffff;
     }
 
 }
@@ -99,7 +99,7 @@
     align-items: center;
 
     @media (prefers-color-scheme: dark) {
-        fill: #6C5f5B;
+        fill: #ffffff;
     }
 
 }
@@ -114,7 +114,7 @@
     color: black;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #ffffff;
     }
 }
 .iconLess:hover , .iconMore:hover{
@@ -162,7 +162,8 @@
     margin-bottom: 0;
     margin-top: 0;
     padding: 10px 5px 5px 0;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 300;
     /* width: fit-content; */
 }
 .linkCart{
@@ -175,7 +176,7 @@
     padding: 0;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #ffffff;
     }
 }
 
@@ -225,7 +226,7 @@
         fill: black;
 
         @media (prefers-color-scheme: dark) {
-            fill: #6C5f5B;
+            fill: #ffffff;
         }
     }
 
@@ -233,7 +234,7 @@
         fill: black;
 
         @media (prefers-color-scheme: dark) {
-            fill: #6C5f5B !important;
+            fill: #ffffff;
         }
     }
    

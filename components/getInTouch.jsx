@@ -3,10 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../assets/styles/GetInTouch.module.css';
 import GetInTouchCarousel from '../components/getintouchCarousel';
-import PhoneIcon from '../assets/images/mobileSVG.svg';
-import WhatsApp from '../assets/images/whataspp-black-svg.svg';
-import EmailIcon from '../assets/images/emailSVG.svg';
 import sideBracket from '../assets/images/sideBracket.png';
+
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import EmailIcon from '@mui/icons-material/Email';
 
 const style = {
     fontFamily: 'Poppins',
@@ -22,14 +23,14 @@ export default function GetInTouch() {
                     <div className={styles.getintouchLinesAndIcons}>
                         <div className={styles.topLine}></div>
                         <div className={styles.getintouchContactIcons}>
-                            <div className={styles.getintouchWhatsappIcon}>
-                                <Image src={WhatsApp} alt='WhatsApp-Icon' />
+                            <div >
+                                <WhatsAppIcon className={styles.getintouchWhatsappIcon}/>
                             </div>
-                            <div className={styles.getintouchPhoneIcon}>
-                                <Image src={PhoneIcon} alt='Phone-Icon' />
+                            <div >
+                                <LocalPhoneIcon className={styles.getintouchPhoneIcon} />
                             </div>
-                            <div className={styles.getintouchEmailIcon}>
-                                <Image src={EmailIcon} alt='Email-Icon' />
+                            <div >
+                                <EmailIcon className={styles.getintouchEmailIcon} />
                             </div>
                         </div>
                         <div className={styles.bottomLine}></div>

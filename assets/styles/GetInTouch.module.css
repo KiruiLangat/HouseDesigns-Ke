@@ -46,7 +46,7 @@
     height: 0;
     margin: 20%;
     transform: rotate(-90deg);
-    border: 1px rgba(237, 125, 49, 0.14) solid;
+    border: 1px rgba(255, 102, 0, 0.14) solid;
 }
 .getintouchContactIcons {
     display: grid;
@@ -112,8 +112,8 @@
     border-bottom: 1.5px solid black;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B;
-        border-bottom: #6C5F5B 1.5px solid;
+        color: #ffffff;
+        border-bottom: #ffffff 1.5px solid;
     }
 }
 .getintouchCTA p:hover {
