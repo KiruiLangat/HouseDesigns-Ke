@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/housedes/public_html/housedesigns
+    - /bin/cp/ -R * $DEPLOYPATH
