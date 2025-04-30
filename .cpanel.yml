@@ -1,10 +1,19 @@
 ---
 deployment:
   tasks:
+    # Define the deployment path
     - export DEPLOYPATH=/home/housedes/public_html/housedesigns
-    - /bin/cp -R .next $DEPLOYPATH/.next
-    - /bin/cp -R public $DEPLOYPATH/public
-    - /bin/cp package.json $DEPLOYPATH
-    - /bin/cp server.js $DEPLOYPATH
-    - /bin/cp .env $DEPLOYPATH/.env
+
+    # Sync only changed files in the .next directory
+    - rsync -av --delete .next/ $DEPLOYPATH/.next
+
+    # Sync only changed files in the public directory
+    - rsync -av --delete public/ $DEPLOYPATH/public
+
+    # Sync individual files if they have changed
+    - rsync -av package.json $DEPLOYPATH/package.json
+    - rsync -av server.js $DEPLOYPATH/server.js
+    - rsync -av .env $DEPLOYPATH/.env
+
+    # Print success message
     - echo "Deployment completed successfully!"
