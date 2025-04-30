@@ -1,0 +1,6 @@
+"use strict";exports.id=2084,exports.ids=[2084],exports.modules={2084:(e,n,s)=>{s.r(n),s.d(n,{default:()=>o});var t=s(997),i=s(6859),r=s.n(i);let MyDocument=class MyDocument extends r(){render(){return(0,t.jsxs)(i.Html,{lang:"en",children:[(0,t.jsxs)(i.Head,{children:[t.jsx("meta",{charSet:"utf-8"}),t.jsx("link",{rel:"icon",href:"/favicon.ico"}),t.jsx("link",{rel:"apple-touch-icon",sizes:"180x180",href:"/apple-touch-icon.png"}),t.jsx("link",{rel:"icon",type:"image/png",sizes:"32x32",href:"/androidIcon32px.png"}),t.jsx("link",{rel:"icon",type:"image/png",sizes:"16x16",href:"/androidIcon16px.png"}),t.jsx("meta",{name:"author",content:"House Designs"}),t.jsx("link",{rel:"canonical",href:"https://housedesigns.com/"})]}),(0,t.jsxs)("body",{children:[t.jsx("noscript",{children:"You need to enable JavaScript to run this app."}),t.jsx(i.Main,{}),t.jsx(i.NextScript,{}),t.jsx("script",{dangerouslySetInnerHTML:{__html:`
+                // prevent Right Click
+                document.addEventListener('contextmenu', function(e) {
+                  e.preventDefault();
+                });
+              `}})]})]})}};let o=MyDocument}};
