@@ -2,15 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/housedes/public_html/housedesigns
-    - /bin/mkdir -p $DEPLOYPATH/.next/server
-    - /bin/mkdir -p $DEPLOYPATH/public
-    - /bin/mkdir -p $DEPLOYPATH/_next/static
-    - /bin/cp -R .next/static $DEPLOYPATH/_next/static
-    - /bin/cp -R public/* $DEPLOYPATH/public/
-    - /bin/cp -R .next/standalone/* $DEPLOYPATH
-    - /bin/cp -R .next/standalone/.next/server $DEPLOYPATH/.next/server
+    - /bin/cp -R .next $DEPLOYPATH/.next
+    - /bin/cp -R public $DEPLOYPATH/public
     - /bin/cp package.json $DEPLOYPATH
-    - /bin/cp next.config.js $DEPLOYPATH
-    - /bin/cp -R .next/standalone/.next/required-server-files.json $DEPLOYPATH/.next/
-    - pm2 restart housedesigns || pm2 start $DEPLOYPATH/server.js --name housedesigns
+    - /bin/cp server.js $DEPLOYPATH
     - echo "Deployment completed successfully!"
