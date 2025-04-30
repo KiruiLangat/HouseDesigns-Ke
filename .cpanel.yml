@@ -6,4 +6,5 @@ deployment:
     - /bin/cp -R public $DEPLOYPATH/public
     - /bin/cp package.json $DEPLOYPATH
     - /bin/cp server.js $DEPLOYPATH
+    - /bin/cp .env $DEPLOYPATH/.env
     - echo "Deployment completed successfully!"
