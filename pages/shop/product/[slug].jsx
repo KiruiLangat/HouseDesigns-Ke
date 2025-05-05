@@ -77,23 +77,25 @@ export default function ProductDescription() {
             try {
                 // only proceed if product and product.categories exist
                 if(product && product.categories && product.categories.length > 0) {
-                    const categoryId = product.categories[0].id; // Assuming you want to fetch products from the first category
-                    const similarCategoryProducts = await fetchAllProducts(categoryId);
-                
-                    //filtering products that share same category
-                    const filteredProducts = similarCategoryProducts.filter(
-                        (prod) => prod.categoryId === product.categoryId &&
-                        prod.categories &&
-                        prod.categories.some(cat =>
-                            product.categores.some(prodCat => prodCat.id === cat.id)
-                        ) 
+                    const allProducts = await fetchAllProducts();
+                    
+                    // Filter products that share the same category as the current product
+                    // and exclude the current product
+                    const filteredProducts = allProducts.filter(prod => 
+                        prod.id !== product.id && // Exclude current product
+                        prod.categories && 
+                        prod.categories.some(prodCat => 
+                            product.categories.some(currentCat => 
+                                currentCat.id === prodCat.id
+                            )
+                        )
                     );
 
                     setSimilarProducts(filteredProducts.slice(0, 3));
                 }
             } catch (error) {
                 console.log('Error fetching similar products', error);
-                setSimilarProducts([]); //set empty tray on errors
+                setSimilarProducts([]); // set empty array on errors
             }
         };
 

@@ -49,14 +49,14 @@
     font-weight: 300;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 .iconTune {
     width: 18px !important;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 .filterOptions {
@@ -107,7 +107,7 @@
     margin-left: 5px;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 .byCategory ul {
@@ -140,7 +140,7 @@
     padding: 0;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 /* .by-category li:hover{
@@ -164,7 +164,7 @@
 .iconDrop {
     
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 .byBedrooms {
@@ -199,7 +199,7 @@
     margin-left: 5px;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 .bedroomsDropdown ul {
@@ -230,7 +230,7 @@
     padding: 0;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 
@@ -250,7 +250,7 @@
     padding: 2px;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 .productsSearchBar {
@@ -280,7 +280,7 @@
     font-weight: 300;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
         border: transparent !important;
     }
 }
@@ -293,7 +293,7 @@
     font-weight: 300;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
         border: transparent;
     }
 }
@@ -309,7 +309,7 @@
     
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 
@@ -374,7 +374,7 @@
 .iconWishlist {
     cursor: pointer;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .addCart {
@@ -385,7 +385,7 @@
     cursor: pointer;
     align-self: center;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .productsCardDetail {
@@ -417,7 +417,7 @@
     color: #00000080;
 
     @media(prefers-color-scheme:dark){
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 
     
@@ -437,7 +437,7 @@
     
 
     @media(prefers-color-scheme:dark){
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 

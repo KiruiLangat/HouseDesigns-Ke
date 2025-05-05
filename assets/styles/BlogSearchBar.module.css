@@ -99,7 +99,7 @@
     margin-left: 5px;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B;
+        color: #7c7c7c;
     }
 }
 .searchResults a {

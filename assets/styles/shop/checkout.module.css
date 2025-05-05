@@ -59,7 +59,7 @@
     color: #00000080;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .checkoutProductDetails h3 {
@@ -188,7 +188,7 @@
     margin-top: 10px;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .mpesaDetails img {
@@ -257,7 +257,7 @@
     margin-top: 0;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .paypalDetails button {
@@ -502,7 +502,7 @@
         margin-top: 10px;
 
         @media (prefers-color-scheme: dark) {
-            color: #6C5f5B;
+            color: #7c7c7c;
         }
     }
     .errorToWhatsapp {

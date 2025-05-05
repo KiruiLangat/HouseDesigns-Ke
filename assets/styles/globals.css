@@ -6,7 +6,7 @@
     margin-top: 20%;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B;
+        color: #7c7c7c;
     }
 
     @media (max-width: 768px) {
@@ -43,22 +43,22 @@
         color: white !important;
     }
     .header a {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .sidebar {
         background-color: #121212 !important;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.18) !important;
     }
     .closeIcon svg {
-        fill: #6C5F5B !important;
+        fill: #7c7c7c !important;
     }
 
     /* Footer css */
     .footerNav a {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .footerText {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
 
     /* HOMEPAGE CSS */
@@ -67,31 +67,31 @@
         filter: invert(1) grayscale(100%);
     }
     .getStartedBox2 p {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .getStartedBox2 h2 {
         color: white !important;
     }
     .getStartedIntro h2 {
-        color: #6C5F5B;
+        color: #7c7c7c;
     }
     .getStartedCTA p {
-        color: #6C5F5B !important;
-        border-bottom: #6C5F5B 1.5px solid !important;
+        color: #7c7c7c !important;
+        border-bottom: #7c7c7c 1.5px solid !important;
     }
     .mobileIcon {
         filter: invert(1) hue-rotate(180deg);
     }
     .mobileCTA p {
-        color: #6C5F5B !important;
-        border-bottom: #6C5F5B 1.5px solid !important;
+        color: #7c7c7c !important;
+        border-bottom: #7c7c7c 1.5px solid !important;
     }
 
    
 
     /* Browse Projects */
     .projectsIntro p {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
 
     /* Get to know us (About us) */
@@ -102,14 +102,14 @@
         color: white !important;
     }
     .viewServices p {
-        color: #6C5F5B !important;
-        border-bottom: 1.5px solid #6C5F5B !important;
+        color: #7c7c7c !important;
+        border-bottom: 1.5px solid #7c7c7c !important;
     }
     .ourPhilosophy {
         color: white !important;
     }
     .philosophyTables p {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .simplicityBox:hover, .infiniteBox:hover, .resilienceBox:hover {
         background-color: transparent !important;
@@ -122,7 +122,7 @@
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1) !important;
     }
     .teamMembers h3 {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .member1Box, .member2Box {
         box-shadow: none !important;
@@ -136,13 +136,13 @@
 
     /* Articles */
     .articlesDesc {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .headline {
         color: white !important;
     }
     .articleBox1 p {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .articleBox1:hover {
         background-color: transparent !important;
@@ -151,25 +151,25 @@
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1) !important;
     }
     .readMoreText {
-        color: #6C5F5B !important;
-        border-bottom: #6C5F5B 1.5px solid !important;
+        color: #7c7c7c !important;
+        border-bottom: #7c7c7c 1.5px solid !important;
     }
 
     /* Our Expertise */
     .service1 h2 {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .service1:hover {
         background-color: transparent !important;
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1) !important;
     }
     .service1 svg {
-        fill: #6C5F5B !important;
+        fill: #7c7c7c !important;
     }
 
     /* Architecture Projects */
     .projectBox1 h2 {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .projectBox1:hover {
         background-color: transparent !important;
@@ -181,18 +181,18 @@
         color: white !important;
     }
     .descriptions h2 {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .descriptions p {
         color: white !important;
     }
     .details p {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
 
     /* Masterplan */
     .masterplan h2 {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
 
     /* BlogGrids */
@@ -208,29 +208,29 @@
         }
     }
     .loading {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
         animation: dot 1.09s infinite !important;
     }
     .box1 .postTitle {
         color: white !important;
     }
     .box1 p {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .box1:hover {
         background-color: transparent !important;
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1) !important;
     }
     .postContent {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .blogNavigation h2 {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
 
     /* Contact Us */
     .contactWelcome p {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
 }
 
@@ -242,7 +242,7 @@
         box-shadow: 0 0 5px rgba(255, 255, 255, 0.18) !important;
     }
     .menuButton svg {
-        fill: #6C5F5B !important;
+        fill: #7c7c7c !important;
     }
 
     /* Footer CSS */
@@ -251,7 +251,7 @@
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.18) !important;
     }
     .mobileFooterSocials p {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
 
     /* Carousel CSS
@@ -266,7 +266,7 @@
         color: white !important;
     }
     .mobileServices h2 {
-        color: #6C5F5B !important;
+        color: #7c7c7c !important;
     }
     .mobileServices .iconContainer {
         box-shadow: 0 2px 6px 0 rgba(255, 255, 255, 0.1);

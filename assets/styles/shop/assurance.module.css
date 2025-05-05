@@ -68,7 +68,7 @@
     color: #00000080;
 
     @media(prefers-color-scheme:dark){
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .policies {
@@ -139,7 +139,7 @@
         color: black;
 
         @media(prefers-color-scheme:dark){
-            color: #6C5f5B;
+            color: #7c7c7c;
         }
     }
 }

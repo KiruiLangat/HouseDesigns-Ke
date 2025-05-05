@@ -32,14 +32,14 @@
 .filterIcon {
     width: 18px;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .filterTitle p {
     font-size: 14px;
     font-weight: 300;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .filterSearchBar {
@@ -67,7 +67,7 @@
     font-size: 14px;
     font-weight: 300;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 .filterSearchBar > input:focus {
@@ -77,7 +77,7 @@
     font-size: 14px;
     font-weight: 300;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 .filterSearchBar :placeholder-shown {
@@ -85,7 +85,7 @@
     font-weight: 300;
     font-family: Poppins;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5b;
+        color: #7c7c7c;
     }
 }
 .filteredProductsContainer {
@@ -123,7 +123,7 @@
 .iconDrop{
 
     @media (prefers-color-scheme:dark){
-        fill: #6C5f5B;
+        fill: #7c7c7c;
     }
 }
 .attribute1 {
@@ -146,7 +146,7 @@
     font-weight: 400;
     margin-right: 50px;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .filteredProducts {
@@ -215,7 +215,7 @@
 .iconWishlist {
     cursor: pointer;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .addCart {
@@ -225,7 +225,7 @@
     cursor: pointer;
     align-self: center;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .filteredProductsCardTitle {
@@ -248,7 +248,7 @@
     margin-bottom: 0;
     color: #00000080;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .filteredProductsCardDetail {
@@ -294,7 +294,7 @@
     font-weight: 300;
 
     @media (prefers-color-scheme:dark){
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .iconSearchProducts{
@@ -303,7 +303,7 @@
     margin-left: 5px;
 
     @media (prefers-color-scheme:dark){
-        fill: #6C5f5B;
+        fill: #7c7c7c;
     }
 }
 @media (max-width: 768px) {

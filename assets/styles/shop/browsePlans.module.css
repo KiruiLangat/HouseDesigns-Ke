@@ -42,7 +42,7 @@
     margin-top: 0;
     color: #00000080;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .categoriesNav {
@@ -96,7 +96,7 @@
     margin-right: 10px;
     color: #00000080;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .iconArrow {
@@ -108,7 +108,7 @@
     color: #00000080;
     transition: transform 0.3s ease-out;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .categoriesNav a:hover {
@@ -126,7 +126,7 @@
     text-decoration: none;
     color: #000000;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .bigPlanSample {
@@ -154,6 +154,7 @@
     z-index: 1;
     background-color: #fffffd;
     border-radius: 10px;
+
     @media (prefers-color-scheme: dark) {
         background-color: #000000;
     }
@@ -164,7 +165,7 @@
 .iconWishlist {
     cursor: pointer;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .addCart {
@@ -174,7 +175,7 @@
     cursor: pointer;
     align-self: center;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .starPlan {
@@ -190,7 +191,7 @@
     margin-left: 5px;
     color: black;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .iconPopular {
@@ -235,7 +236,7 @@
     margin-bottom: 0;
     margin-top: 2px;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .previewDetailsTitle h3 {
@@ -290,7 +291,7 @@
     margin-top: 10px;
     color: black;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .bigPlanSamplesImages {
@@ -336,7 +337,7 @@
         margin-top: 0;
         color: #00000080;
         @media (prefers-color-scheme: dark) {
-            color: #6C5f5B;
+            color: #7c7c7c;
         }
     }
     .categoriesNav {
@@ -368,7 +369,7 @@
         margin-right: 10px;
         color: #00000080;
         @media (prefers-color-scheme: dark) {
-            color: #6C5f5B;
+            color: #7c7c7c;
         }
     }
     .landingPlans {
@@ -398,7 +399,7 @@
         margin-top: 10px;
         color: #00000080;
         @media (prefers-color-scheme: dark) {
-            color: #6C5f5B;
+            color: #7c7c7c;
         }
     }
     .iconPopular{
@@ -420,7 +421,7 @@
         margin-left: 5px;
         justify-self: flex-end;
         @media (prefers-color-scheme: dark) {
-            color: #6C5f5B;
+            color: #7c7c7c;
         }
     }
     .previewDetails {
@@ -447,7 +448,7 @@
         margin-top: 10px;
         color: black;
         @media (prefers-color-scheme: dark) {
-            color: #6C5f5B;
+            color: #7c7c7c;
         }
     }
     .bigPlanSampleImages {

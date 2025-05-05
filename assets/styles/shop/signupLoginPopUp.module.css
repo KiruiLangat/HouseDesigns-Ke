@@ -93,7 +93,7 @@
     font-weight: 400;
 
     @media (prefers-color-scheme: dark){
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .googleIcon {
@@ -111,7 +111,7 @@
     margin-bottom: 20px;
 
     @media (prefers-color-scheme: dark){
-        color:#6c5f5b;
+        color:#7c7c7c;
     }
 }
 .checkoutPopupInput {
@@ -138,7 +138,7 @@
     @media (prefers-color-scheme: dark){
         border: 1px solid rgba(255, 255, 255, 0.2);
         background-color: transparent;
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .checkoutPopupInput button {

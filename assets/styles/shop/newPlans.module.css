@@ -24,7 +24,7 @@
     
 
     @media(prefers-color-scheme:dark){
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .newPlansHeading {
@@ -47,7 +47,7 @@
     color: #00000080;
 
     @media(prefers-color-scheme:dark){
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .plansNavCTA {
@@ -64,7 +64,7 @@
     color: #00000080;
 
     @media (prefers-color-scheme:dark){
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .plansNavCTA:hover {
@@ -124,7 +124,7 @@
 .iconWishlist {
     cursor: pointer;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .addCart {
@@ -134,7 +134,7 @@
     cursor: pointer;
     align-self: center;
     @media (prefers-color-scheme: dark) {
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .newPlansCard Img {
@@ -160,7 +160,7 @@
     color: #00000080;
 
     @media(prefers-color-scheme:dark){
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
 }
 .iconIndicator {
@@ -192,7 +192,7 @@
     color: #00000080;
 
     @media (prefers-color-scheme:dark){
-        color: #6C5f5B
+        color: #7c7c7c
     }
 }
 
@@ -236,7 +236,7 @@
     font-weight: 300;
 
     @media (prefers-color-scheme:dark){
-        color: #6C5f5B;
+        color: #7c7c7c;
     }
     
     

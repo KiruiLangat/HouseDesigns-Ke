@@ -43,7 +43,8 @@
 }
 @media (prefers-color-scheme: dark) {
     .landingSubtext {
-        color: #6C5F5B;
+        color: #ffff;
+        font-weight: 300;
     }
 }
 .landingSubtext .highlightSubtext {
