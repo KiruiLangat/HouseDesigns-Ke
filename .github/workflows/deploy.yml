@@ -1,0 +1,91 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [ main ]  # Deploy when pushing to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Step 1: Clone repository code
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    # Step 2: Setup Node.js environment - Node 18 LTS is recommended for Next.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Using 18 LTS instead of 23.3.0 which is not yet stable
+        cache: 'npm'  # Enables caching of npm dependencies
+        
+    # Step 3: Install project dependencies
+    - name: Install dependencies
+      run: npm install  # Use regular install instead of ci to avoid package-lock issues
+      
+    # Step 4: Build Next.js application with production settings
+    - name: Build Next.js app
+      run: npm run build
+      env:
+        NODE_ENV: production  # Ensures production optimizations
+      
+    # Step 5: Deploy the .next directory (contains compiled application)
+    - name: Deploy Next.js build files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./.next/  # Next.js build output
+        server-dir: /public_html/housedesigns/HouseDesigns-Ke/.next/  # Target location on cPanel
+        dangerous-clean-slate: true  # Clean destination before uploading
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          
+    # Step 6: Deploy necessary project files (excluding source and build artifacts)
+    - name: Deploy supporting files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /public_html/housedesigns/HouseDesigns-Ke/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.next/**  # Exclude entire .next directory as it's already deployed
+          **/src/**    # No need to deploy source files
+          **/.github/**  # No need for GitHub files on production
+          **/tests/**  # No need for test files on production
+          **/*.log
+          
+    # Step 7: Restart PM2 process to apply changes
+    - name: Restart PM2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        script: |
+          # Navigate to project directory
+          cd /home/housedes/public_html/housedesigns/HouseDesigns-Ke
+          
+          # Load NVM if available (common on shared hosting)
+          if [ -f ~/.nvm/nvm.sh ]; then
+            source ~/.nvm/nvm.sh
+          fi
+          
+          # Reload or start PM2 process
+          if pm2 list | grep -q "housedesigns"; then
+            pm2 reload housedesigns
+          else
+            pm2 start npm --name "housedesigns" -- start
+          fi
+          
+          # Save PM2 process list to persist across server restarts
+          pm2 save
