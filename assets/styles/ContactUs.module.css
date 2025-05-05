@@ -14,11 +14,11 @@
 .contactWelcome p{
     font-size: 18px;
     font-weight: 300;
-    margin-top: 3%;
+    margin-top: 10px;
     text-align: center;
 
     @media (prefers-color-scheme: dark) {
-        color: #6C5F5B;
+        color: #ffffff;
     }
 }
 .contactUs{

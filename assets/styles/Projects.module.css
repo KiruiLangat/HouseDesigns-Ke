@@ -3,13 +3,6 @@
     50% { background-color: #e5e5e5; }
     100% { background-color: #eee; }
 }
-@media (prefers-color-scheme: dark){
-    @keyframes blinking {
-        0% { background-color: #6C5F5B; }
-        50% { background-color: #6C5F5B; }
-        100% { background-color: #6C5F5B; }
-    }
-}
 
 .projects{
     width: 93%;
@@ -17,12 +10,14 @@
     margin: auto;
     padding: 0;
 }
+
 .projectsTitle{
     font-size: 36px;
     font-weight: 300;
     margin-top: 5%;
     text-align: center;
 }
+
 .serviceProjectsContainer{
     width: 80%;
     margin: auto;
@@ -34,13 +29,14 @@
     top: 0;
     text-decoration: none;
     border-bottom: none;
-     
 }
+
 .projectsContainer a{
     text-decoration: none;
     border-bottom: none;
     color: black;
 }
+
 .projectBox1{
     width: 90%;
     height: auto;
@@ -53,38 +49,25 @@
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     text-decoration: none;
     color: black;
-
-    @media (prefers-color-scheme: dark) {
-        background-color: transparent;
-        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
-    }
 }
 
 .projectBox1:hover{
     background-color: #ED7D3124;
-
-    @media (prefers-color-scheme: dark) {
-        background-color: transparent;
-        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
-    }
 }
+
 .projectBox1 h2{
     text-align: center;
     font-size: 20px;
     font-weight: 300;
     text-decoration: none;
     color: black;
-
-    @media (prefers-color-scheme: dark) {
-        color: #ffffff;
-    }
-    
 }
+
 .projectBox1 a{
     text-decoration: none;
     color: black;
-    
 }
+
 .projectsImg{
     width:100% ;
     height: 250px;
@@ -92,6 +75,7 @@
     background-color: #eee;
     animation: blinking 1.5s infinite;
 }
+
 .projectsImg Img{
     width: 100%;
     height: 100%;
@@ -102,17 +86,16 @@
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-
 }
 
-
-/* ServiceSubCategory.js styling and architecture service*/
+/* Residentials styling and architecture service*/
 
 .projectImg{
     width:100%;
     height: 250px;
     border-radius: 10px; 
 }
+
 .projectImg img{
     width: 100%;
     height: 100%;
@@ -120,8 +103,8 @@
     box-sizing: border-box;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
     margin-bottom: 5px;
-
 }
+
 .projectBox{
     width: 90%;
     height: auto;
@@ -134,20 +117,12 @@
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     text-decoration: none;
     color: black;
-
-    @media (prefers-color-scheme: dark) {
-        background-color: transparent;
-        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
-    }
 }
+
 .projectBox:hover{
     background-color: #ED7D3124;
-
-    @media (prefers-color-scheme: dark) {
-        background-color: transparent;
-        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
-    }
 }
+
 .projectBox h2{
     font-size: 20px;
     font-weight: 300;
@@ -155,18 +130,12 @@
     margin-top: 5%;
     text-decoration: none;
     color: black;
-
-    @media (prefers-color-scheme: dark) {
-        color: #ffffff;
-    }
 }
+
 .projectBox a{
     text-decoration: none;
     color: black;
-
 }
-
-
 
 @media (max-width:768px){
     .projects{
@@ -189,11 +158,6 @@
         height: auto;
         box-sizing: border-box;
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-
-        @media (prefers-color-scheme: dark) {
-            background-color: transparent;
-            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
-        }
     }
     .projectBox1 h2{
         font-size: 16px; 
@@ -231,8 +195,53 @@
     }
     .projectBox{
         width: 93%;
+    }
+}
 
-        @media (prefers-color-scheme: dark) {
+/* Dark mode styles consolidated in one place */
+@media (prefers-color-scheme: dark){
+    @keyframes blinking {
+        0% { background-color: #6C5F5B; }
+        50% { background-color: #6C5F5B; }
+        100% { background-color: #6C5F5B; }
+    }
+    
+    .projectBox1 {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
+    
+    .projectBox1:hover {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
+    
+    .projectBox1 h2 {
+        color: #ffffff;
+    }
+    
+    .projectBox {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
+    
+    .projectBox:hover {
+        background-color: transparent;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    }
+    
+    .projectBox h2 {
+        color: #ffffff;
+    }
+    
+    /* Mobile specific dark mode styles */
+    @media (max-width: 768px) {
+        .projectBox1 {
+            background-color: transparent;
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        .projectBox {
             background-color: transparent;
             box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
         }

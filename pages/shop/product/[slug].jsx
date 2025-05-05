@@ -75,13 +75,25 @@ export default function ProductDescription() {
     useEffect(() => {
         const fetchSimilarProducts = async () => {
             try {
-                const similarCategoryProducts = await fetchAllProducts(product.categoryId);
-                const filteredProducts = similarCategoryProducts.filter(
-                    (prod) => prod.categoryId === product.categoryId && prod.id !== product.id
-                );
-                setSimilarProducts(filteredProducts.slice(0, 3));
+                // only proceed if product and product.categories exist
+                if(product && product.categories && product.categories.length > 0) {
+                    const categoryId = product.categories[0].id; // Assuming you want to fetch products from the first category
+                    const similarCategoryProducts = await fetchAllProducts(categoryId);
+                
+                    //filtering products that share same category
+                    const filteredProducts = similarCategoryProducts.filter(
+                        (prod) => prod.categoryId === product.categoryId &&
+                        prod.categories &&
+                        prod.categories.some(cat =>
+                            product.categores.some(prodCat => prodCat.id === cat.id)
+                        ) 
+                    );
+
+                    setSimilarProducts(filteredProducts.slice(0, 3));
+                }
             } catch (error) {
                 console.log('Error fetching similar products', error);
+                setSimilarProducts([]); //set empty tray on errors
             }
         };
 
@@ -207,7 +219,8 @@ export default function ProductDescription() {
             <div className={styles.productSimilar}>
                 <h2>Recommended Products</h2>
                 <div className={styles.similarProductsList}>
-                    {similarProducts.map((product) => (
+                    {similarProducts && similarProducts.length > 0 ? (
+                        similarProducts.map((product) => (
                         <div key={product.id} className={styles.similarProducts}>
                             <Link href={`/shop/product/${product.slug}`} legacyBehavior>
                                 <a>
@@ -281,7 +294,11 @@ export default function ProductDescription() {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))
+                
+                    ) : (
+                        <p style={{textAlign:'center'}}>No Similar Products found</p>
+                    )}
                 </div>
             </div>
         </div>

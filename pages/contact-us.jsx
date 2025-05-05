@@ -1,13 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import styles from '../assets/styles/ContactUs.module.css'
 import Calendly from '../components/Calendly'
-import callicon from '../assets/images/mobileSVG.svg'
-import emailicon from '../assets/images/emailSVG.svg'
-import whatsappicon from '../assets/images/whataspp-black-svg.svg'
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import EmailIcon from '@mui/icons-material/Email'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+
+ 
 
 const style = {
   fontFamily: 'Poppins'
@@ -76,17 +77,17 @@ export default function ContactUs() {
           <div className={styles.ourContacts}>
             <h2>How to reach us:</h2>
             <div className={styles.call}>
-              <Image src={callicon} alt='mobile-icon' />
+              <LocalPhoneIcon />
               <h3>Call us</h3>
               <p>+254 710 478 088</p>
             </div>
             <div className={styles.email}>
-              <Image src={emailicon} alt='email-icon' />
+              <EmailIcon />
               <h3>Email</h3>
               <p>housedesignske@gmail.com</p>
             </div>
             <div className={styles.whatsapp}>
-              <Image src={whatsappicon} alt='whatsapp-icon' />
+              <WhatsAppIcon />
               <h3>WhatsApp</h3>
               <a href="https://wa.me/+254710478088" target="_blank" rel="noopener noreferrer">
                 Chat with us on WhatsApp

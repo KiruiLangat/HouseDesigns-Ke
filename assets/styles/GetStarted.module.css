@@ -83,12 +83,15 @@
     gap: 20px;
 }
 
-.getStartedBox2 Img{
-    @media (prefers-color-scheme: dark) {
-        filter: invert(1) grayscale(100%);
-    }
+
+@media (prefers-color-scheme: dark) {
+        .getStartedBox2 Img{
+            filter: invert(1) grayscale(100%) hue-rotate(180deg);
+        }
 }
+
 .getStartedBox2 p {
+
     @media (prefers-color-scheme: dark) {
         color: #ffffff;
     }

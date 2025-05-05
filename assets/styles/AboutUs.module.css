@@ -65,6 +65,13 @@
 .workflow:hover {
     transform: scale(0.7);
 }
+
+@media (prefers-color-scheme: dark) {
+    .workflow {
+        filter: invert(1) hue-rotate(180deg);
+    }
+}
+
 .viewServices {
     position: relative;
     align-items: flex-end;
@@ -418,6 +425,14 @@
         display: block;
         margin-top: 5%;
     }
+
+    @media (prefers-color-scheme: dark) {
+        .mobileWorkflow {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        
+    }
+
     .viewServices {
         position: relative;
         left: 0;
@@ -514,9 +529,11 @@
         
     }
 
-    .mobileInfiniteTitle, .mobileResilienceTitle, .mobileSimplicityTitle {
-        @media (prefers-color-scheme: dark) {
-            color: #6C5F5B;
+    @media (prefers-color-scheme: dark) {
+        .mobileInfiniteTitle, .mobileResilienceTitle, .mobileSimplicityTitle {
+            color: #a8a8a8;
+            font-weight: 400;
+            font-style: italic;
         }
     }
     .ourTeamBox {
@@ -542,10 +559,9 @@
         justify-content: center;
         justify-content: space-between;
     }
-    .teamMembers h3{
-
-        @media (prefers-color-scheme: dark) {
-            color: #6C5F5B;
+     @media (prefers-color-scheme: dark) {
+        .teamMembers h3{
+            color: #a8a8a8;
         }
     }
     .member1Box {

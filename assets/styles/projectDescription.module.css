@@ -47,6 +47,7 @@
     background-color: #eee;
     height: 350px;
     animation: blinking 1s infinite;
+    position: relative;
 }
 .masonry Img {
     width: 100%;
@@ -57,6 +58,10 @@
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 .projectInfo {
     width: 93%;
@@ -129,17 +134,25 @@
         font-size: 14px;
     }
     .imageContainer {
-        height: 105px;
+        height: 200px;
+        margin-bottom: 10px;
         animation: blinking 1.5s infinite;
+        position: relative;
     }
     .masonry {
         display: grid;
         grid-template-columns: repeat(1,1fr);
+        gap: 10px;
     }
     .masonry Img{
         width: 100%;
-        height:auto;
+        height:200px;
         object-fit: cover;
         transition: opacity 0.5s ease-in-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0;
     }
 }

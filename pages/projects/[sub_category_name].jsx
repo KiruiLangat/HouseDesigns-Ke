@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../../assets/styles/Projects.module.css';
 import '@fontsource/poppins';
+import e from 'cors';
 
 const style = {
     fontFamily: 'Poppins',
@@ -82,7 +83,12 @@ export default function Projects() {
                         <Link href={`/projects/${sub_category_name}/${project.title}`}>
                             <a>
                                 <div className={styles.projectsImg}>
-                                    <Image src={project.project_img_url} alt='Project Loading' layout='fill' objectFit='cover' loading='lazy' />
+                                    <Image 
+                                        src={project.project_img_url} 
+                                        alt='Project Loading' layout='fill' 
+                                        objectFit='cover' 
+                                        loading='lazy'
+                                        onLoad={(e) => e.target.style.opacity = 1} />
                                 </div>
                                 <h2>{project.title}</h2>
                             </a>
