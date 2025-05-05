@@ -9,7 +9,7 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { useCart, useWishlist } from '../../services/shop/cartContext';
 import OptionsPopUp from './OptionsPopUp';
-import Stars from '../../assets/images/stars.svg';
+import Stars from '../../assets/images/Stars.svg';
 import Bedroom from '../../assets/images/Bedroom.svg';
 import Bathroom from '../../assets/images/Bathroom.svg';
 import Floors from '../../assets/images/Floors.svg';
