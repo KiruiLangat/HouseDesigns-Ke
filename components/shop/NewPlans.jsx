@@ -3,10 +3,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../../assets/styles/shop/newPlans.module.css'
 import { fetchCategories, fetchProducts } from '../../services/shop/woocommerce'
-import Star from '../../assets/images/stars.svg';
-import Bedrooms from '../../assets/images/bedroom.svg';
-import Bathrooms from '../../assets/images/bathroom.svg';
-import Floors from '../../assets/images/floors.svg';
+import Star from '../../assets/images/Stars.svg';
+import Bedrooms from '../../assets/images/Bedroom.svg';
+import Bathrooms from '../../assets/images/Bathroom.svg';
+import Floors from '../../assets/images/Floors.svg';
 import PlinthArea from '../../assets/images/plinth.svg';
 import Arrow from '../../assets/images/Arrow.svg';
 
