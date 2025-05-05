@@ -90,7 +90,7 @@ const NewPlans = () => {
                         <div className={styles.cartWishlist}>
                             <div className={styles.wishlist} onClick={() =>
                                 isInWishlist(product) ? handleRemoveFromWishlist(product) : handleAddToWishlist(product)}>
-                                {wishlist.includes(product) ? (
+                                {isInWishlist(product) ? (
                                     <FavoriteIcon className={styles.iconWishlist} />
                                 ) : (
                                     <FavoriteBorderIcon className={styles.iconWishlist} />
