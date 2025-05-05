@@ -117,8 +117,9 @@ const NewPlans = () => {
                                     onClose={() => setShowOptionsPopUp(false)}
                                     handleClosePopUp={handleClosePopUp}
                                     onSelectOption={(_option) => {
-                                        isInCart(selectedProduct) ? handleRemoveFromCart(selectedProduct) :
-                                            handleAddToCart(selectedProduct, selectedProduct, selectedOption)
+                                        isInCart(selectedProduct) ? 
+                                            handleRemoveFromCart(selectedProduct) :
+                                            handleAddToCart(selectedProduct, selectedPrice, selectedOption)
                                         setShowOptionsPopUp(false)
                                     }}
                                 />
