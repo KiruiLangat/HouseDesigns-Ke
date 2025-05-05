@@ -11,6 +11,15 @@ jobs:
     # Add environment configuration for better secret management
     environment: production
     
+    # Add environment variables for database and WooCommerce
+    env:
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_NAME: ${{ secrets.DB_NAME }}
+      WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
+      WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
+    
     steps:
     # Step 1: Clone repository code
     - name: Checkout code
@@ -32,6 +41,11 @@ jobs:
       run: npm run build
       env:
         NODE_ENV: production  # Ensures production optimizations
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
+        WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
       
     # Step 5: Deploy the .next directory (contains compiled application)
     - name: Deploy Next.js build files
@@ -66,6 +80,7 @@ jobs:
           **/.github/**  # No need for GitHub files on production
           **/tests/**  # No need for test files on production
           **/*.log
+          
           
     # Step 7: Restart PM2
     - name: Restart PM2
