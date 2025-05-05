@@ -38,7 +38,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./.next/  # Next.js build output
-        server-dir: /public_html/housedesigns/HouseDesigns-Ke/.next/  # Target location on cPanel
+        server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
         dangerous-clean-slate: true  # Clean destination before uploading
         exclude: |
           **/.git*
@@ -53,7 +53,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: /public_html/housedesigns/HouseDesigns-Ke/
+        server-dir: /public_html/housedesigns/  # This path seems correct
         exclude: |
           **/.git*
           **/.git*/**
@@ -64,7 +64,7 @@ jobs:
           **/tests/**  # No need for test files on production
           **/*.log
           
-    # Step 7: Restart PM2 process to apply changes
+    # Step 7: Restart PM2
     - name: Restart PM2
       uses: appleboy/ssh-action@master
       with:
@@ -73,7 +73,7 @@ jobs:
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
           # Navigate to project directory
-          cd /home/housedes/public_html/housedesigns/HouseDesigns-Ke
+          cd /public_html/housedesigns  # Updated to match server-dir path
           
           # Load NVM if available (common on shared hosting)
           if [ -f ~/.nvm/nvm.sh ]; then
