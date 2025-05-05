@@ -30,7 +30,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'  # Using 18 LTS instead of 23.3.0 which is not yet stable
+        node-version: '20.18.2'  # Using 18 LTS instead of 23.3.0 which is not yet stable
         cache: 'npm'  # Enables caching of npm dependencies
         
     # Step 3: Install project dependencies
