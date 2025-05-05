@@ -11,8 +11,9 @@ jobs:
     # Add environment configuration for better secret management
     environment: production
     
-    # Add environment variables for database and WooCommerce
+    # Define all environment variables once at the job level
     env:
+      NODE_ENV: production
       DB_HOST: ${{ secrets.DB_HOST }}
       DB_USER: ${{ secrets.DB_USER }}
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
@@ -39,13 +40,7 @@ jobs:
     # Step 4: Build Next.js application with production settings
     - name: Build Next.js app
       run: npm run build
-      env:
-        NODE_ENV: production  # Ensures production optimizations
-        DB_HOST: ${{ secrets.DB_HOST }}
-        DB_USER: ${{ secrets.DB_USER }}
-        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-        WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
-        WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
+      # Environment variables are inherited from the job level, no need to repeat
       
     # Step 5: Deploy the .next directory (contains compiled application)
     - name: Deploy Next.js build files
