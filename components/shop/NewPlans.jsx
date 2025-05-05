@@ -7,7 +7,7 @@ import Star from '../../assets/images/Stars.svg';
 import Bedrooms from '../../assets/images/Bedroom.svg';
 import Bathrooms from '../../assets/images/Bathroom.svg';
 import Floors from '../../assets/images/Floors.svg';
-import PlinthArea from '../../assets/images/plinth.svg';
+import PlinthArea from '../../assets/images/Plinth.svg';
 import Arrow from '../../assets/images/Arrow.svg';
 
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
