@@ -39,7 +39,7 @@ const NewPlans = () => {
     const [selectedOption, setSelectedOption] = useState(null);
 
     const isInCart = (product) => cart.some((item) => item && item.slug === product.slug);
-    const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
+    const isInWishlist = (product) => wishlist.some((item) => item && item.slug === product.slug);
 
     const handleClosePopUp = () => {
         setShowOptionsPopUp(false);
