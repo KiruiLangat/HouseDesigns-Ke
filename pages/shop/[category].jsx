@@ -13,10 +13,10 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBag';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import SearchIcon from '@mui/icons-material/Search';
-import Bedrooms from '../../assets/images/bedroom.svg';
-import Floors from '../../assets/images/floors.svg';
-import PlinthArea from '../../assets/images/plinth.svg';
-import Bathrooms from '../../assets/images/bathroom.svg';
+import Bedrooms from '../../assets/images/Bedroom.svg';
+import Floors from '../../assets/images/Floors.svg';
+import PlinthArea from '../../assets/images/Plinth.svg';
+import Bathrooms from '../../assets/images/Bathroom.svg';
 
 
 import OptionsPopUp from '../../components/shop/OptionsPopUp';

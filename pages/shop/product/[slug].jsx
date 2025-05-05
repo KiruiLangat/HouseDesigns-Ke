@@ -7,10 +7,10 @@ import styles from '../../../assets/styles/shop/productDescription.module.css';
 
 import '@fontsource/poppins';
 import { fetchAllProducts, fetchAttributesTerms, fetchProductVariations } from '../../../services/shop/woocommerce';
-import Bedrooms from '../../../assets/images/bedroom.svg';
-import Bathrooms from '../../../assets/images/bathroom.svg';
-import Floors from '../../../assets/images/floors.svg';
-import PlinthArea from '../../../assets/images/plinth.svg';
+import Bedrooms from '../../../assets/images/Bedroom.svg';
+import Bathrooms from '../../../assets/images/Bathroom.svg';
+import Floors from '../../../assets/images/Floors.svg';
+import PlinthArea from '../../../assets/images/Plinth.svg';
 
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';

@@ -10,10 +10,10 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { useCart, useWishlist } from '../../services/shop/cartContext';
 import OptionsPopUp from './OptionsPopUp';
 import Stars from '../../assets/images/stars.svg';
-import Bedroom from '../../assets/images/bedroom.svg';
-import Bathroom from '../../assets/images/bathroom.svg';
-import Floors from '../../assets/images/floors.svg';
-import PlinthArea from '../../assets/images/plinth.svg';
+import Bedroom from '../../assets/images/Bedroom.svg';
+import Bathroom from '../../assets/images/Bathroom.svg';
+import Floors from '../../assets/images/Floors.svg';
+import PlinthArea from '../../assets/images/Plinth.svg';
 import Arrow from '../../assets/images/Arrow.svg';
 
 const style = {
