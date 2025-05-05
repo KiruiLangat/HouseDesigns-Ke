@@ -3,19 +3,15 @@ deployment:
   tasks:
     # Define the deployment path
     - export DEPLOYPATH=/home/housedes/public_html/housedesigns
-
-    # Sync only changed files in the .next directory
-    - rsync -av --delete .next/ $DEPLOYPATH/.next
-
-    # Sync only changed files in the public directory
-    - rsync -av --delete public/ $DEPLOYPATH/public
-
-    # Sync individual files if they have changed
-    - rsync -av package.json $DEPLOYPATH/package.json
-    - rsync -av server.js $DEPLOYPATH/server.js
-    - rsync -av .env $DEPLOYPATH/.env
-
-    # pm2 reload/ restarting
-    - pm2 reload housedesigns || pm2 start $DEPLOYPATH/server.js --name housedesigns
-    # Print success message
-    - echo "Deployment completed successfully!"
+    
+    # Sync only changed files in the required directories
+    - /bin/rsync -av --delete .next/ $DEPLOYPATH/.next
+    - /bin/rsync -av --delete public/ $DEPLOYPATH/public
+    
+    # Sync individual files
+    - /bin/rsync -av package.json package-lock.json $DEPLOYPATH/
+    - /bin/rsync -av server.js $DEPLOYPATH/
+    - /bin/rsync -av .env $DEPLOYPATH/
+    
+    # Create a deployment completion marker
+    - /bin/touch $DEPLOYPATH/.deployment-completed
