@@ -24,28 +24,25 @@ const style = {
     fontFamily: 'Poppins'
 }
 
-const SvgImage = ({ src, alt, className }) => (
-    <Image src={src} alt={alt} className={className} />
-)
-
 const NewPlans = () => {
+    // Product data
     const [products, setProducts] = useState([]);
-
-    //handling Cart and Wishlist
+    
+    // Cart and Wishlist handling
     const { cart, handleAddToCart, handleRemoveFromCart } = useCart();
     const { wishlist, handleAddToWishlist, handleRemoveFromWishlist } = useWishlist();
+
+    // Options Pop up state
+    const [showOptionsPopUp, setShowOptionsPopUp] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [selectedPrice, setSelectedPrice] = useState(null);
+    const [selectedOption, setSelectedOption] = useState(null);
 
     const isInCart = (product) => cart.some((item) => item && item.slug === product.slug);
     const isInWishlist = (product) => wishlist.some((item) => item.slug === product.slug);
 
-    //Options Pop up
-    const [showOptionsPopUp, setShowOptionsPopUp] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState(null)
-    const [selectedPrice, setSelectedPrice] = useState(null)
-    const [selectedOption, setSelectedOption] = useState(null)
-
     const handleClosePopUp = () => {
-        setShowOptionsPopUp(false)
+        setShowOptionsPopUp(false);
     }
 
     useEffect(() => {
@@ -78,7 +75,7 @@ const NewPlans = () => {
                     <Link href={`/shop/New Plans`}>
                         <div className={styles.plansNavCTA}>
                             <p>See More</p>
-                            <SvgImage src={Arrow} alt="Arrow" className={styles.iconArrowNp} />
+                            <Image src={Arrow} alt="Arrow" className={styles.iconArrowNp} />
                         </div>
                     </Link>
                 </div>
@@ -127,7 +124,7 @@ const NewPlans = () => {
                         </div>
 
                         <div className={styles.newIndicator}>
-                            <SvgImage src={Star} alt="New" className={styles.iconIndicator} />
+                            <Image src={Star} alt="New" className={styles.iconIndicator} />
                             <p>New</p>
                         </div>
                         <div className={styles.newPlansCardTitle}>
@@ -137,20 +134,20 @@ const NewPlans = () => {
 
                         <div className={styles.newPlansCardDetail}>
                             <div className={styles.newPlansCardDetails}>
-                                <SvgImage src={Bedrooms} alt="Bedrooms" className={styles.iconGrid} />
+                                <Image src={Bedrooms} alt="Bedrooms" className={styles.iconGrid} />
                                 <p>{product.attributes.find(attr => attr.name === 'Bedrooms')?.options[0]} Bedrooms</p>
                             </div>
 
                             <div className={styles.newPlansCardDetails}>
-                                <SvgImage src={Floors} alt="Floors" className={styles.iconGridFloors} />
+                                <Image src={Floors} alt="Floors" className={styles.iconGridFloors} />
                                 <p>{product.attributes.find(attr => attr.name === 'Floors')?.options[0]} Floor(s)</p>
                             </div>
                             <div className={styles.newPlansCardDetails}>
-                                <SvgImage src={PlinthArea} alt="Plinth Area" className={styles.iconGrid} />
+                                <Image src={PlinthArea} alt="Plinth Area" className={styles.iconGrid} />
                                 <p>{product.attributes.find(attr => attr.name === 'Plinth Area')?.options[0]}</p>
                             </div>
                             <div className={styles.newPlansCardDetails}>
-                                <SvgImage src={Bathrooms} alt="Bathrooms" className={styles.iconGrid} />
+                                <Image src={Bathrooms} alt="Bathrooms" className={styles.iconGrid} />
                                 <p>{product.attributes.find(attr => attr.name === 'Bathrooms')?.options[0]} Bathrooms</p>
                             </div>
                         </div>

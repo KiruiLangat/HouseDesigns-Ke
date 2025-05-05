@@ -28,9 +28,6 @@ const style = {
     fontFamily: 'Poppins',
 };
 
-const SvgImage = ({ src, alt, className }) => (
-    <Image src={src} alt={alt} className={className} />
-);
 
 export default function ProductDescription() {
     const router = useRouter();
@@ -168,19 +165,19 @@ export default function ProductDescription() {
                     <div className={styles.attributesDescription}>
                         <div className={styles.productDescFeatures}>
                             <div className={styles.productDescFeature}>
-                                <SvgImage src={Bedrooms} alt={'Bedrooms'} className={styles.icon} />
+                                <Image src={Bedrooms} alt={'Bedrooms'} className={styles.icon} />
                                 <p>{product.attributes.find((attr) => attr.name === 'Bedrooms')?.options} Bedrooms</p>
                             </div>
                             <div className={styles.productDescFeature}>
-                                <SvgImage src={Bathrooms} alt={'Bathrooms'} className={styles.icon} />
+                                <Image src={Bathrooms} alt={'Bathrooms'} className={styles.icon} />
                                 <p>{product.attributes.find((attr) => attr.name === 'Bathrooms')?.options} Bathrooms</p>
                             </div>
                             <div className={styles.productDescFeature}>
-                                <SvgImage src={Floors} alt={'Floors'} className={styles.iconFloors} />
+                                <Image src={Floors} alt={'Floors'} className={styles.iconFloors} />
                                 <p>{product.attributes.find((attr) => attr.name === 'Floors')?.options} Floor(s)</p>
                             </div>
                             <div className={styles.productDescFeature}>
-                                <SvgImage src={PlinthArea} alt={'Plinth Area'} className={styles.icon} />
+                                <Image src={PlinthArea} alt={'Plinth Area'} className={styles.icon} />
                                 <p>{product.attributes.find((attr) => attr.name === 'Plinth Area')?.options}</p>
                             </div>
                         </div>
@@ -279,19 +276,19 @@ export default function ProductDescription() {
                             </div>
                             <div className={styles.newPlansCardDetail}>
                                 <div className={styles.newPlansCardDetails}>
-                                    <SvgImage src={Bedrooms} alt={'Bedrooms'} className={styles.iconGrid} />
+                                    <Image src={Bedrooms} alt={'Bedrooms'} className={styles.iconGrid} />
                                     <p>{product.attributes.find((attr) => attr.name === 'Bedrooms')?.options[0]} Bedrooms</p>
                                 </div>
                                 <div className={styles.newPlansCardDetails}>
-                                    <SvgImage src={Floors} alt={'Floors'} className={styles.iconGridFloors} />
+                                    <Image src={Floors} alt={'Floors'} className={styles.iconGridFloors} />
                                     <p>{product.attributes.find((attr) => attr.name === 'Floors')?.options[0]} Floor(s)</p>
                                 </div>
                                 <div className={styles.newPlansCardDetails}>
-                                    <SvgImage src={PlinthArea} alt={'Plinth Area'} className={styles.iconGrid} />
+                                    <Image src={PlinthArea} alt={'Plinth Area'} className={styles.iconGrid} />
                                     <p>{product.attributes.find((attr) => attr.name === 'Plinth Area')?.options[0]}</p>
                                 </div>
                                 <div className={styles.newPlansCardDetails}>
-                                    <SvgImage src={Bathrooms} alt={'Bathrooms'} className={styles.iconGrid} />
+                                    <Image src={Bathrooms} alt={'Bathrooms'} className={styles.iconGrid} />
                                     <p>{product.attributes.find((attr) => attr.name === 'Bathrooms')?.options[0]} Bathrooms</p>
                                 </div>
                             </div>

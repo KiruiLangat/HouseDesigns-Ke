@@ -20,9 +20,7 @@ const style = {
     fontFamily: 'Poppins'
 };
 
-const SvgImage = ({ src, alt, className }) => (
-    <Image src={src} alt={alt} className={className} />
-);
+
 
 const BrowsePlans = () => {
     // Fetching categories from woocommerce
@@ -118,7 +116,7 @@ const BrowsePlans = () => {
                         <Link href={`/shop/${selectedCategory}`}>
                             <div className={styles.plansNav}>
                                 <p>See More</p>
-                                <SvgImage src={Arrow} alt="Arrow" className={styles.iconArrow} />
+                                <Image src={Arrow} alt="Arrow" className={styles.iconArrow} />
                             </div>
                         </Link>
                     </div>
@@ -166,7 +164,7 @@ const BrowsePlans = () => {
                                 <div className={styles.previewDetailsContainer}>
                                     <div className={styles.previewDetailsTitle}>
                                         <div className={styles.starPlan}>
-                                            <SvgImage src={Stars} alt="Stars" className={styles.iconPopular} />
+                                            <Image src={Stars} alt="Stars" className={styles.iconPopular} />
                                             <p>Most Popular Plan</p>
                                         </div>
                                         <div className={styles.previewDetailsTitlePricing}>
@@ -177,19 +175,19 @@ const BrowsePlans = () => {
                                     <div className={styles.previewDetails}>
                                         <div className={styles.previewDetailsInfo}>
                                             <div className={styles.Bedrooms}>
-                                                <SvgImage src={Bedroom} alt="Bedroom" className={styles.icon} />
+                                                <Image src={Bedroom} alt="Bedroom" className={styles.icon} />
                                                 <p>{products[0].attributes.find(attr => attr.name === 'Bedrooms')?.options[0]} Bedrooms</p>
                                             </div>
                                             <div className={styles.Bathrooms}>
-                                                <SvgImage src={Bathroom} alt="Bathroom" className={styles.icon} />
+                                                <Image src={Bathroom} alt="Bathroom" className={styles.icon} />
                                                 <p>{products[0].attributes.find(attr => attr.name === 'Bathrooms')?.options[0]} Bathrooms</p>
                                             </div>
                                             <div className={styles.Floors}>
-                                                <SvgImage src={Floors} alt="Floors" className={styles.iconFloors} />
+                                                <Image src={Floors} alt="Floors" className={styles.iconFloors} />
                                                 <p>{products[0].attributes.find(attr => attr.name === 'Floors')?.options[0]} Floor(s)</p>
                                             </div>
                                             <div className={styles.Plinth}>
-                                                <SvgImage src={PlinthArea} alt="Plinth Area" className={styles.icon} />
+                                                <Image src={PlinthArea} alt="Plinth Area" className={styles.icon} />
                                                 <p>{products[0].attributes.find(attr => attr.name === 'Plinth Area')?.options[0]}</p>
                                             </div>
                                         </div>

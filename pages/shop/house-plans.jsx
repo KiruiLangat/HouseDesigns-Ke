@@ -25,9 +25,6 @@ const style = {
     fontFamily: 'Poppins',
 };
 
-const SvgImage = ({ src, alt, className }) => {
-    return <Image src={src} alt={alt} className={className} />;
-}
 
 export default function HousePlans({ category }) {
     const [products, setProducts] = useState([]);
@@ -375,23 +372,23 @@ export default function HousePlans({ category }) {
                                         </div>
                                         <div className={styles.productsCardDetail}>
                                             <div className={styles.productsCardDetails}>
-                                                <SvgImage src={Bedrooms} alt="Bedrooms" className={styles.iconGrid} />
+                                                <Image src={Bedrooms} alt="Bedrooms" className={styles.iconGrid} />
                                                 <p>
                                                     {product.attributes.find((attr) => attr.name === 'Bedrooms')?.options[0]} Bedrooms
                                                 </p>
                                             </div>
                                             <div className={styles.productsCardDetails}>
-                                                <SvgImage src={Floors} alt="Floors" className={styles.iconGridFloors} />
+                                                <Image src={Floors} alt="Floors" className={styles.iconGridFloors} />
                                                 <p>
                                                     {product.attributes.find((attr) => attr.name === 'Floors')?.options[0]} Floor(s)
                                                 </p>
                                             </div>
                                             <div className={styles.productsCardDetails}>
-                                                <SvgImage src={PlinthArea} alt="Plinth Area" className={styles.iconGrid} />
+                                                <Image src={PlinthArea} alt="Plinth Area" className={styles.iconGrid} />
                                                 <p>{product.attributes.find((attr) => attr.name === 'Plinth Area')?.options[0]}</p>
                                             </div>
                                             <div className={styles.productsCardDetails}>
-                                                <SvgImage src={Bathrooms} alt="Bathrooms" className={styles.iconGrid} />
+                                                <Image src={Bathrooms} alt="Bathrooms" className={styles.iconGrid} />
                                                 <p>
                                                     {product.attributes.find((attr) => attr.name === 'Bathrooms')?.options[0]} Bathrooms
                                                 </p>
