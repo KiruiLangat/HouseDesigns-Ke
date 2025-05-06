@@ -67,7 +67,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: /public_html/housedesigns/  # This path seems correct
+        server-dir: public_html/housedesigns/  # This path seems correct
         exclude: |
           **/.git*
           **/.git*/**
