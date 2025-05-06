@@ -79,9 +79,9 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: /public_html/housedesigns/  # This path seems correct
+        dangerous-clean-slate: false  # Changed to false to prevent deleting existing directories
         log-level: minimal  # Set log level to minimal for cleaner logs
         state-name: .root-deploy-state.json  # Unique state name for the main directory
-        dangerous-clean-slate: false  # Set to false to avoid deleting existing directories
         exclude: |
           **/.git*
           **/.git*/**
