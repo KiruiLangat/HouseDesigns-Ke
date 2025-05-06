@@ -41,29 +41,17 @@ jobs:
     - name: Build Next.js app
       run: npm run build
       # Environment variables are inherited from the job level, no need to repeat
-    
-    # Create directories before deployment
-    - name: Create directories
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        password: ${{ secrets.SSH_PASSWORD }}
-        script: |
-          mkdir -p /home/housedes/public_html/housedesigns/.next/static
-
+      
     # Step 5: Deploy the .next directory (contains compiled application)
     - name: Deploy Next.js build files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_SERVER }}
-        port: 21  # Default FTP port
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./.next/  # Next.js build output
-        server-dir: public_html/housedesigns/.next/  # Update to include .next subfolder
-        dangerous-clean-slate: true  # Change to false after first deployment: Cleans destination before uploading
-        log-level: verbose  # Set to verbose for detailed logs
+        server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
+        dangerous-clean-slate: false  # Change to false after first deployment: Cleans destination before uploading
         exclude: |
           **/.git*
           **/.git*/**
@@ -76,8 +64,8 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./  # This path seems correct
-        server-dir: public_html/housedesigns/  # This path seems correct
+        local-dir: ./
+        server-dir: /public_html/housedesigns/  # This path seems correct
         exclude: |
           **/.git*
           **/.git*/**
@@ -87,6 +75,7 @@ jobs:
           **/.github/**  # No need for GitHub files on production
           **/tests/**  # No need for test files on production
           **/*.log
+          
           
     # Step 7: Restart PM2
     - name: Restart PM2
