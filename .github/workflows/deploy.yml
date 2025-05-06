@@ -51,13 +51,12 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./.next/  # Next.js build output
         server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
-        dangerous-clean-slate: true  # Change to false after first deployment: Cleans destination before uploading
+        dangerous-clean-slate: false  # Changed to false to prevent deleting existing directories
         log-level: verbose
         exclude: |
           **/.git*
           **/.git*/**
-          **/node_modules/**
-          **/_next/static/[a-zA-Z0-9]*/**  # Ignore missing hash folders 
+          **/node_modules**
           
     # Step 6: Deploy necessary project files (excluding source and build artifacts)
     - name: Deploy supporting files
