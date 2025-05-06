@@ -6,6 +6,7 @@ import styles from '../assets/styles/Blog.module.css';
 import '@fontsource/poppins';
 import SearchBar from '../components/BlogSearchBar';
 import BlogGrids from '../components/BlogGrids';
+import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 
 const style = {
     fontFamily: 'Poppins',
@@ -15,6 +16,23 @@ export default function Blog() {
   const [blogPost, setBlogPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    // Set initial window width
+    setWindowWidth(window.innerWidth);
+    
+    // Handle window resize
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?&_embed')
@@ -39,7 +57,12 @@ export default function Blog() {
   }, []); // Empty dependency array to run only once
 
   if (loading) {
-    return <div className='loading'>Loading<span>...</span></div>;
+    return (
+      <div className={styles.loading}>
+        <HourglassBottomIcon className={styles.loadingIcon} />
+        <p>Retrieving posts...</p>
+      </div>
+    );
   }
   if (error) {
     return <div className='error'>{error}</div>;
@@ -57,10 +80,12 @@ export default function Blog() {
 
     function truncateText(text, length, viewportWidth) {
       if (!text || !length) return text;
-      if (window.innerWidth <= viewportWidth && text.length > length) {
+      // Use the state-tracked window width instead of direct window access
+      if (windowWidth <= viewportWidth && text.length > length) {
         return text.substring(0, length) + '...';
       } else {
-        return text;
+        // For larger screens, use a more generous character limit
+        return text.length > length * 2 ? text.substring(0, length * 2) + '...' : text;
       }
     }
 
@@ -85,7 +110,7 @@ export default function Blog() {
           <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
         </Head>
 
-        <Link href={`/blog/${slug}`} className={styles.blogIntro}>
+        <Link href={`/blog/${slug}`} className={styles.blogIntro} legacyBehavior={false}>
           <div className={styles.testImg}>
             <Image src={featuredImage} alt='featured-img' width={1260} height={600} />
           </div>

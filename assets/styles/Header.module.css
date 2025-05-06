@@ -16,6 +16,13 @@
     margin-left: 10px;
 }
 
+@media (prefers-color-scheme: dark) {
+    .logo {
+        filter: invert(1) hue-rotate(180deg);
+    }
+}
+
+
 .header ul {
     display: flex;
     list-style: none;

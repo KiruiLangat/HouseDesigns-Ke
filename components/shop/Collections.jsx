@@ -43,7 +43,7 @@ const Collections = () => {
                                     src={category.image ? category.image.src : '/default-thumbnail.jpg'} 
                                     alt={category.name} 
                                     width={300} 
-                                    height={200} 
+                                    height={300} 
                                     layout="responsive" 
                                     loading='lazy' 
                                 />

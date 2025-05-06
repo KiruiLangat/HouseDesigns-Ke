@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import styles from '../../assets/styles/BlogPost.module.css';
+import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 
 const style = {
     fontFamily: 'Poppins',
@@ -51,7 +52,12 @@ export default function BlogPost() {
   }, [slug]);
 
   if (!post) {
-    return <div className='loading'>Loading<span>...</span></div>;
+    return (
+      <div className={styles.loading}>
+        <HourglassBottomIcon className={styles.loadingIcon} />
+        <p>Retrieving post...</p>
+      </div>
+    );
   }
   if (isLoading) {
     return <div className='loading'>Loading<span>...</span> </div>;
@@ -89,20 +95,16 @@ export default function BlogPost() {
         <div className={styles.blogNavigation}>
           <div className={styles.previous}>
             {previousPost && (
-              <Link href={`/blog/${previousPost.slug}`} legacyBehavior>
-                <a>
-                  <h2>● Previous Post</h2>
-                </a>
-              </Link>
+              <a href={`/blog/${previousPost.slug}`}>
+                <h2>● Previous Post</h2>
+              </a>
             )}
           </div>
           <div className={styles.next}>
             {nextPost && (
-              <Link href={`/blog/${nextPost.slug}`} legacyBehavior>
-                <a>
-                  <h2>Next Post ●</h2>
-                </a>
-              </Link>
+              <a href={`/blog/${nextPost.slug}`}>
+                <h2>Next Post ●</h2>
+              </a>
             )}
           </div>
         </div>

@@ -19,7 +19,7 @@ const Assurance = () => {
                 <div className={styles.assuranceBox}>
                     <SupportAgentIcon />
                     <p>Always ready to assist.<br/> Contact us through 
-                    <a href='tel:+254 799 000 299'> +254 799 000 299</a>.</p>
+                    <a href='tel:+254 710 478 088'> +254 710 478 088</a>.</p>
                 </div>
             
                 <div className={styles.assuranceBox}>

@@ -5,44 +5,42 @@
     max-width: 1200px;
     min-height: 100vh;
 }
-@keyframes dot {
-    0%, 20% {
-      color: rgba(0,0,0,0);
-      text-shadow:
-        .25em 0 0 rgba(0,0,0,0),
-        .5em 0 0 rgba(0,0,0,0);
-    }
 
-    
-    /* 40% {
-      color: white;
-      text-shadow:
-        .25em 0 0 white,
-        
-    }
-    60% {
-      text-shadow:
-        .25em 0 0 white,
-        .5em 0 0 white;
-    }
-    80%, 100% {
-      text-shadow:
-        .25em 0 0 white,
-        .5em 0 0 white;
-    } */
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  
-.loading {
-    color: black;
-    font-family: Poppins;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 25%;
-    font-size: 20px;
-    animation: dot 1.09s infinite;
-    min-height: 50vh;
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:10%;
+  height: 50vh;
+  color: black;
+  font-family: Poppins;
+  font-size: 18px;
+  gap: 20px;
+}
+
+.loadingIcon {
+  font-size: 48px !important;
+  animation: rotate 2s linear infinite;
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  .loading {
+    color: white;
+  }
+}
+
 .blogIntro{
     display: flex;
     justify-content: center;
@@ -73,13 +71,15 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #00000099;
+    background-color: #000000b5;
+    backdrop-filter: blur(10px);
     color: white;
     display: flex;
     flex-direction: column;
     width: 93%;
     border-radius: 10px;
     height: 35%;
+    padding: 10px;
 }
 .overlayInfo h2{
     font-size: 24px;
@@ -110,6 +110,14 @@
 
 
 @media (max-width:768px){
+    .loadingIcon{
+        font-size: 20px !important;
+    }
+    .loading{
+        font-size: 16px;
+    }
+
+
     .testImg{
         margin-top: 2%;
         width: 93%;
@@ -124,6 +132,7 @@
         height: 45%;
         width: 93%;
         margin-bottom: 0;
+        padding: 0;
     }
     .overlayInfo h2{
         font-size: 14px;
