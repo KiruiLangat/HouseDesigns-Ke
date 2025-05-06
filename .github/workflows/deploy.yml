@@ -51,7 +51,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./.next/  # Next.js build output
         server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
-        dangerous-clean-slate: true  # Clean destination before uploading
+        dangerous-clean-slate: false  # Change to false after first deployment: Cleans destination before uploading
         exclude: |
           **/.git*
           **/.git*/**
@@ -85,19 +85,26 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
-          # Navigate to project directory
-          cd /public_html/housedesigns  # Updated to match server-dir path
+          script: |
+          # Activate the virtual environment
+          source /home/housedes/nodevenv/public_html/housedesigns/20/bin/activate
           
-          # Load NVM if available (common on shared hosting)
-          if [ -f ~/.nvm/nvm.sh ]; then
-            source ~/.nvm/nvm.sh
+          # Navigate to the project directory
+          cd /home/housedes/public_html/housedesigns
+          
+          # Ensure PM2 is installed
+          if ! command -v pm2 &> /dev/null; then
+            echo "PM2 not found. Installing PM2..."
+            npm install -g pm2
           fi
           
-          # Reload or start PM2 process
+          # Reload or start the PM2 process
           if pm2 list | grep -q "housedesigns"; then
+            echo "Reloading existing PM2 process..."
             pm2 reload housedesigns
           else
-            pm2 start npm --name "housedesigns" -- start
+            echo "Starting new PM2 process..."
+            pm2 start server.js --name housedesigns --update-env
           fi
           
           # Save PM2 process list to persist across server restarts
