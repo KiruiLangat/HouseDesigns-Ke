@@ -57,6 +57,7 @@ jobs:
           **/.git*
           **/.git*/**
           **/node_modules/**
+          **/_next/static/[a-zA-Z0-9]*/**  # Ignore missing hash folders 
           
     # Step 6: Deploy necessary project files (excluding source and build artifacts)
     - name: Deploy supporting files
