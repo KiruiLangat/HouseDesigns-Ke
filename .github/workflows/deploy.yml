@@ -85,7 +85,6 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
-          script: |
           # Activate the virtual environment
           source /home/housedes/nodevenv/public_html/housedesigns/20/bin/activate
           
