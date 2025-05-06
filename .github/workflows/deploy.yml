@@ -47,10 +47,11 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_SERVER }}
+        port: 21  # Default FTP port
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./.next/  # Next.js build output
-        server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
+        server-dir: public_html/housedesigns/.next/  # Update to include .next subfolder
         dangerous-clean-slate: true  # Change to false after first deployment: Cleans destination before uploading
         log-level: verbose  # Set to verbose for detailed logs
         exclude: |
