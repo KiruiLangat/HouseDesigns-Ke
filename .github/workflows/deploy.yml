@@ -51,7 +51,8 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./.next/  # Next.js build output
         server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
-        dangerous-clean-slate: false  # Change to false after first deployment: Cleans destination before uploading
+        dangerous-clean-slate: true  # Change to false after first deployment: Cleans destination before uploading
+        log-level: verbose
         exclude: |
           **/.git*
           **/.git*/**
@@ -66,6 +67,8 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: /public_html/housedesigns/  # This path seems correct
+        log-level: verbose
+        dangerous-clean-slate: false  # Change to false after first deployment: Cleans destination before uploading
         exclude: |
           **/.git*
           **/.git*/**
