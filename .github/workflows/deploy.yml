@@ -62,14 +62,15 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./.next/  # Next.js build output
         server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
-        dangerous-clean-slate: true # Set to true to clean slate the .next directory
+        dangerous-clean-slate: true  # Clean slate to avoid stale files
         log-level: minimal  # Set log level to minimal for cleaner logs
         state-name: .next-deploy-state.json  # Unique state name for .next directory
         exclude: |
           **/.git*
           **/.git*/**
-          **/node_modules**
-          **/.next-deploy-state.json  # Exclude the state file itself
+          **/node_modules/**
+          **/.github/**
+          **/tests/**  # No need for test files on production        
           **/.ftp-deploy-sync-state.json  # Exclude the FTP state file itself
           
     # Step 6: Deploy necessary project files (excluding source and build artifacts)
@@ -81,6 +82,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: /public_html/housedesigns/  # This path seems correct
+        dangerous-clean-slate: true  # Clean slate to avoid stale files
         log-level: minimal  # Set log level to minimal for cleaner logs
         state-name: .root-deploy-state.json  # Unique state name for the main directory
         exclude: |
