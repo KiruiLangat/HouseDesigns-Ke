@@ -51,7 +51,7 @@ export default function BlogPost() {
       });
   }, [slug]);
 
-  if (!post) {
+  if (!post || isLoading) {
     return (
       <div className={styles.loading}>
         <HourglassBottomIcon className={styles.loadingIcon} />
@@ -59,9 +59,7 @@ export default function BlogPost() {
       </div>
     );
   }
-  if (isLoading) {
-    return <div className='loading'>Loading<span>...</span> </div>;
-  }
+
 
   return (
     <HelmetProvider>

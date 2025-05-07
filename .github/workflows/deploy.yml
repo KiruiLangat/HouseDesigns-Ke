@@ -69,9 +69,7 @@ jobs:
           **/.git*
           **/.git*/**
           **/node_modules/**
-          **/.github/**
-          **/tests/**  # No need for test files on production        
-          **/.ftp-deploy-sync-state.json  # Exclude the FTP state file itself
+         
           
     # Step 6: Deploy necessary project files (excluding source and build artifacts)
     - name: Deploy supporting files
@@ -82,7 +80,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: /public_html/housedesigns/  # This path seems correct
-        dangerous-clean-slate: true  # Clean slate to avoid stale files
+        dangerous-clean-slate: false  # Clean slate to avoid stale files
         log-level: minimal  # Set log level to minimal for cleaner logs
         state-name: .root-deploy-state.json  # Unique state name for the main directory
         exclude: |
@@ -94,7 +92,7 @@ jobs:
           **/.github/**  # No need for GitHub files on production
           **/tests/**  # No need for test files on production
           **/*.log
-          **/.root-deploy-state.json  # Exclude the state file itself
+          
           
           
     # Step 7: Restart PM2

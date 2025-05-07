@@ -38,7 +38,7 @@ export default function ContactUs() {
         throw new Error('HTTPS error' + response.status);
       }
       console.log('Navigating to submission page')
-      router.push('/submission-page');
+      router.push('/submission');
     } catch (error) {
       console.log('Form submission failed', error);
     }
