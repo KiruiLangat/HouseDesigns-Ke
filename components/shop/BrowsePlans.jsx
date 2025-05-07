@@ -20,13 +20,38 @@ const style = {
     fontFamily: 'Poppins'
 };
 
+// Simplified placeholder component for category tabs
+const CategoryPlaceholder = () => (
+    <div className={styles.categoryPlaceholderContainer}>
+        {[1, 2, 3, 4].map(i => (
+            <div key={i} className={styles.categoryPlaceholder}></div>
+        ))}
+    </div>
+);
 
+// Simplified placeholder component for the product display
+const ProductPlaceholder = () => (
+    <div className={styles.landingPlans}>
+        <div className={styles.bigPlanSample}>
+            <div className={styles.imagePlaceholder}></div>
+            <div className={styles.detailsPlaceholder}>
+                <div className={styles.titlePlaceholder}></div>
+                <div className={styles.pricePlaceholder}></div>
+            </div>
+        </div>
+        <div className={styles.smallImagesPlaceholder}>
+            <div className={styles.smallImagePlaceholder}></div>
+            <div className={styles.smallImagePlaceholder}></div>
+        </div>
+    </div>
+);
 
 const BrowsePlans = () => {
     // Fetching categories from woocommerce
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('Popular Plans');
+    const [isLoading, setIsLoading] = useState(true);
 
     // Handling Cart and Wishlist
     const { cart, handleAddToCart, handleRemoveFromCart } = useCart();
@@ -46,6 +71,7 @@ const BrowsePlans = () => {
 
     useEffect(() => {
         const fetchData = async () => {
+            setIsLoading(true);
             try {
                 // Fetch categories
                 const categoriesData = await fetchCategories();
@@ -58,6 +84,8 @@ const BrowsePlans = () => {
                 }
             } catch (error) {
                 console.error('Error fetching categories', error);
+            } finally {
+                setIsLoading(false);
             }
         };
 
@@ -66,6 +94,7 @@ const BrowsePlans = () => {
 
     useEffect(() => {
         const fetchProductsForCategory = async () => {
+            setIsLoading(true);
             try {
                 const category = categories.find(cat => cat.name === selectedCategory);
                 if (category) {
@@ -75,6 +104,8 @@ const BrowsePlans = () => {
                 }
             } catch (error) {
                 console.error('Error fetching products', error);
+            } finally {
+                setIsLoading(false);
             }
         };
 
@@ -94,25 +125,29 @@ const BrowsePlans = () => {
                 </div>
                 <div className={styles.plansCategories}>
                     <div className={styles.categoriesNav}>
-                        <ul className={styles.categories}>
-                            {[
-                                ...categories.filter(category => category.name === 'Popular Plans'),
-                                ...categories.filter(category => desiredCategories.includes(category.name))
-                            ].map(category => (
-                                <li
-                                    key={category.slug}
-                                    className={`${category.name === 'Popular Plans' ? styles.defaultCategory : ''}
-                                        ${category.name === selectedCategory ? styles.selectedCategory : ''}
-                                        ${category.name === 'Popular Plans' && category.name !== selectedCategory ? styles.defaultCategoryUnselected : ''}`}
-                                    onClick={() => {
-                                        setSelectedCategory(category.name);
-                                        console.log('selected category', category.name);
-                                    }}
-                                >
-                                    {category.name}
-                                </li>
-                            ))}
-                        </ul>
+                        {isLoading || categories.length === 0 ? (
+                            <CategoryPlaceholder />
+                        ) : (
+                            <ul className={styles.categories}>
+                                {[
+                                    ...categories.filter(category => category.name === 'Popular Plans'),
+                                    ...categories.filter(category => desiredCategories.includes(category.name))
+                                ].map(category => (
+                                    <li
+                                        key={category.slug}
+                                        className={`${category.name === 'Popular Plans' ? styles.defaultCategory : ''}
+                                            ${category.name === selectedCategory ? styles.selectedCategory : ''}
+                                            ${category.name === 'Popular Plans' && category.name !== selectedCategory ? styles.defaultCategoryUnselected : ''}`}
+                                        onClick={() => {
+                                            setSelectedCategory(category.name);
+                                            console.log('selected category', category.name);
+                                        }}
+                                    >
+                                        {category.name}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                         <Link href={`/shop/${selectedCategory}`}>
                             <div className={styles.plansNav}>
                                 <p>See More</p>
@@ -121,7 +156,9 @@ const BrowsePlans = () => {
                         </Link>
                     </div>
 
-                    {products.length > 0 && (
+                    {isLoading || products.length === 0 ? (
+                        <ProductPlaceholder />
+                    ) : (
                         <div className={styles.landingPlans}>
                             <div className={styles.bigPlanSample}>
                                 <Link href={`/shop/product/${products[0]?.slug}`}>

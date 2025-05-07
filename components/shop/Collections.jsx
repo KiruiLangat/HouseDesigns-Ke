@@ -12,14 +12,30 @@ const style = {
     fontFamily: 'Poppins',
 };
 
+// Placeholder component for collections
+const CollectionPlaceholder = () => (
+    <div className={styles.collectionsCard}>
+        <div className={styles.imagePlaceholder}></div>
+        <div className={styles.titlePlaceholder}></div>
+    </div>
+);
+
 const Collections = () => {
     const [categories, setCategories] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        setIsLoading(true);
         fetchCategories()
             .then((data) => {
                 setCategories(data);
                 console.log("Fetched categories", data);
+            })
+            .catch(error => {
+                console.error("Error fetching categories:", error);
+            })
+            .finally(() => {
+                setIsLoading(false);
             });
     }, []);
 
@@ -35,23 +51,33 @@ const Collections = () => {
                 <h2>Explore Versatile House Plans for Every Stage of Your Life</h2>
             </div>
             <div className={styles.collectionsCardContainer}>
-                {filteredCategories.map((category) => (
-                    <div key={category.id} className={styles.collectionsCard}>
-                        <Link href={`/shop/${category.slug}`} legacyBehavior>
-                            <a>
-                                <Image 
-                                    src={category.image ? category.image.src : '/default-thumbnail.jpg'} 
-                                    alt={category.name} 
-                                    width={300} 
-                                    height={300} 
-                                    layout="responsive" 
-                                    loading='lazy' 
-                                />
-                                <h3>{category.name}</h3>
-                            </a>
-                        </Link>
-                    </div>
-                ))}
+                {isLoading ? (
+                    // Display placeholders while loading
+                    <>
+                        {[1, 2, 3, 4].map(i => (
+                            <CollectionPlaceholder key={i} />
+                        ))}
+                    </>
+                ) : (
+                    // Display actual categories once loaded
+                    filteredCategories.map((category) => (
+                        <div key={category.id} className={styles.collectionsCard}>
+                            <Link href={`/shop/${category.slug}`} legacyBehavior>
+                                <a>
+                                    <Image 
+                                        src={category.image ? category.image.src : '/default-thumbnail.jpg'} 
+                                        alt={category.name} 
+                                        width={300} 
+                                        height={300} 
+                                        layout="responsive" 
+                                        loading='lazy' 
+                                    />
+                                    <h3>{category.name}</h3>
+                                </a>
+                            </Link>
+                        </div>
+                    ))
+                )}
             </div>
         </div>
     );

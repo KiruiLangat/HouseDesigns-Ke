@@ -18,7 +18,7 @@ const WishlistPage = () => {
       {wishlist.length === 0 ? (
         <div className={styles.noProduct}>
             <p>Your wishlist is empty</p>
-            <Link href='/shop'>
+            <Link href='/shop' legacyBehavior>
                 <a>Save Plans for Later</a>
             </Link>
         </div>

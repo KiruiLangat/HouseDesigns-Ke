@@ -40,7 +40,7 @@ export default function OurExpertise(){
                 <div className={styles.service1}>
                     <Link href="/architecture"> 
                         <div className={styles.service1Img}>
-                            <Image src={architecture} alt='architecture' layout='fixed' />
+                            <Image src={architecture} alt='architecture' layout='fixed'  loading='lazy'/>
                         </div>
                         <h2>Architecture</h2>
                         <div className={styles.arrowServices}>
@@ -54,7 +54,7 @@ export default function OurExpertise(){
                 <div className={styles.service1}>
                     <Link href="">
                         <div className={styles.service1Img}>
-                            <Image src={InteriorDesign} alt='interior design' layout='fixed' />
+                            <Image src={InteriorDesign} alt='interior design' layout='fixed' loading='lazy'/>
                         </div>
                         <h2>Interior Design</h2>
                         <div className={styles.arrowServices}>
@@ -68,7 +68,7 @@ export default function OurExpertise(){
                 <div className={styles.service1}>
                     <Link href='/contact-us'>
                         <div className={styles.service1Img}>
-                            <Image src={ProjectMgmt} alt='project-management' layout='fixed' />
+                            <Image src={ProjectMgmt} alt='project-management' layout='fixed' loading='lazy' />
                         </div>
                         <h2>Project Management</h2>
                         <div className={styles.arrowServices}>
@@ -82,7 +82,7 @@ export default function OurExpertise(){
                 <div className={styles.service1}>
                     <Link href='/masterplanning'>
                         <div className={styles.service1Img}>
-                            <Image src={Masterplanning} alt='masterplanning' layout='fixed' />
+                            <Image src={Masterplanning} alt='masterplanning' layout='fixed' loading='lazy' />
                         </div>
                         <h2>Master Planning</h2>
                         <div className={styles.arrowServices}>

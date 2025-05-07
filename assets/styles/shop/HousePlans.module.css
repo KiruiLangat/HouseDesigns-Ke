@@ -244,7 +244,7 @@
 
 }
 .iconSearchProducts {
-    width: 25px !important;
+    width: 25px;
     margin-left: 5px;
     transform: rotate(90deg);
     padding: 2px;
@@ -318,6 +318,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
     margin-top: 20px;
+    width: 100%;
 }
 .productsCard {
     position: relative;
@@ -329,6 +330,7 @@
     border: 1px solid #0000000D;
     height: auto;
     margin: auto;
+    padding-bottom: 10px;
     
     
     @media (prefers-color-scheme:dark){
@@ -574,3 +576,237 @@
           
     }
 }
+
+
+
+/* Placeholder styles for products */
+.imagePlaceholder {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.productCardContent {
+  padding: 10px;
+}
+
+.cartWishlistPlaceholder {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  right: 0;
+  width: 27px;
+  margin: 5px;
+  top: 10px;
+  background-color: #fffffd;
+  border-radius: 10px;
+}
+
+.iconPlaceholder {
+  width: 24px;
+  height: 24px;
+  margin: 5px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.titlePlaceholder {
+  height: 18px;
+  width: 80%;
+  margin: 10px 0 5px 10px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.pricePlaceholder {
+  height: 12px;
+  width: 40%;
+  margin: 0 0 10px 10px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.detailsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.detailPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+/* Filter placeholders */
+.filterPlaceholder {
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* No products message */
+.noProducts {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .imagePlaceholder,
+  .titlePlaceholder,
+  .pricePlaceholder,
+  .detailPlaceholder,
+  .iconPlaceholder,
+  .filterHeaderPlaceholder,
+  .filterItemPlaceholder {
+    background: linear-gradient(90deg, #3a3a3a 25%, #444 50%, #3a3a3a 75%);
+    background-size: 200% 100%;
+  }
+  
+  .cartWishlistPlaceholder {
+    background-color: #000000;
+  }
+  
+  .noProducts {
+    color: #aaa;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Additional styles to ensure placeholders display correctly */
+.noImagePlaceholder {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  color: #777;
+  font-size: 14px;
+  border-radius: 10px;
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: #333;
+    color: #999;
+  }
+}
+
+/* Fix for mobile view placeholders */
+@media (max-width: 768px) {
+  .imagePlaceholder {
+    height: 250px;
+  }
+  
+  .detailsContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    background-color: #0000000D;
+    border-radius: 10px;
+    padding: 5px;
+    
+    @media(prefers-color-scheme:dark){
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+  
+  .cartWishlistPlaceholder {
+    width: 27px;
+  }
+}
+
+/* Fix for desktop placeholders */
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Ensure placeholder styles match product styles */
+.detailPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* Ensure the productsCardDetail for placeholders matches the real one */
+.productsCard .productsCardDetail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+    padding: 5px;
+}
+
+/* Ensure productsCardDetails match real structure */
+.productsCard .productsCardDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: auto;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .imagePlaceholder,
+    .titlePlaceholder,
+    .pricePlaceholder,
+    .detailPlaceholder,
+    .iconPlaceholder,
+    .filterHeaderPlaceholder,
+    .filterItemPlaceholder {
+      background: linear-gradient(90deg, #3a3a3a 25%, #444 50%, #3a3a3a 75%);
+      background-size: 200% 100%;
+    }
+    
+    .cartWishlistPlaceholder {
+      background-color: #000000;
+    }
+    
+    .noProducts {
+      color: #aaa;
+    }
+  }

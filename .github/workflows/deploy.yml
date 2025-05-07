@@ -16,7 +16,7 @@ jobs:
       NODE_ENV: production
       DB_HOST: ${{ secrets.DB_HOST }}
       DB_USER: ${{ secrets.DB_USER }}
-      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_PASSWORD: ${{ secrets.DB_PASS}}
       DB_NAME: ${{ secrets.DB_NAME }}
       WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
       WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
@@ -62,13 +62,14 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./.next/  # Next.js build output
         server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
-        dangerous-clean-slate: false  # Changed to false to prevent deleting existing directories
+        dangerous-clean-slate: true # Set to true to clean slate the .next directory
         log-level: minimal  # Set log level to minimal for cleaner logs
         state-name: .next-deploy-state.json  # Unique state name for .next directory
         exclude: |
           **/.git*
           **/.git*/**
           **/node_modules**
+          **/.next-deploy-state.json  # Exclude the state file itself
           
     # Step 6: Deploy necessary project files (excluding source and build artifacts)
     - name: Deploy supporting files
@@ -91,6 +92,7 @@ jobs:
           **/.github/**  # No need for GitHub files on production
           **/tests/**  # No need for test files on production
           **/*.log
+          **/.root-deploy-state.json  # Exclude the state file itself
           
           
     # Step 7: Restart PM2

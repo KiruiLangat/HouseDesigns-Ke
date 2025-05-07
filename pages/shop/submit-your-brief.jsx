@@ -3,13 +3,24 @@ import '@fontsource/poppins';
 
 const style = {
     fontFamily: 'Poppins',
+    display: 'flex', 
+    justifyContent: 'center',
+    alignItems: 'center', 
+    height: '100vh'
 }
 
 const SubmitYourBrief = () => {
   return (
-    <div  style={{ display: 'flex', justifyContent: 'center',
-        alignItems: 'center', height: '100vh', style, fontSize:'16px', fontWeight:'400', textAlign:'center' }}>
-      <h1>Form Under Construction</h1>
+    <div  style={style}>
+      <h1 
+        style={{
+          fontSize:'32px', 
+          fontWeight:'400',
+          textAlign:'center',
+        }}
+      >
+        Tailored bespoke form coming soon!
+      </h1>
     </div>
   );
 };

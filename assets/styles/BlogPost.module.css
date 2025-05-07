@@ -107,6 +107,7 @@
     font-weight: 400;
     text-align: left;
     margin-bottom: 0;
+    color: #000;
 }
 
 .postContent h3 {
@@ -612,6 +613,7 @@
         font-size: 20px;
     }
     
+    
     .content p {
         font-size: 14px;
     }
@@ -668,11 +670,6 @@
         margin-left: 0;
         margin-right: 0;
         margin-bottom: 0;
-    }
-    
-    /* Dark mode specific mobile adjustments */
-    .content h1 {
-        color: #ffffff;
     }
     
     .postContent Img {

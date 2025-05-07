@@ -9,7 +9,7 @@ const style = {
 
 const Profile = () => {
     return (
-        <div style={{ textAlign: 'center', padding: '20px', style }}>
+        <div style={style}>
             <h1 style={{fontWeight:'300'}}>User Profile</h1>
             <h2 style={{fontWeight:'300', fontSize:'16px'}}>Page is currently Under Modification!</h2>
         </div>

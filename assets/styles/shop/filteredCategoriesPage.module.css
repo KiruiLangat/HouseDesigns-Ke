@@ -164,6 +164,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
     margin-top: 0;
+    width: 100%;
 }
 .filteredProductsCard {
     position: relative;
@@ -175,6 +176,8 @@
     border: 1px solid #0000000D;
     height: auto;
     margin: auto;
+    padding-bottom: 10px;
+    overflow: hidden;
     @media (prefers-color-scheme: dark) {
         border: 1px solid #ffffff0D;
     }
@@ -259,6 +262,7 @@
     margin-top: 10px;
     background-color: #0000000D;
     border-radius: 10px;
+    padding: 5px;
     @media (prefers-color-scheme: dark) {
         box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
     }
@@ -408,4 +412,146 @@
     .filteredProductsCardDetail{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+}
+
+/* Placeholder styles for products */
+.imagePlaceholder {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.cartWishlistPlaceholder {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  right: 0;
+  width: 27px;
+  margin: 5px;
+  top: 10px;
+  background-color: #fffffd;
+  border-radius: 10px;
+}
+
+.iconPlaceholder {
+  width: 24px;
+  height: 24px;
+  margin: 5px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.titlePlaceholder {
+  height: 18px;
+  width: 80%;
+  margin: 10px 0 5px 10px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.pricePlaceholder {
+  height: 12px;
+  width: 40%;
+  margin: 0 0 10px 10px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.detailPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+/* Filter placeholders */
+.filterPlaceholder {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.filterItemPlaceholder {
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+/* No image placeholder */
+.noImagePlaceholder {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  color: #777;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .imagePlaceholder,
+  .titlePlaceholder,
+  .pricePlaceholder,
+  .detailPlaceholder,
+  .iconPlaceholder,
+  .filterItemPlaceholder {
+    background: linear-gradient(90deg, #3a3a3a 25%, #444 50%, #3a3a3a 75%);
+    background-size: 200% 100%;
+  }
+  
+  .cartWishlistPlaceholder {
+    background-color: #000000;
+  }
+  
+  .noImagePlaceholder {
+    background-color: #333;
+    color: #999;
+  }
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+  .imagePlaceholder {
+    height: 250px;
+  }
+  
+  .filterItemPlaceholder {
+    height: 30px;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }

@@ -24,9 +24,26 @@ const style = {
     fontFamily: 'Poppins'
 }
 
+// Placeholder component for NewPlans
+const NewPlanPlaceholder = () => (
+    <div className={styles.newPlansCard}>
+        <div className={styles.imagePlaceholder}></div>
+        <div className={styles.newPlansCardTitle}>
+            <div className={styles.titlePlaceholder}></div>
+            <div className={styles.pricePlaceholder}></div>
+        </div>
+        <div className={styles.newPlansCardDetail}>
+            {[1, 2, 3, 4].map(i => (
+                <div key={i} className={styles.detailPlaceholder}></div>
+            ))}
+        </div>
+    </div>
+);
+
 const NewPlans = () => {
     // Product data
     const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     
     // Cart and Wishlist handling
     const { cart, handleAddToCart, handleRemoveFromCart } = useCart();
@@ -47,6 +64,7 @@ const NewPlans = () => {
 
     useEffect(() => {
         const fetchData = async () => {
+            setIsLoading(true);
             try {
                 const fetchedCategories = await fetchCategories();
 
@@ -59,6 +77,8 @@ const NewPlans = () => {
                 }
             } catch (error) {
                 console.log('Error Fetching Products', error);
+            } finally {
+                setIsLoading(false);
             }
         }
         fetchData();
@@ -79,80 +99,90 @@ const NewPlans = () => {
                         </div>
                     </Link>
                 </div>
-                {products.map(product => (
-                    <div key={product.id} className={styles.newPlansCard}>
-                        <Link href={`/shop/product/${product.slug}`}>
-                            <Image src={product.images[0].src} alt={product.name} loading='lazy' width={500} height={500} />
-                        </Link>
-                        <div className={styles.cartWishlist}>
-                            <div className={styles.wishlist} onClick={() =>
-                                isInWishlist(product) ? handleRemoveFromWishlist(product) : handleAddToWishlist(product)}>
-                                {isInWishlist(product) ? (
-                                    <FavoriteIcon className={styles.iconWishlist} />
-                                ) : (
-                                    <FavoriteBorderIcon className={styles.iconWishlist} />
+                {isLoading ? (
+                    // Display placeholders while loading
+                    <>
+                        <NewPlanPlaceholder />
+                        <NewPlanPlaceholder />
+                        <NewPlanPlaceholder />
+                    </>
+                ) : (
+                    // Display actual products once loaded
+                    products.map(product => (
+                        <div key={product.id} className={styles.newPlansCard}>
+                            <Link href={`/shop/product/${product.slug}`}>
+                                <Image src={product.images[0].src} alt={product.name} loading='lazy' width={500} height={500} />
+                            </Link>
+                            <div className={styles.cartWishlist}>
+                                <div className={styles.wishlist} onClick={() =>
+                                    isInWishlist(product) ? handleRemoveFromWishlist(product) : handleAddToWishlist(product)}>
+                                    {isInWishlist(product) ? (
+                                        <FavoriteIcon className={styles.iconWishlist} />
+                                    ) : (
+                                        <FavoriteBorderIcon className={styles.iconWishlist} />
+                                    )}
+                                </div>
+                                <div className={styles.addCart} onClick={() => {
+                                    setSelectedProduct(product)
+                                    setShowOptionsPopUp(true)
+                                }}>
+                                    {isInCart(product) ? (
+                                        <ShoppingBagIcon className={styles.iconAddCart} />
+                                    ) : (
+                                        <ShoppingBagOutlinedIcon className={styles.iconAddCart} />
+                                    )}
+                                </div>
+
+                                {showOptionsPopUp && selectedProduct === product && (
+                                    <OptionsPopUp
+                                        product={selectedProduct}
+                                        setSelectedPrice={setSelectedPrice}
+                                        selectedPrice={selectedPrice}
+                                        setSelectedOption={setSelectedOption}
+                                        selectedOption={selectedOption}
+                                        onClose={() => setShowOptionsPopUp(false)}
+                                        handleClosePopUp={handleClosePopUp}
+                                        onSelectOption={(_option) => {
+                                            isInCart(selectedProduct) ? 
+                                                handleRemoveFromCart(selectedProduct) :
+                                                handleAddToCart(selectedProduct, selectedPrice, selectedOption)
+                                            setShowOptionsPopUp(false)
+                                        }}
+                                    />
                                 )}
                             </div>
-                            <div className={styles.addCart} onClick={() => {
-                                setSelectedProduct(product)
-                                setShowOptionsPopUp(true)
-                            }}>
-                                {isInCart(product) ? (
-                                    <ShoppingBagIcon className={styles.iconAddCart} />
-                                ) : (
-                                    <ShoppingBagOutlinedIcon className={styles.iconAddCart} />
-                                )}
+
+                            <div className={styles.newIndicator}>
+                                <Image src={Star} alt="New" className={styles.iconIndicator} />
+                                <p>New</p>
+                            </div>
+                            <div className={styles.newPlansCardTitle}>
+                                <h3>{product.name}</h3>
+                                <h4>From ${product.price}</h4>
                             </div>
 
-                            {showOptionsPopUp && selectedProduct === product && (
-                                <OptionsPopUp
-                                    product={selectedProduct}
-                                    setSelectedPrice={setSelectedPrice}
-                                    selectedPrice={selectedPrice}
-                                    setSelectedOption={setSelectedOption}
-                                    selectedOption={selectedOption}
-                                    onClose={() => setShowOptionsPopUp(false)}
-                                    handleClosePopUp={handleClosePopUp}
-                                    onSelectOption={(_option) => {
-                                        isInCart(selectedProduct) ? 
-                                            handleRemoveFromCart(selectedProduct) :
-                                            handleAddToCart(selectedProduct, selectedPrice, selectedOption)
-                                        setShowOptionsPopUp(false)
-                                    }}
-                                />
-                            )}
-                        </div>
+                            <div className={styles.newPlansCardDetail}>
+                                <div className={styles.newPlansCardDetails}>
+                                    <Image src={Bedrooms} alt="Bedrooms" className={styles.iconGrid} />
+                                    <p>{product.attributes.find(attr => attr.name === 'Bedrooms')?.options[0]} Bedrooms</p>
+                                </div>
 
-                        <div className={styles.newIndicator}>
-                            <Image src={Star} alt="New" className={styles.iconIndicator} />
-                            <p>New</p>
-                        </div>
-                        <div className={styles.newPlansCardTitle}>
-                            <h3>{product.name}</h3>
-                            <h4>From ${product.price}</h4>
-                        </div>
-
-                        <div className={styles.newPlansCardDetail}>
-                            <div className={styles.newPlansCardDetails}>
-                                <Image src={Bedrooms} alt="Bedrooms" className={styles.iconGrid} />
-                                <p>{product.attributes.find(attr => attr.name === 'Bedrooms')?.options[0]} Bedrooms</p>
-                            </div>
-
-                            <div className={styles.newPlansCardDetails}>
-                                <Image src={Floors} alt="Floors" className={styles.iconGridFloors} />
-                                <p>{product.attributes.find(attr => attr.name === 'Floors')?.options[0]} Floor(s)</p>
-                            </div>
-                            <div className={styles.newPlansCardDetails}>
-                                <Image src={PlinthArea} alt="Plinth Area" className={styles.iconGrid} />
-                                <p>{product.attributes.find(attr => attr.name === 'Plinth Area')?.options[0]}</p>
-                            </div>
-                            <div className={styles.newPlansCardDetails}>
-                                <Image src={Bathrooms} alt="Bathrooms" className={styles.iconGrid} />
-                                <p>{product.attributes.find(attr => attr.name === 'Bathrooms')?.options[0]} Bathrooms</p>
+                                <div className={styles.newPlansCardDetails}>
+                                    <Image src={Floors} alt="Floors" className={styles.iconGridFloors} />
+                                    <p>{product.attributes.find(attr => attr.name === 'Floors')?.options[0]} Floor(s)</p>
+                                </div>
+                                <div className={styles.newPlansCardDetails}>
+                                    <Image src={PlinthArea} alt="Plinth Area" className={styles.iconGrid} />
+                                    <p>{product.attributes.find(attr => attr.name === 'Plinth Area')?.options[0]}</p>
+                                </div>
+                                <div className={styles.newPlansCardDetails}>
+                                    <Image src={Bathrooms} alt="Bathrooms" className={styles.iconGrid} />
+                                    <p>{product.attributes.find(attr => attr.name === 'Bathrooms')?.options[0]} Bathrooms</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))
+                )}
             </div>
         </div>
     )

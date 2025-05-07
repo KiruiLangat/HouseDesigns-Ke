@@ -95,16 +95,16 @@ export default function BlogPost() {
         <div className={styles.blogNavigation}>
           <div className={styles.previous}>
             {previousPost && (
-              <a href={`/blog/${previousPost.slug}`}>
+              <Link href={`/blog/${previousPost.slug}`}>
                 <h2>● Previous Post</h2>
-              </a>
+              </Link>
             )}
           </div>
           <div className={styles.next}>
             {nextPost && (
-              <a href={`/blog/${nextPost.slug}`}>
+              <Link href={`/blog/${nextPost.slug}`}>
                 <h2>Next Post ●</h2>
-              </a>
+              </Link>
             )}
           </div>
         </div>

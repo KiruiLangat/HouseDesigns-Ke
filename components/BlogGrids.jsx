@@ -11,8 +11,10 @@ const style = {
 export default function BlogGrids() {
 
     const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true);
         fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&per_page=8')
         .then(response => {
             console.log(response)
@@ -24,25 +26,40 @@ export default function BlogGrids() {
         .then(data => {
             setPosts(data);
             console.log('Posts:', data)
+            setLoading(false);
         })
         .catch(error => {
             console.error('Error:', error)
+            setLoading(false);
         })
     }, []);
 
-  return (
-    <div style={style} className={styles.grids}>
-        {posts.map(post => (
-            <Link href={`/blog/${post.slug}`} key={post.slug} className={styles.box1}>
-                <div className={styles.imgBox}>
-                    {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
-                        <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='fixed' width={500} height={300} />
-                    )}
-                </div>
-                <h2 className={styles.postTitle} dangerouslySetInnerHTML={{__html: post.title.rendered }}/>
-                <p>{new Date(post.date).toLocaleDateString()}</p>
-            </Link>
-        ))}
-    </div>
-  )
+    // Generate placeholder skeleton items
+    const renderPlaceholders = () => {
+        return Array(8).fill().map((_, index) => (
+            <div key={`placeholder-${index}`} className={`${styles.box1} ${styles.placeholder}`}>
+                <div className={`${styles.imgBox} ${styles.placeholderImg}`}></div>
+                <div className={`${styles.placeholderTitle}`}></div>
+                <div className={`${styles.placeholderDate}`}></div>
+            </div>
+        ));
+    };
+
+    return (
+        <div style={style} className={styles.grids}>
+            {loading ? renderPlaceholders() : (
+                posts.map(post => (
+                    <Link href={`/blog/${post.slug}`} key={post.slug} className={styles.box1}>
+                        <div className={styles.imgBox}>
+                            {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
+                                <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='fixed' width={500} height={300} />
+                            )}
+                        </div>
+                        <h2 className={styles.postTitle} dangerouslySetInnerHTML={{__html: post.title.rendered }}/>
+                        <p>{new Date(post.date).toLocaleDateString()}</p>
+                    </Link>
+                ))
+            )}
+        </div>
+    )
 }

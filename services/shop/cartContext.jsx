@@ -34,7 +34,11 @@ export const CartProvider = ({ children }) => {
 
   const handleAddToCart = (product, selectedPrice, selectedOption) => {
     setCart((prevCart) => {
-      const updatedCart = [...prevCart, { ...product, selectedPrice, selectedOptionDescription: selectedOption.description }];
+      const updatedCart = [...prevCart, { 
+        ...product, 
+        selectedPrice, 
+        selectedOptionDescription: selectedOption ? selectedOption.description : null 
+      }];
       localStorage.setItem('cart', JSON.stringify(updatedCart));
       return updatedCart;
     });

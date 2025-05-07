@@ -40,7 +40,7 @@ export default function ArchitectureServiceCategory() {
                     <Link href="/residentials" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={ResidentialsImg} alt='Residential' />
+                                <Image src={ResidentialsImg} alt='Residential' loading='lazy' />
                             </div>
                             <h2>Residentials</h2>
                         </a>
@@ -50,7 +50,7 @@ export default function ArchitectureServiceCategory() {
                     <Link href="/commercial" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={CommercialImg} alt='Commercial' />
+                                <Image src={CommercialImg} alt='Commercial' loading='lazy'/>
                             </div>
                             <h2>Commercial</h2>
                         </a>
@@ -60,7 +60,7 @@ export default function ArchitectureServiceCategory() {
                     <Link href="/institutions" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={InstitutionImg} alt='Institutions' />
+                                <Image src={InstitutionImg} alt='Institutions' loading='lazy' />
                             </div>
                             <h2>Institutions</h2>
                         </a>

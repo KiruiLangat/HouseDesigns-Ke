@@ -39,7 +39,7 @@ export default function ServiceSubCategory(){
                         <Link href="/projects/bungalows" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={BungalowsImg} alt='Bungalows'  />
+                                <Image src={BungalowsImg} alt='Bungalows' loading='lazy' />
                             </div>
                             <h2>Bungalows</h2>
                         </a>
@@ -49,7 +49,7 @@ export default function ServiceSubCategory(){
                         <Link href="/projects/maisonettes" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={MaisonetteImg} alt='Maisonette'  />
+                                <Image src={MaisonetteImg} alt='Maisonette' loading='lazy' />
                             </div>
                             <h2>Maisonettes</h2>
                         </a>
@@ -59,7 +59,7 @@ export default function ServiceSubCategory(){
                         <Link href="/projects/apartments" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={ApartmentsImg} alt='Apartments'  />
+                                <Image src={ApartmentsImg} alt='Apartments' loading='lazy' />
                             </div>
                             <h2>Apartments</h2>
                         </a>
@@ -69,7 +69,7 @@ export default function ServiceSubCategory(){
                         <Link href="/projects/tiny homes" legacyBehavior>
                         <a>
                             <div className={styles.projectImg}>
-                                <Image src={TinyHomesImg} alt='Tiny Homes' />
+                                <Image src={TinyHomesImg} alt='Tiny Homes' loading='lazy' />
                             </div>
                             <h2>Tiny Homes</h2>
                         </a>
