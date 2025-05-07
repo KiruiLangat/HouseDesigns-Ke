@@ -80,7 +80,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: /public_html/housedesigns/  # This path seems correct
-        dangerous-clean-slate: false  # Clean slate to avoid stale files
+        dangerous-clean-slate: true  # Clean slate to avoid stale files
         log-level: minimal  # Set log level to minimal for cleaner logs
         state-name: .root-deploy-state.json  # Unique state name for the main directory
         exclude: |
