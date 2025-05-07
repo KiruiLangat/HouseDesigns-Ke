@@ -70,6 +70,7 @@ jobs:
           **/.git*/**
           **/node_modules**
           **/.next-deploy-state.json  # Exclude the state file itself
+          **/.ftp-deploy-sync-state.json  # Exclude the FTP state file itself
           
     # Step 6: Deploy necessary project files (excluding source and build artifacts)
     - name: Deploy supporting files
