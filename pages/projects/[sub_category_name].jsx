@@ -85,13 +85,13 @@ export default function Projects() {
                                 <div className={styles.projectsImg}>
                                     <Image 
                                         src={project.project_img_url} 
-                                        alt='Project Loading' layout='fill' 
+                                        alt={project.title || 'Project Loading'} 
+                                        layout='fill' 
                                         objectFit='cover' 
-                                        loading='lazy'
+                                        priority={true}
                                         className={styles.projectImage}
                                         onLoad={(e) => {
                                             e.target.classList.add(styles.loaded);
-                                            e.target.style.opacity = 1;
                                         }}
                                     />
                                 </div>
