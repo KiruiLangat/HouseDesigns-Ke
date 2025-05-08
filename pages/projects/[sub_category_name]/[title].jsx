@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 import styles from '../../../assets/styles/projectDescription.module.css'
 import '@fontsource/poppins'
+import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 
 const style = {
     fontFamily: 'Poppins'
@@ -54,7 +55,12 @@ export default function ProjectDescription() {
     }, [title]);
 
     if (!project) {
-        return <div className={styles.loading}>Loading <span>...</span></div>
+        return ( 
+        <div className={styles.loading}>
+            <HourglassBottomIcon className={styles.loadingIcon} />
+            <p>Fetching Project Images...</p>            
+        </div>
+        )
     }
 
     const ogUrl = `https://housedesigns.co.ke/${project.title}`
@@ -81,12 +87,35 @@ export default function ProjectDescription() {
             </Head>
             <>
                 <div className={styles.largeImg}>
-                    <Image src={images[0]} alt='project Img' layout='responsive' width={1200} height={600} />
+                    {images[0] && (
+                        <Image 
+                            src={images[0]} 
+                            alt='project Img' 
+                            layout='responsive' 
+                            width={1200} 
+                            height={600}
+                            className={styles.mainImage}
+                            onLoad={(e) => {
+                                e.target.classList.add(styles.loaded);
+                                e.target.style.opacity = 1;
+                            }}
+                        />
+                    )}
                 </div>
                 <div className={styles.masonry}>
                     {images.slice(1).map((image, index) => (
                         <div key={index} className={styles.imageContainer}>
-                            <Image src={image} alt={`img${index + 1}`} layout='responsive' width={1200} height={600} onLoad={(e) => e.target.style.opacity = 1} loading='lazy' />
+                            <Image 
+                                src={image} 
+                                alt={`img${index + 1}`} 
+                                onLoad={(e) => {
+                                    e.target.classList.add('loaded');
+                                    e.target.style.opacity = 1;
+                                }} 
+                                loading='lazy'
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                            />
                         </div>
                     ))}
                 </div>

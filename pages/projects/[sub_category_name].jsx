@@ -88,7 +88,12 @@ export default function Projects() {
                                         alt='Project Loading' layout='fill' 
                                         objectFit='cover' 
                                         loading='lazy'
-                                        onLoad={(e) => e.target.style.opacity = 1} />
+                                        className={styles.projectImage}
+                                        onLoad={(e) => {
+                                            e.target.classList.add(styles.loaded);
+                                            e.target.style.opacity = 1;
+                                        }}
+                                    />
                                 </div>
                                 <h2>{project.title}</h2>
                             </a>

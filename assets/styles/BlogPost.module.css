@@ -22,7 +22,7 @@
   
   .loadingIcon {
     font-size: 48px !important;
-    animation: rotate 2s linear infinite;
+    animation: rotate 1.5s linear infinite;
     color: inherit;
   }
   

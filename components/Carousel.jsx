@@ -100,8 +100,8 @@ export default function Carousel({ sub_category_name }) {
                 <Image 
                   src={project.image_url} 
                   alt={project.title}  
-                  layout="fill" // Make image responsive
-                  style={{ objectFit: 'cover' }} // Corrected this line
+                  layout="fill"
+                  style={{ objectFit: 'cover' }}
                 />
                 <div className={styles.carouselOverlay1}>
                   <p>{project.title}</p>

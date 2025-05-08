@@ -69,6 +69,9 @@ jobs:
           **/.git*
           **/.git*/**
           **/node_modules/**
+          **/.gitignore**  # Exclude gitignore files
+          **/.ftp-deploy-sync-state.json
+          **/.next-deploy-state.json  # Exclude previous state files
          
           
     # Step 6: Deploy necessary project files (excluding source and build artifacts)
@@ -87,11 +90,16 @@ jobs:
           **/.git*
           **/.git*/**
           **/node_modules/**
+          **/.env**  # Exclude environment files for security
+          **/.gitignore**  # Exclude gitignore files
+          **/public/Architecture/** # Exclude architecture images file
           **/.next/**  # Exclude entire .next directory as it's already deployed
           **/src/**    # No need to deploy source files
           **/.github/**  # No need for GitHub files on production
           **/tests/**  # No need for test files on production
+          **/spec/**  # No need for spec files on production
           **/*.log
+          **/.root-deploy-state.json  # Exclude previous state files
           
           
           

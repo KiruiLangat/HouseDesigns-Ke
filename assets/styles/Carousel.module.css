@@ -13,10 +13,10 @@
   }
 }
 .swiper-button-next, .swiper-button-prev {
-  color: #ED7D31 !important;
+  color: #ED7D31;
 
   @media (prefers-color-scheme: dark) {
-    color: #ED7D31 !important;
+    color: #ED7D31;
   }
 }
 .swiper-slide{
@@ -24,8 +24,10 @@
 }
 
 .swiper-pagination{
-  display: none;
+  color: #ED7D31;
+
 }
+
 .swiper-slide Img {
   margin: 0;
   width: 100%;
@@ -63,7 +65,7 @@
 @media (max-width: 768px) {
   .swiper-button-next,
   .swiper-button-prev{
-    display: none !important;
+    display: none;
   }
   .swiper-pagination {
     display: block;
