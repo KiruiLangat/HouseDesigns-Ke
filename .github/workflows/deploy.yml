@@ -62,21 +62,41 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./.next/  # Next.js build output
         server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
-        dangerous-clean-slate: false  # Clean slate to avoid stale files
-        log-level: minimal  # Set log level to minimal for cleaner logs
-        state-name: .next-deploy-state.json  # Unique state name for .next directory
+        dangerous-clean-slate: true  # Clean slate for .next directory
+        log-level: minimal
+        state-name: .next-deploy-state.json
         exclude: |
           **/.git*
           **/.git*/**
           **/node_modules/**
-          **/.gitignore**  # Exclude gitignore files
+          **/.gitignore**
           **/.ftp-deploy-sync-state.json
-          **/.next-deploy-state.json  # Exclude previous state files
-          **/.gitignore**  # Exclude gitignore files
-          **/public/Architecture/** # Exclude architecture images file
+          **/.next-deploy-state.json
+          **/public/Architecture/**
          
+    # Create necessary directories via SSH before supporting files upload
+    - name: Create directories via SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        port: 1624
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        script: |
+          # Create any required directories that might be missing
+          mkdir -p /home/housedes/public_html/housedesigns/.next/static
+          mkdir -p /home/housedes/public_html/housedesigns/public/Architecture
+          # Ensure directory permissions are correct
+          chmod -R 755 /home/housedes/public_html/housedesigns/public/Architecture
+          # Protect manually uploaded configuration files
+          if [ -f /home/housedes/public_html/housedesigns/.env ]; then
+            chmod 600 /home/housedes/public_html/housedesigns/.env
+          fi
+          if [ -f /home/housedes/public_html/housedesigns/.gitignore ]; then
+            chmod 644 /home/housedes/public_html/housedesigns/.gitignore
+          fi
           
-    # Step 6: Deploy necessary project files (excluding source and build artifacts)
+    # Step 6: Deploy supporting files
     - name: Deploy supporting files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
@@ -84,24 +104,23 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: /public_html/housedesigns/  # This path seems correct
-        dangerous-clean-slate: false # Clean slate not needed for this step
-        log-level: verbose  # Set log level to  for cleaner logs
-        state-name: .root-deploy-state.json  # Unique state name for the main directory
+        server-dir: /public_html/housedesigns/
+        dangerous-clean-slate: false  # Keep this false to preserve important files
+        log-level: verbose
         exclude: |
           **/.git*
           **/.git*/**
           **/node_modules/**
-          **/.env**  # Exclude environment files for security
-          **/.next/**  # Exclude entire .next directory as it's already deployed
-          **/src/**    # No need to deploy source files
-          **/.github/**  # No need for GitHub files on production
-          **/tests/**  # No need for test files on production
-          **/spec/**  # No need for spec files on production
+          **/.env**
+          **/.next**
+          **/src**
+          **/.github**
+          **/.gitignore**
+          **/public/Architecture/**  # This line ensures Architecture folder is preserved
+          **/tests**
+          **/spec**
           **/*.log
-          **/.root-deploy-state.json  # Exclude previous state files
-          
-          
+          **/.root-deploy-state.json
           
     # Step 7: Restart PM2
     - name: Restart PM2
