@@ -132,6 +132,16 @@
 }
 
 
+@media (prefers-color-scheme: dark) {
+    .shareButtons a:hover{
+        color: #c06628;
+    }
+    
+    .shareButtons a{
+        color: #7c7c7c;
+    }
+    
+}
 
 /* =============================================
    CONTENT CONTAINER STYLES
