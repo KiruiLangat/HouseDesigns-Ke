@@ -62,7 +62,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./.next/  # Next.js build output
         server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
-        dangerous-clean-slate: true  # Clean slate for .next directory
+        dangerous-clean-slate: false  # Clean slate for .next directory
         log-level: minimal
         state-name: .next-deploy-state.json
         exclude: |

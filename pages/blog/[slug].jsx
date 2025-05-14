@@ -117,36 +117,36 @@ export default function BlogPost() {
               <ShareIcon className={styles.shareIcon} /> 
               <h3>Share:</h3>
             </div>
-            <div className={styles.shareButtons}>
-              <a 
-                href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${post.title.rendered} - https://housedesigns.co.ke/blog/${post.slug}/`)}`} 
+            <div className={styles.shareButtons}>              <a 
+                href={`whatsapp://send?text=${encodeURIComponent(`${post.title.rendered}: https://housedesigns.co.ke/blog/${post.slug}/`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.whatsappShare}
+                aria-label="Share on WhatsApp"
               >
                 <WhatsAppIcon />
-              </a>
-              <a 
+              </a>              <a 
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://housedesigns.co.ke/blog/${post.slug}/`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.facebookShare}
+                aria-label="Share on Facebook"
               >
                 <FacebookIcon />
-              </a>
-              <a 
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${post.title.rendered} - https://housedesigns.co.ke/blog/${post.slug}/`)}`} 
+              </a>              <a 
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${post.title.rendered}`)}&url=${encodeURIComponent(`https://housedesigns.co.ke/blog/${post.slug}/`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.twitterShare}
+                aria-label="Share on Twitter"
               >
                 <XIcon />
-              </a>
-              <a 
+              </a>              <a 
                 href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://housedesigns.co.ke/blog/${post.slug}/`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.linkedinShare}
+                aria-label="Share on LinkedIn"
               >
                 <LinkedInIcon />
               </a>
