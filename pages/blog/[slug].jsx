@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Head from 'next/head'; // Replace Helmet with Next.js Head
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import styles from '../../assets/styles/BlogPost.module.css';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
+import ShareIcon from '@mui/icons-material/Share';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import XIcon from '@mui/icons-material/X';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 
 const style = {
     fontFamily: 'Poppins',
@@ -17,7 +23,6 @@ export default function BlogPost() {
   const [previousPost, setPreviousPost] = useState(null);
   const [nextPost, setNextPost] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  // const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     if (!slug) return;
@@ -60,53 +65,117 @@ export default function BlogPost() {
     );
   }
 
+  // Clean the excerpt text by removing HTML tags
+  const cleanExcerpt = post.excerpt.rendered
+    .replace(/<[^>]*>/g, '')
+    .substring(0, 160);
+
+  // Get the featured image with fallback
+  const featuredImage = post._embedded && 
+    post._embedded['wp:featuredmedia'] && 
+    post._embedded['wp:featuredmedia'][0] ? 
+    post._embedded['wp:featuredmedia'][0].source_url : 
+    'https://housedesigns.co.ke/default-image.jpg';
 
   return (
-    <HelmetProvider>
-      <div style={style} className={styles.postContainer}>
-        <Helmet>
-          <title>{post.title.rendered}</title>
-          <meta name='title' content={post.title.rendered} />
-          <meta name='description' content={post.excerpt.rendered.substring(0, 160)} />
-          <meta property='og:title' content={post.title.rendered} />
-          <meta property='og:description' content={post.excerpt.rendered.substring(0, 160)} />
-          <meta property='og:image' content={post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].source_url : 'default-image-url'} />
-          <meta property='og:url' content={`https://housedesigns.co.ke/blog/${post.slug}`} />
-          <meta name='twitter:card' content='summary_large_image' />
-          <meta name='twitter:title' content={post.title.rendered} />
-          <meta name='twitter:description' content={post.excerpt.rendered.substring(0, 160)} />
-          <meta name='twitter:image' content={post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].source_url : 'default-image-url'} />
-          <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${post.slug}`} />
-        </Helmet>
-        <div className={styles.post}>
-          <div className={styles.featuredImg}>
-            {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
-              <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='fixed' width={700} height={475} />
-            )}
-          </div>
-          <div className={styles.content}>
-            <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-            <p>{new Date(post.date).toLocaleDateString()}</p>
-            <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-          </div>
+    <div style={style} className={styles.postContainer}>
+      <Head>
+        <title>{post.title.rendered}</title>
+        <meta name="title" content={post.title.rendered} />
+        <meta name="description" content={cleanExcerpt} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://housedesigns.co.ke/blog/${post.slug}`} />
+        <meta property="og:title" content={post.title.rendered} />
+        <meta property="og:description" content={cleanExcerpt} />
+        <meta property="og:image" content={featuredImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={`https://housedesigns.co.ke/blog/${post.slug}`} />
+        <meta name="twitter:title" content={post.title.rendered} />
+        <meta name="twitter:description" content={cleanExcerpt} />
+        <meta name="twitter:image" content={featuredImage} />
+      </Head>
+
+      <div className={styles.post}>
+        <div className={styles.featuredImg}>
+          {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
+            <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='fixed' width={700} height={475} />
+          )}
         </div>
-        <div className={styles.blogNavigation}>
-          <div className={styles.previous}>
-            {previousPost && (
-              <Link href={`/blog/${previousPost.slug}`}>
-                <h2>● Previous Post</h2>
-              </Link>
-            )}
+        <div className={styles.content}>
+          <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+          <p>{new Date(post.date).toLocaleDateString()}</p>
+
+          {/* Social sharing buttons */}
+          <div className={styles.socialSharing}>
+            <div className={styles.shareTitle}>
+              <ShareIcon className={styles.shareIcon} /> 
+              <h3>Share:</h3>
+            </div>
+            <div className={styles.shareButtons}>
+              <a 
+                href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${post.title.rendered} - https://housedesigns.co.ke/blog/${post.slug}/`)}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.whatsappShare}
+              >
+                <WhatsAppIcon />
+              </a>
+              <a 
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://housedesigns.co.ke/blog/${post.slug}/`)}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.facebookShare}
+              >
+                <FacebookIcon />
+              </a>
+              <a 
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${post.title.rendered} - https://housedesigns.co.ke/blog/${post.slug}/`)}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.twitterShare}
+              >
+                <XIcon />
+              </a>
+              <a 
+                href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://housedesigns.co.ke/blog/${post.slug}/`)}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.linkedinShare}
+              >
+                <LinkedInIcon />
+              </a>
+
+            </div>
           </div>
-          <div className={styles.next}>
-            {nextPost && (
-              <Link href={`/blog/${nextPost.slug}`}>
-                <h2>Next Post ●</h2>
-              </Link>
-            )}
-          </div>
+
+          <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
         </div>
       </div>
-    </HelmetProvider>
+
+      
+      
+      <div className={styles.blogNavigation}>
+        <div className={styles.previous}>
+          {previousPost && (
+            <Link href={`/blog/${previousPost.slug}`}>
+              <h2>● Previous Post</h2>
+            </Link>
+          )}
+        </div>
+        <div className={styles.next}>
+          {nextPost && (
+            <Link href={`/blog/${nextPost.slug}`}>
+              <h2>Next Post ●</h2>
+            </Link>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }

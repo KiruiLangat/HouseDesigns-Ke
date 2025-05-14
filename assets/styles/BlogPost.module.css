@@ -32,6 +32,7 @@
     }
   }
 
+ 
 
 /* =============================================
    CONTAINER STYLES
@@ -80,6 +81,57 @@
     border-radius: 10px;
     object-fit: cover;
 }
+
+
+/* =============================================
+   SHARING SECTION
+   ============================================= */
+
+.socialSharing{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;
+    gap: 20px;
+}
+   
+.shareTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.shareIcon{
+    font-size: 24px;
+    color: #Ed7d31;
+}
+.shareTitle h3{
+    font-size: 12px;
+    font-weight:600;
+    
+}
+
+.shareButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.shareButtons a{
+    text-decoration: none;
+    padding: 0 5px;
+    color: #000;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.shareButtons a:hover{
+    color: #Ed7d31;
+}
+
+
 
 /* =============================================
    CONTENT CONTAINER STYLES
