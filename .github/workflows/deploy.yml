@@ -105,6 +105,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: /public_html/housedesigns/
+        dangerous-clean-slate: true  # Keep this false to preserve important files
         log-level: verbose
         exclude: |
           **/.git*
