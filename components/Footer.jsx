@@ -36,7 +36,12 @@ export default function Footer() {
     return (
         <div className={styles.footerContainer} style={style}>
             <div className={styles.footerLeft}>
-                <Image src={logo} alt='logo' className={styles.footerLogo} onClick={scrollToTop} />
+                <Link href="/" passHref legacyBehavior >
+                    <a >
+                        <Image src={logo} alt='HouseDesigns Logo' className={styles.footerLogo} />
+                    </a>
+                </Link>
+                                
                 <nav className={styles.footerNav}>
                     <ul>
                         <li><Link href='/our-expertise'>Our Expertise</Link></li>

@@ -1,6 +1,5 @@
 .articlesContainer {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
     margin-top: 7%;
@@ -28,9 +27,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: auto;
     margin: 5px;
     margin-top: 3%;
+    gap: 0;
     justify-content: space-around;
 }
 
@@ -61,7 +60,6 @@
 }
 
 .articleImg {
-    position: relative;
     width: auto;
     height: 55%;
     margin: 20px;
@@ -95,6 +93,79 @@
 
     @media (prefers-color-scheme: dark) {
         color: white;
+    }
+}
+
+/* Placeholder styles */
+.placeholder {
+    animation: pulse 1.5s infinite alternate;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.placeholderImg {
+    background-color: #a4a4a4;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+    @media (prefers-color-scheme: dark) {
+        background-color: #444444;
+    }
+}
+
+.placeholderImg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+    animation: shimmer 1.5s infinite;
+}
+
+.placeholderTitle {
+    height: 16px;
+    background-color: #a4a4a4;
+    margin: 15px 20px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite alternate;
+    
+    @media (prefers-color-scheme: dark) {
+        background-color: #444444;
+    }
+}
+
+.placeholderDate {
+    height: 12px;
+    width: 40%;
+    background-color: #a4a4a4;
+    margin: 10px 20px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite alternate;
+    
+    @media (prefers-color-scheme: dark) {
+        background-color: #444444;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
     }
 }
 
@@ -142,23 +213,34 @@
 @media (max-width: 768px) {
     .articlesContainer {
         margin-top: 15%;
+        width:100%;
     }
 
     .articles {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        width: 100%;
         margin-top: 5%;
+    }
+    
+    /* Ensure placeholder container has the same styling as articles container */
+    .placeholderContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .articleBox1 {
         display: grid;
         grid-template-columns: 1fr;
-        width: 93% !important;
+        width: 93%;
         margin: auto;
         margin-bottom: 2%;
         margin-top: 5%;
         height: 80%;
-        box-sizing: border-box;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 
         @media (prefers-color-scheme: dark) {
@@ -221,6 +303,41 @@
 
     .articleBox1 p {
         font-size: 12px;
+        margin-top: 0;
+    }
+
+    /* Responsive placeholder styles for mobile */
+    .placeholder {
+        width: 93% !important; /* Match the 93% width of article boxes */
+        height: auto;
+        min-height: 350px;
+        margin: auto;
+        margin-bottom: 5% !important;
+        margin-top: 5% !important;
+    }
+    
+    .placeholderImg {
+        width: auto;
+        height: 250px !important;
+        margin: 20px;
+        position: relative;
+    }
+
+    .placeholderImg::after {
+        transform: translateX(-100%);
+        animation-duration: 1.2s; /* Slightly faster animation on mobile */
+    }
+
+    .placeholderTitle {
+        height: 16px;
+        margin: 5px 20px;
+        width: 85%;
+    }
+
+    .placeholderDate {
+        height: 12px;
+        width: 35%;
+        margin: 5px 20px;
     }
 }
 

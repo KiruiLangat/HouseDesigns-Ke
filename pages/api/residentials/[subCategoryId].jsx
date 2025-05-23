@@ -4,7 +4,7 @@ export default function handler(req, res) {
   const { subCategoryId } = req.query;
 
   if (req.method === 'GET') {
-    pool.query('SELECT * FROM projects WHERE sub_category_id = ?', [subCategoryId], (error, results) => {
+    pool.query('SELECT * FROM projects WHERE sub_category_id = ? ORDER BY id DESC', [subCategoryId], (error, results) => {
       if (error) {
         console.error(error);
         res.status(500).json({ error: 'Internal Server Error' });

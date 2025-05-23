@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Head from 'next/head'; // Replace Helmet with Next.js Head
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -10,6 +10,9 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import CanonicalURL from '../../components/SEO/CanonicalURL';
+import BlogJsonLd from '../../components/SEO/BlogJsonLd';
+import { ensureAbsoluteUrl, cleanHtmlTags, getSocialImage, truncateText } from '../../services/seoUtils';
 
 
 const style = {
@@ -55,7 +58,6 @@ export default function BlogPost() {
         }
       });
   }, [slug]);
-
   if (!post || isLoading) {
     return (
       <div className={styles.loading}>
@@ -64,89 +66,118 @@ export default function BlogPost() {
       </div>
     );
   }
-
+  
   // Clean the excerpt text by removing HTML tags
-  const cleanExcerpt = post.excerpt.rendered
-    .replace(/<[^>]*>/g, '')
-    .substring(0, 160);
-
+  const cleanExcerpt = truncateText(post.excerpt.rendered, 160);
+  
   // Get the featured image with fallback
-  const featuredImage = post._embedded && 
-    post._embedded['wp:featuredmedia'] && 
-    post._embedded['wp:featuredmedia'][0] ? 
-    post._embedded['wp:featuredmedia'][0].source_url : 
-    'https://housedesigns.co.ke/default-image.jpg';
+  const featuredImage = getSocialImage(post);
+
+  // Get clean post title
+  const postTitle = cleanHtmlTags(post.title.rendered);
 
   return (
-    <div style={style} className={styles.postContainer}>
+    <div style={style} className={styles.postContainer}>        
       <Head>
-        <title>{post.title.rendered}</title>
-        <meta name="title" content={post.title.rendered} />
+        <title>{postTitle} | HouseDesigns</title>
+        <meta name="title" content={postTitle} />
         <meta name="description" content={cleanExcerpt} />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href={`https://housedesigns.co.ke/blog/${post.slug}`} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://housedesigns.co.ke/blog/${post.slug}`} />
-        <meta property="og:title" content={post.title.rendered} />
+        <meta property="og:title" content={postTitle} />
         <meta property="og:description" content={cleanExcerpt} />
         <meta property="og:image" content={featuredImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="HouseDesigns" />
+        <meta property="article:published_time" content={post.date} />
+        {post.modified && <meta property="article:modified_time" content={post.modified} />}
+        {post._embedded?.author?.[0] && 
+          <meta property="article:author" content={post._embedded.author[0].name} />}
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={`https://housedesigns.co.ke/blog/${post.slug}`} />
-        <meta name="twitter:title" content={post.title.rendered} />
+        <meta name="twitter:title" content={postTitle} />
         <meta name="twitter:description" content={cleanExcerpt} />
         <meta name="twitter:image" content={featuredImage} />
+        <meta name="twitter:site" content="@housedesigns" />
+        
+        {/* Additional SEO tags */}
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="author" content={post._embedded?.author?.[0]?.name || "HouseDesigns"} />
       </Head>
-
-      <div className={styles.post}>
+      
+      {/* Add structured data */}
+      <BlogJsonLd 
+        post={post} 
+        featuredImage={featuredImage} 
+        url={`https://housedesigns.co.ke/blog/${post.slug}`} 
+      />
+      
+      <div className={styles.post}>        
         <div className={styles.featuredImg}>
-          {post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url && (
-            <Image src={post._embedded['wp:featuredmedia'][0].source_url} alt='featured-img' layout='fixed' width={700} height={475} />
+          {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
+            <Image 
+              src={ensureAbsoluteUrl(post._embedded['wp:featuredmedia'][0].source_url)} 
+              alt={postTitle}
+              layout='responsive' 
+              width={700} 
+              height={475} 
+              
+            />
           )}
         </div>
-        <div className={styles.content}>
+        <div className={styles.content}>          
           <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-          <p>{new Date(post.date).toLocaleDateString()}</p>
+          <p className={styles.postDate}>
+            {new Date(post.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+          </p>
 
           {/* Social sharing buttons */}
           <div className={styles.socialSharing}>
             <div className={styles.shareTitle}>
               <ShareIcon className={styles.shareIcon} /> 
               <h3>Share:</h3>
-            </div>
-            <div className={styles.shareButtons}>              
+            </div>            <div className={styles.shareButtons}>
               <a 
-                href={`whatsapp://send?source=${encodeURIComponent(`${featuredImage} ${post.title.rendered} ${cleanExcerpt} https://housedesigns.co.ke/blog/${post.slug}`)}`} 
+                href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${postTitle} - ${cleanExcerpt}\n\nhttps://housedesigns.co.ke/blog/${post.slug}`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.whatsappShare}
                 aria-label="Share on WhatsApp"
               >
                 <WhatsAppIcon />
-              </a>             
+              </a>
               <a 
-                href={`https://www.facebook.com/sharer/sharer.php?source=${encodeURIComponent(featuredImage)}&u=${encodeURIComponent(`${post.title.rendered} ${cleanExcerpt} https://housedesigns.co.ke/blog/${post.slug}`)}`} 
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://housedesigns.co.ke/blog/${post.slug}`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.facebookShare}
                 aria-label="Share on Facebook"
               >
                 <FacebookIcon />
-              </a>             
+              </a>
               <a 
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${featuredImage} ${post.title.rendered} ${cleanExcerpt}`)}&url=${encodeURIComponent(`https://housedesigns.co.ke/blog/${post.slug}`)}`} 
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${postTitle} - ${cleanExcerpt}`)}&url=${encodeURIComponent(`https://housedesigns.co.ke/blog/${post.slug}`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.twitterShare}
                 aria-label="Share on Twitter"
               >
                 <XIcon />
-              </a>              
+              </a>
               <a 
-                href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://housedesigns.co.ke/blog/${post.slug}`)}&title=${encodeURIComponent(post.title.rendered)}&summary=${encodeURIComponent(`${featuredImage} ${cleanExcerpt}`)}`} 
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://housedesigns.co.ke/blog/${post.slug}`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.linkedinShare}
@@ -154,7 +185,6 @@ export default function BlogPost() {
               >
                 <LinkedInIcon />
               </a>
-
             </div>
           </div>
 
@@ -163,19 +193,22 @@ export default function BlogPost() {
       </div>
 
       
-      
-      <div className={styles.blogNavigation}>
+        <div className={styles.blogNavigation}>
         <div className={styles.previous}>
           {previousPost && (
-            <Link href={`/blog/${previousPost.slug}`}>
-              <h2>● Previous Post</h2>
+            <Link href={`/blog/${previousPost.slug}`} legacyBehavior>
+              <a className={styles.navigationLink}>
+                <span>● Previous Post</span>
+              </a>
             </Link>
           )}
         </div>
         <div className={styles.next}>
           {nextPost && (
-            <Link href={`/blog/${nextPost.slug}`}>
-              <h2>Next Post ●</h2>
+            <Link href={`/blog/${nextPost.slug}`} legacyBehavior>
+              <a className={styles.navigationLink}>
+                <span>Next Post ●</span>
+              </a>
             </Link>
           )}
         </div>

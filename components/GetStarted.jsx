@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../assets/styles/GetStarted.module.css'
 import '@fontsource/poppins'
@@ -8,7 +9,6 @@ import PMgt from '../assets/images/pmgt.png'
 import Masterplanning from '../assets/images/masterplanningIcon.png'
 import Architecture from '../assets/images/Architecture.png'
 import sideBracket from '../assets/images/sideBracket.png'
-import Link from 'next/link';
 
 const style = {
     fontFamily: 'Poppins',
@@ -66,22 +66,30 @@ export default function GetStarted() {
         <div className={styles.mobileServices}>
             <h1>Our Expertise</h1>
             <div className={styles.servicesContainer}>
-                <div className={styles.iconContainer}>
-                    <Image src = {Architecture} alt="Architecture-Icon" className={styles.mobileIcon}/>
-                    <h2>Architecture</h2>
-                </div>
-                <div className={styles.iconContainer}>
-                    <Image src = {InteriorDesign} alt="Interior-Design-Icon" className={styles.mobileIcon}/>
-                    <h2>Interior Design</h2>
-                </div>
-                <div className={styles.iconContainer}>
-                    <Image src = {PMgt} alt="Project-Management-Icon" className={styles.mobileIcon}/>
-                    <h2>Project Management</h2>
-                </div>
-                <div className={styles.iconContainer}>
-                    <Image src = {Masterplanning} alt="MasterplanningIcon" className={styles.mobileIcon}/>                
-                    <h2>Masterplanning</h2>
-                </div>
+                <Link href='/architecture' passHref legacyBehavior>
+                    <div className={styles.iconContainer}>
+                        <Image src = {Architecture} alt="Architecture-Icon" className={styles.mobileIcon}/>
+                        <h2>Architecture</h2>
+                    </div> 
+                </Link>
+                <Link href='/contact-us' passHref legacyBehavior>
+                    <div className={styles.iconContainer}>
+                        <Image src = {InteriorDesign} alt="Interior-Design-Icon" className={styles.mobileIcon}/>
+                        <h2>Interior Design</h2>
+                    </div>
+                </Link>
+                <Link href='/contact-us' passHref legacyBehavior>
+                    <div className={styles.iconContainer}>
+                        <Image src = {PMgt} alt="Project-Management-Icon" className={styles.mobileIcon}/>
+                        <h2>Project Management</h2>
+                    </div>
+                </Link>
+                <Link href='/masterplanning' passHref legacyBehavior>
+                    <div className={styles.iconContainer}>
+                        <Image src = {Masterplanning} alt="MasterplanningIcon" className={styles.mobileIcon}/>                
+                        <h2>Masterplanning</h2>
+                    </div>
+                </Link>
             </div>
             
             <Link href='/our-expertise' legacyBehavior>

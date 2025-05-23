@@ -10,8 +10,8 @@ export default function Home() {
     return(
         <>
             <Head>
-                <title>House Designs Shop</title>
-                <meta name="description" content="Shop for house designs" />
+                <title>HouseDesigns Shop</title>
+                <meta name="description" content="Shop for HouseDesigns" />
                 <meta name='image' property='og:image' content='/CM_1.jpg' />
             </Head>
             <LandingPage />

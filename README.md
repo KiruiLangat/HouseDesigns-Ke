@@ -1,5 +1,5 @@
-# Comprehensive Web Application and eCommerce for House Designs Ke
-House Designs Ke is an Architecture Company that delivers Simple Functional Architecture
+# Comprehensive Web Application and eCommerce for HouseDesigns Ke
+HouseDesigns Ke is an Architecture Company that delivers Simple Functional Architecture
 
 ## Overview
 

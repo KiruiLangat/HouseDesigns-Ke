@@ -17,7 +17,6 @@ export default function BlogGrids() {
         setLoading(true);
         fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&per_page=8')
         .then(response => {
-            console.log(response)
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -25,7 +24,6 @@ export default function BlogGrids() {
         })
         .then(data => {
             setPosts(data);
-            console.log('Posts:', data)
             setLoading(false);
         })
         .catch(error => {

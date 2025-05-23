@@ -16,8 +16,8 @@ function Homepage() {
   return (
     <div className={styles.container} style={style}>
       <Head>
-        <title>House Designs</title>
-        <meta name='title' content='House Designs' />
+        <title>HouseDesigns</title>
+        <meta name='title' content='HouseDesigns' />
         <meta name='description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
         <meta property='og:description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
         <meta property='og:image' content='/carousel3.jpg' />
@@ -26,7 +26,7 @@ function Homepage() {
         <meta property='og:url' content='https://housedesigns.co.ke/' />
         <meta property='og:type' content='website' />
         <meta name='twitter:card' content='summary' /> 
-        <meta name='twitter:title' content='House Designs' />
+        <meta name='twitter:title' content='HouseDesigns' />
         <meta name='twitter:description' content='Discover the difference in Style, Design, Delivery and Comfort.' />
         <meta name='twitter:image' content='/carousel3.jpg' />
         <meta name='twitter:image:width' content='1024' />

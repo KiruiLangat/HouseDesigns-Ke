@@ -44,7 +44,7 @@ export default function Blog() {
         return response.json();
       })
       .then(data => {
-        console.log('Successfully connected to WordPress backend:', data);
+        console.log('Successfully connected to WordPress backend:');
         setBlogPost(data);
       })
       .catch(error => {

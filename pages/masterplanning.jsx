@@ -47,26 +47,33 @@ export default function Masterplanning() {
             </Head>
             <div className={styles.masterplan} style={style}>
                 <div className={styles.largeImg}>
-                    <Image src={Masterplan} alt="institution Masterplan" width={'700px'} height={'430px'} />
+                    <Image 
+                        src={Masterplan} 
+                        alt="institution Masterplan" 
+                        width={700} 
+                        height={430} 
+                        loading="eager" 
+                        priority 
+                    />
                 </div>
                 <h1 className={styles.masterplanTitle}>Masterplanning Services</h1>
                 <h2>University of Isiolo</h2>
                 <div className={styles.masonry}>
-                    <Image src={Masterplan1} alt="institution Masterplan" />
-                    <Image src={Masterplan2} alt="institution Masterplan" />
-                    <Image src={Masterplan3} alt="institution Masterplan" />
-                    <Image src={Masterplan4} alt="institution Masterplan" />
-                    <Image src={Masterplan5} alt="institution Masterplan" />
-                    <Image src={Masterplan6} alt="institution Masterplan" />
-                    <Image src={Masterplan7} alt="institution Masterplan" />
-                    <Image src={Masterplan8} alt="institution Masterplan" />
-                    <Image src={Masterplan9} alt="institution Masterplan" />
-                    <Image src={Masterplan10} alt="institution Masterplan" />
-                    <Image src={Masterplan11} alt="institution Masterplan" />
-                    <Image src={Masterplan12} alt="institution Masterplan" />
-                    <Image src={Masterplan13} alt="institution Masterplan" />
-                    <Image src={Masterplan14} alt="institution Masterplan" />
-                    <Image src={Masterplan15} alt="institution Masterplan" />
+                    <Image src={Masterplan1} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan2} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan3} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan4} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan5} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan6} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan7} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan8} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan9} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan10} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan11} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan12} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan13} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan14} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
+                    <Image src={Masterplan15} alt="institution Masterplan" loading="lazy" placeholder="blur" blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=" />
                 </div>
             </div>
         </>

@@ -1,3 +1,14 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap locations
+Sitemap: https://housedesigns.co.ke/sitemap.xml
+Sitemap: https://housedesigns.co.ke/server-sitemap.xml
+
+# Crawl-delay suggestion
+Crawl-delay: 10
+
+# Disallow WordPress admin and login
+Disallow: /CMS/wp-admin/
+Disallow: /CMS/wp-login.php

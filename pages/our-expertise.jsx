@@ -52,7 +52,7 @@ export default function OurExpertise(){
                     </Link>
                 </div>
                 <div className={styles.service1}>
-                    <Link href="">
+                    <Link href="/contact-us">
                         <div className={styles.service1Img}>
                             <Image src={InteriorDesign} alt='interior design' layout='fixed' loading='lazy'/>
                         </div>

@@ -47,11 +47,11 @@
 .post {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: center;
+    align-items: left;
     width: 93%;
     height: 100%;
     border-radius: 10px;
-    margin: auto;
     position: relative;
 }
 
@@ -187,6 +187,7 @@
     flex-direction: column;
     justify-content: left;
     align-items: left;
+    margin-top: 0;
 }
 
 /* =============================================
@@ -442,7 +443,6 @@
 .postContent :global(h1) {
     font-size: 28px;
     font-weight: 400;
-    margin-top: 30px;
     margin-bottom: 15px;
 }
 
@@ -450,7 +450,7 @@
     font-size: 24px;
     font-weight: 400;
     margin-top: 25px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .postContent :global(h3) {
@@ -694,8 +694,8 @@
     
     .featuredImg {
         margin-top: 20px;
-        height: 300px;
         border-radius: 10px;
+        height: auto;
     }
     
     .content {
@@ -705,11 +705,21 @@
     
     .content h1 {
         font-size: 20px;
+        margin-top: 0 !important;
     }
     
     
     .content p {
         font-size: 14px;
+    }
+
+    .postContent :global(h1) {
+        font-size: 20px;
+        margin-top: 0 !important;
+    }
+
+    .postContent{
+        margin-top: 0 !important;
     }
     
     .postContent Img {

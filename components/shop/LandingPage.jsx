@@ -40,7 +40,7 @@ export default function LandingPage() {
                     </h1>
                     <h2 className={styles.landingSubtext}>
                         Experience the Journey from Concept to Completion of<br />
-                        House Designs and House Plans with Expert Workflow, <br />
+                        HouseDesigns and House Plans with Expert Workflow, <br />
                         <span className={styles.highlightSubtext} style={getHighlightStyle()}> Transforming Your Vision Step by Step </span> and Crafting <br /> and Your Amazing Dream Home.
                     </h2>
                 </div>

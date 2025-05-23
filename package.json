@@ -23,6 +23,7 @@
     "mysql2": "^3.14.1",
     "next": "^13.4.0",
     "next-seo": "^6.6.0",
+    "next-sitemap": "^4.2.3",
     "node-fetch": "^3.3.2",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.9",
@@ -42,6 +43,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },

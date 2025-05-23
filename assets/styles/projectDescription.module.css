@@ -52,6 +52,11 @@
     margin: auto;
     padding: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .largeImg {
@@ -64,7 +69,6 @@
     background-color: #eee;
     animation: blinking 1.5s infinite;
     overflow: hidden;
-    margin-bottom: 20px;
 }
 
 .largeImg img {
@@ -95,7 +99,7 @@
     width: 93%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 10px;
     margin: auto;
     margin-bottom: 30px;
 }
@@ -127,19 +131,25 @@
     opacity: 1;
 }
 .projectInfo {
-    width: 93%;
+    width: 100%;
     height: auto;
     margin: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    gap: 10px;
 }
 .projectDescription h1 {
     font-size: 36px;
     font-weight: 400;
-    text-align: center;
+    text-align: left;
+    margin-left: 20px;
 }
 .descriptions {
-    margin-left: 10%;
-    
+    margin-left: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 10px;   
 }
 .description1 h2 {
     font-size: 24px;
@@ -166,7 +176,11 @@
     font-weight: 300;
 }
 .details {
-    margin-left:15%;   
+    display: flex;
+    width: auto; 
+    height: auto; 
+    padding: 0 10px;
+    align-items: left; 
     
 }
 .details h2 {
@@ -189,10 +203,19 @@
     }
     .largeImg {
         margin-top: 2%;
+        max-height: 300px;
+    }
+
+    .largeImg img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
     }
      .projectInfo {
-        width: auto;
-        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
      }
     .projectDescription h1 {
         font-size: 24px;
@@ -208,12 +231,12 @@
         padding-bottom: 65%; /* Slightly shorter aspect ratio for mobile */
         animation: blinking 1.5s infinite;
         position: relative;
-        margin-bottom: 15px; /* Add spacing between images on mobile */
+        margin-bottom: 10px; /* Add spacing between images on mobile */
     }
     .masonry {
         display: grid;
         grid-template-columns: repeat(1,1fr);
-        gap: 20px;
+        gap: 10px;
         margin-bottom: 20px;
     }
     .masonry .imageContainer img{
@@ -222,5 +245,24 @@
         min-height: 200px;
         object-fit: cover;
         transition: opacity 0.3s ease-in-out;
+    }
+    .projectDescription{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .descriptions{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: left;
+        gap: 5px;
+        width: auto;
+    }
+
+    .details{
+        height: auto;
     }
 }

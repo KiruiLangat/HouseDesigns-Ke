@@ -11,7 +11,7 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/androidIcon32px.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/androidIcon16px.png" />
-          <meta name="author" content="House Designs" />
+          <meta name="author" content="HouseDesigns" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-XDBB1JXH18"

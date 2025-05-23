@@ -67,7 +67,7 @@ export default function BrowseCarousel({ sub_category_name }) {
           swiperRef.current = swiper;
           swiper.autoplay.start();
         }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false, waitForTransition: true }}
         loop={true}
         pagination={{ clickable: true, el: '.swiper-pagination' }}
         navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
