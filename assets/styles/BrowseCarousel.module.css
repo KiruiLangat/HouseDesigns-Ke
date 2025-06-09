@@ -61,7 +61,7 @@
   margin: 10px auto;
   font-size: 18px;
   font-weight: 300;
-  color: #fff;
+  color: #ED7D31;
 }
 
 @media (max-width: 768px) {
@@ -102,6 +102,6 @@
     font-size: 14px;
     font-weight: 300;
     text-align: center;
-    box-shadow: #ED7D3124;
+    color: #ED7D31;
   }
 }

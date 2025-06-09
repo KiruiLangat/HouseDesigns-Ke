@@ -11,19 +11,54 @@
 export function ensureAbsoluteUrl(url, defaultImage = '/Logo.png') {
   if (!url) return `https://housedesigns.co.ke${defaultImage}`;
   
+  // Handle URLs that start with http or https
   if (url.startsWith('http')) return url;
+  
+  // Handle protocol-relative URLs (starting with //)
+  if (url.startsWith('//')) return `https:${url}`;
+  
+  // Handle absolute paths
   if (url.startsWith('/')) return `https://housedesigns.co.ke${url}`;
+  
+  // Handle relative paths
   return `https://housedesigns.co.ke/${url}`;
 }
 
 /**
- * Cleans HTML tags from a string
- * @param {string} text - Text that might contain HTML
- * @returns {string} - Clean text without HTML tags
+ * Cleans HTML tags and decodes HTML entities from a string
+ * @param {string} text - Text that might contain HTML tags and entities
+ * @returns {string} - Clean, decoded text without HTML tags or entities
  */
 export function cleanHtmlTags(text) {
   if (!text) return '';
-  return text.replace(/<[^>]*>/g, '');
+  
+  // First remove HTML tags
+  let cleanText = text.replace(/<[^>]*>/g, '');
+  
+  // Then decode HTML entities
+  const textarea = typeof document !== 'undefined' ? document.createElement('textarea') : null;
+  
+  if (textarea) {
+    // Browser environment - use DOM to decode
+    textarea.innerHTML = cleanText;
+    cleanText = textarea.value;
+  } else {
+    // Server environment - manual replacement of common entities
+    cleanText = cleanText
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#039;/g, "'")
+      .replace(/&#8217;/g, "'")
+      .replace(/&#8216;/g, "'")
+      .replace(/&#8220;/g, '"')
+      .replace(/&#8221;/g, '"')
+      .replace(/&hellip;/g, '...')
+      .replace(/&#8230;/g, '...');
+  }
+  
+  return cleanText;
 }
 
 /**
@@ -32,35 +67,31 @@ export function cleanHtmlTags(text) {
  * @param {object} post - WordPress post object with _embedded media
  * @param {string} [fallbackImage] - Fallback image to use if post has no image
  * @returns {string} - URL to an appropriately sized image
- */
-export function getSocialImage(post, fallbackImage = '/Logo.png') {
-  // If no post or embedded media, return fallback
-  if (!post || 
-      !post._embedded || 
-      !post._embedded['wp:featuredmedia'] || 
-      !post._embedded['wp:featuredmedia'][0]) {
-    return ensureAbsoluteUrl(fallbackImage);
-  }
-  
-  const media = post._embedded['wp:featuredmedia'][0];
-  
-  // Check if WordPress has generated appropriate sized images
-  if (media.media_details && media.media_details.sizes) {
-    // Try to get an image close to 1200x630 (Facebook recommendation)
-    const sizes = media.media_details.sizes;
-    
-    // Check for sizes in preferred order
-    if (sizes.large) {
-      return ensureAbsoluteUrl(sizes.large.source_url);
-    } else if (sizes.medium_large) {
-      return ensureAbsoluteUrl(sizes.medium_large.source_url);
-    } else if (sizes.medium) {
-      return ensureAbsoluteUrl(sizes.medium.source_url);
+ */  export const getSocialImage = (post) => {
+    // Simple fallback for missing post data
+    if (!post || !post._embedded || !post._embedded?.['wp:featuredmedia']?.[0]?.source_url) {
+      return ensureAbsoluteUrl('/CM_1.jpg');
     }
-  }
+    
+    const media = post._embedded['wp:featuredmedia'][0];
   
-  // Fallback to the main source URL
-  return ensureAbsoluteUrl(media.source_url);
+    // Check if WordPress has generated appropriate sized images
+    if (media.media_details && media.media_details.sizes) {
+      // Try to get an image close to 1200x630 (Facebook recommendation)
+      const sizes = media.media_details.sizes;
+      
+      // Check for sizes in preferred order
+      if (sizes.large) {
+        return ensureAbsoluteUrl(sizes.large.source_url);
+      } else if (sizes.medium_large) {
+        return ensureAbsoluteUrl(sizes.medium_large.source_url);
+      } else if (sizes.medium) {
+        return ensureAbsoluteUrl(sizes.medium.source_url);
+      }
+    }
+    
+    // Fallback to the main source URL
+    return ensureAbsoluteUrl(media.source_url);
 }
 
 /**

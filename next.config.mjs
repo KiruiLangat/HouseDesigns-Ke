@@ -1,16 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone',
-    images: {
-      domains: [
-        'housedesigns.co.ke',
-        'housedesigns.co.ke/CMS'
-      ],
+    output: 'standalone',    images: {
+      domains: ['housedesigns.co.ke', 'www.housedesigns.co.ke'],
+      formats: ['image/avif', 'image/webp'],
+      deviceSizes: [640, 750, 828, 1080, 1200],
       remotePatterns: [
         {
           protocol: 'https',
           hostname: 'housedesigns.co.ke',
-          pathname: '/CMS/**',
+          pathname: '/**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'www.housedesigns.co.ke',
+          pathname: '/**',
         }
       ],
       unoptimized: true,

@@ -2,22 +2,24 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from '../assets/styles/Blog.module.css';
 import '@fontsource/poppins';
 import SearchBar from '../components/BlogSearchBar';
 import BlogGrids from '../components/BlogGrids';
-import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
+import LoadingIndicator from '../components/LoadingIndicator';
 
 const style = {
     fontFamily: 'Poppins',
 };
 
 export default function Blog() {
+  const router = useRouter();
   const [blogPost, setBlogPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [windowWidth, setWindowWidth] = useState(0);
-
+  const [isNavigating, setIsNavigating] = useState(false);
   useEffect(() => {
     // Set initial window width
     setWindowWidth(window.innerWidth);
@@ -33,6 +35,30 @@ export default function Blog() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  
+  // Add router event handlers to track navigation state
+  useEffect(() => {
+    const handleStart = (url) => {
+      // Show loading when navigating to a blog post
+      if (url.startsWith('/blog/')) {
+        setIsNavigating(true);
+      }
+    };
+    
+    const handleComplete = () => {
+      setIsNavigating(false);
+    };
+    
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+    
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleComplete);
+    };
+  }, [router]);
 
   useEffect(() => {
     fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?&_embed')
@@ -50,19 +76,13 @@ export default function Blog() {
       .catch(error => {
         console.error('Error connecting to WordPress backend:', error);
         setError(error.toString());
-      })
-      .finally(() => {
+      })      .finally(() => {
         setLoading(false);
       });
   }, []); // Empty dependency array to run only once
-
-  if (loading) {
-    return (
-      <div className={styles.loading}>
-        <HourglassBottomIcon className={styles.loadingIcon} />
-        <p>Retrieving posts...</p>
-      </div>
-    );
+  
+  if (loading || isNavigating) {
+    return <LoadingIndicator message={loading ? "Retrieving posts..." : "Loading post..."} />;
   }
   if (error) {
     return <div className='error'>{error}</div>;
