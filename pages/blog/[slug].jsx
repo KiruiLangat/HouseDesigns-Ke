@@ -31,16 +31,16 @@ async function getPostBySlug(slug) {
     
     // Use even more restricted fields for known problematic posts
     const isProblematicPost = problemSlugs.includes(slug);
-    
-    // Only request specific fields we need to render the post
+      // Only request specific fields we need to render the post
     // For problematic posts, exclude content to reduce payload size significantly
     const essentialFields = isProblematicPost 
       ? 'id,slug,title,date,modified,excerpt.rendered' 
       : 'id,slug,title,date,modified,content.rendered,excerpt.rendered';
     
-    // Fetch post data with limited fields and embedded media
+    // Fetch post data with embedded media - use _embed instead of _embed=author,wp:featuredmedia
+    // to ensure we get the correct structure that WordPress API expects
     const response = await fetch(
-      `https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed=author,wp:featuredmedia&_fields=${essentialFields}&slug=${slug}`
+      `https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&_fields=${essentialFields}&slug=${slug}`
     );
     
     if (!response.ok) {
@@ -220,6 +220,8 @@ export default function BlogPost({ postData }) {
         <meta property="og:title" content={postTitle} />
         <meta property="og:description" content={cleanExcerpt} />
         <meta property="og:image" content={featuredImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="article:published_time" content={post.date} />
         {post.modified && (
           <meta property="article:modified_time" content={post.modified} />
@@ -242,25 +244,41 @@ export default function BlogPost({ postData }) {
         featuredImage={featuredImage} 
         url={`https://housedesigns.co.ke/blog/${post.slug}`} 
       />
-        <div className={styles.post}>        <div className={styles.featuredImg}>
-          {post._embedded?.['wp:featuredmedia']?.[0]?.source_url ? (
+        <div className={styles.post}>        
+          <div className={styles.featuredImg}>
+          {/* More robust featured image handling with fallbacks */}
+          {post._embedded?.['wp:featuredmedia']?.[0] ? (
             <Image 
-              src={ensureAbsoluteUrl(post._embedded['wp:featuredmedia'][0].source_url)}
+              src={ensureAbsoluteUrl(
+                post._embedded['wp:featuredmedia'][0].source_url || 
+                (post._embedded['wp:featuredmedia'][0].media_details?.sizes?.large?.source_url) ||
+                '/CM_1.jpg'
+              )}
               alt={postTitle}
               style={{ width: '100%', height: 'auto' }}
               width={700} 
               height={475}
               priority={true}
               loading="eager"
-              quality={75} // Further reduce image quality for performance
+              quality={75}
               placeholder="blur" 
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+              onError={() => console.log("Image failed to load, using fallback")}
             />
           ) : (
-            <div className={styles.noImage}>Featured image not available</div>
+            <div className={styles.noImage}>
+              <Image
+                src="/CM_1.jpg" 
+                alt="Default Featured Image"
+                width={700}
+                height={475}
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </div>
           )}
         </div>
-        <div className={styles.content}>            <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+        <div className={styles.content}>            
+        <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
           <p className={styles.postDate}>
             {formattedDate}
           </p>
@@ -273,29 +291,38 @@ export default function BlogPost({ postData }) {
             </div>            
             <div className={styles.shareButtons}>
               <a
-                href={`https://api.whatsapp.com/send?text=${shareText}%0A%0A${shareUrl}`}
+                href={`https://api.whatsapp.com/send?text=https://housedesigns.co.ke/blog/${post.slug}`}
                 className={styles.whatsappShare}
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 <WhatsAppIcon />
               </a>
               
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=https://housedesigns.co.ke/blog/${post.slug}`}
                 className={styles.facebookShare}
+                target='_blank'
+                rel='noopener noreferrer'
+                
               >
                 <FacebookIcon />
               </a>
 
               <a
-                href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`}
+                href={`https://twitter.com/intent/tweet?text=${shareText}&url=https://housedesigns.co.ke/blog/${post.slug}`}
                 className={styles.twitterShare}
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 <XIcon />
               </a>
 
               <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=https://housedesigns.co.ke/blog/${post.slug}`}
                 className={styles.linkedinShare}
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 <LinkedInIcon />
               </a>
@@ -309,7 +336,8 @@ export default function BlogPost({ postData }) {
             }} />
           )}
         </div>
-      </div>      <div className={styles.blogNavigation}>
+      </div>      
+      <div className={styles.blogNavigation}>
         <div className={styles.previous}>
           {previousPost ? (
             <Link href={`/blog/${previousPost.slug}`} legacyBehavior>
@@ -353,24 +381,42 @@ export async function getStaticPaths() {
       'microcement-in-kenya-understanding-its-uses-types-application-methods-and-advantages'
     ];
     
-    // Only pre-render a small number of recent posts to reduce build time and page size
-    const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug&per_page=8');
+    // Define a small set of known working posts to ensure build succeeds
+    // This guarantees we'll have at least some posts built statically
+    const safeSlugs = [
+      'interior-designs', 
+      'architecture',
+      'residential-design'
+    ];
     
-    if (!response.ok) {
-      throw new Error(`API error: ${response.status} ${response.statusText}`);
+    // Create paths for our safe slugs to ensure the build completes
+    const safePaths = safeSlugs.map(slug => ({ params: { slug } }));
+    
+    // Only attempt to pre-render a small number of recent posts to reduce build time
+    try {
+      const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug&per_page=6');
+      
+      if (response.ok) {
+        const posts = await response.json();
+        
+        // Filter out problematic slugs from pre-rendering
+        const dynamicPaths = posts
+          .filter(post => !problemSlugs.includes(post.slug))
+          .map(post => ({ params: { slug: post.slug } }));
+        
+        // Combine our safe paths with dynamic ones
+        return {
+          paths: [...safePaths, ...dynamicPaths],
+          fallback: 'blocking',
+        };
+      }
+    } catch (fetchError) {
+      console.error('Error fetching post slugs, using safe paths only:', fetchError);
     }
     
-    const posts = await response.json();
-    
-    // Filter out problematic slugs from pre-rendering
-    const safePosts = posts.filter(post => !problemSlugs.includes(post.slug));
-    
-    const paths = safePosts.map(post => ({ params: { slug: post.slug } }));
-    
+    // Fallback to just our safe paths if the API call fails
     return {
-      paths,
-      // 'blocking' provides a better UX than 'true' as it waits for the page 
-      // to be generated on first request instead of showing a loading state
+      paths: safePaths,
       fallback: 'blocking',
     };
   } catch (error) {
@@ -443,40 +489,36 @@ export async function getStaticProps({ params }) {
         minimalPost.content = { rendered: content?.rendered || '' };
         minimalPost.excerpt = { rendered: excerpt?.rendered || '' };
       }
-      
-      // Only keep minimal embedded data
+        // Handle embedded data more carefully - preserve structure but clean it
       if (_embedded) {
-        minimalPost._embedded = {};
+        minimalPost._embedded = _embedded;
         
-        // Keep only essential featured media data - just the URL for problematic posts
+        // Instead of completely restructuring, just clean up large parts
         if (_embedded['wp:featuredmedia']?.[0]) {
+          // Keep original featured media but remove unnecessary fields
           const media = _embedded['wp:featuredmedia'][0];
           
-          if (isProblematicPost) {
-            // Ultra minimal for problematic posts
-            minimalPost._embedded['wp:featuredmedia'] = [{
-              source_url: media.source_url,
-              alt_text: media.alt_text || ''
-            }];
-          } else {
-            // Normal minimal for regular posts
-            minimalPost._embedded['wp:featuredmedia'] = [{
-              source_url: media.source_url,
-              alt_text: media.alt_text || '',
-              media_details: {
-                sizes: media.media_details?.sizes ? {
-                  large: media.media_details.sizes.large,
-                  medium: media.media_details.sizes.medium
-                } : undefined
-              }
-            }];
-          }
-        }
-        
-        // Keep only essential author data
-        if (_embedded.author?.[0]) {
-          minimalPost._embedded.author = [{
-            name: _embedded.author[0].name
+          // Clean up large unnecessary fields from the media object
+          const fieldsToRemove = [
+            'description', 'caption', 'content', 'post', 'source_url_raw',
+            'ping_status', 'template', 'guid', 'slug', 'status', 'comment_status',
+            'link', 'parent', 'menu_order', 'mime_type', 'yoast_head', 'acf'
+          ];
+          
+          // Only remove fields from a copy to avoid modifying the original
+          minimalPost._embedded['wp:featuredmedia'] = [{
+            ...media,
+            // Preserve essential fields that are needed for rendering
+            id: media.id,
+            source_url: media.source_url,
+            alt_text: media.alt_text || '',
+            media_details: media.media_details ? {
+              width: media.media_details.width,
+              height: media.media_details.height,
+              sizes: media.media_details.sizes
+            } : undefined,
+            // Remove all unnecessary fields
+            ...Object.fromEntries(fieldsToRemove.map(field => [field, undefined]))
           }];
         }
       }
@@ -484,7 +526,6 @@ export async function getStaticProps({ params }) {
       // Replace with minimal version
       postData.post = minimalPost;
     }
-  
     return {
       props: { 
         postData 
@@ -514,12 +555,4 @@ export async function getStaticProps({ params }) {
       revalidate: 1800 // Try again in 30 minutes
     };
   }
-    return {
-    props: { 
-      postData 
-    },
-    // Revalidate the page every 6 hours - blog content doesn't change frequently
-    // This reduces server load while keeping content relatively fresh
-    revalidate: 21600
-  };
 }

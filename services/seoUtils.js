@@ -69,26 +69,37 @@ export function cleanHtmlTags(text) {
  * @returns {string} - URL to an appropriately sized image
  */  export const getSocialImage = (post) => {
     // Simple fallback for missing post data
-    if (!post || !post._embedded || !post._embedded?.['wp:featuredmedia']?.[0]?.source_url) {
+    if (!post || !post._embedded) {
       return ensureAbsoluteUrl('/CM_1.jpg');
     }
     
-    const media = post._embedded['wp:featuredmedia'][0];
-  
+    // Make sure we have featured media
+    const featuredMedia = post._embedded?.['wp:featuredmedia']?.[0];
+    if (!featuredMedia) {
+      return ensureAbsoluteUrl('/CM_1.jpg');
+    }
+    
+    // Direct source URL is available
+    if (featuredMedia.source_url) {
+      return ensureAbsoluteUrl(featuredMedia.source_url);
+    }
+    
     // Check if WordPress has generated appropriate sized images
-    if (media.media_details && media.media_details.sizes) {
+    if (featuredMedia.media_details && featuredMedia.media_details.sizes) {
       // Try to get an image close to 1200x630 (Facebook recommendation)
-      const sizes = media.media_details.sizes;
-      
-      // Check for sizes in preferred order
-      if (sizes.large) {
+      const sizes = featuredMedia.media_details.sizes;
+          // Check for sizes in preferred order
+      if (sizes.large && sizes.large.source_url) {
         return ensureAbsoluteUrl(sizes.large.source_url);
-      } else if (sizes.medium_large) {
+      } else if (sizes.medium_large && sizes.medium_large.source_url) {
         return ensureAbsoluteUrl(sizes.medium_large.source_url);
-      } else if (sizes.medium) {
+      } else if (sizes.medium && sizes.medium.source_url) {
         return ensureAbsoluteUrl(sizes.medium.source_url);
       }
     }
+    
+    // Ultimate fallback if no other image was found
+    return ensureAbsoluteUrl('/CM_1.jpg');
     
     // Fallback to the main source URL
     return ensureAbsoluteUrl(media.source_url);
