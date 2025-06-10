@@ -8,21 +8,26 @@
  * @param {string} [defaultImage] - Default image to use if URL is empty
  * @returns {string} - An absolute URL
  */
-export function ensureAbsoluteUrl(url, defaultImage = '/Logo.png') {
-  if (!url) return `https://housedesigns.co.ke${defaultImage}`;
-  
-  // Handle URLs that start with http or https
-  if (url.startsWith('http')) return url;
+export const ensureAbsoluteUrl = (url) => {
+  if (!url) return 'https://housedesigns.co.ke/CM_1.jpg';
   
   // Handle protocol-relative URLs (starting with //)
-  if (url.startsWith('//')) return `https:${url}`;
+  if (url.startsWith('//')) {
+    return 'https:' + url;
+  }
   
-  // Handle absolute paths
-  if (url.startsWith('/')) return `https://housedesigns.co.ke${url}`;
+  // Handle absolute paths (starting with /)
+  if (url.startsWith('/') && !url.startsWith('//')) {
+    return 'https://housedesigns.co.ke' + url;
+  }
   
-  // Handle relative paths
-  return `https://housedesigns.co.ke/${url}`;
-}
+  // Handle URLs without protocol
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    return 'https://' + url;
+  }
+  
+  return url;
+};
 
 /**
  * Cleans HTML tags and decodes HTML entities from a string
@@ -68,42 +73,56 @@ export function cleanHtmlTags(text) {
  * @param {string} [fallbackImage] - Fallback image to use if post has no image
  * @returns {string} - URL to an appropriately sized image
  */  export const getSocialImage = (post) => {
-    // Simple fallback for missing post data
-    if (!post || !post._embedded) {
-      return ensureAbsoluteUrl('/CM_1.jpg');
+  try {
+    // Check if we have embedded media
+    if (!post._embedded || !post._embedded['wp:featuredmedia'] || post._embedded['wp:featuredmedia'].length === 0) {
+    console.log('No featured media found');
+    return 'https://housedesigns.co.ke/CM_1.jpg';
+  }
+    
+    const media = post._embedded['wp:featuredmedia'][0];
+    
+    // First try to get the full size image
+    let imageUrl = null;
+    
+    // Try the main source_url first
+    if (media.source_url) {
+      imageUrl = media.source_url;
+      console.log('Using source_url:', imageUrl);
+    } 
+    // Then try the large size
+    else if (media.media_details?.sizes?.large?.source_url) {
+      imageUrl = media.media_details.sizes.large.source_url;
+      console.log('Using large size:', imageUrl);
+    }
+    // Then try medium
+    else if (media.media_details?.sizes?.medium?.source_url) {
+      imageUrl = media.media_details.sizes.medium.source_url;
+      console.log('Using medium size:', imageUrl);
     }
     
-    // Make sure we have featured media
-    const featuredMedia = post._embedded?.['wp:featuredmedia']?.[0];
-    if (!featuredMedia) {
-      return ensureAbsoluteUrl('/CM_1.jpg');
+    // If no image was found, return default
+    if (!imageUrl) {
+      console.log('No image URL found in media object');
+      return 'https://housedesigns.co.ke/CM_1.jpg';
     }
     
-    // Direct source URL is available
-    if (featuredMedia.source_url) {
-      return ensureAbsoluteUrl(featuredMedia.source_url);
+    // Ensure it's an absolute URL with https://
+    if (imageUrl.startsWith('//')) {
+      imageUrl = 'https:' + imageUrl;
+    } else if (imageUrl.startsWith('/')) {
+      imageUrl = 'https://housedesigns.co.ke' + imageUrl;
+    } else if (!imageUrl.startsWith('http')) {
+      imageUrl = 'https://' + imageUrl;
     }
     
-    // Check if WordPress has generated appropriate sized images
-    if (featuredMedia.media_details && featuredMedia.media_details.sizes) {
-      // Try to get an image close to 1200x630 (Facebook recommendation)
-      const sizes = featuredMedia.media_details.sizes;
-          // Check for sizes in preferred order
-      if (sizes.large && sizes.large.source_url) {
-        return ensureAbsoluteUrl(sizes.large.source_url);
-      } else if (sizes.medium_large && sizes.medium_large.source_url) {
-        return ensureAbsoluteUrl(sizes.medium_large.source_url);
-      } else if (sizes.medium && sizes.medium.source_url) {
-        return ensureAbsoluteUrl(sizes.medium.source_url);
-      }
-    }
-    
-    // Ultimate fallback if no other image was found
-    return ensureAbsoluteUrl('/CM_1.jpg');
-    
-    // Fallback to the main source URL
-    return ensureAbsoluteUrl(media.source_url);
-}
+    console.log('Final image URL:', imageUrl);
+    return imageUrl;
+  } catch (error) {
+    console.error('Error in getSocialImage:', error);
+    return 'https://housedesigns.co.ke/CM_1.jpg';
+  }
+}  
 
 /**
  * Truncates text to a specified length with ellipsis

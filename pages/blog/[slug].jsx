@@ -22,6 +22,8 @@ const style = {
 
 // Function to fetch a post by slug
 async function getPostBySlug(slug) {
+  
+
   try {
     // Problem posts that need special handling to reduce payload size
     const problemSlugs = [
@@ -208,6 +210,8 @@ export default function BlogPost({ postData }) {
     day: 'numeric'
   });
 
+  console.debug('Final meta image URL:', featuredImage);
+
   return (
     <div style={style} className={styles.postContainer}>          
       <Head>
@@ -222,6 +226,11 @@ export default function BlogPost({ postData }) {
         <meta property="og:image" content={featuredImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        
+        {/* For when no image is found */}
+        {!featuredImage && (
+          <meta property="og:image" content="https://housedesigns.co.ke/CM_1.jpg" />
+        )}
         <meta property="article:published_time" content={post.date} />
         {post.modified && (
           <meta property="article:modified_time" content={post.modified} />
