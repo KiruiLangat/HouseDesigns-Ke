@@ -72,11 +72,11 @@ export function cleanHtmlTags(text) {
  * @param {object} post - WordPress post object with _embedded media
  * @param {string} [fallbackImage] - Fallback image to use if post has no image
  * @returns {string} - URL to an appropriately sized image
- */  export const getSocialImage = (post) => {
+ */  
+export const getSocialImage = (post) => {
   try {
     // Check if we have embedded media
     if (!post._embedded || !post._embedded['wp:featuredmedia'] || post._embedded['wp:featuredmedia'].length === 0) {
-    console.log('No featured media found');
     return 'https://housedesigns.co.ke/CM_1.jpg';
   }
     
@@ -88,22 +88,18 @@ export function cleanHtmlTags(text) {
     // Try the main source_url first
     if (media.source_url) {
       imageUrl = media.source_url;
-      console.log('Using source_url:', imageUrl);
     } 
     // Then try the large size
     else if (media.media_details?.sizes?.large?.source_url) {
       imageUrl = media.media_details.sizes.large.source_url;
-      console.log('Using large size:', imageUrl);
     }
     // Then try medium
     else if (media.media_details?.sizes?.medium?.source_url) {
       imageUrl = media.media_details.sizes.medium.source_url;
-      console.log('Using medium size:', imageUrl);
     }
     
     // If no image was found, return default
     if (!imageUrl) {
-      console.log('No image URL found in media object');
       return 'https://housedesigns.co.ke/CM_1.jpg';
     }
     
@@ -116,10 +112,8 @@ export function cleanHtmlTags(text) {
       imageUrl = 'https://' + imageUrl;
     }
     
-    console.log('Final image URL:', imageUrl);
     return imageUrl;
   } catch (error) {
-    console.error('Error in getSocialImage:', error);
     return 'https://housedesigns.co.ke/CM_1.jpg';
   }
 }  
