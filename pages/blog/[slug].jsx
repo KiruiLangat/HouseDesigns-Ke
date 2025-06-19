@@ -42,7 +42,19 @@ async function getAllPostSlugs() {
   }
 }
 
-export default function BlogPost({ post }) {
+// Fetch all posts (slugs and titles) for navigation
+async function getAllPostsMeta() {
+  try {
+    const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug,title&per_page=100');
+    if (!response.ok) return [];
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching all posts meta:', error);
+    return [];
+  }
+}
+
+export default function BlogPost({ post, previousPost, nextPost }) {
   const router = useRouter();
   const [isNavigating, setIsNavigating] = useState(false);
 
@@ -162,8 +174,32 @@ export default function BlogPost({ post }) {
           </div>
           <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.content?.rendered || '<p>Content temporarily unavailable.</p>' }} />
         </div>
+        <div className={styles.blogNavigation}>
+              <div className={styles.previous}>
+                {previousPost ? (
+                  <Link href={`/blog/${previousPost.slug}`} legacyBehavior>
+                    <a className={styles.navigationLink} title={previousPost.title?.rendered || previousPost.title || "Previous Post"}>
+                      <h2>● Previous</h2>
+                    </a>
+                  </Link>
+                ) : (
+                  <h2 className={styles.disabledLink}></h2>
+                )}
+              </div>
+              <div className={styles.next}>
+              {nextPost ? (
+                <Link href={`/blog/${nextPost.slug}`} legacyBehavior>
+                  <a className={styles.navigationLink} title={nextPost.title?.rendered || nextPost.title || "Next Post"}>
+                    <h2>Next ●</h2>
+                  </a>
+                </Link>
+              ) : (
+                <h2 className={styles.disabledLink}>Next ●</h2>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
   );
 }
 
@@ -180,8 +216,14 @@ export async function getStaticProps({ params }) {
   if (!post) {
     return { notFound: true };
   }
+  // Fetch all posts meta for navigation
+  const allPosts = await getAllPostsMeta();
+  // Find current post index
+  const currentIndex = allPosts.findIndex(p => p.slug === params.slug);
+  const previousPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const nextPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
   return {
-    props: { post },
+    props: { post, previousPost, nextPost },
     revalidate: 21600,
   };
 }
