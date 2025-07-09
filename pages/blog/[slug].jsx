@@ -32,7 +32,7 @@ async function getPostBySlug(slug) {
 // Get all post slugs for static paths
 async function getAllPostSlugs() {
   try {
-    const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug');
+    const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug&per_page=100');
     if (!response.ok) return [];
     const posts = await response.json();
     return posts.map(post => ({ params: { slug: post.slug } }));
@@ -82,6 +82,7 @@ export default function BlogPost({ post, previousPost, nextPost }) {
 
   // Get featured image or fallback
   const featuredImage = getSocialImage(post);
+  console.log('Featured Image:', featuredImage);
   const postTitle = cleanHtmlTags(post.title?.rendered || '');
   const cleanExcerpt = truncateText(post.excerpt?.rendered || '', 160);
   const shareText = encodeURIComponent(postTitle);
@@ -109,6 +110,7 @@ export default function BlogPost({ post, previousPost, nextPost }) {
         <meta name="twitter:image" content={featuredImage} />
         <link rel="canonical" href={shareUrl} />
       </Head>
+
       <BlogJsonLd post={post} featuredImage={featuredImage} url={shareUrl} />
       <div className={styles.post}>
         <div className={styles.featuredImg}>

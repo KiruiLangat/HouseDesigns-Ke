@@ -116,7 +116,7 @@ jobs:
           **/src**
           **/.github**
           **/.gitignore**
-          **/public/Architecture/**  # This line ensures Architecture folder is preserved
+          **/public/Architecture /**  # This line ensures Architecture folder is preserved
           **/tests**
           **/spec**
           **/*.log
@@ -137,11 +137,7 @@ jobs:
           # Navigate to the project directory
           cd /home/housedes/public_html/housedesigns
           
-          # Ensure PM2 is installed
-          if ! command -v pm2 &> /dev/null; then
-            echo "PM2 not found. Installing PM2..."
-            npm install -g pm2
-          fi
+          npm install --production  # Install production dependencies only
           
           # Reload or start the PM2 process
           if pm2 list | grep -q "housedesigns"; then

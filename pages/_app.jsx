@@ -34,31 +34,9 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Head>
-        {/* Default meta tags that will be overridden by page-specific ones */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="title" content="HouseDesigns" />
-        <meta name="keywords" content="HouseDesigns, HouseDesigns, House Plans, House Construction, House Design Company, Kenya" />
-        <meta name="author" content="HouseDesigns" />
-        <meta name="description" content="HouseDesigns - Discover the difference in Style, Design, Delivery and Comfort." />
-        
-        {/* Default Open Graph */}
-        <meta property="og:site_name" content="HouseDesigns" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://housedesigns.co.ke/Logo.png" />
-        
-        {/* Default Twitter Card */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@housedesigns" />
-        
-        {/* Crawler directives */}
-        <meta name="robots" content="index, follow" />
-        
-        {/* Favicon */}
+        {/* Only include favicon and manifest here. All meta tags should be set per-page. */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        
-        {/* Manifest for PWA */}
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <CartProvider>
