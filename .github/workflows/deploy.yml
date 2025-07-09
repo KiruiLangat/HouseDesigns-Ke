@@ -16,7 +16,7 @@ jobs:
       NODE_ENV: production
       DB_HOST: ${{ secrets.DB_HOST }}
       DB_USER: ${{ secrets.DB_USER }}
-      DB_PASSWORD: ${{ secrets.DB_PASS}}
+      DB_PASSWORD: ${{ secrets.DB_PASS }}
       DB_NAME: ${{ secrets.DB_NAME }}
       WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
       WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
@@ -55,7 +55,7 @@ jobs:
       
     # Step 5: Deploy the .next directory (contains compiled application) via SFTP
     - name: SFTP Deploy .next build files
-      uses: appleboy/sftp-action@v0.0.12 
+      uses: appleboy/sftp-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
         port: 1624
@@ -92,7 +92,7 @@ jobs:
           
     # Step 6: Deploy supporting files via SFTP
     - name: SFTP Deploy supporting files
-      uses: appleboy/sftp-action@v0.0.12
+      uses: appleboy/sftp-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
         port: 1624
