@@ -53,20 +53,26 @@ jobs:
       run: npm run build
       # Environment variables are inherited from the job level, no need to repeat
       
-    # Step 5: Deploy the .next directory (contains compiled application) via SFTP
-    - name: SFTP Deploy .next build files
-      uses: appleboy/sftp-action@master
+    # Step 5: Deploy the .next directory (contains compiled application)
+    - name: Deploy Next.js build files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        host: ${{ secrets.SSH_HOST }}
-        port: 1624
-        username: ${{ secrets.SSH_USERNAME }}
-        password: ${{ secrets.SSH_PASSWORD }}
-        source: ".next/*"
-        target: "/home/housedes/public_html/housedesigns/.next/"
-        overwrite: true
-        rm: false
-        strip_components: 1
-        exclude: ".git*,node_modules,.gitignore,.ftp-deploy-sync-state.json,.next-deploy-state.json,public/Architecture"
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./.next/
+        server-dir: /public_html/housedesigns/.next/
+        dangerous-clean-slate: false
+        log-level: minimal
+        state-name: .next-deploy-state.json
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.gitignore**
+          **/.ftp-deploy-sync-state.json
+          **/.next-deploy-state.json
+          **/public/Architecture/**
          
     # Create necessary directories via SSH before supporting files upload
     - name: Create directories via SSH
@@ -90,20 +96,31 @@ jobs:
             chmod 644 /home/housedes/public_html/housedesigns/.gitignore
           fi
           
-    # Step 6: Deploy supporting files via SFTP
-    - name: SFTP Deploy supporting files
-      uses: appleboy/sftp-action@master
+    # Step 6: Deploy supporting files
+    - name: Deploy supporting files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        host: ${{ secrets.SSH_HOST }}
-        port: 1624
-        username: ${{ secrets.SSH_USERNAME }}
-        password: ${{ secrets.SSH_PASSWORD }}
-        source: "*"
-        target: "/home/housedes/public_html/housedesigns/"
-        overwrite: true
-        rm: false
-        strip_components: 0
-        exclude: ".git*,node_modules,.env,.next,src,.github,.gitignore,public/Architecture,tests,spec,*.log,.root-deploy-state.json"
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /public_html/housedesigns/
+        dangerous-clean-slate: true
+        log-level: verbose
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.env**
+          **/.next**
+          **/src**
+          **/.github**
+          **/.gitignore**
+          **/public/Architecture /**
+          **/tests**
+          **/spec**
+          **/*.log
+          **/.root-deploy-state.json
           
     # Step 7: Restart PM2
     - name: Restart PM2
