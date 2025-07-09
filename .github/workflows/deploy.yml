@@ -53,26 +53,16 @@ jobs:
       run: npm run build
       # Environment variables are inherited from the job level, no need to repeat
       
-    # Step 5: Deploy the .next directory (contains compiled application)
-    - name: Deploy Next.js build files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    # Step 5: Deploy the .next directory (contains compiled application) via SFTP
+    - name: Deploy .next via SFTP
+      uses: appleboy/sftp-action@v0.1.7
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./.next/  # Next.js build output
-        server-dir: /public_html/housedesigns/.next/  # Update to include .next subfolder
-        dangerous-clean-slate: false  # Clean slate for .next directory
-        log-level: minimal
-        state-name: .next-deploy-state.json
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/.gitignore**
-          **/.ftp-deploy-sync-state.json
-          **/.next-deploy-state.json
-          **/public/Architecture/**
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: 1624
+        source: ".next/*"
+        target: "/home/housedes/public_html/housedesigns/.next/"
          
     # Create necessary directories via SSH before supporting files upload
     - name: Create directories via SSH
@@ -96,31 +86,17 @@ jobs:
             chmod 644 /home/housedes/public_html/housedesigns/.gitignore
           fi
           
-    # Step 6: Deploy supporting files
-    - name: Deploy supporting files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    # Step 6: Deploy supporting files via SFTP
+    - name: Deploy supporting files via SFTP
+      uses: appleboy/sftp-action@v0.1.7
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./
-        server-dir: /public_html/housedesigns/
-        dangerous-clean-slate: true  # Keep this false to preserve important files
-        log-level: verbose
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/.env**
-          **/.next**
-          **/src**
-          **/.github**
-          **/.gitignore**
-          **/public/Architecture /**  # This line ensures Architecture folder is preserved
-          **/tests**
-          **/spec**
-          **/*.log
-          **/.root-deploy-state.json
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: 1624
+        source: "*"
+        target: "/home/housedes/public_html/housedesigns/"
+        exclude: ".git,node_modules,.env,.next,src,.github,.gitignore,public/Architecture,tests,spec,*.log,.root-deploy-state.json"
           
     # Step 7: Restart PM2
     - name: Restart PM2
