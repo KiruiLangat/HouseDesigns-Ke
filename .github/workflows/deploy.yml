@@ -60,7 +60,8 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-
+        protocol: ftp
+        port: 21
         local-dir: ./.next/
         server-dir: /public_html/housedesigns/.next/
         dangerous-clean-slate: false
@@ -104,7 +105,8 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-
+        protocol: ftp
+        port: 21
         local-dir: ./
         server-dir: /public_html/housedesigns/
         dangerous-clean-slate: true
