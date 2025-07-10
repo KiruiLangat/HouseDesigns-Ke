@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone',    images: {
+    output: 'standalone',    
+    images: {
       domains: ['housedesigns.co.ke', 'www.housedesigns.co.ke'],
       formats: ['image/avif', 'image/webp'],
       deviceSizes: [640, 750, 828, 1080, 1200],

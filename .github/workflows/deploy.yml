@@ -61,12 +61,12 @@ jobs:
         port: 1624
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
-        source: ".next/*"
+        source: ".next"
         target: "/home/housedes/public_html/housedesigns/.next/"
         protocol: sftp
         overwrite: true
         rm: false
-        strip_components: 1
+        strip_components: 0
         # Exclude is not supported by scp-action. If you need to exclude files, prepare a temp directory before this step.
          
     # Create necessary directories via SSH before supporting files upload

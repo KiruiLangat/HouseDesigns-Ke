@@ -82,7 +82,6 @@ export default function BlogPost({ post, previousPost, nextPost }) {
 
   // Get featured image or fallback
   const featuredImage = getSocialImage(post);
-  console.log('Featured Image:', featuredImage);
   const postTitle = cleanHtmlTags(post.title?.rendered || '');
   const cleanExcerpt = truncateText(post.excerpt?.rendered || '', 160);
   const shareText = encodeURIComponent(postTitle);

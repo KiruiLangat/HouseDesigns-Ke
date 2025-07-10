@@ -233,12 +233,15 @@
         top:0;
         z-index: 9999;
         height: 66px;
-
-        @media (prefers-color-scheme: dark) {
-            background-color: #121212;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
     }
+/* Fix: Always apply dark mode header background at top level, not nested */
+@media (prefers-color-scheme: dark) {
+    .header {
+        background-color: #121212;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+}
+
     .logo{
         width: 130px;
         height: auto;
