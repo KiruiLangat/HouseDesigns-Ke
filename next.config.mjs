@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    output: 'standalone',    
+const nextConfig = {  
     images: {
       domains: ['housedesigns.co.ke', 'www.housedesigns.co.ke'],
       formats: ['image/avif', 'image/webp'],
