@@ -225,6 +225,6 @@ export async function getStaticProps({ params }) {
   const nextPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
   return {
     props: { post, previousPost, nextPost },
-    revalidate: 21600,
+    revalidate: 30,
   };
 }
