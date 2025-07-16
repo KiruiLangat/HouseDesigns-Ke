@@ -28,22 +28,39 @@ export default function Masterplanning() {
     return (
         <>
             <Head>
-                <title>Masterplanning Projects</title>
-                <meta name='title' content='Masterplanning Projects' />
-                <meta name='description' content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
-                <meta property='og:title' content='Masterplanning' />
-                <meta property='og:description' content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
-                <meta property='og:image' content='/masterplanning.png' />
-                <meta property='og:image:width' content='1200' />
-                <meta property='og:image:height' content='600' />
-                <meta property='og:url' content='https://housedesigns.co.ke/masterplanning' />
-                <meta name='twitter:card' content='summary' />
-                <meta name='twitter:title' content='Masterplanning' />
-                <meta name='twitter:description' content='Enhancing Our Community by Developing Sustainable, Functional, and Aesthetically Pleasing Urban Spaces.' />
-                <meta name='twitter:image' content='/masterplanning.png' />
-                <meta name='twitter:image:width' content='1024' />
-                <meta name='twitter:image:height' content='512' />
-                <meta name='twitter:url' content='https://housedesigns.co.ke/masterplanning' />
+                <title>Masterplanning Projects | HouseDesigns</title>
+                <meta name="description" content="Enhancing our community by developing sustainable, functional, and aesthetically pleasing urban spaces. Explore masterplanning projects by HouseDesigns in Kenya." />
+                <meta property="og:title" content="Masterplanning Projects | HouseDesigns" />
+                <meta property="og:description" content="Enhancing our community by developing sustainable, functional, and aesthetically pleasing urban spaces. Explore masterplanning projects by HouseDesigns in Kenya." />
+                <meta property="og:image" content="https://housedesigns.co.ke/masterplanning.png" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:url" content="https://housedesigns.co.ke/masterplanning" />
+                <meta property="og:type" content="website" />
+                <link rel="canonical" href="https://housedesigns.co.ke/masterplanning" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Masterplanning Projects | HouseDesigns" />
+                <meta name="twitter:description" content="Enhancing our community by developing sustainable, functional, and aesthetically pleasing urban spaces. Explore masterplanning projects by HouseDesigns in Kenya." />
+                <meta name="twitter:image" content="https://housedesigns.co.ke/masterplanning.png" />
+                <meta name="twitter:url" content="https://housedesigns.co.ke/masterplanning" />
+                {/* Organization JSON-LD structured data */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Organization",
+                      "name": "HouseDesigns",
+                      "url": "https://housedesigns.co.ke/",
+                      "logo": "https://housedesigns.co.ke/Logo.png",
+                      "sameAs": [
+                        "https://x.com/HouseDesignske/",
+                        "https://www.linkedin.com/company/house-designske/",
+                        "https://www.instagram.com/house_designske/"
+                      ]
+                    })
+                  }}
+                />
             </Head>
             <div className={styles.masterplan} style={style}>
                 <div className={styles.largeImg}>

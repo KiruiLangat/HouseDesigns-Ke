@@ -47,21 +47,39 @@ export default function ContactUs() {
   return (
     <div className={styles.contactContainer} style={style}>
       <Head>
-        <title>Contact Us</title>
-        <meta name='title' content='Contact Us' />
-        <meta name='description' content='Get in touch with us. Reach out to us and let us create something extraordinary together.' />
-        <meta property='og:description' content='Get in touch with us. Reach out to us and let us create something extraordinary together' />
-        <meta property='og:image' content='/projectMgmt.webp' />
-        <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='600' />
-        <meta property='og:url' content='https://housedesigns.co.ke/contact-us' />
-        <meta name='twitter:card' content='summary' />
-        <meta name='twitter:title' content='Contact Us' />
-        <meta name='twitter:description' content='Get in touch with us. Reach out to us and let us create something extraordinary together' />
-        <meta name='twitter:image' content='/projectMgmt.webp' />
-        <meta name='twitter:image:width' content='1024' />
-        <meta name='twitter:image:height' content='512' />
-        <meta name='twitter:url' content='https://housedesigns.co.ke/contact-us' />
+        <title>Contact Us | HouseDesigns</title>
+        <meta name="description" content="Get in touch with HouseDesigns. Reach out and let us create something extraordinary together. Contact us for architecture, interior, and project management services in Kenya." />
+        <meta property="og:title" content="Contact Us | HouseDesigns" />
+        <meta property="og:description" content="Get in touch with HouseDesigns. Reach out and let us create something extraordinary together. Contact us for architecture, interior, and project management services in Kenya." />
+        <meta property="og:image" content="https://housedesigns.co.ke/projectMgmt.webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://housedesigns.co.ke/contact-us" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://housedesigns.co.ke/contact-us" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | HouseDesigns" />
+        <meta name="twitter:description" content="Get in touch with HouseDesigns. Reach out and let us create something extraordinary together. Contact us for architecture, interior, and project management services in Kenya." />
+        <meta name="twitter:image" content="https://housedesigns.co.ke/projectMgmt.webp" />
+        <meta name="twitter:url" content="https://housedesigns.co.ke/contact-us" />
+        {/* Organization JSON-LD structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "HouseDesigns",
+              "url": "https://housedesigns.co.ke/",
+              "logo": "https://housedesigns.co.ke/Logo.png",
+              "sameAs": [
+                "https://x.com/HouseDesignske/",
+                "https://www.linkedin.com/company/house-designske/",
+                "https://www.instagram.com/house_designske/"
+              ]
+            })
+          }}
+        />
       </Head>
       <div className={styles.contactHeader}></div>
       <div className={styles.contactWelcome}>

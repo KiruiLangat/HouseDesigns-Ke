@@ -17,24 +17,41 @@ export default function OurExpertise(){
     return(
         <div className={styles.ourExpertise} style={style}>
             <Head>
-                <title>Our Expertise</title>
-                <meta name='title' content='Our Expertise' />
-                <meta name='description' content='Explore our Services' />
-                <meta property='og:title' content='Our Expertise'/>
-                <meta property='og:description' content='Explore our Services' />
-                <meta property='og:image' content='https://housedesigns.co.ke/CM_1.jpg' />
-                <meta property='og:image:width' content='1200' />
-                <meta property='og:image:height' content='600' />
-                <meta property='og:url' content='https://housedesigns.co.ke/our-expertise' />
-                <meta name='twitter:card' content='summary' />
-                <meta name='twitter:title' content='Our Expertise' />
-                <meta name='twitter:description' content='Explore our Services' />
-                <meta name='twitter:image' content='https://housedesigns.co.ke/CM_1.jpg' />
-                <meta name='twitter:image:width' content='1024' />
-                <meta name='twitter:image:height' content='512' />
-                <meta name='twitter:url' content='https://housedesigns.co.ke/our-expertise' />
+                <title>Our Expertise | HouseDesigns</title>
+                <meta name="description" content="Explore our services at HouseDesigns: architecture, interior design, project management, and master planning in Kenya." />
+                <meta property="og:title" content="Our Expertise | HouseDesigns"/>
+                <meta property="og:description" content="Explore our services at HouseDesigns: architecture, interior design, project management, and master planning in Kenya." />
+                <meta property="og:image" content="https://housedesigns.co.ke/CM_1.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:url" content="https://housedesigns.co.ke/our-expertise" />
+                <meta property="og:type" content="website" />
+                <link rel="canonical" href="https://housedesigns.co.ke/our-expertise" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Our Expertise | HouseDesigns" />
+                <meta name="twitter:description" content="Explore our services at HouseDesigns: architecture, interior design, project management, and master planning in Kenya." />
+                <meta name="twitter:image" content="https://housedesigns.co.ke/CM_1.jpg" />
+                <meta name="twitter:url" content="https://housedesigns.co.ke/our-expertise" />
+                {/* Organization JSON-LD structured data */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Organization",
+                      "name": "HouseDesigns",
+                      "url": "https://housedesigns.co.ke/",
+                      "logo": "https://housedesigns.co.ke/Logo.png",
+                      "sameAs": [
+                        "https://x.com/HouseDesignske/",
+                        "https://www.linkedin.com/company/house-designske/",
+                        "https://www.instagram.com/house_designske/"
+                      ]
+                    })
+                  }}
+                />
             </Head> 
-            
+            {/* ...existing code... */}
             <h1 className={styles.titleServices}>Explore our services</h1>
             <div className={styles.services}>
                 <div className={styles.service1}>

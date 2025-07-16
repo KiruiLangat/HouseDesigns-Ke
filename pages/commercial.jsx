@@ -20,22 +20,39 @@ export default function CommercialCategory(){
     return(
         <div className={styles.projectDescription} style={style}>
             <Head>
-                <title>Commercial Projects</title>
-                <meta name='title' content='Commercial Projects' />
-                <meta name='description' content='Industrialization with Style and Finese' />
-                <meta property='og:title' content='Commercial Projects'/>
-                <meta property='og:description' content='Industrialization with Style and Finese' />
-                <meta property='og:image' content='/modernmarket1.jpg' />
-                <meta property='og:image:width' content='1200' />
-                <meta property='og:image:height' content='600' />
-                <meta property='og:url' content='https://housedesigns.co.ke/architecture/commercial' />
-                <meta name='twitter:card' content='summary' />
-                <meta name='twitter:title' content='Commercial Projects' />
-                <meta name='twitter:description' content='Industrialization with Style and Finese' />
-                <meta name='twitter:image' content='/modernmarket1.jpg' />
-                <meta name='twitter:image:width' content='1024' />
-                <meta name='twitter:image:height' content='512' />
-                <meta name='twitter:url' content='https://housedesigns.co.ke/architecture/commercial' />
+                <title>Commercial Projects | HouseDesigns</title>
+                <meta name="description" content="Industrialization with Style and Finesse. Explore our commercial architecture projects by HouseDesigns in Kenya." />
+                <meta property="og:title" content="Commercial Projects | HouseDesigns"/>
+                <meta property="og:description" content="Industrialization with Style and Finesse. Explore our commercial architecture projects by HouseDesigns in Kenya." />
+                <meta property="og:image" content="https://housedesigns.co.ke/modernmarket1.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:url" content="https://housedesigns.co.ke/architecture/commercial" />
+                <meta property="og:type" content="website" />
+                <link rel="canonical" href="https://housedesigns.co.ke/architecture/commercial" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Commercial Projects | HouseDesigns" />
+                <meta name="twitter:description" content="Industrialization with Style and Finesse. Explore our commercial architecture projects by HouseDesigns in Kenya." />
+                <meta name="twitter:image" content="https://housedesigns.co.ke/modernmarket1.jpg" />
+                <meta name="twitter:url" content="https://housedesigns.co.ke/architecture/commercial" />
+                {/* Organization JSON-LD structured data */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Organization",
+                      "name": "HouseDesigns",
+                      "url": "https://housedesigns.co.ke/",
+                      "logo": "https://housedesigns.co.ke/Logo.png",
+                      "sameAs": [
+                        "https://x.com/HouseDesignske/",
+                        "https://www.linkedin.com/company/house-designske/",
+                        "https://www.instagram.com/house_designske/"
+                      ]
+                    })
+                  }}
+                />
             </Head>
             <div className={styles.largeImg}>
                 <Image src={ModernMarket5} alt='Modern Market' />

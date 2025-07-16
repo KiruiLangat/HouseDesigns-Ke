@@ -18,22 +18,39 @@ export default function InstitutionCategory(){
     return(
         <div className={styles.projectDescription} style={style}>
             <Head>
-                <title>Institutions</title>
-                <meta name='title' content='Institutions' />
-                <meta name='description' content='Enhancing Our Learning Spaces' />
-                <meta property='og:title' content='Institutions'/>
-                <meta property='og:description' content='Enhancing Our Learning Spaces' />
-                <meta property='og:image' content='/Institutions.png' />
-                <meta property='og:image:width' content='1200' />
-                <meta property='og:image:height' content='600' />
-                <meta property='og:url' content='https://housedesigns.co.ke/architecture/institutions' />
-                <meta name='twitter:card' content='summary' />
-                <meta name='twitter:title' content='Institutions' />
-                <meta name='twitter:description' content='Enhancing Our Learning Spaces' />
-                <meta name='twitter:image' content='/Institutions.png' />
-                <meta name='twitter:image:width' content='1024' />
-                <meta name='twitter:image:height' content='512' />
-                <meta name='twitter:url' content='https://housedesigns.co.ke/architecture/institutions' />
+                <title>Institutions | HouseDesigns</title>
+                <meta name="description" content="Enhancing our learning spaces. Explore our institutional architecture projects by HouseDesigns in Kenya." />
+                <meta property="og:title" content="Institutions | HouseDesigns"/>
+                <meta property="og:description" content="Enhancing our learning spaces. Explore our institutional architecture projects by HouseDesigns in Kenya." />
+                <meta property="og:image" content="https://housedesigns.co.ke/Institutions.png" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:url" content="https://housedesigns.co.ke/architecture/institutions" />
+                <meta property="og:type" content="website" />
+                <link rel="canonical" href="https://housedesigns.co.ke/architecture/institutions" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Institutions | HouseDesigns" />
+                <meta name="twitter:description" content="Enhancing our learning spaces. Explore our institutional architecture projects by HouseDesigns in Kenya." />
+                <meta name="twitter:image" content="https://housedesigns.co.ke/Institutions.png" />
+                <meta name="twitter:url" content="https://housedesigns.co.ke/architecture/institutions" />
+                {/* Organization JSON-LD structured data */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Organization",
+                      "name": "HouseDesigns",
+                      "url": "https://housedesigns.co.ke/",
+                      "logo": "https://housedesigns.co.ke/Logo.png",
+                      "sameAs": [
+                        "https://x.com/HouseDesignske/",
+                        "https://www.linkedin.com/company/house-designske/",
+                        "https://www.instagram.com/house_designske/"
+                      ]
+                    })
+                  }}
+                />
             </Head>
             <div className={styles.largeImg}>
                 <Image src={InstitutionImg} alt='Institution' />

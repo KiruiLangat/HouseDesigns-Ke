@@ -16,25 +16,43 @@ export default function ServiceSubCategory(){
     return(
         <div className={styles.projects} style={style}>
             <Head>
-                <title>Residential Projects</title>
-                <meta name='title' content='Residential Projects' />
-                <meta name='description' content='Explore Our Residential Projects' />
-                <meta property='og:title' content='Residential Projects'/>
-                <meta property='og:description' content='Explore Our Residential Projects' />
-                <meta property='og:image' content='https://housedesigns.co.ke/apartment.jpg' />
-                <meta property='og:image:width' content='1200' />
-                <meta property='og:image:height' content='600' />
-                <meta property='og:url' content='https://housedesigns.co.ke/architecture/residentials' />
-                <meta name='twitter:card' content='summary' />
-                <meta name='twitter:title' content='Residential Projects' />
-                <meta name='twitter:description' content='Explore Our Residential Projects' />
-                <meta name='twitter:image' content='https://housedesigns.co.ke/apartment.jpg' />
-                <meta name='twitter:image:width' content='1024' />
-                <meta name='twitter:image:height' content='512' />
-                <meta name='twitter:url' content='https://housedesigns.co.ke/architecture/residentials' />
+                <title>Residential Projects | HouseDesigns</title>
+                <meta name="description" content="Explore our residential projects by HouseDesigns, including bungalows, maisonettes, apartments, and tiny homes in Kenya." />
+                <meta property="og:title" content="Residential Projects | HouseDesigns"/>
+                <meta property="og:description" content="Explore our residential projects by HouseDesigns, including bungalows, maisonettes, apartments, and tiny homes in Kenya." />
+                <meta property="og:image" content="https://housedesigns.co.ke/apartments.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:url" content="https://housedesigns.co.ke/architecture/residentials" />
+                <meta property="og:type" content="website" />
+                <link rel="canonical" href="https://housedesigns.co.ke/architecture/residentials" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Residential Projects | HouseDesigns" />
+                <meta name="twitter:description" content="Explore our residential projects by HouseDesigns, including bungalows, maisonettes, apartments, and tiny homes in Kenya." />
+                <meta name="twitter:image" content="https://housedesigns.co.ke/apartments.jpg" />
+                <meta name="twitter:url" content="https://housedesigns.co.ke/architecture/residentials" />
+                {/* Organization JSON-LD structured data */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Organization",
+                      "name": "HouseDesigns",
+                      "url": "https://housedesigns.co.ke/",
+                      "logo": "https://housedesigns.co.ke/Logo.png",
+                      "sameAs": [
+                        "https://x.com/HouseDesignske/",
+                        "https://www.linkedin.com/company/house-designske/",
+                        "https://www.instagram.com/house_designske/"
+                      ]
+                    })
+                  }}
+                />
             </Head>
             <h1 className={styles.projectsTitle}>Residential Projects</h1>
                 <div className={styles.serviceProjectsContainer}>
+                    {/* ...existing code... */}
                     <div className={styles.projectBox}>
                         <Link href="/projects/bungalows" legacyBehavior>
                         <a>

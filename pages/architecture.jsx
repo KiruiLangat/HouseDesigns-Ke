@@ -16,26 +16,44 @@ export default function ArchitectureServiceCategory() {
     return (
         <div className={styles.projects} style={style}>
             <Head>
-                <title>Architecture Projects</title>
-                <meta name='title' content='Architecture Projects' />
-                <meta name='description' content='Explore Our Architecture Projects' />
-                <meta property='og:title' content='Architecture Projects' />
-                <meta property='og:description' content='Explore Our Architecture Projects' />
-                <meta property='og:image' content='/modernmarket.jpg' />
-                <meta property='og:image:width' content='1200' />
-                <meta property='og:image:height' content='600' />
-                <meta property='og:url' content='https://housedesigns.co.ke/architecture' />
-                <meta name='twitter:card' content='summary' />
-                <meta name='twitter:title' content='Architecture Projects' />
-                <meta name='twitter:description' content='Explore Our Architecture Projects' />
-                <meta name='twitter:image' content='/modernmarket.jpg' />
-                <meta name='twitter:image:width' content='1024' />
-                <meta name='twitter:image:height' content='512' />
-                <meta name='twitter:url' content='https://housedesigns.co.ke/architecture' />
+                <title>Architecture Projects | HouseDesigns</title>
+                <meta name="description" content="Explore our portfolio of architecture projects by HouseDesigns, including residential, commercial, and institutional designs in Kenya." />
+                <meta property="og:title" content="Architecture Projects | HouseDesigns" />
+                <meta property="og:description" content="Explore our portfolio of architecture projects by HouseDesigns, including residential, commercial, and institutional designs in Kenya." />
+                <meta property="og:image" content="https://housedesigns.co.ke/modernmarket.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:url" content="https://housedesigns.co.ke/architecture" />
+                <meta property="og:type" content="website" />
+                <link rel="canonical" href="https://housedesigns.co.ke/architecture" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Architecture Projects | HouseDesigns" />
+                <meta name="twitter:description" content="Explore our portfolio of architecture projects by HouseDesigns, including residential, commercial, and institutional designs in Kenya." />
+                <meta name="twitter:image" content="https://housedesigns.co.ke/modernmarket.jpg" />
+                <meta name="twitter:url" content="https://housedesigns.co.ke/architecture" />
+                {/* Organization JSON-LD structured data */}
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Organization",
+                      "name": "HouseDesigns",
+                      "url": "https://housedesigns.co.ke/",
+                      "logo": "https://housedesigns.co.ke/Logo.png",
+                      "sameAs": [
+                        "https://x.com/HouseDesignsKe",
+                        "https://www.linkedin.com/company/house-designske/",
+                        "https://www.instagram.com/house_designske/"
+                      ]
+                    })
+                  }}
+                />
             </Head>
 
             <h1 className={styles.projectsTitle}>Architecture Projects</h1>
             <div className={styles.serviceProjectsContainer}>
+                {/* ...existing code... */}
                 <div className={styles.projectBox1}>
                     <Link href="/residentials" legacyBehavior>
                         <a>
