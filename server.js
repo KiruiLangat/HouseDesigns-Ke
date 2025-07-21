@@ -9,7 +9,7 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  // Serve static files from the .next folder
+  // Serve static files from the public folder
   server.use(express.static(path.join(__dirname, 'public_html/housedesigns/public')));
 
   //Handle all other routes with Next.js
