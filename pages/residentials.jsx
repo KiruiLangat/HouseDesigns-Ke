@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import styles from '../assets/styles/Projects.module.css'
+import styles from '../assets/styles/OurExpertise.module.css'
 import BungalowsImg from '../assets/images/bungalows.jpg'
 import MaisonetteImg from '../assets/images/maisonettes.jpg'
 import ApartmentsImg from '../assets/images/apartments.jpg'
@@ -14,7 +14,7 @@ const style = {
 
 export default function ServiceSubCategory(){
     return(
-        <div className={styles.projects} style={style}>
+        <div className={styles.ourExpertise} style={style}>
             <Head>
                 <title>Residential Projects | HouseDesigns</title>
                 <meta name="description" content="Explore our residential projects by HouseDesigns, including bungalows, maisonettes, apartments, and tiny homes in Kenya." />
@@ -50,50 +50,69 @@ export default function ServiceSubCategory(){
                   }}
                 />
             </Head>
-            <h1 className={styles.projectsTitle}>Residential Projects</h1>
-                <div className={styles.serviceProjectsContainer}>
-                    {/* ...existing code... */}
-                    <div className={styles.projectBox}>
-                        <Link href="/projects/bungalows" legacyBehavior>
-                        <a>
-                            <div className={styles.projectImg}>
-                                <Image src={BungalowsImg} alt='Bungalows' loading='lazy' />
-                            </div>
+            <h1 className={styles.titleServices}>Residential Projects</h1>
+            <div className={styles.services}>
+                <div className={styles.service1}>
+                    <Link href="/projects/bungalows">
+                        <div className={styles.service1Img}>
+                            <Image src={BungalowsImg} alt='Bungalows' layout='responsive' width={600} height={250} loading='lazy' />
+                        </div>
+                        <div className={styles.serviceTitleRow}>
                             <h2>Bungalows</h2>
-                        </a>
-                        </Link>
-                    </div>
-                    <div className={styles.projectBox}>
-                        <Link href="/projects/maisonettes" legacyBehavior>
-                        <a>
-                            <div className={styles.projectImg}>
-                                <Image src={MaisonetteImg} alt='Maisonette' loading='lazy' />
-                            </div>
-                            <h2>Maisonettes</h2>
-                        </a>
-                        </Link>
-                    </div>
-                    <div className={styles.projectBox}>
-                        <Link href="/projects/apartments" legacyBehavior>
-                        <a>
-                            <div className={styles.projectImg}>
-                                <Image src={ApartmentsImg} alt='Apartments' loading='lazy' />
-                            </div>
-                            <h2>Apartments</h2>
-                        </a>
-                        </Link>
-                    </div>
-                    <div className={styles.projectBox}>
-                        <Link href="/projects/tiny homes" legacyBehavior>
-                        <a>
-                            <div className={styles.projectImg}>
-                                <Image src={TinyHomesImg} alt='Tiny Homes' loading='lazy' />
-                            </div>
-                            <h2>Tiny Homes</h2>
-                        </a>
-                        </Link>
-                    </div>
+                            <span className={styles.arrowServices}>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path id="Arrow 7" d="M15.7071 8.70711C16.0976 8.31658 16.0976 7.68342 15.7071 7.29289L9.34315 0.928932C8.95262 0.538408 8.31946 0.538408 7.92893 0.928932C7.53841 1.31946 7.53841 1.95262 7.92893 2.34315L13.5858 8L7.92893 13.6569C7.53841 14.0474 7.53841 14.6805 7.92893 15.0711C8.31946 15.4616 8.95262 15.4616 9.34315 15.0711L15.7071 8.70711ZM0 9H15V7H0L0 9Z" fill="#ED7D31"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </Link>
                 </div>
+                <div className={styles.service1}>
+                    <Link href="/projects/maisonettes">
+                        <div className={styles.service1Img}>
+                            <Image src={MaisonetteImg} alt='Maisonette' layout='responsive' width={600} height={250} loading='lazy' />
+                        </div>
+                        <div className={styles.serviceTitleRow}>
+                            <h2>Maisonettes</h2>
+                            <span className={styles.arrowServices}>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path id="Arrow 7" d="M15.7071 8.70711C16.0976 8.31658 16.0976 7.68342 15.7071 7.29289L9.34315 0.928932C8.95262 0.538408 8.31946 0.538408 7.92893 0.928932C7.53841 1.31946 7.53841 1.95262 7.92893 2.34315L13.5858 8L7.92893 13.6569C7.53841 14.0474 7.53841 14.6805 7.92893 15.0711C8.31946 15.4616 8.95262 15.4616 9.34315 15.0711L15.7071 8.70711ZM0 9H15V7H0L0 9Z" fill="#ED7D31"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </Link>
+                </div>
+                <div className={styles.service1}>
+                    <Link href="/projects/apartments">
+                        <div className={styles.service1Img}>
+                            <Image src={ApartmentsImg} alt='Apartments' layout='responsive' width={600} height={250} loading='lazy' />
+                        </div>
+                        <div className={styles.serviceTitleRow}>
+                            <h2>Apartments</h2>
+                            <span className={styles.arrowServices}>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path id="Arrow 7" d="M15.7071 8.70711C16.0976 8.31658 16.0976 7.68342 15.7071 7.29289L9.34315 0.928932C8.95262 0.538408 8.31946 0.538408 7.92893 0.928932C7.53841 1.31946 7.53841 1.95262 7.92893 2.34315L13.5858 8L7.92893 13.6569C7.53841 14.0474 7.53841 14.6805 7.92893 15.0711C8.31946 15.4616 8.95262 15.4616 9.34315 15.0711L15.7071 8.70711ZM0 9H15V7H0L0 9Z" fill="#ED7D31"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </Link>
+                </div>
+                <div className={styles.service1}>
+                    <Link href="/projects/tiny homes">
+                        <div className={styles.service1Img}>
+                            <Image src={TinyHomesImg} alt='Tiny Homes' layout='responsive' width={600} height={250} loading='lazy' />
+                        </div>
+                        <div className={styles.serviceTitleRow}>
+                            <h2>Tiny Homes</h2>
+                            <span className={styles.arrowServices}>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path id="Arrow 7" d="M15.7071 8.70711C16.0976 8.31658 16.0976 7.68342 15.7071 7.29289L9.34315 0.928932C8.95262 0.538408 8.31946 0.538408 7.92893 0.928932C7.53841 1.31946 7.53841 1.95262 7.92893 2.34315L13.5858 8L7.92893 13.6569C7.53841 14.0474 7.53841 14.6805 7.92893 15.0711C8.31946 15.4616 8.95262 15.4616 9.34315 15.0711L15.7071 8.70711ZM0 9H15V7H0L0 9Z" fill="#ED7D31"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </Link>
+                </div>
+            </div>
         </div>
     )
 }

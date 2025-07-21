@@ -122,25 +122,31 @@ export default function ProjectDescription() {
             </>
             {project && (
                 <>
-                    <h1>{project.title}</h1>
+                    
                     <div className={styles.projectInfo}>
-                        <div className={styles.descriptions}>
-                            <div className={styles.description1}>
-                                <h2>Location</h2>
-                                <p>{project.location}</p>
+                        <h1>{project.title}</h1>
+                        <div className={styles.projectTexts}>
+                            <div className={styles.descriptions}>
+                                
+                                <div className={styles.description1}>
+                                    <h2>Location</h2>
+                                    <p>{project.location}</p>
+                                </div>
+                                <div className={styles.description2}>
+                                    <h2>Plinth Area</h2>
+                                    <p>{project.plinth_area}</p>
+                                </div>
+                                <div className={styles.description3}>
+                                    <h2>Status</h2>
+                                    <p>{project.project_status}</p>
+                                </div>
                             </div>
-                            <div className={styles.description2}>
-                                <h2>Plinth Area</h2>
-                                <p>{project.plinth_area}</p>
+                            <div className={styles.details}>
+                                <h2>Project Details</h2>
+                                <div className={styles.detailsContent}>
+                                    <p>{project.details}</p>
+                                </div>
                             </div>
-                            <div className={styles.description3}>
-                                <h2>Status</h2>
-                                <p>{project.project_status}</p>
-                            </div>
-                        </div>
-                        <div className={styles.details}>
-                            <h2>Project Details</h2>
-                            <p>{project.details}</p>
                         </div>
                     </div>
                 </>

@@ -13,34 +13,38 @@
 .services{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap:5px;
+    gap:50px;
     width: 80%;
     height: auto;   
     margin: auto; 
-    margin-top: 5%;
+    padding: 50px 0;
 }
 
 .service1{
-    border: rgba(0, 0, 0, 0.1) 1px solid;
+    border: 1px solid rgba(0, 0, 0, 0.1) ;
     border-radius: 10px;
-    width: 90%;
+    width: 100%;
     height: auto;
     margin: auto;
-    margin-bottom: 10%; 
-    position: relative;
 }
-.service1:hover{
-    background-color: #ED7D3124;
+.service1:hover {
+        background-color: #ED7D3124;
+    }
 
-    @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) { 
+    .service1 {
+       border: 1px solid rgba(255, 255, 255, 0.046);
+    }
+    .service1:hover {
         background-color: transparent;
-        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1)
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
     }
 }
 .service1Img{
     width: 100%;
     height: 250px;
     border-radius: 10px;
+    overflow: hidden;
 }
 .service1Img Img{
     width: 100%;
@@ -48,31 +52,35 @@
     border-radius: 10px;
 }
 .arrowServices{
-    position: absolute;
-    top: 92%;
-    left: 95%;
-    transform: translate(-50%, -50%);
-    width: 20%;
-    height: auto;
+    width: 16px;
+    height: 16px;
 }
-.arrowServices img{
-    width: 40%;
-    height: auto;
-    border: rgba(0, 0, 0, 0.1) 1px solid;
-    border-radius: 10px;
-    
+.arrowServices svg{
+    width: 100%;
+    height: 100%;
 }
+
 .service1 h2{
     font-size: 20px;
     font-weight: 300;
-    margin-left: 15px;
     text-decoration: none;
     color: black;
     border-bottom: none;
+   
+}
+@media (prefers-color-scheme: dark) {
+       .service1 h2 {
+           color: #ffffff;
+       }
+}
 
-    @media (prefers-color-scheme: dark) {
-        color: #ffffff;
-    }
+.serviceTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 15px;
 }
 .service1 a{
     text-decoration: none;
@@ -80,7 +88,7 @@
 
 @media (max-width:768px){
     .ourExpertise{
-        width: 100%;
+        width: 93%;
     }
     .arrowServices{
         display: none;
@@ -95,10 +103,10 @@
         height: 100%;
         border-radius: 10px;
     }
-    .service1{
-        @media (prefers-color-scheme: dark) {
-            background-color: transparent;
-            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+    @media (prefers-color-scheme: dark) {
+        .service1{
+                background-color: transparent;
+                box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
         }
     }
     .service1 h2{
@@ -113,16 +121,64 @@
     .titleServices{
         font-size: 24px;
         font-weight: 300;
-        margin-top: 8%;
+        padding: 20px 0;
         text-align: center;
     }
     .services{
-        margin-top: 5%;
+        padding: 10px 0;
         width: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
 
     }
+    .serviceTitleRow {
+        width: 100%;
+        justify-content: center;
+    }
 
+}
+
+/* Universal shimmer placeholder styles */
+.placeholder {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite linear;
+  border-radius: 10px;
+}
+.placeholder .service1Img,
+.placeholderImg {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite linear;
+}
+.placeholderTitle {
+  height: 24px;
+  width: 60%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  border-radius: 4px;
+  margin: 16px 0;
+  animation: loading 1.5s infinite linear;
+}
+
+@media (prefers-color-scheme: dark) {
+  .placeholder,
+  .placeholder .service1Img,
+  .placeholderImg,
+  .placeholderTitle {
+    background: linear-gradient(90deg, #333 25%, #3a3a3a 50%, #333 75%);
+    background-size: 200% 100%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }

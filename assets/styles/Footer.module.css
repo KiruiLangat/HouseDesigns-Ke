@@ -134,11 +134,16 @@
         justify-content: space-between;
         align-items: center;
 
-        @media (prefers-color-scheme:dark){
+        
+    }
+    @media (prefers-color-scheme:dark){
+        .footerContainer{        
             background-color: #121212;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.18)
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.18); 
         }
     }
+
+
     .footerLogo{
         width: 130px;
         height: auto;
@@ -179,10 +184,14 @@
         font-size: 15px;
         font-weight: 300;
 
-        @media (prefers-color-scheme:dark){
+        
+    }
+    @media (prefers-color-scheme:dark){
+        .mobileSocials a{
             color: #ffffff;
         }
-    }
+    }        
+
     .mobileIcon{
        width: 100%;
        margin: auto;

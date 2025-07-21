@@ -255,7 +255,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   let post = null
   let allPosts = [];
   try {
@@ -267,7 +267,6 @@ export async function getStaticProps({ params }) {
     //if API is temporarily down, let ISR try again soon
     return { 
       notFound: true,
-      revalidate: 10,
     };
   }
   // Fetch all posts meta for navigation

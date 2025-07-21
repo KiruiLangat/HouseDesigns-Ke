@@ -121,7 +121,7 @@
 
 }
 @media (prefers-color-scheme: dark) {
-        .menuButton svg {
+        .menuButton  {
             fill: #ffffff;
         }
         .closeIcon svg{
