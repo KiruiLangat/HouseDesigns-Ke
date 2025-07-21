@@ -16,41 +16,68 @@ import { ensureAbsoluteUrl, cleanHtmlTags, getSocialImage, truncateText } from '
 const style = { fontFamily: 'Poppins' };
 
 // Fetch a single post by slug with _embed
-async function getPostBySlug(slug) {
-  try {
-    const response = await fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&slug=${slug}`);
-    if (!response.ok) return null;
-    const posts = await response.json();
-    if (!posts.length) return null;
-    return posts[0];
-  } catch (error) {
-    console.error('Error fetching post:', error);
-    return null;
+async function getPostBySlug(slug, retries = 3, delay = 1000) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
+      const response = await fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&slug=${slug}`, { signal: controller.signal });
+      clearTimeout(timeout);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const posts = await response.json();
+      if (!posts.length) throw new Error('No posts found');
+      return posts[0];
+    } catch (error) {
+      console.error(`Attempt ${attempt} - Error fetching post:`, error);
+      if (attempt < retries) {
+        await new Promise(res => setTimeout(res, delay));
+      } else {
+        return null;
+      }
+    }
   }
 }
 
 // Get all post slugs for static paths
-async function getAllPostSlugs() {
-  try {
-    const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug&per_page=100');
-    if (!response.ok) return [];
-    const posts = await response.json();
-    return posts.map(post => ({ params: { slug: post.slug } }));
-  } catch (error) {
-    console.error('Error fetching post slugs:', error);
-    return [];
+async function getAllPostSlugs(retries = 3, delay = 1000) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
+      const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug&per_page=100', { signal: controller.signal });
+      clearTimeout(timeout);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const posts = await response.json();
+      return posts.map(post => ({ params: { slug: post.slug } }));
+    } catch (error) {
+      console.error(`Attempt ${attempt} - Error fetching post slugs:`, error);
+      if (attempt < retries) {
+        await new Promise(res => setTimeout(res, delay));
+      } else {
+        return [];
+      }
+    }
   }
 }
 
 // Fetch all posts (slugs and titles) for navigation
-async function getAllPostsMeta() {
-  try {
-    const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug,title&per_page=100');
-    if (!response.ok) return [];
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching all posts meta:', error);
-    return [];
+async function getAllPostsMeta(retries = 3, delay = 1000) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
+      const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug,title&per_page=100', { signal: controller.signal });
+      clearTimeout(timeout);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return await response.json();
+    } catch (error) {
+      console.error(`Attempt ${attempt} - Error fetching all posts meta:`, error);
+      if (attempt < retries) {
+        await new Promise(res => setTimeout(res, delay));
+      } else {
+        return [];
+      }
+    }
   }
 }
 
