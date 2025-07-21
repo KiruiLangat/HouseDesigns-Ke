@@ -52,6 +52,13 @@ jobs:
       run: npm run build
       # Environment variables are inherited from the job level, no need to repeat
       
+    # Debugging step to list contents of .next directory
+    - name: Debug .next build output
+      run: |
+        ls -l .next
+        ls -l .next/static
+        ls -l .next/server
+        
     # Step 5: Deploy the .next directory (contains compiled application) via SFTP
     - name: SFTP Deploy .next build files
       uses: appleboy/scp-action@master
