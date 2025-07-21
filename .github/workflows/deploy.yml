@@ -52,13 +52,7 @@ jobs:
       run: npm run build
       # Environment variables are inherited from the job level, no need to repeat
       
-    # Debugging step to list contents of .next directory
-    - name: Debug .next build output
-      run: |
-        ls -l .next
-        ls -l .next/static
-        ls -l .next/server
-        
+    
     # Step 5: Deploy the .next directory (contains compiled application) via SFTP
     - name: SFTP Deploy .next build files
       uses: appleboy/scp-action@master
@@ -67,7 +61,7 @@ jobs:
         port: 1624
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
-        source: ".next/static .next/server"
+        source: ".next/static/** .next/server/**"
         target: "/home/housedes/public_html/housedesigns/.next/"
         protocol: sftp
         overwrite: true
