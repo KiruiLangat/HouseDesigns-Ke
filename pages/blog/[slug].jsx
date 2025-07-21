@@ -15,12 +15,12 @@ import { ensureAbsoluteUrl, cleanHtmlTags, getSocialImage, truncateText } from '
 
 const style = { fontFamily: 'Poppins' };
 
-// Fetch a single post by slug with _embed
-async function getPostBySlug(slug, retries = 3, delay = 1000) {
+// Client-side fetch helpers
+async function fetchPostBySlug(slug, retries = 3, delay = 1000) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
+      const timeout = setTimeout(() => controller.abort(), 10000);
       const response = await fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&slug=${slug}`, { signal: controller.signal });
       clearTimeout(timeout);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -28,7 +28,6 @@ async function getPostBySlug(slug, retries = 3, delay = 1000) {
       if (!posts.length) throw new Error('No posts found');
       return posts[0];
     } catch (error) {
-      console.error(`Attempt ${attempt} - Error fetching post:`, error);
       if (attempt < retries) {
         await new Promise(res => setTimeout(res, delay));
       } else {
@@ -38,40 +37,16 @@ async function getPostBySlug(slug, retries = 3, delay = 1000) {
   }
 }
 
-// Get all post slugs for static paths
-async function getAllPostSlugs(retries = 3, delay = 1000) {
+async function fetchAllPostsMeta(retries = 3, delay = 1000) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
-      const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug&per_page=100', { signal: controller.signal });
-      clearTimeout(timeout);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const posts = await response.json();
-      return posts.map(post => ({ params: { slug: post.slug } }));
-    } catch (error) {
-      console.error(`Attempt ${attempt} - Error fetching post slugs:`, error);
-      if (attempt < retries) {
-        await new Promise(res => setTimeout(res, delay));
-      } else {
-        return [];
-      }
-    }
-  }
-}
-
-// Fetch all posts (slugs and titles) for navigation
-async function getAllPostsMeta(retries = 3, delay = 1000) {
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    try {
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
+      const timeout = setTimeout(() => controller.abort(), 10000);
       const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug,title&per_page=100', { signal: controller.signal });
       clearTimeout(timeout);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return await response.json();
     } catch (error) {
-      console.error(`Attempt ${attempt} - Error fetching all posts meta:`, error);
       if (attempt < retries) {
         await new Promise(res => setTimeout(res, delay));
       } else {
@@ -81,30 +56,34 @@ async function getAllPostsMeta(retries = 3, delay = 1000) {
   }
 }
 
-export default function BlogPost({ post, previousPost, nextPost }) {
+export default function BlogPost() {
   const router = useRouter();
-  const [isNavigating, setIsNavigating] = useState(false);
+  const { slug } = router.query;
+  const [post, setPost] = useState(null);
+  const [allPosts, setAllPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const handleStart = (url) => {
-      if (url.startsWith('/blog/')) setIsNavigating(true);
-    };
-    const handleComplete = () => setIsNavigating(false);
-    router.events.on('routeChangeStart', handleStart);
-    router.events.on('routeChangeComplete', handleComplete);
-    router.events.on('routeChangeError', handleComplete);
-    return () => {
-      router.events.off('routeChangeStart', handleStart);
-      router.events.off('routeChangeComplete', handleComplete);
-      router.events.off('routeChangeError', handleComplete);
-    };
-  }, [router]);
+    if (!slug) return;
+    setLoading(true);
+    Promise.all([
+      fetchPostBySlug(slug),
+      fetchAllPostsMeta()
+    ]).then(([fetchedPost, postsMeta]) => {
+      setPost(fetchedPost);
+      setAllPosts(postsMeta);
+      setLoading(false);
+      if (!fetchedPost) {
+        router.replace('/404');
+      }
+    });
+  }, [slug, router]);
 
-  if (router.isFallback || isNavigating) {
+  if (loading) {
     return <LoadingIndicator message="Retrieving post..." />;
   }
   if (!post) {
-    return router.push('/404');
+    return null;
   }
 
   // Get featured image or fallback
@@ -114,6 +93,11 @@ export default function BlogPost({ post, previousPost, nextPost }) {
   const shareText = encodeURIComponent(postTitle);
   const shareUrl = `https://housedesigns.co.ke/blog/${post.slug}`;
   const formattedDate = post.date ? new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+
+  // Navigation logic
+  const currentIndex = allPosts.findIndex(p => p.slug === slug);
+  const previousPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const nextPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 
   return (
     <div style={style} className={styles.postContainer}>
@@ -127,7 +111,6 @@ export default function BlogPost({ post, previousPost, nextPost }) {
         <meta property="og:image" content={featuredImage || 'https://housedesigns.co.ke/CM_1.jpg'} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        
         <meta property="article:published_time" content={post.date} />
         {post.modified && <meta property="article:modified_time" content={post.modified} />}
         <meta name="twitter:card" content="summary_large_image" />
@@ -203,55 +186,32 @@ export default function BlogPost({ post, previousPost, nextPost }) {
           <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.content?.rendered || '<p>Content temporarily unavailable.</p>' }} />
         </div>
         <div className={styles.blogNavigation}>
-              <div className={styles.previous}>
-                {previousPost ? (
-                  <Link href={`/blog/${previousPost.slug}`} legacyBehavior>
-                    <a className={styles.navigationLink} title={previousPost.title?.rendered || previousPost.title || "Previous Post"}>
-                      <h2>● Previous</h2>
-                    </a>
-                  </Link>
-                ) : (
-                  <h2 className={styles.disabledLink}></h2>
-                )}
-              </div>
-              <div className={styles.next}>
-              {nextPost ? (
-                <Link href={`/blog/${nextPost.slug}`} legacyBehavior>
-                  <a className={styles.navigationLink} title={nextPost.title?.rendered || nextPost.title || "Next Post"}>
-                    <h2>Next ●</h2>
-                  </a>
-                </Link>
-              ) : (
-                <h2 className={styles.disabledLink}>Next ●</h2>
-              )}
-            </div>
+          <div className={styles.previous}>
+            {previousPost ? (
+              <Link href={`/blog/${previousPost.slug}`} legacyBehavior>
+                <a className={styles.navigationLink} title={previousPost.title?.rendered || previousPost.title || "Previous Post"}>
+                  <h2>● Previous</h2>
+                </a>
+              </Link>
+            ) : (
+              <h2 className={styles.disabledLink}></h2>
+            )}
+          </div>
+          <div className={styles.next}>
+            {nextPost ? (
+              <Link href={`/blog/${nextPost.slug}`} legacyBehavior>
+                <a className={styles.navigationLink} title={nextPost.title?.rendered || nextPost.title || "Next Post"}>
+                  <h2>Next ●</h2>
+                </a>
+              </Link>
+            ) : (
+              <h2 className={styles.disabledLink}>Next ●</h2>
+            )}
           </div>
         </div>
       </div>
+    </div>
   );
 }
 
-export async function getStaticPaths() {
-  const paths = await getAllPostSlugs();
-  return {
-    paths,
-    fallback: 'blocking',
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const post = await getPostBySlug(params.slug);
-  if (!post) {
-    return { notFound: true };
-  }
-  // Fetch all posts meta for navigation
-  const allPosts = await getAllPostsMeta();
-  // Find current post index
-  const currentIndex = allPosts.findIndex(p => p.slug === params.slug);
-  const previousPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
-  const nextPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
-  return {
-    props: { post, previousPost, nextPost },
-    revalidate: 30,
-  };
-}
+// ...existing code...
