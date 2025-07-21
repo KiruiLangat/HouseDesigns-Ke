@@ -10,7 +10,7 @@ app.prepare().then(() => {
   const server = express();
 
   // Serve static files from the .next folder
-  server.use('/_next', express.static(path.join(__dirname, 'public_html/housedesigns/.next')));
+  server.use(express.static(path.join(__dirname, 'public_html/housedesigns/public')));
 
   //Handle all other routes with Next.js
   server.all('*', (req, res) => {
