@@ -112,22 +112,21 @@ export default function Blog() {
     return (
       <div className={styles.blogContainer} style={style}>
         <Head>
-          <title>{title.rendered}</title>
-          <meta name='title' content={title.rendered} />
-          <meta name='description' content={excerpt.rendered.substring(0, 160)} />
-          <meta property='og:title' content={title.rendered} />
-          <meta property='og:description' content={excerpt.rendered.substring(0, 160)} />
-          <meta property='og:image' content={featuredImage} />
-          <meta property='og:image:width' content='1260' />
-          <meta property='og:image:height' content='600' />
-          <meta property='og:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
-          <meta name='twitter:card' content='summary' />
-          <meta name='twitter:title' content={title.rendered} />
-          <meta name='twitter:description' content={excerpt.rendered.substring(0, 160)} />
-          <meta name='twitter:image' content={featuredImage} />
-          <meta name='twitter:image:width' content='1024' />
-          <meta name='twitter:image:height' content='512' />
-          <meta name='twitter:url' content={`https://housedesigns.co.ke/blog/${slug}`} />
+          <title>Blog | HouseDesigns</title>
+          <meta name="title" content="Blog | HouseDesigns" />
+          <meta name="description" content="Explore the latest articles, tips, and inspiration on architecture, interior design, and house plans in Kenya. Stay updated with our expert blog posts." />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Blog | HouseDesigns" />
+          <meta property="og:description" content="Explore the latest articles, tips, and inspiration on architecture, interior design, and house plans in Kenya." />
+          <meta property="og:url" content="https://housedesigns.co.ke/blog" />
+          <meta property="og:image" content="https://housedesigns.co.ke/OurExpertise.jpg" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Blog | HouseDesigns" />
+          <meta name="twitter:description" content="Explore the latest articles, tips, and inspiration on architecture, interior design, and house plans in Kenya." />
+          <meta name="twitter:image" content="https://housedesigns.co.ke/OurExpertise.jpg" />
+          <link rel="canonical" href="https://housedesigns.co.ke/blog" />
         </Head>
 
         <Link href={`/blog/${slug}`} className={styles.blogIntro} legacyBehavior={false}>
