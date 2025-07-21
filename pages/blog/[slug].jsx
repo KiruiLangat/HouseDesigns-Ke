@@ -247,13 +247,7 @@ export default function BlogPost({ post, previousPost, nextPost }) {
   );
 }
 
-export async function getStaticPaths() {
-  const paths = await getAllPostSlugs();
-  return {
-    paths,
-    fallback: 'blocking',
-  };
-}
+
 
 export async function getServerSideProps({ params }) {
   let post = null
@@ -280,7 +274,6 @@ export async function getServerSideProps({ params }) {
   const previousPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
   const nextPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
   return {
-    props: { post, previousPost, nextPost },
-    revalidate: 30,
+    props: { post, previousPost, nextPost }
   };
 }
