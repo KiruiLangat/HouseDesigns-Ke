@@ -61,7 +61,7 @@ jobs:
         port: 1624
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
-        source: ".next/static/** .next/server/**"
+        source: ".next/**"
         target: "/home/housedes/public_html/housedesigns/.next/"
         protocol: sftp
         overwrite: true
