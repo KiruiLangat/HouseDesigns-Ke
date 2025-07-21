@@ -45,7 +45,7 @@ export default function Footer() {
                 <nav className={styles.footerNav}>
                     <ul>
                         <li><Link href='/our-expertise'>Our Expertise</Link></li>
-                        <li><Link href='about-us'>About Us</Link></li>
+                        <li><Link href='/about-us'>About Us</Link></li>
                         <li><Link href='/shop'>Shop</Link></li>
                         <li><Link href='/blog'>Blog</Link></li>
                         <li><Link href='/contact-us'>Contact Us</Link></li>
