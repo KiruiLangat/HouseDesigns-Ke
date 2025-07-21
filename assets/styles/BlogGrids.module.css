@@ -1,3 +1,47 @@
+/* Pagination Arrow Styles */
+.arrowContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.arrowLeft, .arrowRight {
+    background-color: transparent;
+    color: #ED7D31;
+    border: 1px solid #ED7D31;
+    border-radius: 50%;
+    padding: 10px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrowLeft:hover, .arrowRight:hover {
+    background-color: #ED7D3124;
+}
+
+.arrowLeft:disabled, .arrowRight:disabled {
+    background: #ccc;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.gridsWrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 20px;
+}
 .grids{
     max-width: 93%;
     height: auto;
@@ -6,7 +50,6 @@
     grid-template-rows: repeat(2,1fr);
     gap: 15px;
     margin: auto;
-    margin-bottom: 0;
     text-decoration: none;
     color: black;
     box-sizing: border-box;
@@ -174,9 +217,10 @@
 }
 
 @media (max-width: 768px){
+
     .grids{
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: auto, 1fr;
     }
     .box1{
         @media (prefers-color-scheme: dark){
@@ -193,5 +237,11 @@
     }
     .box1 p{
         font-size: 10px;
+    }
+
+    .arrowLeft, .arrowRight {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
     }
 }
