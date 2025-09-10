@@ -61,7 +61,7 @@ export default function Blog() {
   }, [router]);
 
   useEffect(() => {
-    fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?&_embed')
+  fetch('https://cms.housedesigns.co.ke/wp-json/wp/v2/posts?&_embed')
       .then(response => {
         console.log(response);
         if (!response.ok) {

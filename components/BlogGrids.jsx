@@ -19,7 +19,7 @@ export default function BlogGrids() {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&per_page=8&page=${page}`)
+    fetch(`https://cms.housedesigns.co.ke/wp-json/wp/v2/posts?_embed&per_page=8&page=${page}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

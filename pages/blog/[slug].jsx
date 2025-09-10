@@ -22,7 +22,7 @@ async function getPostBySlug(slug, retries = 5, delay = 1000) {
     try {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 10000);
-      const response = await fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&slug=${slug}`, { signal: controller.signal });
+  const response = await fetch(`https://cms.housedesigns.co.ke/wp-json/wp/v2/posts?_embed&slug=${slug}`, { signal: controller.signal });
       clearTimeout(timeout);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const posts = await response.json();
@@ -54,7 +54,7 @@ async function getAllPostSlugs(retries = 5, delay = 1000) {
     try {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 10000);
-      const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug&per_page=100', { signal: controller.signal });
+  const response = await fetch('https://cms.housedesigns.co.ke/wp-json/wp/v2/posts?_fields=slug&per_page=100', { signal: controller.signal });
       clearTimeout(timeout);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const posts = await response.json();
@@ -79,7 +79,7 @@ async function getAllPostsMeta(retries = 5, delay = 1000) {
     try {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 10000);
-      const response = await fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_fields=slug,title&per_page=100', { signal: controller.signal });
+  const response = await fetch('https://cms.housedesigns.co.ke/wp-json/wp/v2/posts?_fields=slug,title&per_page=100', { signal: controller.signal });
       clearTimeout(timeout);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const posts = await response.json();

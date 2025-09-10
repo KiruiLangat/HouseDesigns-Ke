@@ -1,27 +1,37 @@
-import pool from '../../../../services/MySQLConnector';
 
-export default function handler(req, res) {
+
+function convertBigInt(obj) {
+  if (Array.isArray(obj)) {
+    return obj.map(convertBigInt);
+  } else if (obj && typeof obj === 'object') {
+    return Object.fromEntries(
+      Object.entries(obj).map(([k, v]) => [k, typeof v === 'bigint' ? v.toString() : convertBigInt(v)])
+    );
+  }
+  return obj;
+}
+
+export default async function handler(req, res) {
   const { title } = req.query;
 
   if (req.method === 'GET') {
-    pool.query('SELECT projects_id FROM projectDescription WHERE title = ?', [title], (error, results) => {
-      if (error) {
-        res.status(500).send(error);
-      } else if (results[0] === undefined) {
-        res.status(404).send('Project not found');
-      } else {
-        const projectId = results[0].projects_id;
-        pool.query('SELECT image_url FROM images WHERE projects_id = ?', [projectId], (error, results) => {
-          if (error) {
-            console.error(error);
-            res.status(500).json({ error: 'Internal Server Error' });
-          } else {
-            const images = results.map(row => row.image_url);
-            res.json(images);
-          }
-        });
+    try {
+      const project = await prisma.projectDescription.findFirst({
+        where: { title: title }
+      });
+      if (!project) {
+        return res.status(404).send('Project not found');
       }
-    });
+      const imagesList = await prisma.images.findMany({
+        where: { projects_id: project.projects_id },
+        select: { image_url: true }
+      });
+      const imageUrls = imagesList.map(img => img.image_url);
+      res.status(200).json(convertBigInt(imageUrls));
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
   } else {
     res.status(405).json({ error: 'Method Not Allowed' });
   }

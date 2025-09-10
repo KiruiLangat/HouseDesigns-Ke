@@ -20,11 +20,9 @@ export default function SearchBar ({post}) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(`You searched for: ${searchTerm}`);
 
-    fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?search=${searchTerm}&_embed`)
+  fetch(`https://cms.housedesigns.co.ke/wp-json/wp/v2/posts?search=${searchTerm}&_embed`)
       .then(response => {
-        console.log(response)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -32,7 +30,6 @@ export default function SearchBar ({post}) {
       })
       .then(data => {
         setSearchResults(data);
-        console.log('Search results:', data)
         
       })
       .catch(error => {
@@ -48,9 +45,8 @@ export default function SearchBar ({post}) {
       setCategory('');
     }
     else{
-      fetch (`https://housedesigns.co.ke/CMS/wp-json/wp/v2/categories?slug=${categorySlug}`)
+  fetch (`https://cms.housedesigns.co.ke/wp-json/wp/v2/categories?slug=${categorySlug}`)
       .then(response => {
-        console.log(response)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -61,9 +57,8 @@ export default function SearchBar ({post}) {
           const categoryId = categories[0].id;
           setCategory(categories[0].slug);
 
-          fetch(`https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
+          fetch(`https://cms.housedesigns.co.ke/wp-json/wp/v2/posts?categories=${categoryId}&_embed`)
           .then(response => {
-            console.log(response)
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
             }

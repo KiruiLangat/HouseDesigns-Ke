@@ -217,6 +217,15 @@
     color: #000;
 }
 
+.postDate {
+    font-size: 14px;
+    font-weight: 300;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
 .postContent h3 {
     font-size: 20px;
     font-weight: 400;
@@ -458,27 +467,27 @@
    ============================================= */
 .postContent :global(h1) {
     font-size: 28px;
-    font-weight: 400;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 
 .postContent :global(h2) {
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 600;
     margin-top: 25px;
     margin-bottom: 15px;
 }
 
 .postContent :global(h3) {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 600;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
 .postContent :global(h4) {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
     margin-top: 18px;
     margin-bottom: 8px;
 }
@@ -522,6 +531,17 @@
     font-weight: 300;
     margin: 8px 0;
     line-height: 1.5;
+}
+
+.postContent table th {
+        border: 1px solid #222831;
+        color: #fff;
+        padding: 10px;
+    }
+.postContent table td {
+        border: 1px solid #222831;
+        padding: 10px;
+        font-size: 14px;
 }
 
 /* =============================================
@@ -688,9 +708,11 @@
         color: #7c7c7c;
     }
     
-    .content h1,
-    .content p {
+    .content h1{
         color: #ffffff;
+    }
+    .content p {
+        color: #7c7c7c;
     }
     
     .postContent ul,
@@ -701,7 +723,7 @@
     
     .postContent li,
     .postContent :global(li) {
-        color: #7c7c7c;
+        color: #d4d4d4;
     }
     
     .postContent :global(h1),
@@ -709,14 +731,17 @@
     .postContent :global(h3),
     .postContent :global(h4),
     .postContent :global(h5),
-    .postContent :global(h6),
-    .postContent :global(p) {
-        color: #7c7c7c;
+    .postContent :global(h6){
+        color: #ffffff;
+    }
+
+    .postContent :global(p){
+        color: #d4d4d4;
     }
     
     .postContent :global(ul),
     .postContent :global(ol) {
-        color: #ffffff;
+        color: #d4d4d4;
         box-shadow: none;
     }
     
@@ -728,6 +753,30 @@
     
     .postContent :global(figcaption) {
         color: #a0a0a0;
+    }
+
+
+    .postContent table th {
+        background-color: #222831;
+        color: #fff;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .postContent table td {
+        border: 1px solid #282828;
+        color: #d4d4d4;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+ 
+   
+    .postContent hr {
+        background-color: #7c7c7c !important;
+    }
+    .postContent table :global(tr){
+        color: #d4d4d4;
+        font-weight: 300;
     }
     
     .blogNavigation a {

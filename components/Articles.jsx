@@ -13,7 +13,7 @@ export default function Articles() {
 
     React.useEffect(() => {
         setIsLoading(true);
-        fetch('https://housedesigns.co.ke/CMS/wp-json/wp/v2/posts?_embed&per_page=3')
+    fetch('https://cms.housedesigns.co.ke/wp-json/wp/v2/posts?_embed&per_page=3')
         .then(response => {
             // console.log(response)
             if (!response.ok) {

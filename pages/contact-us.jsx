@@ -14,8 +14,10 @@ const style = {
   fontFamily: 'Poppins'
 }
 
+
 export default function ContactUs() {
   const [form, setForm] = useState({ name: '', email: '', number: '', message: '' });
+  const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
 
   const handleChange = (e) => {
@@ -24,7 +26,7 @@ export default function ContactUs() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    setSubmitting(true);
     try {
       const response = await fetch(`/api/contact-form`, {
         method: 'POST',
@@ -41,6 +43,8 @@ export default function ContactUs() {
       router.push('/submission');
     } catch (error) {
       console.log('Form submission failed', error);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -123,7 +127,9 @@ export default function ContactUs() {
               <input type='number' name='number' placeholder='' value={form.number} onChange={handleChange} required />
               <h3>*Message:</h3>
               <textarea name='message' placeholder='Leave a message' value={form.message} onChange={handleChange} required />
-              <button type='submit'>Submit</button>
+              <button type='submit' disabled={submitting}>
+                {submitting ? 'Submitting...' : 'Submit'}
+              </button>
             </form>
           </div>
         </div>
