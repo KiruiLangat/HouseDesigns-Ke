@@ -9,6 +9,7 @@
     "@fontsource/poppins": "^5.0.13",
     "@mui/icons-material": "^5.16.4",
     "@mui/material": "^5.16.4",
+    "@prisma/client": "^6.15.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -24,6 +25,7 @@
     "next": "^13.4.0",
     "next-seo": "^6.6.0",
     "node-fetch": "^3.3.2",
+    "prisma": "^6.15.0",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.9",
     "react-calendly": "^4.3.1",
@@ -70,8 +72,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@prisma/client": "^6.15.0",
-    "next-sitemap": "^4.2.3",
-    "prisma": "^6.15.0"
+    "next-sitemap": "^4.2.3"
+
   }
 }
