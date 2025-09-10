@@ -1,3 +1,4 @@
+import prisma from '../../lib/prisma';
 
 function convertBigInt(obj) {
   if (Array.isArray(obj)) {
