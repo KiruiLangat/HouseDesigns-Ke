@@ -15,10 +15,10 @@ function convertBigInt(obj) {
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      const browseSwiperProjects = await prisma.browseSwiperProjects.findMany({
+      const BrowseSwiperProjects = await prisma.BrowseSwiperProjects.findMany({
         orderBy: { id: 'desc' }
       });
-      res.status(200).json(convertBigInt(browseSwiperProjects));
+      res.status(200).json(convertBigInt(BrowseSwiperProjectsrowseSwiperProjects));
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Internal Server Error' });
