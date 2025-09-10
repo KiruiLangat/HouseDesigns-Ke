@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       const BrowseSwiperProjects = await prisma.BrowseSwiperProjects.findMany({
         orderBy: { id: 'desc' }
       });
-      res.status(200).json(convertBigInt(BrowseSwiperProjectsrowseSwiperProjects));
+      res.status(200).json(convertBigInt(BrowseSwiperProjects));
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Internal Server Error' });
