@@ -42,7 +42,6 @@ const Collections = () => {
     const collections = ['Family Houses', 'Holiday Houses', 'Retirement Houses', 'Cottages'];
 
     const filteredCategories = categories.filter((category) => collections.includes(category.name));
-    console.log('Filtered Categories', filteredCategories);
 
     return (
         <div className={styles.collections} style={style}>
