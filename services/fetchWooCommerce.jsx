@@ -7,7 +7,7 @@ const consumerKey = process.env.WC_CONSUMER_KEY;
 const consumerSecret = process.env.WC_CONSUMER_SECRET;
 
 const api = new WooCommerceRestApi({
-  url: 'https://housedesigns.co.ke/CMS',
+  url: 'https://cms.housedesigns.co.ke/',
   consumerKey: consumerKey,
   consumerSecret: consumerSecret,
   version: 'wc/v3'
