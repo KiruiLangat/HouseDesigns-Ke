@@ -27,6 +27,7 @@ export default async function handler(req, res) {
         select: { image_url: true }
       });
       const imageUrls = imagesList.map(img => img.image_url);
+      res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
       res.status(200).json(convertBigInt(imageUrls));
     } catch (error) {
       console.error(error);

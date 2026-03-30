@@ -2,6 +2,7 @@
 module.exports = {
   siteUrl: 'https://housedesigns.co.ke',
   generateRobotsTxt: true,
+  autoLastmod: false,
   sitemapSize: 7000,
   additionalSitemaps: [
     `https://housedesigns.co.ke/server-sitemap.xml`,
@@ -18,5 +19,5 @@ module.exports = {
       },
     ],
   },
-  exclude: ['/CMS/*', '/404'],
+  exclude: ['/CMS/*', '/404', '/api/*'],
 }

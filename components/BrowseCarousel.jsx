@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
+import useSWR from 'swr';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,6 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import styles from '../assets/styles/BrowseCarousel.module.css';
 import '@fontsource/poppins';
+import fetcher from '../lib/fetcher';
 
 import Fallback1 from '../assets/images/residentials.jpg';
 import Fallback2 from '../assets/images/maisonettes.jpg';
@@ -17,48 +19,28 @@ const style = {
   fontFamily: 'Poppins',
 };
 
+const fallbackProjects = [
+  {
+    id: 1,
+    title: 'Residentials',
+    image_url: Fallback1,
+  },
+  {
+    id: 2,
+    title: 'Gikambura House',
+    image_url: Fallback2,
+  },
+  // Add more fallback projects as needed
+];
+
 export default function BrowseCarousel({ sub_category_name }) {
-  const [projects, setProjects] = useState([]);
   const swiperRef = useRef(null);
 
-  const fallbackProjects = [
-    {
-      id: 1,
-      title: 'Residentials',
-      image_url: Fallback1,
-    },
-    {
-      id: 2,
-      title: 'Gikambura House',
-      image_url: Fallback2,
-    },
-    // Add more fallback projects as needed
-  ];
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch('/api/browse');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setProjects(data);
-      } catch (error) {
-        console.error(error);
-        setTimeout(() => {
-          setProjects(fallbackProjects); // Use fallback projects after waiting
-        }, 2000); // 2 seconds waiting time
-      }
-    };
-    fetchProjects();
-  }, [fallbackProjects]);
-
-  useEffect(() => {
-    if (swiperRef.current) {
-      swiperRef.current.update();
-    }
-  }, [projects]);
+  const { data: projects = fallbackProjects } = useSWR('/api/browse', fetcher, {
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+    dedupingInterval: 30000,
+  });
 
   return (
     <>

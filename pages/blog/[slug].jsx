@@ -249,8 +249,21 @@ export default function BlogPost({ post, previousPost, nextPost }) {
 
 
 
-export async function getServerSideProps({ params }) {
-  let post = null
+export async function getStaticPaths() {
+  let paths = [];
+  try {
+    paths = await getAllPostSlugs();
+  } catch (error) {
+    console.error('Error fetching post slugs for getStaticPaths:', error);
+  }
+  return {
+    paths,
+    fallback: 'blocking',
+  };
+}
+
+export async function getStaticProps({ params }) {
+  let post = null;
   let allPosts = [];
   try {
     post = await getPostBySlug(params.slug);
@@ -258,22 +271,18 @@ export async function getServerSideProps({ params }) {
     post = null;
   }
   if (!post || typeof post !== 'object') {
-    //if API is temporarily down, let ISR try again soon
-    return { 
-      notFound: true,
-    };
+    return { notFound: true };
   }
-  // Fetch all posts meta for navigation
- try{ 
+  try {
     allPosts = await getAllPostsMeta();
   } catch (error) {
     allPosts = [];
   }
-  // Find current post index
   const currentIndex = allPosts.findIndex(p => p.slug === params.slug);
   const previousPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
   const nextPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
   return {
-    props: { post, previousPost, nextPost }
+    props: { post, previousPost, nextPost },
+    revalidate: 3600,
   };
 }

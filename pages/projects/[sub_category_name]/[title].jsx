@@ -1,68 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
 import Image from 'next/image'
 import Head from 'next/head'
 import styles from '../../../assets/styles/projectDescription.module.css'
 import '@fontsource/poppins'
-import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
+import prisma from '../../../lib/prisma'
 
 const style = {
     fontFamily: 'Poppins'
 }
 
-export default function ProjectDescription() {
-    const router = useRouter()
-    const { title } = router.query
-    const [images, setImages] = useState([])
-
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const response = await fetch(`/api/residentials/project-images/${title}`)
-                console.log(title)
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json()
-                setImages(data)
-            } catch (error) {
-                console.error(error)
-            }
-        }
-        if (title) {
-            fetchImages();
-        }
-    }, [title]);
-
-    const [project, setProject] = useState(null)
-
-    useEffect(() => {
-        const fetchProject = async () => {
-            try {
-                const response = await fetch(`/api/residentials/project-details/${title}`)
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json()
-                setProject(data)
-            } catch (error) {
-                console.error(error)
-            }
-        }
-        if (title) {
-            fetchProject();
-        }
-    }, [title]);
-
-    if (!project) {
-        return ( 
-        <div className={styles.loading}>
-            <HourglassBottomIcon className={styles.loadingIcon} />
-            <p>Fetching Project Images...</p>            
-        </div>
-        )
+function convertBigInt(obj) {
+    if (Array.isArray(obj)) return obj.map(convertBigInt);
+    if (obj && typeof obj === 'object') {
+        return Object.fromEntries(
+            Object.entries(obj).map(([k, v]) => [k, typeof v === 'bigint' ? v.toString() : convertBigInt(v)])
+        );
     }
+    return obj;
+}
 
+export default function ProjectDescription({ project, images }) {
     const ogUrl = `https://housedesigns.co.ke/${project.title}`
 
     return (
@@ -120,37 +77,72 @@ export default function ProjectDescription() {
                     ))}
                 </div>
             </>
-            {project && (
-                <>
-                    
-                    <div className={styles.projectInfo}>
-                        <h1>{project.title}</h1>
-                        <div className={styles.projectTexts}>
-                            <div className={styles.descriptions}>
-                                
-                                <div className={styles.description1}>
-                                    <h2>Location</h2>
-                                    <p>{project.location}</p>
-                                </div>
-                                <div className={styles.description2}>
-                                    <h2>Plinth Area</h2>
-                                    <p>{project.plinth_area}</p>
-                                </div>
-                                <div className={styles.description3}>
-                                    <h2>Status</h2>
-                                    <p>{project.project_status}</p>
-                                </div>
+            <>
+                <div className={styles.projectInfo}>
+                    <h1>{project.title}</h1>
+                    <div className={styles.projectTexts}>
+                        <div className={styles.descriptions}>
+                            <div className={styles.description1}>
+                                <h2>Location</h2>
+                                <p>{project.location}</p>
                             </div>
-                            <div className={styles.details}>
-                                <h2>Project Details</h2>
-                                <div className={styles.detailsContent}>
-                                    <p>{project.details}</p>
-                                </div>
+                            <div className={styles.description2}>
+                                <h2>Plinth Area</h2>
+                                <p>{project.plinth_area}</p>
+                            </div>
+                            <div className={styles.description3}>
+                                <h2>Status</h2>
+                                <p>{project.project_status}</p>
+                            </div>
+                        </div>
+                        <div className={styles.details}>
+                            <h2>Project Details</h2>
+                            <div className={styles.detailsContent}>
+                                <p>{project.details}</p>
                             </div>
                         </div>
                     </div>
-                </>
-            )}
+                </div>
+            </>
         </div>
     )
+}
+
+export async function getStaticPaths() {
+    return {
+        paths: [],
+        fallback: 'blocking',
+    };
+}
+
+export async function getStaticProps({ params }) {
+    const { title } = params;
+
+    try {
+        const project = await prisma.projectDescription.findFirst({
+            where: { title },
+        });
+
+        if (!project) {
+            return { notFound: true };
+        }
+
+        const imagesList = await prisma.images.findMany({
+            where: { projects_id: project.projects_id },
+            select: { image_url: true },
+        });
+
+        const images = imagesList.map(img => img.image_url);
+
+        return {
+            props: {
+                project: convertBigInt(project),
+                images,
+            },
+            revalidate: 3600,
+        };
+    } catch (error) {
+        console.error(error);
+        return { notFound: true };
+    }
 }
