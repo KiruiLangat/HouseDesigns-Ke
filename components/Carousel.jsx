@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
+import useSWR from 'swr';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,7 +11,8 @@ import 'swiper/css/navigation';
 import '@fontsource/poppins';
 
 import Fallback1 from '../assets/images/OurExpertise.jpg';
-import Fallback2 from '../assets/images/bungalows.jpg'
+import Fallback2 from '../assets/images/bungalows.jpg';
+import fetcher from '../lib/fetcher';
 
 const style = {
   fontFamily: 'Poppins',
@@ -33,46 +35,13 @@ const fallbackProjects = [
 ];
 
 export default function Carousel({ sub_category_name }) {
-  const [projects, setProjects] = useState([]);
   const swiperRef = useRef(null);
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch('/api/swiper');
-        const contentType = response.headers.get('content-type');
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        } else if (!contentType || !contentType.includes('application/json')) {
-          throw new TypeError("Oops, we haven't got JSON!");
-        }
-
-        try {
-          const data = await response.json();
-          setProjects(data);
-        } catch (err) {
-          console.error('Failed to parse JSON:', err);
-          setTimeout(() => {
-            setProjects(fallbackProjects); // Use fallback projects after waiting
-          }, 2000); // 2 seconds waiting time
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        setTimeout(() => {
-          setProjects(fallbackProjects); // Use fallback projects after waiting
-        }, 2000); // 2 seconds waiting time
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  useEffect(() => {
-    if (swiperRef.current) {
-      swiperRef.current.update();
-    }
-  }, [projects]);
+  const { data: projects = fallbackProjects } = useSWR('/api/swiper', fetcher, {
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+    dedupingInterval: 30000,
+  });
 
   return (
     <>

@@ -20,6 +20,7 @@ export default async function handler(req, res) {
         where: { sub_category_id: BigInt(subCategoryId) },
         orderBy: { id: 'desc' }
       });
+      res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
       res.status(200).json(convertBigInt(projectsList));
     } catch (error) {
       console.error(error);

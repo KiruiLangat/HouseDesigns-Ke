@@ -6,6 +6,7 @@ export default async function handler(req, res) {
   }
   try {
     const categories = await fetchFromWooCommerce('products/categories', { per_page: 100 });
+    res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
     res.json(categories);
   } catch (error) {
     res.status(500).send(error.message);

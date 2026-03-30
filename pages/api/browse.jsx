@@ -18,6 +18,7 @@ export default async function handler(req, res) {
       const BrowseSwiperProjects = await prisma.BrowseSwiperProjects.findMany({
         orderBy: { id: 'desc' }
       });
+      res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
       res.status(200).json(convertBigInt(BrowseSwiperProjects));
     } catch (error) {
       console.error(error);

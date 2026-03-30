@@ -8,6 +8,7 @@ export default async function get(req, res) {
   }
   try {
     const products = await fetchFromWooCommerce('products', params);
+    res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
     res.json(products);
   } catch (error) {
     res.status(500).json({ error: error.message });
